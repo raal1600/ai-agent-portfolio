@@ -42,7 +42,15 @@
   </section>
 
   <section class="section" aria-labelledby="runtime-title">
-    <div class="section-intro"><div class="kicker">Actual runtime proof</div><h2 id="runtime-title">Core behavior executed with synthetic inputs</h2><p>A public-safe runner imported the actual private control and delivery modules, exercised them in temporary directories, asserted every expected result, and removed the fixture afterward.</p></div>
+    <div class="section-intro"><div class="kicker">Actual runtime proof</div><h2 id="runtime-title">Watch the harness verify itself</h2><p>This Playwright recording shows a public-safe verification view while its local runner executes the actual private control modules and nine focused Node test files with synthetic inputs.</p></div>
+
+    <div class="media-frame">
+      <video controls preload="metadata" poster="../evidence/pi-agent-harness/pi-runtime-poster.png" aria-label="Pi agent harness runtime verification recording">
+        <source src="../evidence/pi-agent-harness/pi-agent-harness-runtime.webm" type="video/webm">
+        Your browser cannot play the WebM video. <a href="../evidence/pi-agent-harness/pi-agent-harness-runtime.webm">Download the runtime recording</a>.
+      </video>
+      <p class="caption">Actual private modules and nine focused test files · synthetic fixture · 138/138 tests · zero failures · no private content shown.</p>
+    </div>
 
     <div class="evidence-grid" id="behavior-evidence">
       <article class="evidence-card"><span class="evidence-label">Capability gate</span><span class="evidence-value" data-result="capabilityGatePass">Passed</span><span class="evidence-note">Full delivery requires every prerequisite.</span></article>

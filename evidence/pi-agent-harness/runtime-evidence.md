@@ -7,10 +7,18 @@
 **Result:** PASS
 **Focused suites:** 138 tests passed, 0 failed
 
+- [Visual runtime recording](pi-agent-harness-runtime.webm)
+- [Final verification frame](pi-runtime-poster.png)
 - [Reviewable public-safe runtime scenario](runtime-scenario.mjs)
 - [Actual synthetic core-behavior result](runtime-behavior.json)
 - [Genuine Node test-runner output](pi-extension-tests.txt)
 - [Private-source snapshot manifest](source-snapshot.sha256)
+
+## Visual runtime recording
+
+The WebM is a Playwright capture of a purpose-built, public-safe verification view. During the recorded session, its local runner spawned the current private `yolo-control` and `pi-yolo-delivery` core modules, then ran nine focused private Node test files. The visible cards and `138 / 138` result were populated only after those processes completed successfully. The view displayed synthetic labels and sanitized test names; it did not expose source code, local paths, credentials, prompts, notes, or sessions.
+
+This is runtime evidence, not an architecture animation. The public capture runner itself remains a temporary local fixture because it requires private module paths; the reviewable scenario below documents the executed behavior without those paths.
 
 ## What was executed
 
@@ -66,6 +74,8 @@ Evidence hashes:
 2ca28a28ce886bc999768e821653b8b3f1b457e8ac741f670c43d28a67a2704b  runtime-scenario.mjs
 e8dbaccf805e340dc6c42106c6d34980287404c40e6883e68b4b9317e03d7c84  runtime-behavior.json
 e5601037f4fc5b31819ee5b9537f81990d2e56c21c5d8395f996ac11cb71396e  pi-extension-tests.txt
+736ceb0bee5ededa3e5142b37ae37040cd2b7c8750a5600ba797d4c9c1c05c7e  pi-agent-harness-runtime.webm
+f1a9ecc0959f6c29781c6435eb76503789808f0743e016a584af28a6b361ca62  pi-runtime-poster.png
 ```
 
 Reviewed inventory at capture time:

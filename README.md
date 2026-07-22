@@ -8,9 +8,11 @@ I am a Technical Customer Success Manager and former IT Manager who also builds 
 
 ### Pi agent harness — actual core execution
 
-The Pi evidence is an executable, public-safe scenario and captured test run rather than a presentation video:
+The Pi evidence includes a visual recording of an executable, public-safe scenario and the focused test run:
 
-- **[Open the guided runtime-evidence page](https://raal1600.github.io/ai-agent-portfolio/projects/pi-agent-harness.html#runtime-title)**
+- **[Watch the embedded Pi runtime recording](https://raal1600.github.io/ai-agent-portfolio/projects/pi-agent-harness.html#runtime-title)**
+- [Play or download the Pi WebM recording](evidence/pi-agent-harness/pi-agent-harness-runtime.webm)
+- [View the final verification frame](evidence/pi-agent-harness/pi-runtime-poster.png)
 - [Read the complete evidence record](evidence/pi-agent-harness/runtime-evidence.md)
 - [Inspect the machine-readable runtime result](evidence/pi-agent-harness/runtime-behavior.json)
 - [Inspect the public-safe runtime scenario](evidence/pi-agent-harness/runtime-scenario.mjs)
