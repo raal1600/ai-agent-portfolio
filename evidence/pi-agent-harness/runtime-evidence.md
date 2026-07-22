@@ -7,8 +7,9 @@
 **Result:** PASS
 **Focused suites:** 138 tests passed, 0 failed
 
-- [Implementation → review screen recording](agent-demo-implementation-review.mp4)
-- [Completed Obsidian handoff frame](agent-demo-implementation-review-poster.jpg)
+- [Autonomous multi-agent workflow playback](multi-agent-autonomous-workflow.webm)
+- [Completed multi-agent workflow frame](multi-agent-autonomous-workflow-poster.png)
+- [Machine-readable multi-agent result](multi-agent-workflow-result.json)
 - [Focused verification recording](pi-agent-harness-runtime.webm)
 - [Final verification frame](pi-runtime-poster.png)
 - [Reviewable public-safe runtime scenario](runtime-scenario.mjs)
@@ -16,17 +17,18 @@
 - [Genuine Node test-runner output](pi-extension-tests.txt)
 - [Private-source snapshot manifest](source-snapshot.sha256)
 
-## Implementation → review screen recording
+## Autonomous multi-agent workflow playback
 
-The MP4 is an actual macOS screen capture of the `Agent demo` cmux workspace and Obsidian. It records an isolated synthetic ticket from authorization through implementation and independent review:
+The 18-second WebM is an evidence-bound presentation of an actual Pi subagent run against isolated synthetic ticket `DEMO-MA1`. It replaces the slower raw desktop capture with a purpose-built view that makes agent roles, authority, parallel work, gates, handoffs, and verdicts immediately understandable.
 
-1. Obsidian displays synthetic handoff `DEMO-T05` as `active-ready` in the `implement` queue.
-2. Pi session 1 changes only the synthetic project's `src/slugify.js`, then reports `npm test` with 3 passing tests and a clean `git diff --check`.
-3. The same handoff is updated with implementation evidence and moved to the `review` queue.
-4. Pi session 2 inspects the actual diff and unchanged tests, reruns both gates, reports no blockers, and returns `GO`.
-5. The handoff is updated with review evidence and moved to `Completed`, where Obsidian displays `status: completed` and `direction: completed`.
+1. A Pi implementation agent receives writer authority limited to `src/slugify.js`.
+2. The agent inspects committed tests, changes only the approved file, and passes three tests plus `git diff --check`.
+3. The orchestrator closes the writer phase and dispatches two independent Pi reviewer sessions in parallel.
+4. The code reviewer inspects the actual baseline diff and unchanged tests, reruns the gates, finds no blockers, and returns `GO`.
+5. The QA validator independently verifies tests, scope, staging, and commit state, then returns `PASS`.
+6. The orchestrator marks the workflow complete only after both read-only verdicts succeed. No implementation commit is created.
 
-The capture uses no production repository, customer information, credentials, private notes, private prompts, or private implementation source. It was recorded in bounded segments and curated to remove task instructions, prior rehearsal output, unrelated cmux navigation, and the macOS dock. The published sequence retains the actual active-ready handoff, synthetic source diff, implementation gates, review-ready handoff, independent review gates and verdict, and completed handoff. It is exported at 1280×720. The synthetic source diff remains visible because it is the review target.
+The displayed sequence is a verified playback rather than a raw desktop recording. Its states and results are populated from `multi-agent-workflow-result.json`, which records the actual three-session execution, reviewed diff hash, resulting source hash, gates, and verdicts. The synthetic implementation and final reviews were executed by separate Pi subagent sessions; the two review agents ran concurrently.
 
 ## Focused verification recording
 
@@ -90,8 +92,9 @@ e8dbaccf805e340dc6c42106c6d34980287404c40e6883e68b4b9317e03d7c84  runtime-behavi
 e5601037f4fc5b31819ee5b9537f81990d2e56c21c5d8395f996ac11cb71396e  pi-extension-tests.txt
 736ceb0bee5ededa3e5142b37ae37040cd2b7c8750a5600ba797d4c9c1c05c7e  pi-agent-harness-runtime.webm
 f1a9ecc0959f6c29781c6435eb76503789808f0743e016a584af28a6b361ca62  pi-runtime-poster.png
-7f77cafed618d53e26cfdf7694e2e3385f85e2f29e8e928774eb9474f5c07730  agent-demo-implementation-review.mp4
-44a9ce1e4292eb800fd8ba69ebc307d8f2c40b6ceea718941da6addce11335b8  agent-demo-implementation-review-poster.jpg
+22ca2b58c7c70efca6e235e1e03db0cb69500bce22030cddb23048c1736d26df  multi-agent-autonomous-workflow.webm
+8618197c38d0efedc3cadf537d1c73b404b33f71b797b31bf1730ba2bf1f08e2  multi-agent-autonomous-workflow-poster.png
+0129d7bbbd664d11dc97d78673686608697588e9be1d177b5ae8bd69cb86676a  multi-agent-workflow-result.json
 ```
 
 Reviewed inventory at capture time:
@@ -108,7 +111,7 @@ Reviewed inventory at capture time:
 - Synthetic authority, ticket, queue, owner, and content identities
 - Temporary lease directories removed after execution
 - The focused verification runner accessed and mutated no Obsidian content.
-- The screen recording shows only the synthetic DEMO-T05 handoff created for this demonstration as it moves through `implement`, `review`, and `Completed`; no unrelated vault note content is shown.
+- The multi-agent playback shows only synthetic DEMO-MA1 identities, public-safe activities, gates, and verdicts; it contains no desktop or vault view.
 - No private prompt, transcript, session, credential, hostname, or absolute path in the public artifacts
 - Temporary evidence runner removed after capture
 
