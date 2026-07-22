@@ -12,10 +12,12 @@ I am a Technical Customer Success Manager and former IT Manager who also builds 
 
 A TypeScript/Node.js extension suite for the Pi coding-agent harness. It adds custom tools, lifecycle events, interactive controls, deterministic workflow state, resumable sessions, bounded multi-agent execution, Obsidian-backed knowledge workflows, and fail-closed safety boundaries.
 
-- 8,267 lines of reviewed non-test TypeScript/JavaScript source
-- 2,965 lines of tests
-- 136 extension tests passing in the reviewed local run
+- 8,566 lines of reviewed non-test TypeScript/JavaScript source
+- 3,122 lines of tests
+- 138 extension tests passing in the captured run
 - Human approval retained for sensitive transitions
+
+**[Runtime evidence: actual core execution and genuine 138-test Node runner output](evidence/pi-agent-harness/runtime-evidence.md)**
 
 ### [SoherDocs document platform](case-studies/soherdocs.md)
 
@@ -28,6 +30,8 @@ A multi-user Next.js and PostgreSQL platform for producing structured, tailored 
 - Layered unit, visual, browser, and end-to-end test gates
 - Decoupled service boundaries designed for maintainable handover
 
+**[Runtime evidence: actual Playwright/Chromium application-export flow](evidence/soherdocs/runtime-evidence.md)**
+
 ## What this portfolio demonstrates
 
 - Building working MVPs while preserving clear architectural seams
@@ -38,7 +42,7 @@ A multi-user Next.js and PostgreSQL platform for producing structured, tailored 
 
 ## Verification and access
 
-The public repository intentionally contains case studies rather than private application or extension source. Runtime evidence is published only when captured from the real system with synthetic data. During a supervised technical review I can:
+The public repository contains sanitized case studies plus runtime artifacts captured from the real private systems with synthetic data. The implementation source remains private. During a supervised technical review I can:
 
 1. Walk through selected source modules and architectural decisions.
 2. Run focused automated tests and explain failure/recovery behavior.

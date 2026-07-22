@@ -84,6 +84,8 @@ The project uses layered verification:
 
 The private project contains a broad automated suite across unit, service, visual, browser, and end-to-end surfaces. Exact collection and gate results are available during supervised review rather than asserted from this source-free public repository.
 
+[View the actual Playwright/Chromium application-export runtime capture and machine-readable assertions.](../evidence/soherdocs/runtime-evidence.md)
+
 ## Enterprise relevance
 
 - **Rapid MVP delivery:** working vertical slices from profile input to deterministic export

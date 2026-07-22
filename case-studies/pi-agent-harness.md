@@ -82,14 +82,16 @@ The important pattern is that execution is admitted only from explicit authority
 
 ## Verification evidence
 
+[View the captured runtime evidence, machine-readable core behavior, source snapshot manifest, and genuine Node test-runner output.](../evidence/pi-agent-harness/runtime-evidence.md)
+
 Reviewed local inventory on 22 July 2026:
 
 | Measure | Result |
 |---|---:|
-| Non-test TypeScript/JavaScript source | 8,267 lines |
-| Test source | 2,965 lines |
-| Combined extension suite | 11,232 lines |
-| Focused Node tests | 136 passing |
+| Non-test TypeScript/JavaScript source | 8,566 lines |
+| Test source | 3,122 lines |
+| Combined extension suite | 11,688 lines |
+| Focused Node tests | 138 passing |
 
 The tests cover session persistence, inode/symlink races, deterministic state transitions, cross-process lease contention, stale ownership, bounded remediation, queue validation, Obsidian path safety, digest-bound moves, atomic writes, and shutdown recovery.
 

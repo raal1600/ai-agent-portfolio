@@ -1,0 +1,30 @@
+{
+  "capturedAt": "2026-07-22",
+  "result": "pass",
+  "source": "actual private extension core modules",
+  "fixture": "synthetic",
+  "results": {
+    "capabilityNormalization": {
+      "permissions": true,
+      "obsidianAutoWrite": true,
+      "delivery": true,
+      "wayfinder": true,
+      "continuity": true
+    },
+    "capabilityGatePass": true,
+    "dispatchWithoutAllCapabilities": false,
+    "dispatchWithAllCapabilities": true,
+    "duplicateDispatchWithoutNewSignal": false,
+    "dispatchWhilePaused": false,
+    "dispatchAfterExplicitResume": true,
+    "nonCanonicalQueueRejected": true,
+    "canonicalQueueAccepted": true,
+    "simultaneousLeaseOwners": 1,
+    "winnerOwnsLease": true,
+    "loserCannotAcquireWhileOwned": true,
+    "winnerCompletes": true,
+    "winnerReleases": true,
+    "completedFingerprintBlocksReplay": true,
+    "changedCanonicalStateCanAcquire": true
+  }
+}
