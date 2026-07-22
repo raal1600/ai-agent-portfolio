@@ -4,6 +4,28 @@ I am a Technical Customer Success Manager and former IT Manager who also builds 
 
 > **Private source available for supervised review. Temporary read-only access can be arranged for a technical interviewer after scope confirmation.**
 
+## Runtime demos and evidence
+
+### Pi agent harness — actual core execution
+
+The Pi evidence is an executable, public-safe scenario and captured test run rather than a presentation video:
+
+- **[Open the guided runtime-evidence page](https://raal1600.github.io/ai-agent-portfolio/projects/pi-agent-harness.html#runtime-title)**
+- [Read the complete evidence record](evidence/pi-agent-harness/runtime-evidence.md)
+- [Inspect the machine-readable runtime result](evidence/pi-agent-harness/runtime-behavior.json)
+- [Inspect the public-safe runtime scenario](evidence/pi-agent-harness/runtime-scenario.mjs)
+- [Read the genuine 138/138 Node test-runner output](evidence/pi-agent-harness/pi-extension-tests.txt)
+- [Verify the hashed source snapshot](evidence/pi-agent-harness/source-snapshot.sha256)
+
+The scenario imports and executes the actual private control and delivery modules with synthetic inputs. It verifies capability gating, duplicate-dispatch prevention, canonical queue enforcement, cross-process lease contention, pause/resume behavior, and completed-work replay prevention.
+
+### SoherDocs — actual browser runtime
+
+- **[Watch the embedded application demo](https://raal1600.github.io/ai-agent-portfolio/projects/soherdocs.html#runtime-title)**
+- [Play or download the WebM capture](evidence/soherdocs/soherdocs-application-export-runtime.webm)
+- [Read the complete evidence record](evidence/soherdocs/runtime-evidence.md)
+- [Inspect the machine-readable assertions](evidence/soherdocs/runtime-result.json)
+
 ## Case studies
 
 ### [Pi agent harness and governed delivery extensions](case-studies/pi-agent-harness.md)
