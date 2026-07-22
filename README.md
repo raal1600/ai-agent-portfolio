@@ -17,8 +17,6 @@ A TypeScript/Node.js extension suite for the Pi coding-agent harness. It adds cu
 - 136 extension tests passing in the reviewed local run
 - Human approval retained for sensitive transitions
 
-**[Watch the captioned architecture walkthrough](demos/pi-agent-harness-walkthrough.webm)** · [Read the demo guide](demos/pi-agent-harness-demo.md)
-
 ### [SoherDocs document platform](case-studies/soherdocs.md)
 
 ![SoherDocs walkthrough title](assets/soherdocs.png)
@@ -30,8 +28,6 @@ A multi-user Next.js and PostgreSQL platform for producing structured, tailored 
 - Layered unit, visual, browser, and end-to-end test gates
 - Decoupled service boundaries designed for maintainable handover
 
-**[Watch the captioned architecture walkthrough](demos/soherdocs-walkthrough.webm)** · [Read the demo guide](demos/soherdocs-demo.md)
-
 ## What this portfolio demonstrates
 
 - Building working MVPs while preserving clear architectural seams
@@ -42,7 +38,7 @@ A multi-user Next.js and PostgreSQL platform for producing structured, tailored 
 
 ## Verification and access
 
-The public repository intentionally contains case studies and synthetic walkthroughs rather than private application or extension source. During a supervised technical review I can:
+The public repository intentionally contains case studies rather than private application or extension source. Runtime evidence is published only when captured from the real system with synthetic data. During a supervised technical review I can:
 
 1. Walk through selected source modules and architectural decisions.
 2. Run focused automated tests and explain failure/recovery behavior.
