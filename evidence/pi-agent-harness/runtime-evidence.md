@@ -7,9 +7,9 @@
 **Result:** PASS
 **Focused suites:** 138 tests passed, 0 failed
 
-- [Autonomous multi-agent workflow playback](multi-agent-autonomous-workflow.webm)
-- [Completed multi-agent workflow frame](multi-agent-autonomous-workflow-poster.png)
-- [Machine-readable multi-agent result](multi-agent-workflow-result.json)
+- [Contract-accurate Full YOLO workflow playback](full-yolo-workflow.webm)
+- [Completed Full YOLO workflow frame](full-yolo-workflow-poster.png)
+- [Machine-readable workflow and contract evidence](full-yolo-workflow-result.json)
 - [Focused verification recording](pi-agent-harness-runtime.webm)
 - [Final verification frame](pi-runtime-poster.png)
 - [Reviewable public-safe runtime scenario](runtime-scenario.mjs)
@@ -17,18 +17,23 @@
 - [Genuine Node test-runner output](pi-extension-tests.txt)
 - [Private-source snapshot manifest](source-snapshot.sha256)
 
-## Autonomous multi-agent workflow playback
+## Contract-accurate Full YOLO workflow playback
 
-The 18-second WebM is an evidence-bound presentation of an actual Pi subagent run against isolated synthetic ticket `DEMO-MA1`. It replaces the slower raw desktop capture with a purpose-built view that makes agent roles, authority, parallel work, gates, handoffs, and verdicts immediately understandable.
+The 29-second WebM mirrors the current reviewed Full YOLO delivery contract instead of presenting a simplified generic agent sequence. It combines the current hash-pinned prepare, dispatcher, implementation, review, coordination, and safety contracts with bounded evidence from the completed canonical Obsidian V1-S4 execution-batch handoff.
 
-1. A Pi implementation agent receives writer authority limited to `src/slugify.js`.
-2. The agent inspects committed tests, changes only the approved file, and passes three tests plus `git diff --check`.
-3. The orchestrator closes the writer phase and dispatches two independent Pi reviewer sessions in parallel.
-4. The code reviewer inspects the actual baseline diff and unchanged tests, reruns the gates, finds no blockers, and returns `GO`.
-5. The QA validator independently verifies tests, scope, staging, and commit state, then returns `PASS`.
-6. The orchestrator marks the workflow complete only after both read-only verdicts succeed. No implementation commit is created.
+The visible lifecycle is:
 
-The displayed sequence is a verified playback rather than a raw desktop recording. Its states and results are populated from `multi-agent-workflow-result.json`, which records the actual three-session execution, reviewed diff hash, resulting source hash, gates, and verdicts. The synthetic implementation and final reviews were executed by separate Pi subagent sessions; the two review agents ran concurrently.
+1. Derive the smallest graph-ready batch, verify registry-compatible implementer and reviewer assignments, disclose scope and stop conditions, and obtain explicit user batch authorization.
+2. Verify all five session capabilities and the complete canonical batch authority while keeping commit and next-batch authority disabled.
+3. Map and freshness-check the exact Wayfinder capsule, acquire an atomic cross-process batch lease, and persist the active runtime checkpoint.
+4. Process one exact ticket: verify dependency frontier, fixed point, rollback, and safe workspace; reproduce behavior red first; make the minimum bounded correction; run focused/full/safety checks; and record durable evidence without committing.
+5. Finalize the same handoff, advance its Wayfinder generation once, move it from `implement` to `review`, repair exact links sequentially, and pass the post-route consistency gate.
+6. Run fresh read-only Standards and Specification axes separately. The parent reruns required checks and verifies implementation remained unchanged.
+7. On changes-required, increment only the current ticket's normal remediation cycle and route the same note back. The fourth changes-required result stops at `automation-blocked`.
+8. If separately authorized, a later diagnosis-only lease proves one recoverable defect and consumes one ticket-owned post-block attempt; later implementation and later review remain separate phases.
+9. Complete only after both review axes pass. Preserve ticket history, verify the batch exit gate, move only the same handoff to its pinned initiative-scoped Completed destination, repair links, and run the post-archive gate. The next batch remains unauthorized.
+
+The completed V1-S4 evidence exercises the difficult branch rather than only the happy path: normal remediation cycle 3, a fourth changes-required disposition, `automation-blocked`, blocked-remediation diagnosis and route, attempt 2/2 implementation with red-first reproduction, later fresh Standards and Spec passes, parent verification, ticket completion, and batch archival. `full-yolo-workflow-result.json` records the current contract stages, observed completed path, hard stops, and SHA-256 hashes of the reviewed local contracts. The playback is a sanitized presentation of canonical workflow evidence, not a raw prompt, transcript, terminal, or vault recording.
 
 ## Focused verification recording
 
@@ -92,9 +97,9 @@ e8dbaccf805e340dc6c42106c6d34980287404c40e6883e68b4b9317e03d7c84  runtime-behavi
 e5601037f4fc5b31819ee5b9537f81990d2e56c21c5d8395f996ac11cb71396e  pi-extension-tests.txt
 736ceb0bee5ededa3e5142b37ae37040cd2b7c8750a5600ba797d4c9c1c05c7e  pi-agent-harness-runtime.webm
 f1a9ecc0959f6c29781c6435eb76503789808f0743e016a584af28a6b361ca62  pi-runtime-poster.png
-22ca2b58c7c70efca6e235e1e03db0cb69500bce22030cddb23048c1736d26df  multi-agent-autonomous-workflow.webm
-8618197c38d0efedc3cadf537d1c73b404b33f71b797b31bf1730ba2bf1f08e2  multi-agent-autonomous-workflow-poster.png
-0129d7bbbd664d11dc97d78673686608697588e9be1d177b5ae8bd69cb86676a  multi-agent-workflow-result.json
+71936e63ec580f49b37a41f642626df2194b701cdd7e996cf6554183ce66b3a5  full-yolo-workflow.webm
+3efa23c67786cb35492909c6aa31d7a320e9b630cd8b9527ecc896c01a8d1320  full-yolo-workflow-poster.png
+19b8a520fe5ff55a2599d9baa620b8b89d4de6c20feb446359f4c5539a43b280  full-yolo-workflow-result.json
 ```
 
 Reviewed inventory at capture time:
@@ -111,7 +116,7 @@ Reviewed inventory at capture time:
 - Synthetic authority, ticket, queue, owner, and content identities
 - Temporary lease directories removed after execution
 - The focused verification runner accessed and mutated no Obsidian content.
-- The multi-agent playback shows only synthetic DEMO-MA1 identities, public-safe activities, gates, and verdicts; it contains no desktop or vault view.
+- The Full YOLO playback shows only public-safe V1-S4 identifiers, canonical machine states, bounded activities, checks, and dispositions; it contains no desktop or raw vault view.
 - No private prompt, transcript, session, credential, hostname, or absolute path in the public artifacts
 - Temporary evidence runner removed after capture
 

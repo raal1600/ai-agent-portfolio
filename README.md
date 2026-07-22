@@ -11,9 +11,9 @@ I am a Technical Customer Success Manager and former IT Manager who also builds 
 The Pi evidence includes a visual recording of an executable, public-safe scenario and the focused test run:
 
 - **[Watch the embedded Pi runtime recordings](https://raal1600.github.io/ai-agent-portfolio/projects/pi-agent-harness.html#runtime-title)**
-- [Play or download the autonomous multi-agent workflow](evidence/pi-agent-harness/multi-agent-autonomous-workflow.webm)
-- [View the completed multi-agent workflow frame](evidence/pi-agent-harness/multi-agent-autonomous-workflow-poster.png)
-- [Inspect the machine-readable multi-agent result](evidence/pi-agent-harness/multi-agent-workflow-result.json)
+- [Play or download the contract-accurate Full YOLO workflow](evidence/pi-agent-harness/full-yolo-workflow.webm)
+- [View the completed Full YOLO workflow frame](evidence/pi-agent-harness/full-yolo-workflow-poster.png)
+- [Inspect the machine-readable workflow and contract evidence](evidence/pi-agent-harness/full-yolo-workflow-result.json)
 - [Play or download the focused verification WebM](evidence/pi-agent-harness/pi-agent-harness-runtime.webm)
 - [View the final verification frame](evidence/pi-agent-harness/pi-runtime-poster.png)
 - [Read the complete evidence record](evidence/pi-agent-harness/runtime-evidence.md)
