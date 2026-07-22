@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pi agent harness case study with actual core execution and 138-test evidence.">
+  <title>Pi Agent Harness — Rami Halabi Portfolio</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../index.html">Rami Halabi</a>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a href="../index.html">All projects</a>
+    <a href="pi-agent-harness.html" aria-current="page">Pi agent harness</a>
+    <a href="soherdocs.html">SoherDocs</a>
+  </nav>
+</header>
+
+<main id="content">
+  <section class="hero compact">
+    <div class="eyebrow">Agent engineering</div>
+    <h1>Pi agent harness</h1>
+    <p class="lead">A TypeScript and Node.js extension suite that turns coding agents into a governed delivery system with explicit authority, deterministic phases, durable recovery, and human-controlled limits.</p>
+    <div class="badges"><span class="badge proof">Actual private modules executed</span><span class="badge proof">138/138 tests</span><span class="badge">Pi SDK</span><span class="badge">Obsidian</span></div>
+    <div class="proof-banner"><span class="status-dot" aria-hidden="true"></span><strong>Verified behavior:</strong> capability gates, pause/resume, canonical paths, lease contention, and replay prevention.</div>
+  </section>
+
+  <section class="section" aria-labelledby="contribution-title">
+    <div class="section-intro"><div class="kicker">My contribution</div><h2 id="contribution-title">Designed and implemented as an independent project</h2><p class="lead">I designed the control model, implemented the TypeScript/Node.js extensions, integrated Pi lifecycle events and Obsidian tooling, and built the test and recovery strategy.</p></div>
+    <ul class="check-list"><li>Defined capability, authority, phase, remediation, and hard-stop contracts.</li><li>Implemented dispatch gates, durable session continuity, cross-process leases, and bounded parallel execution.</li><li>Built filesystem-first knowledge tooling, safety checks, regression suites, and operator-facing controls.</li></ul>
+  </section>
+
+  <section class="section" aria-labelledby="value-title">
+    <div class="section-intro"><div class="kicker">Why it matters</div><h2 id="value-title">Making AI-assisted delivery dependable</h2></div>
+    <div class="value-grid">
+      <article class="value-card"><h3>Authority stays explicit</h3><p>Agents execute only within a user-authorized batch, ticket, phase, workspace, and security boundary.</p></article>
+      <article class="value-card"><h3>Concurrency stays controlled</h3><p>Cross-process leases prevent duplicate ownership while bounded isolated agents can work in parallel.</p></article>
+      <article class="value-card"><h3>Failure stays recoverable</h3><p>Durable checkpoints, reconciliation, bounded remediation, and hard stops prevent silent continuation.</p></article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="runtime-title">
+    <div class="section-intro"><div class="kicker">Actual runtime proof</div><h2 id="runtime-title">Core behavior executed with synthetic inputs</h2><p>A public-safe runner imported the actual private control and delivery modules, exercised them in temporary directories, asserted every expected result, and removed the fixture afterward.</p></div>
+
+    <div class="evidence-grid" id="behavior-evidence">
+      <article class="evidence-card"><span class="evidence-label">Capability gate</span><span class="evidence-value" data-result="capabilityGatePass">Passed</span><span class="evidence-note">Full delivery requires every prerequisite.</span></article>
+      <article class="evidence-card"><span class="evidence-label">Dispatch control</span><span class="evidence-value" data-result="duplicateDispatchWithoutNewSignal">Blocked</span><span class="evidence-note">No duplicate dispatch without a new signal.</span></article>
+      <article class="evidence-card"><span class="evidence-label">Lease contention</span><span class="evidence-value" data-result="simultaneousLeaseOwners">1 owner</span><span class="evidence-note">Two simultaneous contenders produce one owner.</span></article>
+      <article class="evidence-card"><span class="evidence-label">Unsafe queue alias</span><span class="evidence-value" data-result="nonCanonicalQueueRejected">Rejected</span><span class="evidence-note">Only the canonical implementation queue is accepted.</span></article>
+      <article class="evidence-card"><span class="evidence-label">Replay protection</span><span class="evidence-value" data-result="completedFingerprintBlocksReplay">Passed</span><span class="evidence-note">A completed fingerprint cannot run again unchanged.</span></article>
+      <article class="evidence-card"><span class="evidence-label">Focused tests</span><span class="evidence-value">138/138</span><span class="evidence-note">Zero failures in the captured extension suites.</span></article>
+    </div>
+
+    <div class="terminal" aria-label="Node test-runner summary">actual private extension suites
+
+ℹ tests     138
+ℹ pass      138
+ℹ fail      0
+ℹ cancelled 0
+ℹ skipped   0
+ℹ duration  849.149333 ms</div>
+  </section>
+
+  <section class="section" aria-labelledby="workflow-title">
+    <div class="section-intro"><div class="kicker">Delivery model</div><h2 id="workflow-title">A controlled agent workflow</h2></div>
+    <div class="flow" aria-label="Pi agent delivery workflow">
+      <div class="flow-node">Human authorization</div><div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-node">Capability gate</div><div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-node">Cross-process lease</div><div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-node">Implementation or review</div><div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-node">Verification or hard stop</div>
+    </div>
+    <ul class="check-list"><li>Commits, deployment, destruction, and next-batch progression remain outside automatic authority.</li><li>Obsidian retrieval and mutations remain bounded, path-checked, previewed, and approval-aware.</li><li>Parallel execution is capped and isolated; parent-owned knowledge mutations remain sequential.</li></ul>
+  </section>
+
+  <section class="section" aria-labelledby="proof-title">
+    <div class="section-intro"><div class="kicker">Scale and evidence</div><h2 id="proof-title">Reviewed private implementation</h2></div>
+    <div class="evidence-grid">
+      <article class="evidence-card"><span class="evidence-label">Source</span><span class="evidence-value">8,566</span><span class="evidence-note">Non-test TypeScript/JavaScript lines</span></article>
+      <article class="evidence-card"><span class="evidence-label">Tests</span><span class="evidence-value">3,122</span><span class="evidence-note">Test-source lines</span></article>
+      <article class="evidence-card"><span class="evidence-label">Snapshot</span><span class="evidence-value">27</span><span class="evidence-note">Hashed logical source/test artifacts</span></article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="technical-title">
+    <div class="section-intro"><div class="kicker">For technical reviewers</div><h2 id="technical-title">Technical appendix</h2><p>Raw evidence is available without forcing every client to read logs and hashes.</p></div>
+    <details><summary>Runtime behavior and runner</summary><ul><li><a href="../evidence/pi-agent-harness/runtime-behavior.json">Machine-readable result</a></li><li><a href="../evidence/pi-agent-harness/runtime-scenario.mjs">Public-safe scenario</a></li><li><a href="../evidence/pi-agent-harness/runtime-evidence.md">Evidence record</a></li></ul></details>
+    <details><summary>Tests and source snapshot</summary><ul><li><a href="../evidence/pi-agent-harness/pi-extension-tests.txt">Node test-runner output</a></li><li><a href="../evidence/pi-agent-harness/source-snapshot.sha256">SHA-256 source manifest</a></li></ul></details>
+    <details><summary>Detailed engineering case study</summary><p><a href="https://github.com/raal1600/ai-agent-portfolio/blob/main/case-studies/pi-agent-harness.md">Open the full GitHub case study</a>.</p></details>
+  </section>
+
+  <section class="cta" aria-labelledby="review-cta"><h2 id="review-cta">Want to see the full agent workflow?</h2><p>Private source is available for supervised review. Temporary read-only access can be arranged for an identified technical interviewer after the modules, review period, and revocation date are agreed.</p><div class="actions"><a class="button primary" href="https://www.linkedin.com/in/rami-halabi-2a5573195/">Contact via LinkedIn</a><a class="button secondary" href="../index.html">Back to projects</a></div></section>
+</main>
+<footer><p>Pi agent harness · Public case study and runtime evidence · Private source remains access-controlled.</p></footer>
+<script>
+fetch("../evidence/pi-agent-harness/runtime-behavior.json")
+  .then((response) => response.ok ? response.json() : Promise.reject(new Error("Evidence unavailable")))
+  .then((evidence) => {
+    const root = document.querySelector("#behavior-evidence");
+    if (!root || evidence.result !== "pass") return;
+    const results = evidence.results ?? {};
+    const display = {
+      capabilityGatePass: results.capabilityGatePass === true ? "Passed" : "Failed",
+      duplicateDispatchWithoutNewSignal: results.duplicateDispatchWithoutNewSignal === false ? "Blocked" : "Not blocked",
+      simultaneousLeaseOwners: `${results.simultaneousLeaseOwners ?? "?"} owner`,
+      nonCanonicalQueueRejected: results.nonCanonicalQueueRejected === true ? "Rejected" : "Accepted",
+      completedFingerprintBlocksReplay: results.completedFingerprintBlocksReplay === true ? "Passed" : "Failed"
+    };
+    for (const [key, value] of Object.entries(display)) {
+      const target = root.querySelector(`[data-result="${key}"]`);
+      if (target) target.textContent = value;
+    }
+    root.dataset.loaded = "true";
+  })
+  .catch(() => {});
+</script>
+</body>
+</html>
