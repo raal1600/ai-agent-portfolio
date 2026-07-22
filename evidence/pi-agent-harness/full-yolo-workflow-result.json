@@ -26,7 +26,7 @@
     ],
     "onePhasePerLease": true,
     "maxParallelWorkers": 2,
-    "parentOwnsObsidianMutations": true,
+    "soherCoordinatorOwnsObsidianMutations": true,
     "commitPolicy": "separate",
     "automaticNextBatch": false,
     "normalRemediationMaximum": 3,
@@ -34,23 +34,23 @@
   },
   "actors": [
     {
-      "id": "parent",
-      "role": "Parent coordinator",
+      "id": "soher-coordinator",
+      "role": "Soher Coordinator",
       "authority": "canonical verification, leases, routing, checkpoints, and sequential Obsidian mutations"
     },
     {
-      "id": "implementer",
-      "role": "Implementation phase",
+      "id": "soher-implementer",
+      "role": "Soher Implementer",
       "authority": "one exact leased ticket and pinned file scope; no Obsidian routing or commit"
     },
     {
-      "id": "standards",
-      "role": "Standards reviewer",
+      "id": "soher-standards-reviewer",
+      "role": "Soher Standards Reviewer",
       "authority": "fresh read-only standards axis"
     },
     {
-      "id": "spec",
-      "role": "Specification reviewer",
+      "id": "soher-spec-reviewer",
+      "role": "Soher Specification Reviewer",
       "authority": "fresh read-only specification axis"
     }
   ],
@@ -58,7 +58,7 @@
     {
       "id": "authorize",
       "phase": "handoff preparation",
-      "actor": "parent",
+      "actor": "soher-coordinator",
       "queue": "implement",
       "state": "active-ready",
       "steps": [
@@ -72,7 +72,7 @@
     {
       "id": "dispatch",
       "phase": "dispatcher eligibility",
-      "actor": "parent",
+      "actor": "soher-coordinator",
       "steps": [
         "verify all five session capabilities and complete canonical batch authority",
         "map the exact Wayfinder capsule and recheck freshness",
@@ -83,7 +83,7 @@
     {
       "id": "implement",
       "phase": "implementation",
-      "actor": "implementer",
+      "actor": "soher-implementer",
       "queue": "implement",
       "state": "in-progress",
       "steps": [
@@ -97,7 +97,7 @@
     {
       "id": "route-review",
       "phase": "implementation route gate",
-      "actor": "parent",
+      "actor": "soher-coordinator",
       "queue": "review",
       "state": "review-ready",
       "steps": [
@@ -111,21 +111,21 @@
     {
       "id": "review",
       "phase": "independent review",
-      "actor": "standards+spec",
+      "actors": ["soher-standards-reviewer", "soher-spec-reviewer"],
       "queue": "review",
       "state": "in-review",
       "steps": [
         "acquire a fresh review lease and persist an active checkpoint",
         "pin the exact fixed point and bounded review target",
         "run fresh read-only Standards and Specification axes separately",
-        "parent reruns required checks and verifies implementation remained unchanged",
+        "Soher Coordinator reruns required checks and verifies implementation remained unchanged",
         "record both dispositions durably"
       ]
     },
     {
       "id": "normal-remediation",
       "phase": "changes-required disposition",
-      "actor": "parent",
+      "actor": "soher-coordinator",
       "queue": "implement",
       "state": "changes-requested",
       "steps": [
@@ -138,7 +138,7 @@
     {
       "id": "blocked-remediation",
       "phase": "separately authorized post-block recovery",
-      "actor": "parent",
+      "actor": "soher-coordinator",
       "queue": "implement",
       "state": "implementation-queued",
       "steps": [
@@ -152,10 +152,10 @@
     {
       "id": "complete-ticket",
       "phase": "passing disposition",
-      "actor": "parent",
+      "actor": "soher-coordinator",
       "state": "completed",
       "steps": [
-        "complete only after both review axes and all parent checks pass",
+        "complete only after both review axes and all Soher Coordinator checks pass",
         "preserve the completed ticket's remediation history",
         "if a batch member remains, bind the successor and reset its ticket-owned counters",
         "move the same handoff back to implement and let a later dispatcher trigger start it"
@@ -164,7 +164,7 @@
     {
       "id": "complete-batch",
       "phase": "batch exit and archive gate",
-      "actor": "parent",
+      "actor": "soher-coordinator",
       "queue": "Completed",
       "state": "review-complete",
       "steps": [
@@ -184,7 +184,7 @@
     "later implementation reproduced two blockers red before the minimum correction",
     "focused 26/26, reliability 140/140, and safety 3/3 passed",
     "later fresh Standards and Spec reviews both returned PASS",
-    "parent verification passed without implementation mutation",
+    "Soher Coordinator verification passed without implementation mutation",
     "T03 completed and blocked-remediation state became resolved",
     "V1-S4 exit gate passed and the same handoff moved to its pinned Completed destination",
     "V1-S5 remained an unauthorized frontier"

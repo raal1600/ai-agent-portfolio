@@ -1,4 +1,4 @@
-# Pi agent harness and governed delivery extensions
+# Soher agent system and governed delivery extensions
 
 ## Problem
 
@@ -6,7 +6,7 @@ AI coding agents can work quickly, but enterprise delivery requires more than ge
 
 ## Solution
 
-I designed and built a private TypeScript/Node.js extension suite around the Pi coding-agent harness. The suite treats agent execution as a controlled delivery system rather than an unrestricted autonomous process.
+I designed and built Soher, a private TypeScript/Node.js governed agent system on the Pi coding-agent framework. Soher operates through specialized coordinator, implementer, and reviewer forms and treats agent execution as a controlled delivery system rather than an unrestricted autonomous process.
 
 ```mermaid
 flowchart LR
@@ -36,7 +36,7 @@ flowchart LR
 - Cross-process leases and heartbeats to prevent duplicate ownership
 - Durable session checkpoints and resumable execution
 - Bounded parallel execution with a maximum of two isolated child tasks
-- Parent-owned integration and knowledge-base mutations
+- Soher Coordinator-owned integration and knowledge-base mutations
 - Hard stops for commits, deployment, destruction, scope expansion, and unauthorized next-batch work
 
 ### Obsidian knowledge integration

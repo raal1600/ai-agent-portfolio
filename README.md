@@ -6,14 +6,16 @@ I am a Technical Customer Success Manager and former IT Manager who also builds 
 
 ## Runtime demos and evidence
 
-### Pi agent harness — actual core execution
+### Soher agent system — actual core execution
 
-The Pi evidence includes a visual recording of an executable, public-safe scenario and the focused test run:
+The Soher evidence includes graphical and terminal recordings of the governed workflow plus a focused executable control-plane test run:
 
-- **[Watch the embedded Pi runtime recordings](https://raal1600.github.io/ai-agent-portfolio/projects/pi-agent-harness.html#runtime-title)**
+- **[Watch the embedded Soher runtime recordings](https://raal1600.github.io/ai-agent-portfolio/projects/pi-agent-harness.html#runtime-title)**
 - [Play or download the contract-accurate Full YOLO workflow](evidence/pi-agent-harness/full-yolo-workflow.webm)
 - [View the completed Full YOLO workflow frame](evidence/pi-agent-harness/full-yolo-workflow-poster.png)
 - [Inspect the machine-readable workflow and contract evidence](evidence/pi-agent-harness/full-yolo-workflow-result.json)
+- [Play or download the Soher terminal workflow](evidence/pi-agent-harness/soher-terminal-workflow.webm)
+- [View the Soher terminal workflow frame](evidence/pi-agent-harness/soher-terminal-workflow-poster.png)
 - [Play or download the focused verification WebM](evidence/pi-agent-harness/pi-agent-harness-runtime.webm)
 - [View the final verification frame](evidence/pi-agent-harness/pi-runtime-poster.png)
 - [Read the complete evidence record](evidence/pi-agent-harness/runtime-evidence.md)
@@ -33,11 +35,11 @@ The scenario imports and executes the actual private control and delivery module
 
 ## Case studies
 
-### [Pi agent harness and governed delivery extensions](case-studies/pi-agent-harness.md)
+### [Soher agent system and governed delivery extensions](case-studies/pi-agent-harness.md)
 
-![Pi agent harness walkthrough title](assets/pi-agent-harness.png)
+![Soher governed workflow from authorization through implementation, review loops, and completion](assets/pi-agent-harness.png)
 
-A TypeScript/Node.js extension suite for the Pi coding-agent harness. It adds custom tools, lifecycle events, interactive controls, deterministic workflow state, resumable sessions, bounded multi-agent execution, Obsidian-backed knowledge workflows, and fail-closed safety boundaries.
+Soher is a custom TypeScript/Node.js governed agent system built on the Pi coding-agent framework. Its coordinator, implementer, and reviewer forms use custom tools, lifecycle events, deterministic workflow state, resumable sessions, bounded execution, Obsidian-backed knowledge workflows, and fail-closed safety boundaries.
 
 - 8,566 lines of reviewed non-test TypeScript/JavaScript source
 - 3,122 lines of tests
@@ -73,7 +75,7 @@ The public repository contains sanitized case studies plus runtime artifacts cap
 
 1. Walk through selected source modules and architectural decisions.
 2. Run focused automated tests and explain failure/recovery behavior.
-3. Demonstrate the Pi control plane, Obsidian integration, and SoherDocs flows using non-sensitive data.
+3. Demonstrate the Soher control plane, its Pi-framework and Obsidian integrations, and SoherDocs flows using non-sensitive data.
 4. Arrange time-bounded read-only repository access for an agreed reviewer when appropriate.
 
 ## Contact
