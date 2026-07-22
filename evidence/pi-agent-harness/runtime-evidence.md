@@ -19,7 +19,7 @@
 
 ## Contract-accurate Full YOLO workflow playback
 
-The 29-second WebM mirrors the current reviewed Full YOLO delivery contract instead of presenting a simplified generic agent sequence. It combines the current hash-pinned prepare, dispatcher, implementation, review, coordination, and safety contracts with bounded evidence from the completed canonical Obsidian V1-S4 execution-batch handoff.
+The 37-second WebM mirrors the current reviewed Full YOLO delivery contract instead of presenting a simplified generic agent sequence. It combines the current hash-pinned prepare, dispatcher, implementation, review, coordination, and safety contracts with bounded evidence from the completed canonical Obsidian V1-S4 execution-batch handoff.
 
 The visible lifecycle is:
 
@@ -97,8 +97,8 @@ e8dbaccf805e340dc6c42106c6d34980287404c40e6883e68b4b9317e03d7c84  runtime-behavi
 e5601037f4fc5b31819ee5b9537f81990d2e56c21c5d8395f996ac11cb71396e  pi-extension-tests.txt
 736ceb0bee5ededa3e5142b37ae37040cd2b7c8750a5600ba797d4c9c1c05c7e  pi-agent-harness-runtime.webm
 f1a9ecc0959f6c29781c6435eb76503789808f0743e016a584af28a6b361ca62  pi-runtime-poster.png
-71936e63ec580f49b37a41f642626df2194b701cdd7e996cf6554183ce66b3a5  full-yolo-workflow.webm
-3efa23c67786cb35492909c6aa31d7a320e9b630cd8b9527ecc896c01a8d1320  full-yolo-workflow-poster.png
+3c716de30b54e9f8d5a9d1e6f7f143032ee382e70909563435bdd42b5d0cdd1d  full-yolo-workflow.webm
+8b8ee28d448e8b8c14fee0636c40981f5ebe7681945d9eb7681e7264b898d717  full-yolo-workflow-poster.png
 19b8a520fe5ff55a2599d9baa620b8b89d4de6c20feb446359f4c5539a43b280  full-yolo-workflow-result.json
 ```
 
