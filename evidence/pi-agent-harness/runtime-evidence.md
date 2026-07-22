@@ -7,14 +7,28 @@
 **Result:** PASS
 **Focused suites:** 138 tests passed, 0 failed
 
-- [Visual runtime recording](pi-agent-harness-runtime.webm)
+- [Implementation → review screen recording](agent-demo-implementation-review.mp4)
+- [Completed Obsidian handoff frame](agent-demo-implementation-review-poster.jpg)
+- [Focused verification recording](pi-agent-harness-runtime.webm)
 - [Final verification frame](pi-runtime-poster.png)
 - [Reviewable public-safe runtime scenario](runtime-scenario.mjs)
 - [Actual synthetic core-behavior result](runtime-behavior.json)
 - [Genuine Node test-runner output](pi-extension-tests.txt)
 - [Private-source snapshot manifest](source-snapshot.sha256)
 
-## Visual runtime recording
+## Implementation → review screen recording
+
+The MP4 is an actual macOS screen capture of the `Agent demo` cmux workspace and Obsidian. It records an isolated synthetic ticket from authorization through implementation and independent review:
+
+1. Obsidian displays synthetic handoff `DEMO-T05` as `active-ready` in the `implement` queue.
+2. Pi session 1 changes only the synthetic project's `src/slugify.js`, then reports `npm test` with 3 passing tests and a clean `git diff --check`.
+3. The same handoff is updated with implementation evidence and moved to the `review` queue.
+4. Pi session 2 inspects the actual diff and unchanged tests, reruns both gates, reports no blockers, and returns `GO`.
+5. The handoff is updated with review evidence and moved to `Completed`, where Obsidian displays `status: completed` and `direction: completed`.
+
+The capture uses no production repository, customer information, credentials, private notes, private prompts, or private implementation source. It was recorded in bounded segments and curated to remove task instructions, prior rehearsal output, unrelated cmux navigation, and the macOS dock. The published sequence retains the actual active-ready handoff, synthetic source diff, implementation gates, review-ready handoff, independent review gates and verdict, and completed handoff. It is exported at 1280×720. The synthetic source diff remains visible because it is the review target.
+
+## Focused verification recording
 
 The WebM is a Playwright capture of a purpose-built, public-safe verification view. During the recorded session, its local runner spawned the current private `yolo-control` and `pi-yolo-delivery` core modules, then ran nine focused private Node test files. The visible cards and `138 / 138` result were populated only after those processes completed successfully. The view displayed synthetic labels and sanitized test names; it did not expose source code, local paths, credentials, prompts, notes, or sessions.
 
@@ -76,6 +90,8 @@ e8dbaccf805e340dc6c42106c6d34980287404c40e6883e68b4b9317e03d7c84  runtime-behavi
 e5601037f4fc5b31819ee5b9537f81990d2e56c21c5d8395f996ac11cb71396e  pi-extension-tests.txt
 736ceb0bee5ededa3e5142b37ae37040cd2b7c8750a5600ba797d4c9c1c05c7e  pi-agent-harness-runtime.webm
 f1a9ecc0959f6c29781c6435eb76503789808f0743e016a584af28a6b361ca62  pi-runtime-poster.png
+7f77cafed618d53e26cfdf7694e2e3385f85e2f29e8e928774eb9474f5c07730  agent-demo-implementation-review.mp4
+44a9ce1e4292eb800fd8ba69ebc307d8f2c40b6ceea718941da6addce11335b8  agent-demo-implementation-review-poster.jpg
 ```
 
 Reviewed inventory at capture time:
@@ -91,7 +107,8 @@ Reviewed inventory at capture time:
 
 - Synthetic authority, ticket, queue, owner, and content identities
 - Temporary lease directories removed after execution
-- No Obsidian vault content or mutation
+- The focused verification runner accessed and mutated no Obsidian content.
+- The screen recording shows only the synthetic DEMO-T05 handoff created for this demonstration as it moves through `implement`, `review`, and `Completed`; no unrelated vault note content is shown.
 - No private prompt, transcript, session, credential, hostname, or absolute path in the public artifacts
 - Temporary evidence runner removed after capture
 
