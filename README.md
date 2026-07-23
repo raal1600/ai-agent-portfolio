@@ -8,16 +8,17 @@ I am a Technical Customer Success Manager and former IT Manager who also builds 
 
 ### Soher agent system — actual core execution
 
-The Soher evidence includes graphical and terminal recordings of the governed workflow plus a focused executable control-plane test run:
+The Soher evidence includes a current, sanitized recreation of the real Pi control pane, graphical and terminal workflow playbacks, and a separate executable control-plane test snapshot:
 
-- **[Watch the embedded Soher runtime recordings](https://raal1600.github.io/ai-agent-portfolio/projects/pi-agent-harness.html#runtime-title)**
+- **[Watch the embedded Soher control-pane and workflow recordings](https://raal1600.github.io/ai-agent-portfolio/projects/pi-agent-harness.html#runtime-title)**
+- [Play or download the current Soher control-pane walkthrough](evidence/pi-agent-harness/pi-agent-harness-runtime.webm)
+- [View the current control-pane frame](evidence/pi-agent-harness/pi-runtime-poster.png)
+- [Inspect the reproducible public-safe control-pane source](evidence/pi-agent-harness/soher-control-pane-walkthrough.html)
 - [Play or download the contract-accurate Full YOLO workflow](evidence/pi-agent-harness/full-yolo-workflow.webm)
 - [View the completed Full YOLO workflow frame](evidence/pi-agent-harness/full-yolo-workflow-poster.png)
 - [Inspect the machine-readable workflow and contract evidence](evidence/pi-agent-harness/full-yolo-workflow-result.json)
 - [Play or download the Soher terminal workflow](evidence/pi-agent-harness/soher-terminal-workflow.webm)
 - [View the Soher terminal workflow frame](evidence/pi-agent-harness/soher-terminal-workflow-poster.png)
-- [Play or download the focused verification WebM](evidence/pi-agent-harness/pi-agent-harness-runtime.webm)
-- [View the final verification frame](evidence/pi-agent-harness/pi-runtime-poster.png)
 - [Read the complete evidence record](evidence/pi-agent-harness/runtime-evidence.md)
 - [Inspect the machine-readable runtime result](evidence/pi-agent-harness/runtime-behavior.json)
 - [Inspect the public-safe runtime scenario](evidence/pi-agent-harness/runtime-scenario.mjs)

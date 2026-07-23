@@ -1,5 +1,6 @@
 {
   "capturedAt": "2026-07-22",
+  "contractRecheckedAt": "2026-07-23",
   "result": "pass",
   "presentation": "contract-accurate playback of the current Full YOLO state machine, anchored to a completed canonical Obsidian batch",
   "evidenceSource": {
@@ -30,7 +31,10 @@
     "commitPolicy": "separate",
     "automaticNextBatch": false,
     "normalRemediationMaximum": 3,
-    "blockedRemediationRequiresSeparateAuthority": true
+    "blockedRemediationRequiresSeparateAuthority": true,
+    "remediationGrantPerSelectionMaximum": 3,
+    "blockedRemediationCumulativeMaximum": 12,
+    "repeatedGrantPreservesAttemptHistory": true
   },
   "actors": [
     {
@@ -146,7 +150,8 @@
         "prove one recoverable technical defect inside unchanged ticket scope",
         "increment the ticket-owned blocked attempt exactly once and route",
         "later implementation reproduces the blocker red before the minimum fix",
-        "later fresh review either resolves the attempt or returns to ready/exhausted without incrementing it"
+        "later fresh review either resolves the attempt or returns to ready/exhausted without incrementing it",
+        "an exhausted ticket stays paused until the user explicitly adds 1–3 attempts for the unchanged target and scope; repeated grants preserve history and the cumulative limit may not exceed 12"
       ]
     },
     {
@@ -194,12 +199,12 @@
     "changed workspace, scope, security boundary, dependency graph, or fixed point",
     "required check failure, ambiguous defect, or inseparable unrelated change",
     "commit, push, publication, deployment, destruction, network entitlement, or next-batch action",
-    "exhausted or malformed remediation authority"
+    "exhausted or malformed remediation authority, a selector grant above 3 attempts, or a cumulative blocked-remediation limit above 12"
   ],
   "contractSources": {
     "prepare-obsidian-handoff": "efe63c35327b4a97ce9643326fd1491c6faf3001aa382c0bd0d72219a757a718",
     "implement-obsidian-ticket": "05c400cadb03489f552b1f74130c1bf78b71014e9d08837e9a1f39540c66daa4",
-    "review-obsidian-ticket": "e21870a3a4c6e66bee72387f2ee148215c73ce955c5450d48c32db72157992dd",
+    "review-obsidian-ticket": "26326fa7f0978dcc79c9bb6ee7e52c85f921cdac9ab543cca21ca1dd08246d95",
     "coordinate-multiple-pi-yolo-processes": "6274771c6dd84515da2dfc7e7c101a22f6e84cab90e41d7bfcdd4501f59d9f12",
     "modify-yolo-delivery-safely": "467dd5af9222e291b0619e0afa417ca60472d195e711eff189d91939c89e1c13",
     "dispatcher": "224d38c9b3d67c7e339b148c029d9084b1758062614652fac185ad42c8da2da1",

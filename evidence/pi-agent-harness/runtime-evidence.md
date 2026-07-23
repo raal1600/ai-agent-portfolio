@@ -1,23 +1,41 @@
 # Soher agent system runtime evidence
 
-**Captured:** 22 July 2026
+**Executable evidence captured:** 22 July 2026
 
-**Execution:** actual private extension core modules with synthetic inputs
+**Control-pane interface rechecked and recorded:** 23 July 2026
+
+**Execution snapshot:** actual private extension core modules with synthetic inputs
 
 **Result:** PASS
 **Focused suites:** 138 tests passed, 0 failed
 
+- [Current Soher control-pane walkthrough](pi-agent-harness-runtime.webm)
+- [Current control-pane frame](pi-runtime-poster.png)
+- [Reproducible public-safe control-pane source](soher-control-pane-walkthrough.html)
 - [Contract-accurate Full YOLO workflow playback](full-yolo-workflow.webm)
 - [Completed Full YOLO workflow frame](full-yolo-workflow-poster.png)
 - [Machine-readable workflow and contract evidence](full-yolo-workflow-result.json)
 - [Soher terminal workflow playback](soher-terminal-workflow.webm)
 - [Soher terminal workflow frame](soher-terminal-workflow-poster.png)
-- [Focused verification recording](pi-agent-harness-runtime.webm)
-- [Final verification frame](pi-runtime-poster.png)
 - [Reviewable public-safe runtime scenario](runtime-scenario.mjs)
 - [Actual synthetic core-behavior result](runtime-behavior.json)
 - [Genuine Node test-runner output](pi-extension-tests.txt)
 - [Private-source snapshot manifest](source-snapshot.sha256)
+
+## Current Soher control-pane walkthrough
+
+The 31-second WebM is a Chromium recording of a public-safe recreation of the current Soher `/yolo` interface inside Pi. It was rechecked against Pi 0.80.7, the configured light theme, current global resource configuration, the `yolo-control` TUI implementation, the delivery dispatcher, the user-scoped `yolo-implementer` and `yolo-reviewer` definitions, and the active handoff, implementation, and review workflow contracts.
+
+The recording mirrors the real operator sequence and visible controls:
+
+1. The session begins with every automation capability off; durable permission-system YOLO mode also remains off between sessions.
+2. `/yolo on` opens the real five-row capability selector. Selecting Full YOLO normalizes Permission auto-approval, Obsidian auto-write, Wayfinder optimization, Session auto-continuity, and Full YOLO delivery to enabled.
+3. Delivery starts paused and presents the actual authorized-work chooser. When no handoff is resumable, the UI offers new-batch discovery or cancellation.
+4. New-batch discovery has a second explicit confirmation. Discovery prepares one candidate only; it is not batch authorization, and existing resumable work remains paused.
+5. The final synthetic running state shows the real persistent status widget and `/yolo status` dashboard vocabulary: current action, active session owner, delivery health counters, runtime checkpoint, pause, bounded scan, disable-all, and close.
+6. The role boundary matches the configured workflow: the parent Pi session coordinates single-target phases and owns every Obsidian mutation; restricted user-scoped workers are available for approved parallel groups; commits, pushes, publication, deployment, destructive actions, and next-batch progression remain outside authority.
+
+This is deliberately labeled a **sanitized recreation**, not a raw terminal capture and not executable proof. Synthetic IDs replace private session and handoff values, while the layout, wording, state transitions, and light-theme palette come from the reviewed implementation and configuration. The retained HTML source makes the media reproducible. Executable core behavior is evidenced separately by `runtime-behavior.json`, `runtime-scenario.mjs`, the genuine 138-test runner output, and the source-snapshot manifest.
 
 ## Contract-accurate Full YOLO workflow playback
 
@@ -46,12 +64,6 @@ The terminal recording presents the exact same evidence and state transitions th
 - **Soher Standards Reviewer** and **Soher Spec Reviewer** run as fresh read-only forms with separate review axes.
 
 The coordinator stream and three role-specific panes expose the full engineering loop: review returns changes-required, normal remediation stops at its bound, separately authorized diagnosis proves the root cause, a later implementation reproduces the blocker red before correcting it, and later fresh review passes both axes. The final state preserves the same handoff, resolved attempt 2/2, completed archive gate, and unauthorized next batch. Soher is the custom agent system; Pi is identified only as its underlying framework.
-
-## Focused verification recording
-
-The WebM is a Playwright capture of a purpose-built, public-safe verification view. During the recorded session, Soher's local runner spawned the current private `yolo-control` and delivery core modules built on the Pi framework, then ran nine focused private Node test files. The visible cards and `138 / 138` result were populated only after those processes completed successfully. The view displayed synthetic labels and sanitized test names; it did not expose source code, local paths, credentials, prompts, notes, or sessions.
-
-This is runtime evidence, not an architecture animation. The public capture runner itself remains a temporary local fixture because it requires private module paths; the reviewable scenario below documents the executed behavior without those paths.
 
 ## What was executed
 
@@ -107,11 +119,12 @@ Evidence hashes:
 2ca28a28ce886bc999768e821653b8b3f1b457e8ac741f670c43d28a67a2704b  runtime-scenario.mjs
 e8dbaccf805e340dc6c42106c6d34980287404c40e6883e68b4b9317e03d7c84  runtime-behavior.json
 e5601037f4fc5b31819ee5b9537f81990d2e56c21c5d8395f996ac11cb71396e  pi-extension-tests.txt
-9782ba49f85035045363e0a31fbe8fde4df7dd87bb2c664c37b3236c00421b0c  pi-agent-harness-runtime.webm
-bfb12312a2f72ebba42e023f82cc657d431f5ac1754ba73d1a704c881158af61  pi-runtime-poster.png
+91037c9ed7d8f1980eb29694eb5385a6e3eae70e06693208a9ae803f29707a33  pi-agent-harness-runtime.webm
+3d6dc8b997d518e8509467e9088ba1b54c06065d637ec7d826f1d33d8dadc129  pi-runtime-poster.png
+c18c4fdf762266ec3844689ddb6e069a1e695cfece3b4039b28d2d601773af57  soher-control-pane-walkthrough.html
 c6e23d4d3e0ced6042e407aa84b5390a43e6082b6467a441f691387d80c5b12b  full-yolo-workflow.webm
 40563b5a2b628796fec431b3fb4115a83e5b8fe3b117080ca9ebb8d108f8ab7b  full-yolo-workflow-poster.png
-d9591bca07a0da4009523b520e7a056193d5111d2c07bbf01763bc50116c4103  full-yolo-workflow-result.json
+e061ec06ec3df0e6f847416211d83647d37763a5e3aec303af0ea83f2911d6e8  full-yolo-workflow-result.json
 049a7f2a878a4c0cadaaa45dcd7e96633512668e24b0725bdb8ca85a4c4b2ec3  soher-terminal-workflow.webm
 978f80ff70125fccde451e54c96b31a1c556d99ef910ccbc2861028184cf4e61  soher-terminal-workflow-poster.png
 ```
@@ -129,10 +142,11 @@ Reviewed inventory at capture time:
 
 - Synthetic authority, ticket, queue, owner, and content identities
 - Temporary lease directories removed after execution
-- The focused verification runner accessed and mutated no Obsidian content.
+- The temporary core-behavior runner accessed and mutated no Obsidian content.
+- The control-pane walkthrough uses synthetic identifiers and contains no raw terminal, private note, prompt, transcript, session reference, or local path.
 - The Full YOLO playback shows only public-safe V1-S4 identifiers, canonical machine states, bounded activities, checks, and dispositions; it contains no desktop or raw vault view.
 - No private prompt, transcript, session, credential, hostname, or absolute path in the public artifacts
-- Temporary evidence runner removed after capture
+- Temporary core-behavior runner removed after the executable evidence capture
 
 ## Supervised review
 
