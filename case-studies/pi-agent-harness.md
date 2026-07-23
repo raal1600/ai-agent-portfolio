@@ -36,7 +36,7 @@ flowchart LR
 - Cross-process leases and heartbeats to prevent duplicate ownership
 - Durable session checkpoints and resumable execution
 - Bounded parallel execution with a maximum of two isolated child tasks
-- Soher Coordinator-owned integration and knowledge-base mutations
+- Parent Pi-owned integration and knowledge-base mutations
 - Hard stops for commits, deployment, destruction, scope expansion, and unauthorized next-batch work
 
 ### Obsidian knowledge integration

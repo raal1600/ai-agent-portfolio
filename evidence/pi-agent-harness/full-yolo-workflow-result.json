@@ -2,15 +2,16 @@
   "capturedAt": "2026-07-22",
   "contractRecheckedAt": "2026-07-23",
   "result": "pass",
-  "presentation": "contract-accurate playback of the current Full YOLO state machine, anchored to a completed canonical Obsidian batch",
+  "presentation": "sanitized Pi-interface recreations of the current single-target parent-owned Full YOLO workflow and the explicitly authorized parallel parent/worker contract, anchored to a completed canonical Obsidian batch",
   "evidenceSource": {
     "type": "completed canonical execution-batch-handoff",
     "initiative": "Planning Workflow Reliability",
     "batchId": "V1-S4",
     "members": ["V1-S4-T01", "V1-S4-T02", "V1-S4-T03"],
-    "finalStatus": "review-complete",
-    "finalPurpose": "completed",
+    "finalStatus": "completed",
+    "finalPurpose": "review",
     "finalDirection": "completed",
+    "humanOutcome": "review-complete",
     "normalRemediationCycle": 3,
     "blockedRemediationAttempt": 2,
     "blockedRemediationLimit": 2,
@@ -27,7 +28,13 @@
     ],
     "onePhasePerLease": true,
     "maxParallelWorkers": 2,
-    "soherCoordinatorOwnsObsidianMutations": true,
+    "wayfinderMappingConcurrency": 1,
+    "singleTargetParentOwned": true,
+    "parallelWorkersOnlyForAuthorizedGroups": true,
+    "parallelWorkerAgents": ["yolo-implementer", "yolo-reviewer"],
+    "parentMutationsSequential": true,
+    "reviewAxesPerTarget": ["Standards", "Specification"],
+    "parentPiOwnsObsidianMutations": true,
     "commitPolicy": "separate",
     "automaticNextBatch": false,
     "normalRemediationMaximum": 3,
@@ -38,31 +45,26 @@
   },
   "actors": [
     {
-      "id": "soher-coordinator",
-      "role": "Soher Coordinator",
-      "authority": "canonical verification, leases, routing, checkpoints, and sequential Obsidian mutations"
+      "id": "parent-pi",
+      "role": "Parent Pi session / Soher workflow coordinator",
+      "authority": "single-target phase execution, canonical verification, leases, routing, checkpoints, validation commands, dispositions, and every sequential Obsidian mutation"
     },
     {
-      "id": "soher-implementer",
-      "role": "Soher Implementer",
-      "authority": "one exact leased ticket and pinned file scope; no Obsidian routing or commit"
+      "id": "yolo-implementer",
+      "role": "Restricted user-scoped implementation worker",
+      "authority": "approved parallel groups only; one exact isolated cwd and file scope; no Obsidian, routing, commit, publication, deployment, destructive action, or nested delegation"
     },
     {
-      "id": "soher-standards-reviewer",
-      "role": "Soher Standards Reviewer",
-      "authority": "fresh read-only standards axis"
-    },
-    {
-      "id": "soher-spec-reviewer",
-      "role": "Soher Specification Reviewer",
-      "authority": "fresh read-only specification axis"
+      "id": "yolo-reviewer",
+      "role": "Restricted user-scoped review worker",
+      "authority": "approved parallel groups only; one exact fresh read-only target with separate Standards and Specification passes; no shell commands, implementation edits, Obsidian, routing, disposition, or nested delegation"
     }
   ],
   "workflow": [
     {
       "id": "authorize",
       "phase": "handoff preparation",
-      "actor": "soher-coordinator",
+      "actor": "parent-pi",
       "queue": "implement",
       "state": "active-ready",
       "steps": [
@@ -76,18 +78,19 @@
     {
       "id": "dispatch",
       "phase": "dispatcher eligibility",
-      "actor": "soher-coordinator",
+      "actor": "parent-pi",
       "steps": [
         "verify all five session capabilities and complete canonical batch authority",
-        "map the exact Wayfinder capsule and recheck freshness",
-        "acquire one atomic batch lease and owner heartbeat",
+        "acquire one atomic target lease and owner heartbeat",
+        "under that lease, map the exact Wayfinder capsule and recheck freshness",
         "persist the exact runtime checkpoint with state active"
       ]
     },
     {
       "id": "implement",
       "phase": "implementation",
-      "actor": "soher-implementer",
+      "actor": "parent-pi",
+      "optionalParallelActor": "yolo-implementer",
       "queue": "implement",
       "state": "in-progress",
       "steps": [
@@ -101,7 +104,7 @@
     {
       "id": "route-review",
       "phase": "implementation route gate",
-      "actor": "soher-coordinator",
+      "actor": "parent-pi",
       "queue": "review",
       "state": "review-ready",
       "steps": [
@@ -115,21 +118,22 @@
     {
       "id": "review",
       "phase": "independent review",
-      "actors": ["soher-standards-reviewer", "soher-spec-reviewer"],
+      "actor": "parent-pi",
+      "optionalParallelActor": "yolo-reviewer",
       "queue": "review",
       "state": "in-review",
       "steps": [
         "acquire a fresh review lease and persist an active checkpoint",
         "pin the exact fixed point and bounded review target",
-        "run fresh read-only Standards and Specification axes separately",
-        "Soher Coordinator reruns required checks and verifies implementation remained unchanged",
-        "record both dispositions durably"
+        "for a single target, the parent performs separate Standards and Specification passes; for an approved parallel group, one fresh yolo-reviewer worker performs both axes for its exact target",
+        "the parent runs all required validation commands, verifies implementation remained unchanged, and applies the canonical disposition sequentially",
+        "record both axis results durably"
       ]
     },
     {
       "id": "normal-remediation",
       "phase": "changes-required disposition",
-      "actor": "soher-coordinator",
+      "actor": "parent-pi",
       "queue": "implement",
       "state": "changes-requested",
       "steps": [
@@ -142,7 +146,7 @@
     {
       "id": "blocked-remediation",
       "phase": "separately authorized post-block recovery",
-      "actor": "soher-coordinator",
+      "actor": "parent-pi",
       "queue": "implement",
       "state": "implementation-queued",
       "steps": [
@@ -157,10 +161,10 @@
     {
       "id": "complete-ticket",
       "phase": "passing disposition",
-      "actor": "soher-coordinator",
+      "actor": "parent-pi",
       "state": "completed",
       "steps": [
-        "complete only after both review axes and all Soher Coordinator checks pass",
+        "complete only after both review axes and all parent validation checks pass",
         "preserve the completed ticket's remediation history",
         "if a batch member remains, bind the successor and reset its ticket-owned counters",
         "move the same handoff back to implement and let a later dispatcher trigger start it"
@@ -169,12 +173,12 @@
     {
       "id": "complete-batch",
       "phase": "batch exit and archive gate",
-      "actor": "soher-coordinator",
+      "actor": "parent-pi",
       "queue": "Completed",
-      "state": "review-complete",
+      "state": "completed",
       "steps": [
         "verify every member completed and the exact batch exit gate passed",
-        "set the handoff review-complete with inactive review authority",
+        "set machine status to completed, preserve purpose review, set direction completed, record the human-facing review-complete outcome, and make review authority inactive",
         "move only the same handoff to its pre-authorized initiative-scoped completed destination",
         "repair exact links sequentially and run the post-archive consistency gate",
         "expose the next graph frontier without creating, authorizing, or starting the next batch"
@@ -189,7 +193,7 @@
     "later implementation reproduced two blockers red before the minimum correction",
     "focused 26/26, reliability 140/140, and safety 3/3 passed",
     "later fresh Standards and Spec reviews both returned PASS",
-    "Soher Coordinator verification passed without implementation mutation",
+    "parent validation passed without implementation mutation",
     "T03 completed and blocked-remediation state became resolved",
     "V1-S4 exit gate passed and the same handoff moved to its pinned Completed destination",
     "V1-S5 remained an unauthorized frontier"
