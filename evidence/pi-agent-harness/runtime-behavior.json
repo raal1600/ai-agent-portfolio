@@ -1,30 +1,112 @@
 {
-  "capturedAt": "2026-07-22",
+  "schemaVersion": 1,
+  "capturedAt": "2026-07-23T13:52:13.899Z",
   "result": "pass",
-  "source": "actual private extension core modules",
-  "fixture": "synthetic",
+  "evidenceKind": "actual-private-core-execution",
+  "fixture": "synthetic-temporary-filesystem",
+  "runtime": {
+    "node": "v24.11.1",
+    "platform": "darwin",
+    "durationMs": 62.879,
+    "modules": [
+      {
+        "logicalName": "yolo-control/core.mjs",
+        "sha256": "312d142dc20f26685be000e4cc8273ff83572b9f63c2e478cb2ed4bb3e189367"
+      },
+      {
+        "logicalName": "pi-yolo-delivery/core.mjs",
+        "sha256": "e6d1e7f1a61dc286ac48d541729ce51d9354f2d9884d66c6116bfd34b6929517"
+      }
+    ]
+  },
+  "summary": {
+    "assertions": 30,
+    "modulesExecuted": 2,
+    "maximumMappingConcurrency": 1,
+    "maximumParallelTargets": 2,
+    "simultaneousLeaseOwners": 1,
+    "staleOwnerFenced": true,
+    "replayBlocked": true,
+    "destructiveCapabilitySelected": false
+  },
   "results": {
-    "capabilityNormalization": {
+    "capabilities": {
       "permissions": true,
       "obsidianAutoWrite": true,
+      "obsidianAutoDestroy": false,
       "delivery": true,
       "wayfinder": true,
       "continuity": true
     },
-    "capabilityGatePass": true,
-    "dispatchWithoutAllCapabilities": false,
-    "dispatchWithAllCapabilities": true,
-    "duplicateDispatchWithoutNewSignal": false,
-    "dispatchWhilePaused": false,
-    "dispatchAfterExplicitResume": true,
+    "fullDeliveryPrerequisitesSelected": true,
+    "autoDestroyNotSelected": true,
+    "missingCapabilityBlocked": true,
+    "freshDispatchAccepted": true,
+    "duplicateDispatchBlocked": true,
+    "pausedDispatchBlocked": true,
+    "explicitResumeAccepted": true,
     "nonCanonicalQueueRejected": true,
     "canonicalQueueAccepted": true,
+    "mappedTargets": [
+      "a",
+      "b"
+    ],
+    "mappingOrder": [
+      "start-A",
+      "end-A",
+      "start-B",
+      "end-B"
+    ],
+    "maximumMappingConcurrency": 1,
+    "parallelGroupSize": 2,
+    "parallelGroupBatches": [
+      "batch-a",
+      "batch-b"
+    ],
+    "mismatchedTargetsExcluded": true,
+    "renewalLimitAfterTwoAttempts": 5,
+    "oversizedRenewalRejected": true,
+    "cumulativeCeilingEnforced": true,
     "simultaneousLeaseOwners": 1,
     "winnerOwnsLease": true,
-    "loserCannotAcquireWhileOwned": true,
-    "winnerCompletes": true,
-    "winnerReleases": true,
+    "loserBlockedWhileOwned": true,
+    "reconciliationCompletionRecorded": true,
+    "winnerReleasedLease": true,
     "completedFingerprintBlocksReplay": true,
-    "changedCanonicalStateCanAcquire": true
+    "changedCanonicalStateCanAcquire": true,
+    "oldOwnerInitiallyOwned": true,
+    "takeoverBlockedBeforeTtl": true,
+    "staleTakeoverSucceeded": true,
+    "oldOwnerFencedAfterTakeover": true,
+    "newOwnerOwnsAfterTakeover": true
+  },
+  "testRun": {
+    "capturedAt": "2026-07-23T13:52:31.328023Z",
+    "result": "pass",
+    "runner": "node --test --test-reporter=spec",
+    "testFiles": 9,
+    "tests": 149,
+    "passed": 149,
+    "failed": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "durationMs": 933.608958,
+    "artifact": "pi-extension-tests.txt",
+    "artifactSha256": "753d1c941a819de36844b39abb3924293808045c769fcf40607c0837ea383ae4",
+    "logicalSuites": [
+      "yolo-control/core.test.mjs",
+      "pi-yolo-delivery/core.test.mjs",
+      "obsidian-boundary/core.test.mjs",
+      "obsidian-filesystem-first/filesystem-backend.test.mjs",
+      "obsidian-filesystem-first/folder-migration.test.mjs",
+      "pi-agent-inventory/automatic.test.mjs",
+      "pi-agent-inventory/core.test.mjs",
+      "pi-agent-inventory/launcher.test.mjs",
+      "pi-inventory-auto-sync/debounce.test.mjs"
+    ]
+  },
+  "publicRunner": {
+    "artifact": "runtime-scenario.mjs",
+    "sha256": "ec34264a5a826991cfab7f07827158e28171892a418a2189a35734bcf5233f5f"
   }
 }

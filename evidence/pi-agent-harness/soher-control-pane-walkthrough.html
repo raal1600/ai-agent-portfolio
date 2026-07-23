@@ -274,10 +274,11 @@
           <div class="widget">
             <span class="accent bold">Session automation (/yolo)</span><br>
             <span class="dim">&nbsp;&nbsp;Permissions: ask first · Obsidian: ask first</span><br>
+            <span class="dim">&nbsp;&nbsp;Obsidian auto-destroy: off</span><br>
             <span class="dim">&nbsp;&nbsp;Wayfinder: off · Continuity: off</span> · <span class="dim">Full delivery: off</span>
           </div>
           <div class="editor">/yolo on<span class="cursor"></span></div>
-          <div class="footer"><span>ai-agent-portfolio · main</span><span>gpt-5.6-sol · high · context available</span></div>
+          <div class="footer"><span>ai-agent-portfolio · main</span><span>gpt-5.6-sol · max · context available</span></div>
         </div>
       </section>
 
@@ -286,21 +287,23 @@
           <div class="widget">
             <span class="accent bold">Session automation (/yolo)</span><br>
             <span class="dim">&nbsp;&nbsp;Permissions: ask first · Obsidian: ask first</span><br>
+            <span class="dim">&nbsp;&nbsp;Obsidian auto-destroy: off</span><br>
             <span class="dim">&nbsp;&nbsp;Wayfinder: off · Continuity: off</span> · <span class="dim">Full delivery: off</span>
           </div>
           <div class="custom">
             <div class="custom-title">Select YOLO capabilities for this session</div>
             <div class="capabilities">
               <div class="cap-row"><div class="cap-label"><span class="box">[x]</span> Permission auto-approval</div><div class="cap-desc">Automatically approves permission results marked “ask”. Explicit deny rules and tool safety rails remain active.</div></div>
-              <div class="cap-row"><div class="cap-label"><span class="box">[x]</span> Obsidian auto-write</div><div class="cap-desc">Commits non-destructive Obsidian changes without prompting. Auto-destroy remains separate and disabled.</div></div>
+              <div class="cap-row"><div class="cap-label"><span class="box">[x]</span> Obsidian auto-write</div><div class="cap-desc">Commits non-destructive Obsidian changes without prompting. Auto-destroy remains a separate capability.</div></div>
+              <div class="cap-row"><div class="cap-label"><span class="box">[ ]</span> Obsidian auto-destroy — DANGER</div><div class="cap-desc">Skips destructive prompts for permanent deletion, full-note replacement, and empty-trash actions. Session-only, safety-checked, and never selected by Full YOLO.</div></div>
               <div class="cap-row"><div class="cap-label"><span class="box">[x]</span> Wayfinder auto-route optimization</div><div class="cap-desc">Uses metadata-first selective hydration for explicit manual workflow commands and Full YOLO delivery. Ordinary agent chat remains unchanged.</div></div>
               <div class="cap-row"><div class="cap-label"><span class="box">[x]</span> Session auto-continuity</div><div class="cap-desc">Enables 85% checkpoint-before-compaction with exact Wayfinder recap, records supported manual workflow checkpoints, and resumes recorded inactive sessions during Full YOLO delivery.</div></div>
-              <div class="cap-row selected"><div class="cap-label"><span class="accent">&gt;</span> <span class="box">[x]</span> Full YOLO delivery</div><div class="cap-desc">Selects every supporting capability and automatically processes only explicitly authorized YOLO batches. No commits, pushes, deployments, destructive actions, or next-batch progression.</div></div>
+              <div class="cap-row selected"><div class="cap-label"><span class="accent">&gt;</span> <span class="box">[x]</span> Full YOLO delivery</div><div class="cap-desc">Selects every non-destructive supporting capability and automatically processes only explicitly authorized YOLO batches. Auto-destroy is never selected. No commits, pushes, deployments, destructive actions, or next-batch progression.</div></div>
             </div>
             <div class="help">↑↓ navigate · Space toggle · Enter apply · Esc cancel</div>
           </div>
         </div>
-        <div class="footer"><span>ai-agent-portfolio · session capabilities only</span><span>Full delivery turns on its four supporting capabilities</span></div>
+        <div class="footer"><span>ai-agent-portfolio · session capabilities only</span><span>Full delivery selects four non-destructive prerequisites; auto-destroy stays off</span></div>
       </section>
 
       <section class="scene scene-3">
@@ -308,6 +311,7 @@
           <div class="widget">
             <span class="accent bold">Session automation (/yolo)</span><br>
             <span class="success">&nbsp;&nbsp;Permissions: auto-approve · Obsidian: auto-write</span><br>
+            <span class="dim">&nbsp;&nbsp;Obsidian auto-destroy: off</span><br>
             <span class="success">&nbsp;&nbsp;Wayfinder: on · Continuity: on</span> · <span class="warning">Full delivery: on · Execution: paused — no authorized work</span>
           </div>
           <div class="custom">
@@ -328,6 +332,7 @@
           <div class="widget">
             <span class="accent bold">Session automation (/yolo)</span><br>
             <span class="success">&nbsp;&nbsp;Permissions: auto-approve · Obsidian: auto-write</span><br>
+            <span class="dim">&nbsp;&nbsp;Obsidian auto-destroy: off</span><br>
             <span class="success">&nbsp;&nbsp;Wayfinder: on · Continuity: on</span> · <span class="warning">Full delivery: on · Execution: paused</span>
           </div>
           <div class="custom warning-border">
@@ -349,6 +354,7 @@
           <div class="widget">
             <span class="accent bold">Session automation (/yolo)</span><br>
             <span class="success">&nbsp;&nbsp;Permissions: auto-approve · Obsidian: auto-write</span><br>
+            <span class="dim">&nbsp;&nbsp;Obsidian auto-destroy: off</span><br>
             <span class="success">&nbsp;&nbsp;Wayfinder: on · Continuity: on</span> · <span class="success">Full delivery: on · Execution: running</span><br>
             <span class="accent">Current action: Implementing · DEMO-T01</span><br>
             <span class="accent">Active YOLO sessions: 7e57c2a1…91b4f (this Pi process: DEMO-S1/DEMO-T01 Implementing)</span><br>
@@ -361,10 +367,10 @@
             <div class="dashboard-copy">
               Permission auto-approval: <span class="success">enabled</span><br>
               Obsidian auto-write: <span class="success">enabled</span><br>
+              Obsidian auto-destroy: <span class="error">disabled</span><br>
               Wayfinder auto-route optimization: enabled for manual workflows and Full YOLO delivery<br>
               Session auto-continuity: enabled for compaction checkpoints, manual workflows, and Full YOLO delivery<br>
-              Full YOLO delivery: <span class="success">enabled (running)</span><br>
-              Auto-destroy: <span class="error">disabled (separate)</span><br><br>
+              Full YOLO delivery: <span class="success">enabled (running)</span><br><br>
               Active YOLO sessions: 7e57c2a1…91b4f (this Pi process: DEMO-S1/DEMO-T01 Implementing)<br>
               Workflow owner 7e57c2a1…91b4f: DEMO-S1/DEMO-T01 · implement/implementing · active<br>
               Recorded runtime checkpoint (navigation/recovery hint, not ownership)<br>
@@ -377,7 +383,7 @@
               <div class="dash-action selected"><span>&gt; Configure capabilities</span><span class="dash-description">Open the session capability selector.</span></div>
               <div class="dash-action"><span>&nbsp;&nbsp;Pause Full YOLO delivery</span><span class="dash-description">Stop new phase dispatch. If a phase is active, it finishes safely before the pause takes full effect.</span></div>
               <div class="dash-action"><span>&nbsp;&nbsp;Scan delivery queue now</span><span class="dash-description">Schedule one bounded recovery or diagnostic queue scan.</span></div>
-              <div class="dash-action"><span>&nbsp;&nbsp;Disable all capabilities</span><span class="dash-description">Turn off Permission auto-approval, Obsidian auto-write, Wayfinder auto-route optimization, Session auto-continuity, and Full YOLO delivery.</span></div>
+              <div class="dash-action"><span>&nbsp;&nbsp;Disable all capabilities</span><span class="dash-description">Turn off Permission auto-approval, Obsidian auto-write, Obsidian auto-destroy, Wayfinder auto-route optimization, Session auto-continuity, and Full YOLO delivery.</span></div>
               <div class="dash-action"><span>&nbsp;&nbsp;Close</span><span class="dash-description">Leave the current session state unchanged.</span></div>
             </div>
             <div class="help">↑↓ navigate · Enter select · Esc close</div>

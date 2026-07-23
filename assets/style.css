@@ -201,6 +201,34 @@ details ul { margin-bottom: 0; }
 }
 footer { width: min(1120px, calc(100% - 40px)); margin: 0 auto; border-top: 1px solid var(--rule); padding: 28px 0 46px; color: var(--muted); }
 
+/* Recordings-first Soher demo */
+.demo-page { width: min(980px, calc(100% - 40px)); }
+.demo-hero { padding-top: 24px; padding-bottom: 44px; }
+.demo-hero h1 { max-width: 820px; font-size: clamp(42px, 7vw, 68px); }
+.demo-intro { max-width: 720px; }
+.recordings { padding: 44px 0 0; border-top: 1px solid rgba(41, 71, 99, .75); }
+.recording { padding: 46px 0; border-top: 1px solid rgba(41, 71, 99, .75); }
+.recording:first-of-type { margin-top: 28px; }
+.recording-heading { display: grid; grid-template-columns: 42px minmax(0, 1fr) auto; gap: 16px; align-items: start; margin-bottom: 18px; }
+.recording-heading h3 { margin: 1px 0 4px; font-size: clamp(23px, 3vw, 30px); }
+.recording-heading p { margin: 0; max-width: 700px; }
+.recording-number { display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid var(--rule); border-radius: 50%; color: var(--accent-2); font-weight: 850; }
+.recording-type { margin-top: 5px; padding: 4px 9px; border: 1px solid var(--rule); border-radius: 999px; color: var(--muted); font-size: 12px; white-space: nowrap; }
+.recording-type.actual { color: var(--accent-2); border-color: rgba(131, 239, 197, .5); }
+.demo-page .media-frame { padding: 9px; border-radius: 12px; box-shadow: none; }
+.demo-page .media-frame video { border-radius: 7px; }
+.recording-source { display: inline-block; margin-top: 10px; font-size: 14px; font-weight: 700; }
+.actual-recording { border-top-color: rgba(131, 239, 197, .5); }
+.runtime-data { padding-bottom: 8px; }
+.proof-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; margin: 26px 0 16px; overflow: hidden; border: 1px solid var(--rule); border-radius: 12px; background: var(--rule); }
+.proof-strip article { min-height: 104px; padding: 17px; background: var(--bg-soft); }
+.proof-strip span { display: block; color: var(--muted); font-size: 13px; }
+.proof-strip strong { display: block; margin-top: 7px; color: var(--accent-2); font-size: 25px; line-height: 1.1; }
+.evidence-links { display: flex; flex-wrap: wrap; gap: 10px 18px; margin: 18px 0; }
+.evidence-links a { font-weight: 750; }
+.evidence-boundary { max-width: 780px; font-size: 15px; }
+.demo-cta { margin-top: 64px; }
+
 @media (max-width: 820px) {
   .grid, .value-grid, .evidence-grid, .steps-grid { grid-template-columns: 1fr; }
   .site-header { align-items: flex-start; flex-direction: column; }
@@ -208,6 +236,13 @@ footer { width: min(1120px, calc(100% - 40px)); margin: 0 auto; border-top: 1px 
   .hero { padding-top: 18px; }
   .flow { flex-direction: column; }
   .flow-arrow { transform: rotate(90deg); }
+  .recording-heading { grid-template-columns: 38px minmax(0, 1fr); }
+  .recording-type { grid-column: 2; justify-self: start; margin-top: 0; }
+  .proof-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 480px) {
+  .proof-strip { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
