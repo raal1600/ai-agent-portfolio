@@ -3,95 +3,103 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="SoherDocs case study and actual Playwright Chromium runtime evidence.">
-  <title>SoherDocs — Rami Halabi Portfolio</title>
+  <meta name="description" content="A polished SoherDocs product visualization backed by an actual authenticated export runtime capture.">
+  <title>SoherDocs — Rami Halabi</title>
+  <script>document.documentElement.classList.add('js')</script>
   <link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/site.js" defer></script>
+  <noscript><style>.product-controls{display:none}.product-slide{margin-bottom:28px}</style></noscript>
 </head>
 <body>
 <a class="skip-link" href="#content">Skip to content</a>
 <header class="site-header">
   <a class="brand" href="../index.html">Rami Halabi</a>
   <nav class="site-nav" aria-label="Primary navigation">
-    <a href="../index.html">All projects</a>
+    <a href="../index.html">Work</a>
+    <a href="pi-agent-harness.html">Soher</a>
     <a href="soherdocs.html" aria-current="page">SoherDocs</a>
-    <a href="pi-agent-harness.html">Soher agent system</a>
   </nav>
 </header>
 
 <main id="content">
-  <section class="hero compact">
-    <div class="eyebrow">Full-stack platform</div>
-    <h1>SoherDocs</h1>
-    <p class="lead">A multi-user document platform that turns structured profile data into tailored, private, and deterministic application documents.</p>
-    <div class="badges"><span class="badge proof">Actual application runtime</span><span class="badge proof">Synthetic data only</span><span class="badge">Next.js</span><span class="badge">PostgreSQL</span></div>
-    <div class="proof-banner"><span class="status-dot" aria-hidden="true"></span><strong>Verified flow:</strong> sign in → analyze locally → apply suggestions → export six artifacts.</div>
-  </section>
-
-  <section class="section" aria-labelledby="contribution-title">
-    <div class="section-intro"><div class="kicker">My contribution</div><h2 id="contribution-title">Architected and built as an independent project</h2><p class="lead">I designed the product architecture and implemented the full-stack platform from profile storage and authenticated routes through deterministic rendering, private export, and AI-assisted review flows.</p></div>
-    <ul class="check-list"><li>Defined versioned roadmaps, slice boundaries, architecture seams, and acceptance gates.</li><li>Implemented Next.js UI/routes, PostgreSQL repositories, ownership controls, storage, rendering, and export.</li><li>Built unit, visual, browser, and end-to-end verification plus operational handover documentation.</li></ul>
-  </section>
-
-  <section class="section" aria-labelledby="value-title">
-    <div class="section-intro"><div class="kicker">Why it matters</div><h2 id="value-title">Enterprise value</h2></div>
-    <div class="value-grid">
-      <article class="value-card"><h3>Faster document production</h3><p>Structured data and reusable role variants reduce repeated manual rewriting.</p></article>
-      <article class="value-card"><h3>Private by default</h3><p>Authentication, ownership checks, private artifacts, bounded inputs, and rate limits protect user content.</p></article>
-      <article class="value-card"><h3>Built for handover</h3><p>Replaceable service boundaries and layered test gates reduce dependence on a single developer.</p></article>
+  <section class="project-hero">
+    <div data-reveal>
+      <h1>SoherDocs</h1>
+      <p class="lead">A private workspace for analyzing a role, tailoring an application, and exporting owned CV and cover-letter artifacts.</p>
+    </div>
+    <div class="project-hero-note" data-reveal>
+      <p>The product images below are a polished interface direction built around the verified SoherDocs workflow and synthetic demo data.</p>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="runtime-title">
-    <div class="section-intro"><div class="kicker">Actual runtime proof</div><h2 id="runtime-title">Watch the application execute</h2><p>This is a Playwright Chromium recording of the production build—not an animation or slide presentation.</p></div>
-    <div class="media-frame">
-      <video controls preload="metadata" poster="../evidence/soherdocs/frames/01-generator-loaded.png" aria-label="SoherDocs application export runtime capture">
-        <source src="../evidence/soherdocs/soherdocs-application-export-runtime.webm" type="video/webm">
-        Your browser cannot play the WebM video. <a href="../evidence/soherdocs/soherdocs-application-export-runtime.webm">Download the runtime capture</a>.
-      </video>
-      <p class="caption">14.24 seconds · VP8 WebM · Playwright Chromium · synthetic account, job advertisement, database, and storage.</p>
+  <section class="section-block" id="runtime-title" aria-labelledby="product-title">
+    <div class="section-heading" data-reveal>
+      <h2 id="product-title">The product view</h2>
+      <p>Four still states show the workspace, local analysis, document tailoring, and export without turning the page into another video player.</p>
     </div>
 
-    <div class="steps-grid">
-      <article class="step-card"><div class="number">1</div><h3>Authenticate</h3><p>The real Auth.js credentials flow signs in a synthetic user.</p></article>
-      <article class="step-card"><div class="number">2</div><h3>Analyze and apply</h3><p>The local analyzer extracts Acme AB details and applies reviewed suggestions.</p></article>
-      <article class="step-card"><div class="number">3</div><h3>Export</h3><p>The application exports six ownership-checked artifacts and refreshes the list.</p></article>
+    <div class="product-demo" data-image-demo data-reveal tabindex="0" aria-label="SoherDocs product visualization walkthrough">
+      <figure class="product-slide" data-slide>
+        <img src="../evidence/soherdocs/product/01-workspace.png" alt="Polished SoherDocs workspace with owned CV and cover-letter previews and an application progress rail">
+        <figcaption><strong>Application workspace</strong><span>Owned documents, role context, and one clear next step.</span></figcaption>
+      </figure>
+      <figure class="product-slide" data-slide>
+        <img src="../evidence/soherdocs/product/02-analysis.png" alt="Polished SoherDocs local role analysis showing extracted details, confidence, and advisory suggestions">
+        <figcaption><strong>Local role analysis</strong><span>Extracted details remain advisory until the user applies them.</span></figcaption>
+      </figure>
+      <figure class="product-slide" data-slide>
+        <img src="../evidence/soherdocs/product/03-tailoring.png" alt="Polished SoherDocs tailoring workspace with application fields and live CV and cover-letter previews">
+        <figcaption><strong>Tailored documents</strong><span>Editable owned fields update both previews before export.</span></figcaption>
+      </figure>
+      <figure class="product-slide" data-slide>
+        <img src="../evidence/soherdocs/product/04-export.png" alt="Polished SoherDocs export state showing six private HTML, PDF, and text artifacts">
+        <figcaption><strong>Private export</strong><span>Six ownership-checked artifacts across HTML, PDF, and text.</span></figcaption>
+      </figure>
+      <div class="product-controls">
+        <div class="product-steps" aria-label="Choose product state">
+          <button class="product-step" data-slide-to="0" aria-label="Show application workspace">01</button>
+          <button class="product-step" data-slide-to="1" aria-label="Show local role analysis">02</button>
+          <button class="product-step" data-slide-to="2" aria-label="Show document tailoring">03</button>
+          <button class="product-step" data-slide-to="3" aria-label="Show private export">04</button>
+        </div>
+        <div class="product-arrows"><span data-slide-status aria-live="polite">1 / 4</span><button class="arrow-button" data-slide-prev aria-label="Previous product state">←</button><button class="arrow-button" data-slide-next aria-label="Next product state">→</button></div>
+      </div>
+    </div>
+    <p class="visualization-note" data-reveal>Product visualization, not the recorded shipped interface. It keeps the verified workflow and synthetic scenario intact while showing a considered frontend direction. <a href="../evidence/soherdocs/product-visualization.html?state=1">Open the visualization source</a>.</p>
+  </section>
+
+  <section class="section-block" aria-labelledby="runtime-proof-title">
+    <div class="runtime-evidence">
+      <div class="runtime-frame" data-reveal>
+        <img src="../evidence/soherdocs/frames/02-local-analysis.png" alt="Decoded frame from the actual SoherDocs production-build runtime showing local job analysis and suggestions">
+      </div>
+      <div class="runtime-copy" data-reveal>
+        <h2 id="runtime-proof-title">Actual runtime evidence</h2>
+        <p>The real production build ran in Playwright Chromium with a synthetic account, throwaway PostgreSQL, and temporary artifact storage.</p>
+        <ul class="runtime-facts">
+          <li><span>Credentials flow</span><strong>Passed</strong></li>
+          <li><span>Local analysis</span><strong>Passed</strong></li>
+          <li><span>Private artifacts</span><strong>6</strong></li>
+          <li><span>Provider calls</span><strong>0</strong></li>
+        </ul>
+        <div class="evidence-links">
+          <a href="../evidence/soherdocs/soherdocs-application-export-runtime.webm">Original runtime capture</a>
+          <a href="../evidence/soherdocs/runtime-result.json">Machine-readable result</a>
+          <a href="../evidence/soherdocs/runtime-evidence.md">Evidence record</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="proof-title">
-    <div class="section-intro"><div class="kicker">Evidence summary</div><h2 id="proof-title">What the capture establishes</h2></div>
-    <div class="evidence-grid">
-      <article class="evidence-card"><span class="evidence-label">Scenario</span><span class="evidence-value">Passed</span><span class="evidence-note">Application export</span></article>
-      <article class="evidence-card"><span class="evidence-label">Artifacts</span><span class="evidence-value">6</span><span class="evidence-note">HTML, PDF, and text for CV and letter</span></article>
-      <article class="evidence-card"><span class="evidence-label">Production data</span><span class="evidence-value">None</span><span class="evidence-note">Throwaway database and storage</span></article>
-    </div>
-    <ul class="check-list">
-      <li>AI execution remains disabled when no provider is configured.</li>
-      <li>Local analysis runs without a provider or model network call.</li>
-      <li>Profile, account, employer, university, and application data are synthetic.</li>
-      <li>The video is bound to a dated private source snapshot and published SHA-256.</li>
-    </ul>
+  <section class="source-note" data-reveal>
+    <p>Private source is available for a supervised technical review or time-bounded read-only access after scope confirmation.</p>
+    <a href="https://www.linkedin.com/in/rami-halabi-2a5573195/">Contact via LinkedIn</a>
   </section>
-
-  <section class="section" aria-labelledby="architecture-title">
-    <div class="section-intro"><div class="kicker">Architecture</div><h2 id="architecture-title">Clear service boundaries</h2></div>
-    <div class="flow" aria-label="SoherDocs architecture flow">
-      <div class="flow-node">Authenticated browser</div><div class="flow-arrow" aria-hidden="true">→</div>
-      <div class="flow-node">Next.js routes</div><div class="flow-arrow" aria-hidden="true">→</div>
-      <div class="flow-node">Domain services</div><div class="flow-arrow" aria-hidden="true">→</div>
-      <div class="flow-node">PostgreSQL & private storage</div><div class="flow-arrow" aria-hidden="true">→</div>
-      <div class="flow-node">Deterministic export</div>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="technical-title">
-    <div class="section-intro"><div class="kicker">For technical reviewers</div><h2 id="technical-title">Technical appendix</h2><p>The client journey stays concise; raw artifacts remain available for verification.</p></div>
-    <details><summary>Runtime evidence and integrity</summary><ul><li><a href="../evidence/soherdocs/runtime-evidence.md">Evidence record</a></li><li><a href="../evidence/soherdocs/runtime-result.json">Machine-readable assertions</a></li><li><a href="../evidence/soherdocs/frames/02-local-analysis.png">Decoded analysis frame</a></li><li><a href="../evidence/soherdocs/frames/03-export-complete.png">Decoded export frame</a></li></ul></details>
-    <details><summary>Detailed engineering case study</summary><p><a href="https://github.com/raal1600/ai-agent-portfolio/blob/main/case-studies/soherdocs.md">Open the full GitHub case study</a>.</p></details>
-  </section>
-
-  <section class="cta" aria-labelledby="review-cta"><h2 id="review-cta">Want to inspect the implementation?</h2><p>Private source is available for supervised review. Temporary read-only access can be arranged for an identified technical interviewer after the modules, review period, and revocation date are agreed.</p><div class="actions"><a class="button primary" href="https://www.linkedin.com/in/rami-halabi-2a5573195/">Contact via LinkedIn</a><a class="button secondary" href="../index.html">Back to projects</a></div></section>
 </main>
-<footer><p>SoherDocs · Public case study and runtime evidence · Private source remains access-controlled.</p></footer>
+
+<footer class="site-footer">
+  <p>SoherDocs · product visualization and actual runtime evidence.</p>
+  <nav aria-label="Footer navigation"><a href="../index.html">Work</a><a href="pi-agent-harness.html">Soher</a></nav>
+</footer>
 </body>
 </html>

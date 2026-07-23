@@ -1,31 +1,32 @@
-# Rami Halabi — AI Agent & Software Engineering Portfolio
+# Rami Halabi — selected systems
 
-A small public portfolio for two private projects. The site prioritizes short recordings and actual runtime evidence over architecture slides or long case studies.
+A small public portfolio for two private projects, presented through concise demos, product views, and actual runtime evidence.
 
 **[Open the portfolio](https://raal1600.github.io/ai-agent-portfolio/)**
 
-## Soher agent system
+## Soher
 
-**[Watch the complete five-recording demo](https://raal1600.github.io/ai-agent-portfolio/projects/pi-agent-harness.html#runtime-title)**
+**[Open the five-step workflow demo](https://raal1600.github.io/ai-agent-portfolio/projects/pi-agent-harness.html#runtime-title)**
 
-The recordings follow Soher from idea planning and exact authorization through the Pi control pane, single-target delivery, bounded parallel delivery, and fresh private-core execution with synthetic fixtures.
+The clips cover planning and authorization, the Pi control pane, single-target delivery, bounded parallel delivery, and fresh private-core execution with synthetic fixtures.
 
-Actual evidence:
+Evidence:
 
 - [Machine-readable runtime result](evidence/pi-agent-harness/runtime-behavior.json)
 - [Public synthetic runner](evidence/pi-agent-harness/runtime-scenario.mjs)
 - [Genuine 149-test Node output](evidence/pi-agent-harness/pi-extension-tests.txt)
 
-The runtime result binds the current private control and delivery modules by SHA-256 and records 30 passing assertions covering capability gates, dispatch control, canonical queues, sequential mapping, bounded parallel selection, remediation limits, lease contention, stale-owner fencing, and replay protection.
-
 ## SoherDocs
 
-**[Watch the application demo](https://raal1600.github.io/ai-agent-portfolio/projects/soherdocs.html#runtime-title)**
+**[Open the polished image walkthrough](https://raal1600.github.io/ai-agent-portfolio/projects/soherdocs.html#runtime-title)**
 
-A multi-user document platform with authenticated ownership, private artifacts, deterministic export, and reviewed AI-assisted workflows.
+Four product-visualization states show the verified application workspace, local role analysis, document tailoring, and six-artifact private export. The visualization is clearly separated from the actual production-build capture.
 
-- [Runtime evidence](evidence/soherdocs/runtime-evidence.md)
+Evidence:
+
+- [Original runtime capture](evidence/soherdocs/soherdocs-application-export-runtime.webm)
 - [Machine-readable assertions](evidence/soherdocs/runtime-result.json)
+- [Evidence record](evidence/soherdocs/runtime-evidence.md)
 
 ## Source access
 

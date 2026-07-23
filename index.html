@@ -3,75 +3,68 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Rami Halabi's client-facing portfolio for governed AI agents and maintainable software platforms.">
-  <title>Rami Halabi — AI Agent & Software Engineering Portfolio</title>
+  <meta name="description" content="Selected systems by Rami Halabi, shown through concise demos and runtime evidence.">
+  <title>Rami Halabi — Selected systems</title>
+  <script>document.documentElement.classList.add('js')</script>
   <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/site.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#content">Skip to content</a>
 <header class="site-header">
   <a class="brand" href="index.html">Rami Halabi</a>
   <nav class="site-nav" aria-label="Primary navigation">
-    <a href="index.html" aria-current="page">Projects</a>
+    <a href="index.html" aria-current="page">Work</a>
+    <a href="projects/pi-agent-harness.html">Soher</a>
+    <a href="projects/soherdocs.html">SoherDocs</a>
     <a href="https://www.linkedin.com/in/rami-halabi-2a5573195/">LinkedIn</a>
   </nav>
 </header>
 
 <main id="content">
-  <section class="hero">
-    <div class="eyebrow">Technical portfolio</div>
-    <h1>Governed AI agents and maintainable software platforms.</h1>
-    <p class="lead">Two private projects presented through short recordings and actual runtime evidence.</p>
-    <p class="access"><strong>Private source available for supervised review.</strong> Temporary read-only access can be arranged for an identified technical interviewer after scope confirmation.</p>
-  </section>
-
-  <section class="section" aria-labelledby="projects-title">
-    <div class="section-intro">
-      <div class="kicker">Start here</div>
-      <h2 id="projects-title">Choose a project</h2>
-      <p>Watch the workflow, then inspect the generated data.</p>
+  <section class="site-hero">
+    <div data-reveal>
+      <h1>Systems <span class="inline-shot" aria-hidden="true"><img src="evidence/pi-agent-harness/actual-runtime-poster.png" alt=""></span> demonstrated and verified.</h1>
+      <p class="lead">Two private projects, presented without the pitch deck: what they do, how they behave, and the data behind the demos.</p>
     </div>
-
-    <div class="grid">
-      <article class="card">
-        <img class="project-thumb" src="evidence/pi-agent-harness/actual-runtime-poster.png" alt="Actual Soher private-core runtime evidence showing passing assertions and tests">
-        <div class="card-body">
-          <h3>Soher agent system</h3>
-          <p>A governed delivery system built on Pi, demonstrated from idea planning through controlled execution, recovery, and completion.</p>
-          <div class="badges"><span class="badge proof">5 recordings</span><span class="badge proof">149/149 tests</span></div>
-          <ul class="tags"><li>Soher</li><li>Pi framework</li><li>TypeScript</li><li>Obsidian</li></ul>
-          <div class="actions"><a class="button primary" href="projects/pi-agent-harness.html">View project</a></div>
-        </div>
-      </article>
-
-      <article class="card">
-        <img class="project-thumb" src="assets/soherdocs.png" alt="Title frame for the SoherDocs project">
-        <div class="card-body">
-          <h3>SoherDocs</h3>
-          <p>A multi-user document platform with authenticated ownership, private artifacts, deterministic export, and reviewed AI-assisted workflows.</p>
-          <div class="badges"><span class="badge proof">Actual Chromium capture</span><span class="badge proof">Export flow passed</span></div>
-          <ul class="tags"><li>Next.js</li><li>TypeScript</li><li>PostgreSQL</li><li>Drizzle</li></ul>
-          <div class="actions"><a class="button primary" href="projects/soherdocs.html">View project</a></div>
-        </div>
-      </article>
+    <div class="hero-aside" data-reveal>
+      <img src="evidence/soherdocs/product/02-analysis.png" alt="Polished SoherDocs product visualization showing local job analysis and suggested application details">
     </div>
   </section>
 
-  <section class="section" aria-labelledby="review-title">
-    <div class="section-intro">
-      <div class="kicker">Simple review path</div>
-      <h2 id="review-title">How to assess the work</h2>
-    </div>
-    <div class="steps-grid">
-      <article class="step-card"><div class="number">1</div><h3>Watch</h3><p>Follow each system through its short ordered recordings.</p></article>
-      <article class="step-card"><div class="number">2</div><h3>Verify</h3><p>Inspect machine-readable runtime results and genuine test output.</p></article>
-      <article class="step-card"><div class="number">3</div><h3>Review</h3><p>Request a supervised source walkthrough when deeper access is useful.</p></article>
-    </div>
+  <section class="project-list" aria-label="Selected projects">
+    <article class="project-row" data-reveal>
+      <a class="project-visual" href="projects/pi-agent-harness.html" aria-label="Open the Soher agent system showcase">
+        <img src="evidence/pi-agent-harness/actual-runtime-poster.png" alt="Soher runtime evidence with passing core assertions and tests">
+      </a>
+      <div class="project-copy">
+        <h2>Soher</h2>
+        <p>A governed agent workflow built on Pi. Five short demos cover planning, authorization, controlled delivery, recovery, and actual private-core execution.</p>
+        <a class="text-link" href="projects/pi-agent-harness.html">Open the demos</a>
+      </div>
+    </article>
+
+    <article class="project-row reverse" data-reveal>
+      <a class="project-visual" href="projects/soherdocs.html" aria-label="Open the SoherDocs product showcase">
+        <img src="evidence/soherdocs/product/01-workspace.png" alt="Polished SoherDocs workspace visualization with application pipeline and document previews">
+      </a>
+      <div class="project-copy">
+        <h2>SoherDocs</h2>
+        <p>A private document workspace for analyzing a role, tailoring an application, and exporting owned CV and cover-letter artifacts.</p>
+        <a class="text-link" href="projects/soherdocs.html">Open the product view</a>
+      </div>
+    </article>
+  </section>
+
+  <section class="source-note" data-reveal>
+    <p>Implementation source stays private. Supervised review or time-bounded read-only access can be arranged after scope confirmation.</p>
+    <a href="https://www.linkedin.com/in/rami-halabi-2a5573195/">LinkedIn</a>
   </section>
 </main>
 
-<footer>
-  <p><a href="https://www.linkedin.com/in/rami-halabi-2a5573195/">LinkedIn</a> · Public case studies and runtime evidence; private implementation remains access-controlled.</p>
+<footer class="site-footer">
+  <p>Selected work by Rami Halabi.</p>
+  <nav aria-label="Footer navigation"><a href="projects/pi-agent-harness.html">Soher</a><a href="projects/soherdocs.html">SoherDocs</a></nav>
 </footer>
 </body>
 </html>
