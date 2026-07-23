@@ -4,7 +4,7 @@ A small public portfolio for two private projects, presented through concise dem
 
 **[Open the portfolio](https://raal1600.github.io/ai-agent-portfolio/)**
 
-## Soher
+## SoherAgent
 
 **[Open the five-step workflow demo](https://raal1600.github.io/ai-agent-portfolio/projects/pi-agent-harness.html#runtime-title)**
 

@@ -93,39 +93,12 @@ h3 { font-size: clamp(1.35rem, 2.2vw, 2rem); line-height: 1.08; }
 .site-hero {
   min-height: 72vh;
   padding: clamp(76px, 12vw, 164px) 0 clamp(92px, 14vw, 190px);
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(300px, .55fr);
-  gap: clamp(44px, 8vw, 112px);
+  display: flex;
   align-items: center;
 }
 .site-hero > * { min-width: 0; }
-.site-hero h1 { max-width: 900px; }
+.site-hero h1 { max-width: 980px; }
 .site-hero .lead { margin-top: 32px; }
-.hero-aside {
-  justify-self: end;
-  width: min(100%, 410px);
-  transform: translateY(42px) rotate(2deg);
-}
-.hero-aside img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: 50% 50%;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  filter: saturate(.88) contrast(1.03);
-}
-.inline-shot {
-  display: inline-block;
-  width: clamp(92px, 11vw, 158px);
-  height: clamp(42px, 5vw, 68px);
-  margin: 0 .08em;
-  overflow: hidden;
-  vertical-align: .06em;
-  border-radius: 999px;
-  box-shadow: inset 0 0 0 1px rgba(23, 24, 23, .12);
-}
-.inline-shot img { width: 100%; height: 100%; object-fit: cover; }
 
 .project-list { border-top: 1px solid var(--line); }
 .project-row {
@@ -354,9 +327,9 @@ h3 { font-size: clamp(1.35rem, 2.2vw, 2rem); line-height: 1.08; }
   .site-header, main, .site-footer { width: min(100% - 32px, 760px); }
   .site-header { min-height: 68px; }
   .site-nav { gap: 16px; }
-  .site-hero, .project-hero { min-height: auto; grid-template-columns: 1fr; }
+  .site-hero, .project-hero { min-height: auto; }
+  .project-hero { grid-template-columns: 1fr; }
   .site-hero { padding: 84px 0 110px; }
-  .hero-aside { justify-self: start; width: min(70%, 360px); transform: translate(22%, 0) rotate(2deg); }
   .project-row, .project-row.reverse { min-height: auto; grid-template-columns: 1fr; }
   .project-row.reverse .project-visual { order: 0; }
   .project-copy { max-width: 620px; }
@@ -377,9 +350,7 @@ h3 { font-size: clamp(1.35rem, 2.2vw, 2rem); line-height: 1.08; }
   .site-nav { gap: 12px; }
   .site-nav a { font-size: 12px; }
   h1 { font-size: clamp(3rem, 14.5vw, 3.55rem); }
-  .inline-shot { display: none; }
   .site-hero { padding: 70px 0 88px; }
-  .hero-aside { width: 82%; transform: translate(10%, 0) rotate(1.5deg); }
   .project-row { padding: 82px 0; gap: 38px; }
   .project-visual { border-radius: 15px; }
   .project-hero { padding: 72px 0 94px; }
