@@ -18,15 +18,9 @@ Evidence:
 
 ## SoherDocs
 
-**[Open the polished image walkthrough](https://raal1600.github.io/ai-agent-portfolio/projects/soherdocs.html#runtime-title)**
+**[Open the polished image walkthrough](https://raal1600.github.io/ai-agent-portfolio/projects/soherdocs.html#product-view)**
 
-Four product-visualization states show the verified application workspace, local role analysis, document tailoring, and six-artifact private export. The visualization is clearly separated from the actual production-build capture.
-
-Evidence:
-
-- [Original runtime capture](evidence/soherdocs/soherdocs-application-export-runtime.webm)
-- [Machine-readable assertions](evidence/soherdocs/runtime-result.json)
-- [Evidence record](evidence/soherdocs/runtime-evidence.md)
+Four synthetic product-visualization states present a polished interface concept for the application workspace, local role analysis, document tailoring, and private export.
 
 ## Source access
 
