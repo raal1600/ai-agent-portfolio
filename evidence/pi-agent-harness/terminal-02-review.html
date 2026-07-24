@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" data-mode="transcript">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SoherAgent 2 of 5 — Review the plan</title>
+  <script src="terminal-demo.js"></script>
+  <link rel="stylesheet" href="terminal-demo.css">
+</head>
+<body>
+<main class="capture">
+  <header class="recording-meta">
+    <div><strong>SoherAgent · 2 of 5</strong> · review the plan</div>
+    <div class="evidence-badge">Recreation · synthetic task</div>
+  </header>
+  <div class="terminal" role="region" aria-label="Terminal recreation showing a user reviewing and approving a simple three-part plan before any code runs">
+    <div class="titlebar"><div class="lights"><span class="light"></span><span class="light"></span><span class="light"></span></div><div class="titlebar-title">pi · retry-status-demo</div></div>
+    <div class="screen timeline-4">
+
+      <section class="scene">
+        <header class="scene-header">
+          <div><h2 class="scene-step">2/5 · Review</h2><div class="scene-state">See the work in plain language before approving it.</div></div>
+          <div class="scene-boundary">Plan approval is not permission to run</div>
+        </header>
+        <div class="transcript">
+          <div class="turn result"><span class="speaker agent-name">SoherAgent</span>The retry-status idea is ready. No code has started.</div>
+        </div>
+        <div class="terminal-bottom">
+          <div class="editor"><span class="editor-label">›</span>Show me the plan.<span class="cursor"></span></div>
+          <div class="statusbar"><div class="status-main"><strong>2/5 Review</strong> · idea ready · <span class="off">nothing running</span></div><div class="status-keys">Enter send · ↑↓ history</div></div>
+        </div>
+      </section>
+
+      <section class="scene">
+        <header class="scene-header">
+          <div><h2 class="scene-step">2/5 · Review</h2><div class="scene-state">The agent turns the idea into three clear work items.</div></div>
+          <div class="scene-boundary">Two can run independently · one must wait</div>
+        </header>
+        <div class="transcript">
+          <div class="turn user"><span class="speaker">You</span>Show me the plan.</div>
+          <div class="plan-card">
+            <div class="card-title">Proposed plan</div>
+            <div class="plan-row"><span class="plan-number">1</span><span>Show retry status and next retry time</span><span class="plan-note">ready</span></div>
+            <div class="plan-row"><span class="plan-number">2</span><span>Show the latest error summary</span><span class="plan-note">ready</span></div>
+            <div class="plan-row"><span class="plan-number">3</span><span>Connect both views after 1 and 2 pass review</span><span class="plan-note">waits</span></div>
+          </div>
+          <div class="turn agent"><span class="speaker agent-name">SoherAgent</span>Items 1 and 2 can run separately. Item 3 stays blocked until both are reviewed.</div>
+        </div>
+        <div class="terminal-bottom">
+          <div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div>
+          <div class="statusbar"><div class="status-main"><strong>2/5 Review</strong> · plan shown · <span class="off">nothing running</span></div><div class="status-keys">↑↓ inspect · Enter continue</div></div>
+        </div>
+      </section>
+
+      <section class="scene">
+        <header class="scene-header">
+          <div><h2 class="scene-step">2/5 · Review</h2><div class="scene-state">You decide whether the plan is good enough.</div></div>
+          <div class="scene-boundary">The user—not the agent—approves the plan</div>
+        </header>
+        <div class="transcript">
+          <div class="selector">
+            <div class="selector-title">Plan ready — what next?</div>
+            <div class="choice-list">
+              <div class="choice selected"><span>&gt;</span><span>Approve this plan</span><span class="choice-description">Keep these three items and their order.</span></div>
+              <div class="choice"><span></span><span>Request changes</span><span class="choice-description">Tell the agent what should be different.</span></div>
+              <div class="choice"><span></span><span>Cancel</span><span class="choice-description">Leave the idea unchanged.</span></div>
+            </div>
+            <div class="key-help">↑↓ move · Enter choose · Esc back</div>
+          </div>
+        </div>
+        <div class="terminal-bottom">
+          <div class="editor"><span class="editor-label">›</span></div>
+          <div class="statusbar"><div class="status-main"><strong>2/5 Review</strong> · waiting for your decision · <span class="off">nothing running</span></div><div class="status-keys">↑↓ move · Enter choose · Esc back</div></div>
+        </div>
+      </section>
+
+      <section class="scene">
+        <header class="scene-header">
+          <div><h2 class="scene-step">2/5 · Review</h2><div class="scene-state">The plan is approved, but execution is still locked.</div></div>
+          <div class="scene-boundary">Next decision: authorize exact work</div>
+        </header>
+        <div class="transcript">
+          <div class="turn user"><span class="speaker">You</span>Approve this plan.</div>
+          <div class="turn result"><span class="speaker agent-name">SoherAgent</span><strong>Plan approved.</strong><br>Two items are ready. The combined view is waiting. Nothing is running yet.</div>
+          <div class="checks">
+            <div class="check"><strong>✓ Ready</strong> · retry status</div>
+            <div class="check"><strong>✓ Ready</strong> · error summary</div>
+            <div class="check wait"><strong>○ Waiting</strong> · combined view</div>
+            <div class="check no"><strong>× Authorized</strong> · implementation</div>
+          </div>
+        </div>
+        <div class="terminal-bottom">
+          <div class="editor"><span class="editor-label">›</span>/yolo on<span class="cursor"></span></div>
+          <div class="statusbar"><div class="status-main"><strong>2/5 Review</strong> · <span class="ok">plan approved</span> · <span class="off">code untouched</span></div><div class="status-keys">Enter continue · ↑↓ history</div></div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+</body>
+</html>

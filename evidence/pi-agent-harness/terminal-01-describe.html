@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" data-mode="transcript">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SoherAgent 1 of 5 — Describe the change</title>
+  <script src="terminal-demo.js"></script>
+  <link rel="stylesheet" href="terminal-demo.css">
+</head>
+<body>
+<main class="capture">
+  <header class="recording-meta">
+    <div><strong>SoherAgent · 1 of 5</strong> · describe the change</div>
+    <div class="evidence-badge">Recreation · synthetic task</div>
+  </header>
+  <div class="terminal" role="region" aria-label="Terminal recreation showing a user describing a retry-status change and the agent preparing it for planning without starting code">
+    <div class="titlebar"><div class="lights"><span class="light"></span><span class="light"></span><span class="light"></span></div><div class="titlebar-title">pi · retry-status-demo</div></div>
+    <div class="screen timeline-4">
+
+      <section class="scene">
+        <header class="scene-header">
+          <div><h2 class="scene-step">1/5 · Describe</h2><div class="scene-state">Tell the agent what you need in normal language.</div></div>
+          <div class="scene-boundary">Planning first · no code changes</div>
+        </header>
+        <div class="transcript">
+          <div class="turn agent"><span class="speaker agent-name">SoherAgent</span>What should we improve?</div>
+        </div>
+        <div class="terminal-bottom">
+          <div class="editor"><span class="editor-label">›</span>Add a clear retry status so people know when a failed job will try again.<span class="cursor"></span></div>
+          <div class="statusbar"><div class="status-main"><strong>1/5 Describe</strong> · waiting for your request · <span class="off">code untouched</span></div><div class="status-keys">Enter send · ↑↓ history</div></div>
+        </div>
+      </section>
+
+      <section class="scene">
+        <header class="scene-header">
+          <div><h2 class="scene-step">1/5 · Describe</h2><div class="scene-state">The agent confirms the goal before making a plan.</div></div>
+          <div class="scene-boundary">One focused question · no assumptions</div>
+        </header>
+        <div class="transcript">
+          <div class="turn user"><span class="speaker">You</span>Add a clear retry status so people know when a failed job will try again.</div>
+          <div class="turn agent"><span class="speaker agent-name">SoherAgent</span>I’ll turn that into a plan before touching code. Should the status show the last error and the next retry time?</div>
+        </div>
+        <div class="terminal-bottom">
+          <div class="editor"><span class="editor-label">›</span>Yes. Keep the existing retry rules.<span class="cursor"></span></div>
+          <div class="statusbar"><div class="status-main"><strong>1/5 Describe</strong> · clarifying the outcome · <span class="off">code untouched</span></div><div class="status-keys">Enter send · Esc cancel</div></div>
+        </div>
+      </section>
+
+      <section class="scene">
+        <header class="scene-header">
+          <div><h2 class="scene-step">1/5 · Describe</h2><div class="scene-state">The request becomes a clear, reviewable idea.</div></div>
+          <div class="scene-boundary">Agent actions are visible as they happen</div>
+        </header>
+        <div class="transcript">
+          <div class="turn user"><span class="speaker">You</span>Yes. Keep the existing retry rules.</div>
+          <div class="action-list">
+            <div class="action done"><span class="action-label">saved</span><span>Retry-status idea</span><span class="action-state">done</span></div>
+            <div class="action done"><span class="action-label">captured</span><span>Status, last error, and next retry time</span><span class="action-state">done</span></div>
+            <div class="action done"><span class="action-label">bounded</span><span>Existing retry behavior stays unchanged</span><span class="action-state">done</span></div>
+          </div>
+        </div>
+        <div class="terminal-bottom">
+          <div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div>
+          <div class="statusbar"><div class="status-main"><strong>1/5 Describe</strong> · preparing the idea · <span class="off">code untouched</span></div><div class="status-keys">agent working · Esc stop</div></div>
+        </div>
+      </section>
+
+      <section class="scene">
+        <header class="scene-header">
+          <div><h2 class="scene-step">1/5 · Describe</h2><div class="scene-state">The idea is ready for your review.</div></div>
+          <div class="scene-boundary">Next decision: review the plan</div>
+        </header>
+        <div class="transcript">
+          <div class="turn result"><span class="speaker agent-name">SoherAgent</span><strong>Idea ready for review.</strong><br>The goal and limits are recorded. No code has started.</div>
+          <div class="checks">
+            <div class="check"><strong>✓ Goal</strong> · make failed jobs understandable</div>
+            <div class="check"><strong>✓ Show</strong> · status, error, next retry</div>
+            <div class="check no"><strong>× Change</strong> · retry rules</div>
+            <div class="check no"><strong>× Start</strong> · implementation</div>
+          </div>
+        </div>
+        <div class="terminal-bottom">
+          <div class="editor"><span class="editor-label">›</span>Show me the plan.<span class="cursor"></span></div>
+          <div class="statusbar"><div class="status-main"><strong>1/5 Describe</strong> · <span class="ok">idea ready</span> · <span class="off">code untouched</span></div><div class="status-keys">Enter continue · ↑↓ history</div></div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+</body>
+</html>

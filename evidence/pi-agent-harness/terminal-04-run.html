@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" data-mode="transcript">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SoherAgent 4 of 5 — Run the approved work</title>
+  <script src="terminal-demo.js"></script>
+  <link rel="stylesheet" href="terminal-demo.css">
+</head>
+<body>
+<main class="capture">
+  <header class="recording-meta">
+    <div><strong>SoherAgent · 4 of 5</strong> · run the approved work</div>
+    <div class="evidence-badge">Recreation · synthetic task</div>
+  </header>
+  <div class="terminal" role="region" aria-label="Terminal recreation showing two approved tasks mapped one at a time, implemented by at most two isolated workers, validated sequentially, reviewed, fixed within bounds, and completed without starting later work">
+    <div class="titlebar"><div class="lights"><span class="light"></span><span class="light"></span><span class="light"></span></div><div class="titlebar-title">pi · retry-status-demo</div></div>
+    <div class="screen timeline-5">
+
+      <section class="scene">
+        <header class="scene-header">
+          <div><h2 class="scene-step">4/5 · Run</h2><div class="scene-state">The parent checks each authorized item before starting.</div></div>
+          <div class="scene-boundary">Context is checked one item at a time</div>
+        </header>
+        <div class="transcript">
+          <div class="turn user"><span class="speaker">You</span>/yolo</div>
+          <div class="turn agent"><span class="speaker agent-name">SoherAgent</span>Two approved items are ready. I’m checking their scope and dependencies before any worker starts.</div>
+          <div class="action-list">
+            <div class="action done"><span class="action-label">checked</span><span>Retry status · approved scope is current</span><span class="action-state">done first</span></div>
+            <div class="action active"><span class="action-label">checking</span><span>Error summary · approved scope and dependencies</span><span class="action-state">now</span></div>
+          </div>
+        </div>
+        <div class="terminal-bottom">
+          <div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div>
+          <div class="statusbar"><div class="status-main"><strong>4/5 Run</strong> · checking context <span class="accent">1 at a time</span> · 0 workers</div><div class="status-keys">/yolo inspect or pause</div></div>
+        </div>
+      </section>
+
+      <section class="scene">
+        <header class="scene-header">
+          <div><h2 class="scene-step">4/5 · Run</h2><div class="scene-state">Independent work may overlap, but only in isolated work areas.</div></div>
+          <div class="scene-boundary">Maximum 2 workers · parent keeps workflow control</div>
+        </header>
+        <div class="transcript">
+          <div class="turn agent"><span class="speaker agent-name">SoherAgent</span>Both items are independent. Starting two isolated workers—the approved maximum.</div>
+          <div class="action-list">
+            <div class="action active"><span class="action-label">worker 1</span><span>Retry status · reproduce the failing behavior</span><span class="action-state">running</span></div>
+            <div class="action active"><span class="action-label">worker 2</span><span>Error summary · reproduce the failing behavior</span><span class="action-state">running</span></div>
+            <div class="action stop"><span class="action-label">blocked</span><span>Combined view · not part of this authorization</span><span class="action-state">not started</span></div>
+          </div>
+          <div class="turn warning"><span class="speaker agent-name">SoherAgent</span>Workers can change only their own files. They cannot update workflow records, commit, push, deploy, or start another task.</div>
+        </div>
+        <div class="terminal-bottom">
+          <div class="editor"><span class="editor-label">›</span></div>
+          <div class="statusbar"><div class="status-main"><strong>4/5 Run</strong> · <span class="ok">2/2 isolated workers</span> · parent coordinating</div><div class="status-keys">/yolo inspect or pause</div></div>
+        </div>
+      </section>
+
+      <section class="scene">
+        <header class="scene-header">
+          <div><h2 class="scene-step">4/5 · Run</h2><div class="scene-state">Workers return changes; the parent validates them one at a time.</div></div>
+          <div class="scene-boundary">Parallel build · sequential integration</div>
+        </header>
+        <div class="transcript">
+          <div class="action-list">
+            <div class="action done"><span class="action-label">retry status</span><span>Failing check reproduced → small fix → focused checks passed</span><span class="action-state">returned</span></div>
+            <div class="action done"><span class="action-label">error summary</span><span>Failing check reproduced → small fix → focused checks passed</span><span class="action-state">returned</span></div>
+          </div>
+          <div class="turn agent"><span class="speaker agent-name">SoherAgent</span>Both workers finished. I’m inspecting, testing, and integrating their changes one item at a time.</div>
+          <div class="action-list">
+            <div class="action done"><span class="action-label">parent</span><span>Retry status · diff and required checks verified</span><span class="action-state">review-ready</span></div>
+            <div class="action active"><span class="action-label">parent</span><span>Error summary · diff and required checks</span><span class="action-state">validating</span></div>
+          </div>
+        </div>
+        <div class="terminal-bottom">
+          <div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div>
+          <div class="statusbar"><div class="status-main"><strong>4/5 Run</strong> · parent validating <span class="accent">1 at a time</span> · workers settled</div><div class="status-keys">/yolo inspect or pause</div></div>
+        </div>
+      </section>
+
+      <section class="scene">
+        <header class="scene-header">
+          <div><h2 class="scene-step">4/5 · Run</h2><div class="scene-state">Fresh review checks both code quality and the approved plan.</div></div>
+          <div class="scene-boundary">Review is read-only · fixes stay bounded</div>
+        </header>
+        <div class="transcript">
+          <div class="action-list">
+            <div class="action done"><span class="action-label">review</span><span>Retry status · standards pass · plan pass</span><span class="action-state">passed</span></div>
+            <div class="action warn"><span class="action-label">review</span><span>Error summary · empty state needs clearer text</span><span class="action-state">change needed</span></div>
+            <div class="action done"><span class="action-label">fix 1/2</span><span>Error summary · update only the empty-state text</span><span class="action-state">checks passed</span></div>
+            <div class="action done"><span class="action-label">re-review</span><span>Error summary · standards pass · plan pass</span><span class="action-state">passed</span></div>
+          </div>
+          <div class="turn agent"><span class="speaker agent-name">SoherAgent</span>One item passed immediately. The other needed one small, in-scope fix and then passed a fresh review.</div>
+        </div>
+        <div class="terminal-bottom">
+          <div class="editor"><span class="editor-label">›</span></div>
+          <div class="statusbar"><div class="status-main"><strong>4/5 Run</strong> · <span class="ok">2 reviews passed</span> · remediation 1/2</div><div class="status-keys">/yolo inspect or pause</div></div>
+        </div>
+      </section>
+
+      <section class="scene">
+        <header class="scene-header">
+          <div><h2 class="scene-step">4/5 · Run</h2><div class="scene-state">The approved work completes, then automation stops.</div></div>
+          <div class="scene-boundary">Ready later does not mean authorized now</div>
+        </header>
+        <div class="transcript">
+          <div class="turn result"><span class="speaker agent-name">SoherAgent</span><strong>Both approved items are complete.</strong><br>The combined view is now ready, but it has not been authorized.</div>
+          <div class="checks">
+            <div class="check"><strong>✓ Complete</strong> · retry status</div>
+            <div class="check"><strong>✓ Complete</strong> · error summary</div>
+            <div class="check wait"><strong>○ Ready later</strong> · combined view</div>
+            <div class="check no"><strong>× Automatic start</strong> · next work</div>
+          </div>
+        </div>
+        <div class="terminal-bottom">
+          <div class="editor"><span class="editor-label">›</span>Show me the proof.<span class="cursor"></span></div>
+          <div class="statusbar"><div class="status-main"><strong>4/5 Run</strong> · Full delivery on · <span class="warn">paused — no authorized work</span></div><div class="status-keys">Enter continue · /yolo inspect</div></div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+</body>
+</html>

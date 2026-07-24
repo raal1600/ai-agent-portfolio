@@ -8,7 +8,7 @@ A small public portfolio for two private projects, presented through concise dem
 
 **[Open the five-step workflow demo](https://raal1600.github.io/ai-agent-portfolio/projects/pi-agent-harness.html#runtime-title)**
 
-The clips cover planning and authorization, the Pi control pane, single-target delivery, bounded parallel delivery, and fresh private-core execution with synthetic fixtures.
+Five terminal clips follow one synthetic task through description, plan review, exact authorization, bounded delivery, and verification. The first four are clearly labeled recreations; the fifth visualizes dated data captured from the private cores and test suite.
 
 Evidence:
 

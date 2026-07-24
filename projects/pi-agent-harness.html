@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="SoherAgent's planning, control, delivery, recovery, and actual private-core runtime evidence.">
+  <meta name="description" content="Follow one SoherAgent job through a user-friendly terminal workflow, then inspect actual private-core and test evidence.">
   <title>SoherAgent — Rami Halabi</title>
   <script>document.documentElement.classList.add('js')</script>
   <link rel="stylesheet" href="../assets/style.css">
@@ -25,58 +25,58 @@
   <section class="project-hero">
     <div data-reveal>
       <h1>SoherAgent</h1>
-      <p class="lead">A governed agent workflow built on Pi, from an idea and exact authorization to bounded execution, review, recovery, and completion.</p>
+      <p class="lead">A governed agent workflow built on Pi—from a plain-language request to an authorized, reviewed result.</p>
     </div>
     <div class="project-hero-note" data-reveal>
-      <p>The first four demos are reviewed recreations of the current interface and contracts. The final demo uses fresh data emitted by the real private cores.</p>
+      <p>Steps 1–4 are terminal recreations using one synthetic task. Step 5 visualizes dated results captured from the real private cores and test suite.</p>
     </div>
   </section>
 
   <section class="section-block" id="runtime-title" aria-labelledby="demos-title">
     <div class="section-heading" data-reveal>
-      <h2 id="demos-title">The workflow</h2>
-      <p>Choose a step. Each clip is about half a minute and links to its readable source.</p>
+      <h2 id="demos-title">One job, end to end</h2>
+      <p>See what the user types, what the agent does, and what remains outside its authority.</p>
     </div>
 
     <div class="demo-switcher" data-demo-switcher data-reveal>
       <div class="demo-tabs" role="tablist" aria-label="SoherAgent workflow demos">
         <button class="demo-tab" id="demo-tab-1" role="tab" aria-selected="true" aria-controls="demo-panel-1">
-          <span class="demo-tab-number">01</span><span><strong>Plan</strong><span>Idea to exact handoff authority</span></span>
+          <span class="demo-tab-number">01</span><span><strong>Describe</strong><span>Tell the agent what you need</span></span>
         </button>
         <button class="demo-tab" id="demo-tab-2" role="tab" aria-selected="false" aria-controls="demo-panel-2" tabindex="-1">
-          <span class="demo-tab-number">02</span><span><strong>Control</strong><span>Session capabilities and ownership</span></span>
+          <span class="demo-tab-number">02</span><span><strong>Review</strong><span>Check the plan before code</span></span>
         </button>
         <button class="demo-tab" id="demo-tab-3" role="tab" aria-selected="false" aria-controls="demo-panel-3" tabindex="-1">
-          <span class="demo-tab-number">03</span><span><strong>Deliver</strong><span>One leased target through completion</span></span>
+          <span class="demo-tab-number">03</span><span><strong>Authorize</strong><span>Choose exactly what may run</span></span>
         </button>
         <button class="demo-tab" id="demo-tab-4" role="tab" aria-selected="false" aria-controls="demo-panel-4" tabindex="-1">
-          <span class="demo-tab-number">04</span><span><strong>Parallel</strong><span>Two isolated workers, bounded</span></span>
+          <span class="demo-tab-number">04</span><span><strong>Run</strong><span>Watch build, review, and fixes</span></span>
         </button>
         <button class="demo-tab" id="demo-tab-5" role="tab" aria-selected="false" aria-controls="demo-panel-5" tabindex="-1">
-          <span class="demo-tab-number">05</span><span><strong>Prove</strong><span>Actual core execution data</span></span>
+          <span class="demo-tab-number">05</span><span><strong>Verify</strong><span>See actual core and test output</span></span>
         </button>
       </div>
 
       <div class="demo-stage">
         <section class="demo-panel" id="demo-panel-1" role="tabpanel" aria-labelledby="demo-tab-1">
-          <video controls preload="metadata" poster="../evidence/pi-agent-harness/planning-authorization-poster.png" aria-label="Sanitized recreation of planning from idea capture through final handoff authorization"><source src="../evidence/pi-agent-harness/planning-authorization.webm" type="video/webm">Your browser cannot play this recording.</video>
-          <div class="demo-panel-footer"><p>Idea → specification → ticket graph → route → exact handoff.</p><a href="../evidence/pi-agent-harness/planning-authorization-walkthrough.html">Readable source</a></div>
+          <video controls playsinline preload="metadata" poster="../evidence/pi-agent-harness/terminal-01-describe-poster.png" aria-label="Terminal recreation of a user describing a retry-status change before any code starts"><source src="../evidence/pi-agent-harness/terminal-01-describe.webm" type="video/webm">Your browser cannot play this recording.</video>
+          <div class="demo-panel-footer"><p>A natural-language request becomes a saved idea. No code starts.</p><a href="../evidence/pi-agent-harness/terminal-01-describe.html?transcript=1">Open transcript</a></div>
         </section>
         <section class="demo-panel" id="demo-panel-2" role="tabpanel" aria-labelledby="demo-tab-2">
-          <video controls preload="metadata" poster="../evidence/pi-agent-harness/pi-runtime-poster.png" aria-label="Sanitized recreation of the current SoherAgent control pane in Pi"><source src="../evidence/pi-agent-harness/pi-agent-harness-runtime.webm" type="video/webm">Your browser cannot play this recording.</video>
-          <div class="demo-panel-footer"><p>Choose capabilities, keep destruction separate, and inspect ownership.</p><a href="../evidence/pi-agent-harness/soher-control-pane-walkthrough.html">Readable source</a></div>
+          <video controls playsinline preload="metadata" poster="../evidence/pi-agent-harness/terminal-02-review-poster.png" aria-label="Terminal recreation of a user reviewing and approving a three-part plan"><source src="../evidence/pi-agent-harness/terminal-02-review.webm" type="video/webm">Your browser cannot play this recording.</video>
+          <div class="demo-panel-footer"><p>The idea becomes a clear plan with two ready items and one dependency.</p><a href="../evidence/pi-agent-harness/terminal-02-review.html?transcript=1">Open transcript</a></div>
         </section>
         <section class="demo-panel" id="demo-panel-3" role="tabpanel" aria-labelledby="demo-tab-3">
-          <video controls preload="metadata" poster="../evidence/pi-agent-harness/full-yolo-workflow-poster.png" aria-label="Sanitized recreation of one authorized SoherAgent delivery target"><source src="../evidence/pi-agent-harness/full-yolo-workflow.webm" type="video/webm">Your browser cannot play this recording.</video>
-          <div class="demo-panel-footer"><p>Lease, map, implement, review, remediate, complete, and stop.</p><a href="../evidence/pi-agent-harness/full-yolo-workflow-walkthrough.html">Readable source</a></div>
+          <video controls playsinline preload="metadata" poster="../evidence/pi-agent-harness/terminal-03-authorize-poster.png" aria-label="Terminal recreation of a user enabling Full YOLO and authorizing exactly two tasks while permanent deletion stays off"><source src="../evidence/pi-agent-harness/terminal-03-authorize.webm" type="video/webm">Your browser cannot play this recording.</video>
+          <div class="demo-panel-footer"><p>You authorize exactly two items; deletion, deployment, and later work stay off.</p><a href="../evidence/pi-agent-harness/terminal-03-authorize.html?transcript=1">Open transcript</a></div>
         </section>
         <section class="demo-panel" id="demo-panel-4" role="tabpanel" aria-labelledby="demo-tab-4">
-          <video controls preload="metadata" poster="../evidence/pi-agent-harness/soher-terminal-workflow-poster.png" aria-label="Sanitized recreation of an authorized two-target parallel group"><source src="../evidence/pi-agent-harness/soher-terminal-workflow.webm" type="video/webm">Your browser cannot play this recording.</video>
-          <div class="demo-panel-footer"><p>Map sequentially, run at most two isolated workers, integrate sequentially.</p><a href="../evidence/pi-agent-harness/soher-terminal-workflow-walkthrough.html">Readable source</a></div>
+          <video controls playsinline preload="metadata" poster="../evidence/pi-agent-harness/terminal-04-run-poster.png" aria-label="Terminal recreation of two isolated workers completing authorized tasks under parent validation and review"><source src="../evidence/pi-agent-harness/terminal-04-run.webm" type="video/webm">Your browser cannot play this recording.</video>
+          <div class="demo-panel-footer"><p>At most two isolated workers run; the parent validates and finishes each item.</p><a href="../evidence/pi-agent-harness/terminal-04-run.html?transcript=1">Open transcript</a></div>
         </section>
         <section class="demo-panel" id="demo-panel-5" role="tabpanel" aria-labelledby="demo-tab-5">
-          <video controls preload="metadata" poster="../evidence/pi-agent-harness/actual-runtime-poster.png" aria-label="Visualization of actual SoherAgent private-core execution data"><source src="../evidence/pi-agent-harness/actual-runtime.webm" type="video/webm">Your browser cannot play this recording.</video>
-          <div class="demo-panel-footer"><p>Current private cores running against synthetic temporary fixtures.</p><a href="../evidence/pi-agent-harness/actual-runtime-walkthrough.html">Readable source</a></div>
+          <video controls playsinline preload="metadata" poster="../evidence/pi-agent-harness/terminal-05-verify-poster.png" aria-label="Terminal visualization of dated actual SoherAgent private-core and test results using synthetic fixtures"><source src="../evidence/pi-agent-harness/terminal-05-verify.webm" type="video/webm">Your browser cannot play this recording.</video>
+          <div class="demo-panel-footer"><p>Actual captured data: 30/30 core assertions and 149/149 tests passed.</p><a href="../evidence/pi-agent-harness/terminal-05-verify.html?transcript=1">Open transcript</a></div>
         </section>
       </div>
     </div>
@@ -85,13 +85,13 @@
   <section class="section-block" aria-labelledby="evidence-title">
     <div class="evidence-copy" data-reveal>
       <h2 id="evidence-title">Actual runtime evidence</h2>
-      <p>Generated by importing the current private control and delivery modules into the public synthetic runner. The result is bound to the module, runner, and test-output hashes.</p>
+      <p>Captured on <time datetime="2026-07-23">23 July 2026</time> by importing the private control and delivery modules into the public synthetic runner. The result is bound to the module, runner, and test-output hashes.</p>
       <div class="evidence-links">
         <a href="../evidence/pi-agent-harness/runtime-behavior.json">Machine-readable result</a>
         <a href="../evidence/pi-agent-harness/runtime-scenario.mjs">Public synthetic runner</a>
         <a href="../evidence/pi-agent-harness/pi-extension-tests.txt">Node test output</a>
       </div>
-      <p class="evidence-note">No private prompts, notes, sessions, paths, credentials, or production data are included.</p>
+      <p class="evidence-note">This proves the recorded core safeguards—not a full live agent conversation or production deployment. No private prompts, notes, sessions, paths, credentials, or production data are included.</p>
     </div>
   </section>
 
