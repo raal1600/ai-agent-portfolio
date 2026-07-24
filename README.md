@@ -8,7 +8,7 @@ A small public portfolio for two private projects, presented through concise dem
 
 **[Open the five-step workflow demo](https://raal1600.github.io/ai-agent-portfolio/projects/pi-agent-harness.html#runtime-title)**
 
-Five chaptered terminal recordings follow **Retry Status Clarity** across the six planning, handoff, implementation, and review skills: a clearly labeled proposed `/plan on` concept leads into current `/yolo on` exact-batch authorization, reviewed delivery, and a required stop. Recordings 1–2 are sanitized concept recreations; recordings 3–4 recreate reviewed current `/yolo` behavior; recording 5 shows actual evidence from 30 runtime assertions and 155 passing tests.
+Five chaptered terminal recordings follow an imagined **Service Contract Intelligence MVP** project initiative across the six planning, handoff, implementation, and review skills: a clearly labeled proposed `/plan on` concept leads into current `/yolo on` exact-batch authorization, reviewed delivery, and a required stop. The scenario is a portfolio interpretation of a public role brief, not a claim about the employer’s requirements or a deployed product. Recordings 1–2 are sanitized concept recreations; recordings 3–4 recreate reviewed current `/yolo` behavior; recording 5 shows actual evidence from 30 runtime assertions and 155 passing tests.
 
 Evidence:
 
