@@ -443,6 +443,43 @@ html[data-terminal-ui="shell-v2"] .proof-error {
   color: var(--shell-danger);
 }
 
+html[data-terminal-ui="shell-v2"] .agent-narrative {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  border: 1px solid var(--shell-line-strong);
+  background: #0a0f12;
+  box-shadow: 0 12px 28px #00000024;
+}
+html[data-terminal-ui="shell-v2"] .agent-narrative-section {
+  min-width: 0;
+  min-height: 76px;
+  padding: 9px 11px;
+  border-left: 3px solid var(--shell-warning);
+}
+html[data-terminal-ui="shell-v2"] .agent-narrative-section.dialogue {
+  border-left-color: var(--shell-accent);
+  border-left-width: 1px;
+  background: #10191e;
+}
+html[data-terminal-ui="shell-v2"] .agent-narrative-label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--shell-warning);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+}
+html[data-terminal-ui="shell-v2"] .agent-narrative-section.dialogue .agent-narrative-label { color: var(--shell-accent); }
+html[data-terminal-ui="shell-v2"] .agent-narrative p {
+  margin: 0;
+  color: #c8d4d9;
+  font-size: 13px;
+  line-height: 1.4;
+}
+html[data-terminal-ui="shell-v2"] .agent-narrative-section.dialogue p { color: var(--shell-text); }
+
 html[data-terminal-ui="shell-v2"] .terminal-bottom {
   gap: 6px;
   padding-top: 5px;
@@ -529,6 +566,9 @@ html[data-terminal-ui="shell-v2"][data-mode="transcript"] .scene { border-bottom
     min-width: 0;
     overflow-wrap: anywhere;
   }
+  html[data-terminal-ui="shell-v2"] .agent-narrative { grid-template-columns: 1fr; }
+  html[data-terminal-ui="shell-v2"] .agent-narrative-section { min-height: 0; }
+  html[data-terminal-ui="shell-v2"] .agent-narrative-section.dialogue { border-left-width: 3px; border-top: 1px solid var(--shell-line); }
   html[data-terminal-ui="shell-v2"] .initiative-brief-head,
   html[data-terminal-ui="shell-v2"] .initiative-brief-foot { flex-direction: column; gap: 4px; }
   html[data-terminal-ui="shell-v2"] .initiative-brief-grid { grid-template-columns: 1fr; }
