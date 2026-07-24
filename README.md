@@ -18,9 +18,9 @@ Evidence:
 
 ## SoherDocs
 
-**[Open the polished image walkthrough](https://raal1600.github.io/ai-agent-portfolio/projects/soherdocs.html#product-view)**
+**[Open the seven-step workflow recording](https://raal1600.github.io/ai-agent-portfolio/projects/soherdocs.html#product-view)**
 
-Four synthetic product-visualization states present a polished interface concept for the application workspace, local role analysis, document tailoring, and private export.
+One 35-second synthetic product-concept recording follows the full flow: add a job posting, search evidence across saved CV variants, tailor the CV, write a personal cover letter, generate both documents and check ATS readiness, optionally save a new CV variant, and export both PDFs directly.
 
 ## Source access
 

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Readable seven-step transcript for the synthetic SoherDocs product-concept recording.">
+  <title>SoherDocs workflow transcript</title>
+  <style>
+    :root { color-scheme: light; --paper:#f3f1ea; --surface:#fbfaf6; --ink:#171817; --muted:#65665f; --line:#d4d1c6; --green:#1f7353; --soft:#dceee5; --font:"Satoshi","Avenir Next","Helvetica Neue",Arial,sans-serif; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.6; }
+    a { color: inherit; text-underline-offset: .2em; }
+    a:focus-visible { outline: 3px solid #3158df; outline-offset: 4px; }
+    .skip { position: fixed; top: 10px; left: 10px; z-index: 5; transform: translateY(-160%); padding: 9px 13px; border-radius: 999px; background: var(--ink); color: #fff; }
+    .skip:focus { transform: none; }
+    header, main, footer { width: min(1040px, calc(100% - 40px)); margin: 0 auto; }
+    header { padding: 52px 0 64px; border-bottom: 1px solid var(--line); }
+    h1, h2 { margin: 0; letter-spacing: -.04em; line-height: 1.05; }
+    h1 { font-size: clamp(2.7rem, 8vw, 5.7rem); }
+    h2 { font-size: clamp(1.8rem, 4vw, 3.1rem); }
+    p { color: var(--muted); }
+    .lead { max-width: 720px; font-size: 1.18rem; }
+    .truth { max-width: 760px; margin-top: 28px; padding: 15px 17px; border: 1px solid #b9d2c6; border-radius: 12px; background: var(--soft); color: #285b47; }
+    nav { padding: 28px 0; border-bottom: 1px solid var(--line); }
+    nav ol { margin: 0; padding-left: 22px; columns: 2; }
+    nav a { font-weight: 700; }
+    article { padding: clamp(68px, 9vw, 112px) 0; border-bottom: 1px solid var(--line); }
+    .kicker { margin-bottom: 8px; color: var(--green); font-size: .76rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .summary { max-width: 760px; margin: 18px 0 32px; }
+    dl { margin: 0 0 30px; display: grid; grid-template-columns: 92px 1fr; gap: 8px 18px; max-width: 800px; }
+    dt { color: var(--ink); font-weight: 800; }
+    dd { margin: 0; color: var(--muted); }
+    figure { margin: 0; padding: 10px; border-radius: 18px; background: #121817; }
+    img { display: block; width: 100%; height: auto; border-radius: 10px; }
+    figcaption { padding: 12px 4px 3px; color: #b9c3be; font-size: .84rem; }
+    footer { padding: 42px 0 70px; color: var(--muted); }
+    @media (max-width: 620px) { header, main, footer { width: calc(100% - 24px); } nav ol { columns: 1; } dl { grid-template-columns: 1fr; gap: 2px; } dd { margin-bottom: 9px; } figure { padding: 5px; border-radius: 12px; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+<a class="skip" href="#content">Skip to transcript</a>
+<header>
+  <p><a href="../../projects/soherdocs.html">← SoherDocs showcase</a></p>
+  <h1>From job posting to ready-to-send PDFs.</h1>
+  <p class="lead">A readable transcript of the seven-step SoherDocs product-concept recording.</p>
+  <p class="truth"><strong>Synthetic product concept.</strong> This illustrates intended workflow behavior, not a recording of shipped software or runtime evidence. The person, company, job posting, profile evidence, documents, and ATS score are fabricated.</p>
+</header>
+<main id="content">
+  <nav aria-label="Transcript chapters">
+    <ol>
+      <li><a href="#add-job">Add the job posting</a></li>
+      <li><a href="#find-evidence">Find profile evidence</a></li>
+      <li><a href="#tailor-cv">Tailor the CV</a></li>
+      <li><a href="#write-letter">Write the cover letter</a></li>
+      <li><a href="#check-ats">Generate and check ATS readiness</a></li>
+      <li><a href="#save-cv">Optionally save the CV</a></li>
+      <li><a href="#export-pdfs">Export both PDFs</a></li>
+    </ol>
+  </nav>
+
+  <article id="add-job">
+    <div class="kicker">Step 1 · 00:00–00:05</div>
+    <h2>Add the job posting</h2>
+    <p class="summary">Maya starts a new application by pasting a role or uploading the original job-post PDF.</p>
+    <dl><dt>Input</dt><dd>A synthetic AI Product Engineer posting from Northstar Labs.</dd><dt>Action</dt><dd>Select “Analyze job &amp; find matches.”</dd><dt>Result</dt><dd>The role text is ready for requirement extraction and profile matching.</dd></dl>
+    <figure><img src="product/01-job-input.png" alt="SoherDocs concept screen with an uploaded AI Product Engineer job posting and a button to analyze the role and find profile matches"><figcaption>Concept frame · synthetic job and profile data.</figcaption></figure>
+  </article>
+
+  <article id="find-evidence">
+    <div class="kicker">Step 2 · 00:05–00:10</div>
+    <h2>Find the strongest profile evidence</h2>
+    <p class="summary">AI extracts the job requirements, searches six saved CV variants, and shows where each matching fact came from.</p>
+    <dl><dt>Input</dt><dd>The job posting and Maya’s profile knowledge base.</dd><dt>Action</dt><dd>Compare required skills with evidence saved across CV variants.</dd><dt>Result</dt><dd>Nine profile-backed matches, including Python APIs, LLM evaluation, product collaboration, and English proficiency.</dd></dl>
+    <figure><img src="product/02-analysis.png" alt="SoherDocs concept analysis screen comparing job requirements with traceable evidence from six saved CV variants"><figcaption>Concept frame · every visible match cites a synthetic source profile.</figcaption></figure>
+  </article>
+
+  <article id="tailor-cv">
+    <div class="kicker">Step 3 · 00:10–00:15</div>
+    <h2>Build a role-matched CV</h2>
+    <p class="summary">The strongest saved evidence is paired with the role requirements and emphasized in a custom CV draft.</p>
+    <dl><dt>Input</dt><dd>Job requirements and matched profile evidence.</dd><dt>Action</dt><dd>Select relevant experience and skills for this role.</dd><dt>Result</dt><dd>A custom CV preview that uses profile-backed examples without inventing experience.</dd></dl>
+    <figure><img src="product/03-tailoring.png" alt="SoherDocs concept tailoring screen mapping job requirements to saved profile evidence beside a custom CV preview"><figcaption>Concept frame · requirement-to-evidence matching remains visible.</figcaption></figure>
+  </article>
+
+  <article id="write-letter">
+    <div class="kicker">Step 4 · 00:15–00:20</div>
+    <h2>Write a personal cover letter</h2>
+    <p class="summary">Profile knowledge, job context, and personal details are combined into one tailored letter that the user can review.</p>
+    <dl><dt>Input</dt><dd>Saved skills and experience, the job posting, plus Maya’s motivation and preferred tone.</dd><dt>Action</dt><dd>Connect the most relevant evidence to the company’s stated needs.</dd><dt>Result</dt><dd>A personal cover-letter draft with its sources and personalization choices explained.</dd></dl>
+    <figure><img src="product/04-cover-letter.png" alt="SoherDocs concept cover-letter screen showing profile knowledge, job posting, and personal details as sources for a personalized draft"><figcaption>Concept frame · all three source categories are shown explicitly.</figcaption></figure>
+  </article>
+
+  <article id="check-ats">
+    <div class="kicker">Step 5 · 00:20–00:25</div>
+    <h2>Generate and check ATS readiness</h2>
+    <p class="summary">Both documents are generated, then the CV receives an illustrative ATS-readiness score with checks and an actionable improvement.</p>
+    <dl><dt>Input</dt><dd>The tailored CV and cover letter.</dd><dt>Action</dt><dd>Check keywords, document structure, formatting, and role evidence.</dd><dt>Result</dt><dd>An illustrative 88/100 readiness score and one advisory improvement.</dd></dl>
+    <figure><img src="product/05-ats-check.png" alt="SoherDocs concept ATS-readiness screen with an illustrative score of 88, four compatibility checks, and one advisory improvement"><figcaption>Concept frame · the score is not an employer ATS result, hiring prediction, or guarantee.</figcaption></figure>
+  </article>
+
+  <article id="save-cv">
+    <div class="kicker">Step 6 · 00:25–00:30</div>
+    <h2>Optionally save the custom CV</h2>
+    <p class="summary">Maya chooses whether to keep this role-specific CV as a new knowledge-base variant. Skipping does not block export.</p>
+    <dl><dt>Input</dt><dd>The completed custom CV.</dd><dt>Action</dt><dd>Select “Not now” or “Save as a new variant.”</dd><dt>Result</dt><dd>In this walkthrough, a seventh CV variant is added while the six existing versions remain unchanged.</dd></dl>
+    <figure><img src="product/06-save-variant.png" alt="SoherDocs concept save screen showing an optional save choice and a newly added role-specific CV variant in the profile knowledge base"><figcaption>Concept frame · saving is optional and creates a new version.</figcaption></figure>
+  </article>
+
+  <article id="export-pdfs">
+    <div class="kicker">Step 7 · 00:30–00:35</div>
+    <h2>Export both PDFs directly</h2>
+    <p class="summary">The tailored CV and cover letter are presented as separate PDF downloads, ready for the user’s final review and application.</p>
+    <dl><dt>Input</dt><dd>The generated application package.</dd><dt>Action</dt><dd>Select “Download CV” and “Download letter.”</dd><dt>Result</dt><dd>Two proposed PDF exports. The portfolio concept does not generate or download actual files.</dd></dl>
+    <figure><img src="product/07-pdf-export.png" alt="SoherDocs concept export screen with separate direct PDF download actions for the tailored CV and cover letter"><figcaption>Concept frame · direct PDF export is illustrated, not executed by this portfolio demo.</figcaption></figure>
+  </article>
+</main>
+<footer><p>SoherDocs · synthetic product-concept transcript.</p></footer>
+</body>
+</html>

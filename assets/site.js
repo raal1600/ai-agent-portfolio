@@ -51,35 +51,69 @@ const setupDemoSwitcher = () => {
   });
 };
 
-const setupImageDemo = () => {
-  document.querySelectorAll('[data-image-demo]').forEach((demo) => {
-    const slides = [...demo.querySelectorAll('[data-slide]')];
-    const buttons = [...demo.querySelectorAll('[data-slide-to]')];
-    const status = demo.querySelector('[data-slide-status]');
-    let active = 0;
-    const show = (index, focus = false) => {
-      active = (index + slides.length) % slides.length;
-      slides.forEach((slide, slideIndex) => { slide.hidden = slideIndex !== active; });
-      buttons.forEach((button, buttonIndex) => {
-        const selected = buttonIndex === active;
-        button.setAttribute('aria-current', selected ? 'step' : 'false');
-        if (selected && focus) button.focus();
+const setupWorkflowDemo = () => {
+  document.querySelectorAll('[data-workflow-demo]').forEach((demo) => {
+    const video = demo.querySelector('video');
+    const chapters = [...demo.querySelectorAll('[data-chapter-start]')];
+    const status = demo.querySelector('[data-chapter-status]');
+    if (!video || !chapters.length) return;
+    let activeIndex = -1;
+
+    const setActive = (index) => {
+      const active = Math.max(0, Math.min(index, chapters.length - 1));
+      if (active === activeIndex) return;
+      activeIndex = active;
+      chapters.forEach((chapter, chapterIndex) => {
+        if (chapterIndex === active) chapter.setAttribute('aria-current', 'step');
+        else chapter.removeAttribute('aria-current');
       });
-      if (status) status.textContent = `${active + 1} / ${slides.length}`;
+      const chapter = chapters[active];
+      if (status) {
+        const title = chapter.querySelector('strong')?.textContent?.trim() || `Chapter ${active + 1}`;
+        const description = chapter.querySelector('span > span')?.textContent?.trim() || '';
+        const strong = document.createElement('strong');
+        strong.textContent = `Step ${active + 1} · ${title}.`;
+        status.replaceChildren(strong, document.createTextNode(description ? ` ${description}.` : ''));
+      }
     };
-    buttons.forEach((button, index) => button.addEventListener('click', () => show(index)));
-    demo.querySelector('[data-slide-prev]')?.addEventListener('click', () => show(active - 1));
-    demo.querySelector('[data-slide-next]')?.addEventListener('click', () => show(active + 1));
-    demo.addEventListener('keydown', (event) => {
-      if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
-      event.preventDefault();
-      if (event.key === 'ArrowLeft') show(active - 1, true);
-      if (event.key === 'ArrowRight') show(active + 1, true);
+
+    const seek = (index) => {
+      const start = Number(chapters[index].dataset.chapterStart) || 0;
+      const applySeek = () => {
+        video.currentTime = start + .01;
+        video.play().catch(() => {});
+      };
+      if (video.readyState >= 1) applySeek();
+      else video.addEventListener('loadedmetadata', applySeek, { once: true });
+      setActive(index);
+    };
+
+    chapters.forEach((chapter, index) => {
+      chapter.addEventListener('click', (event) => {
+        event.preventDefault();
+        seek(index);
+      });
+      chapter.addEventListener('keydown', (event) => {
+        if (!['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+        let next = index;
+        if (event.key === 'Home') next = 0;
+        else if (event.key === 'End') next = chapters.length - 1;
+        else if (event.key === 'ArrowRight' || event.key === 'ArrowDown') next = (index + 1) % chapters.length;
+        else next = (index - 1 + chapters.length) % chapters.length;
+        chapters[next].focus();
+      });
     });
-    show(0);
+
+    video.addEventListener('timeupdate', () => {
+      const time = video.currentTime;
+      const active = chapters.reduce((result, chapter, index) => time >= Number(chapter.dataset.chapterStart) ? index : result, 0);
+      setActive(active);
+    });
+    setActive(0);
   });
 };
 
 reveal();
 setupDemoSwitcher();
-setupImageDemo();
+setupWorkflowDemo();

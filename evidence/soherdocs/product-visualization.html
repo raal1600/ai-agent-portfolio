@@ -1,27 +1,464 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SoherDocs polished product visualization</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SoherDocs seven-step product concept</title>
 <style>
-:root{--canvas:#dddcd6;--shell:#f8f7f2;--sidebar:#1b211f;--sidebar-muted:#9ea7a2;--ink:#1f2522;--muted:#737b76;--line:#dedfd9;--surface:#fff;--soft:#f0f0ea;--green:#246f55;--green-soft:#dcece5;--purple:#6e5cc9;--purple-soft:#e9e5fa;--blue:#3e68a8;--shadow:0 28px 70px rgba(28,32,30,.16);--font:"Satoshi","Avenir Next","Helvetica Neue",Arial,sans-serif}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{background:var(--canvas);font-family:var(--font);color:var(--ink)}button{font:inherit}.capture{position:absolute;width:1440px;height:1000px;padding:28px;transform-origin:top left}.truth{position:absolute;right:46px;top:7px;color:#636762;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.app{height:100%;display:grid;grid-template-columns:232px 1fr;overflow:hidden;border:1px solid #c8cac4;border-radius:24px;background:var(--shell);box-shadow:var(--shadow)}.sidebar{padding:25px 18px;background:var(--sidebar);color:#f2f4f1;display:flex;flex-direction:column}.brand{display:flex;align-items:center;gap:10px;padding:0 9px 26px;font-size:18px;font-weight:800;letter-spacing:-.02em}.brand-mark{width:28px;height:28px;display:grid;place-items:center;border-radius:9px;background:#d8f0e4;color:#193b2f;font-size:13px}.nav{display:grid;gap:4px}.nav-item{min-height:42px;padding:10px 11px;display:flex;align-items:center;gap:11px;border-radius:10px;color:var(--sidebar-muted);font-size:14px}.nav-item.active{background:#2b3431;color:#fff}.nav-icon{width:17px;height:17px;position:relative;flex:none}.nav-icon::before,.nav-icon::after{content:"";position:absolute;border:1.5px solid currentColor;border-radius:4px}.nav-icon::before{inset:2px}.nav-icon::after{width:5px;height:5px;right:0;bottom:0;background:var(--sidebar)}.sidebar-note{margin-top:auto;padding:14px;border:1px solid #39433f;border-radius:12px;color:var(--sidebar-muted);font-size:12px;line-height:1.45}.sidebar-note strong{display:block;color:#eef2ef;margin-bottom:4px}.main{min-width:0;display:grid;grid-template-rows:72px 1fr}.topbar{padding:0 30px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.58)}.breadcrumbs{color:var(--muted);font-size:13px}.breadcrumbs strong{color:var(--ink)}.profile{display:flex;align-items:center;gap:10px;font-size:13px}.avatar{width:32px;height:32px;display:grid;place-items:center;border-radius:50%;background:#dfe7ff;color:#345197;font-weight:800;font-size:11px}.content{min-height:0;padding:26px 30px 30px;overflow:hidden}.view{height:100%;display:none}.view.active{display:block}.page-head{display:flex;align-items:flex-start;justify-content:space-between;gap:28px;margin-bottom:22px}.page-head h1{margin:0 0 6px;font-size:30px;line-height:1;letter-spacing:-.04em}.page-head p{margin:0;color:var(--muted);font-size:13px}.actions{display:flex;gap:9px}.button{min-height:38px;padding:8px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font-weight:700;font-size:13px}.button.primary{border-color:var(--green);background:var(--green);color:#fff}.button.dark{border-color:var(--ink);background:var(--ink);color:#fff}.status{display:inline-flex;align-items:center;gap:6px;margin-left:8px;padding:4px 8px;border-radius:999px;background:var(--soft);color:var(--muted);font-size:11px;vertical-align:5px}.status::before{content:"";width:6px;height:6px;border-radius:50%;background:#c89b3d}.card{border:1px solid var(--line);border-radius:15px;background:var(--surface)}.card-head{padding:15px 17px;display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid var(--line)}.card-head h2{margin:0;font-size:14px}.card-head span{color:var(--muted);font-size:11px}.card-body{padding:17px}.workspace{display:grid;grid-template-columns:minmax(0,1.42fr) minmax(290px,.58fr);gap:18px;height:calc(100% - 70px)}.document-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;min-height:0}.doc{min-height:0;padding:17px;background:#eceee9;border-radius:14px}.paper{height:100%;padding:18px;border:1px solid #d9dbd6;background:#fff;box-shadow:0 8px 24px rgba(28,34,31,.08)}.paper-header{display:flex;align-items:center;justify-content:space-between;padding-bottom:11px;border-bottom:2px solid #2b614f}.candidate{font-size:14px;font-weight:800;color:#24453b}.tiny{font-size:6px;color:#818782;text-align:right}.paper-section{margin-top:11px}.paper-section b{display:block;margin-bottom:5px;color:#2b614f;font-size:7px;text-transform:uppercase;letter-spacing:.08em}.line{height:5px;margin:4px 0;border-radius:99px;background:#dfe2de}.line.dark{background:#aeb7b1}.w90{width:90%}.w80{width:80%}.w72{width:72%}.w62{width:62%}.w48{width:48%}.rail{display:grid;grid-template-rows:auto 1fr auto;gap:14px}.role-card{padding:17px}.role-card h2{margin:0 0 4px;font-size:16px}.role-card p{margin:0 0 12px;color:var(--muted);font-size:12px}.chips{display:flex;gap:6px;flex-wrap:wrap}.chip{padding:5px 8px;border-radius:999px;background:var(--soft);color:#626963;font-size:10px}.progress{padding:17px}.progress h3{margin:0 0 14px;font-size:13px}.step{display:grid;grid-template-columns:18px 1fr;gap:9px;padding:7px 0;font-size:12px;color:var(--muted)}.step-dot{width:16px;height:16px;border:1px solid #c6cbc7;border-radius:50%;display:grid;place-items:center;font-size:9px}.step.done{color:var(--ink)}.step.done .step-dot{border-color:var(--green);background:var(--green-soft);color:var(--green)}.step.current{color:var(--green);font-weight:800}.step.current .step-dot{border-color:var(--green);box-shadow:inset 0 0 0 4px #fff;background:var(--green)}.mini-proof{padding:14px 16px;background:var(--green-soft);border-color:#bed9cd;color:#295b48;font-size:11px}.analysis-layout{display:grid;grid-template-columns:minmax(330px,.72fr) minmax(0,1.28fr);gap:18px;height:calc(100% - 70px)}.job-panel{height:100%;display:grid;grid-template-rows:auto 1fr auto}.job-text{padding:17px;overflow:hidden;color:#4c534f;font-size:12px;line-height:1.55}.job-text h3{margin:0 0 12px;color:var(--ink);font-size:15px}.job-text p{margin:0 0 11px}.analysis-actions{padding:14px 17px;border-top:1px solid var(--line)}.analysis-results{display:grid;grid-template-rows:auto 1fr;gap:14px}.score-row{display:grid;grid-template-columns:190px 1fr;gap:14px}.match{padding:17px;display:grid;grid-template-columns:72px 1fr;align-items:center;gap:14px}.score{width:70px;height:70px;display:grid;place-items:center;border:7px solid var(--green);border-left-color:#e7e8e3;border-radius:50%;position:relative;font-size:18px;font-weight:800}.score::before{content:"";position:absolute;inset:7px;border-radius:50%;background:#fff}.score span{position:relative}.match h3{margin:0 0 4px;font-size:14px}.match p{margin:0;color:var(--muted);font-size:11px}.confidence{padding:17px}.confidence h3{margin:0 0 12px;font-size:13px}.meter{display:grid;grid-template-columns:95px 1fr 34px;gap:8px;align-items:center;margin:8px 0;color:var(--muted);font-size:10px}.bar{height:6px;overflow:hidden;border-radius:99px;background:#e6e7e2}.bar i{display:block;height:100%;border-radius:99px;background:var(--green)}.insight-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.insight{padding:17px}.insight h3{margin:0 0 13px;font-size:13px}.fact{padding:8px 0;display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid #eee;color:var(--muted);font-size:11px}.fact:last-child{border:0}.fact strong{color:var(--ink);text-align:right}.recommendation{grid-column:1/-1;padding:17px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px;background:var(--purple-soft);border-color:#d4cdf5}.recommendation h3{margin:0 0 4px;color:#493e83;font-size:14px}.recommendation p{margin:0;color:#6d6590;font-size:11px}.tailor-layout{display:grid;grid-template-columns:360px minmax(0,1fr);gap:18px;height:calc(100% - 70px)}.editor{min-height:0;display:grid;grid-template-rows:auto 1fr}.form{padding:16px;overflow:hidden}.field{margin-bottom:11px}.field label{display:block;margin-bottom:4px;color:var(--muted);font-size:10px;font-weight:700}.input{min-height:34px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);font-size:11px}.textarea{height:70px}.suggestion{padding:12px;border:1px solid #d3cdf3;border-radius:10px;background:var(--purple-soft);font-size:10px;color:#5f5880}.suggestion strong{display:block;margin-bottom:4px;color:#453b7e}.preview-area{min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:14px}.preview{min-height:0;display:grid;grid-template-rows:auto 1fr}.preview .doc{border-radius:0 0 14px 14px}.diff{margin-top:8px;padding:7px 9px;border-left:3px solid var(--purple);background:#faf8ff;color:#5a527a;font-size:9px}.export-layout{height:calc(100% - 70px);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.55fr);gap:18px}.export-card{padding:22px;display:grid;grid-template-rows:auto 1fr auto}.success-row{display:flex;align-items:center;gap:14px;margin-bottom:18px}.success-mark{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:var(--green-soft);color:var(--green);font-weight:900}.success-row h2{margin:0 0 3px;font-size:18px}.success-row p{margin:0;color:var(--muted);font-size:11px}.files{display:grid;grid-template-columns:1fr 1fr;gap:9px;align-content:start}.file{padding:12px;display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;border:1px solid var(--line);border-radius:10px}.file-icon{width:32px;height:36px;display:grid;place-items:center;border-radius:7px;background:var(--soft);color:var(--blue);font-size:9px;font-weight:800}.file strong{display:block;font-size:11px}.file span{color:var(--muted);font-size:9px}.download{color:var(--green);font-size:10px;font-weight:800}.export-footer{padding-top:15px;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:10px}.activity{padding:18px}.activity h3{margin:0 0 16px;font-size:14px}.activity-item{padding:0 0 15px 18px;position:relative;border-left:1px solid var(--line);color:var(--muted);font-size:10px}.activity-item:last-child{border-left-color:transparent}.activity-item::before{content:"";position:absolute;left:-4px;top:2px;width:7px;height:7px;border-radius:50%;background:#aeb5b0}.activity-item:first-of-type::before{background:var(--green)}.activity-item strong{display:block;color:var(--ink);font-size:11px}.activity-proof{margin-top:10px;padding:12px;border-radius:10px;background:var(--green-soft);color:#285c47;font-size:10px;line-height:1.45}
+:root {
+  --canvas: #d9dbd5;
+  --shell: #f7f6f1;
+  --sidebar: #17201d;
+  --sidebar-soft: #26312d;
+  --sidebar-muted: #a8b2ad;
+  --ink: #202622;
+  --muted: #6d766f;
+  --line: #dcded7;
+  --surface: #ffffff;
+  --soft: #eef0eb;
+  --green: #1f7353;
+  --green-soft: #dceee5;
+  --blue: #3e63a3;
+  --blue-soft: #e5ebf8;
+  --purple: #6555b5;
+  --purple-soft: #ebe7fa;
+  --amber: #9b6a19;
+  --amber-soft: #f5ead3;
+  --shadow: 0 28px 70px rgba(28, 34, 30, .17);
+  --font: "Satoshi", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+body { background: var(--canvas); color: var(--ink); font-family: var(--font); }
+button { font: inherit; }
+.capture {
+  position: absolute;
+  width: 1440px;
+  height: 900px;
+  padding: 20px;
+  transform-origin: top left;
+}
+.app {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 224px 1fr;
+  overflow: hidden;
+  border: 1px solid #c8cbc4;
+  border-radius: 23px;
+  background: var(--shell);
+  box-shadow: var(--shadow);
+}
+.sidebar {
+  padding: 24px 17px 18px;
+  display: flex;
+  flex-direction: column;
+  background: var(--sidebar);
+  color: #f5f7f4;
+}
+.brand {
+  padding: 0 8px 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -.03em;
+}
+.brand-mark {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: #d8f0e4;
+  color: #173e30;
+  font-size: 13px;
+}
+.flow-label {
+  margin: 2px 9px 10px;
+  color: #77857f;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.flow { display: grid; gap: 4px; }
+.flow-step {
+  min-height: 48px;
+  padding: 8px 9px;
+  display: grid;
+  grid-template-columns: 23px 1fr;
+  gap: 9px;
+  align-items: center;
+  border-radius: 10px;
+  color: var(--sidebar-muted);
+}
+.flow-step.active { background: var(--sidebar-soft); color: #fff; }
+.flow-step.done { color: #dce7e1; }
+.flow-number {
+  width: 21px;
+  height: 21px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #53615b;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 800;
+}
+.flow-step.active .flow-number { border-color: #86c6aa; background: #d8f0e4; color: #174832; }
+.flow-step.done .flow-number { border-color: #4e8f73; color: #9ed1ba; }
+.flow-step strong { display: block; font-size: 12px; line-height: 1.15; }
+.flow-step span:last-child { display: block; margin-top: 2px; color: #7f8c86; font-size: 9px; }
+.flow-step.active span:last-child { color: #b7c3bd; }
+.profile-kb {
+  margin-top: auto;
+  padding: 13px;
+  border: 1px solid #3b4943;
+  border-radius: 12px;
+  color: var(--sidebar-muted);
+  font-size: 10px;
+  line-height: 1.45;
+}
+.profile-kb strong { display: block; margin-bottom: 3px; color: #f2f5f2; font-size: 11px; }
+.profile-kb .kb-count { margin-top: 9px; color: #bce0cf; font-weight: 800; }
+.main { min-width: 0; display: grid; grid-template-rows: 66px 1fr; }
+.topbar {
+  padding: 0 27px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, .64);
+}
+.context { color: var(--muted); font-size: 12px; }
+.context strong { color: var(--ink); }
+.truth {
+  padding: 7px 10px;
+  border: 1px solid #bdc9c2;
+  border-radius: 999px;
+  background: #f6faf7;
+  color: #426456;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.content { min-height: 0; padding: 22px 27px 24px; overflow: hidden; }
+.view { height: 100%; display: none; grid-template-rows: auto 1fr auto; gap: 17px; }
+.view.active { display: grid; }
+.page-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
+.stage-kicker { margin: 0 0 4px; color: var(--green); font-size: 11px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+.page-head h1 { margin: 0 0 5px; font-size: 30px; line-height: 1; letter-spacing: -.04em; }
+.page-head p { margin: 0; color: var(--muted); font-size: 13px; }
+.page-note { max-width: 285px; padding-top: 4px; color: var(--muted); font-size: 10px; line-height: 1.45; text-align: right; }
+.card { min-width: 0; border: 1px solid var(--line); border-radius: 15px; background: var(--surface); }
+.card-head { padding: 13px 15px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--line); }
+.card-head h2 { margin: 0; font-size: 13px; }
+.card-head span { color: var(--muted); font-size: 10px; }
+.card-body { padding: 15px; }
+.button { min-height: 36px; padding: 8px 13px; border: 1px solid var(--line); border-radius: 9px; background: #fff; color: var(--ink); font-size: 11px; font-weight: 800; }
+.button.primary { border-color: var(--green); background: var(--green); color: #fff; }
+.button.selected { border-color: var(--green); background: var(--green-soft); color: #20563f; }
+.chip { display: inline-flex; align-items: center; padding: 5px 8px; border-radius: 999px; background: var(--soft); color: #59635c; font-size: 9px; font-weight: 700; }
+.scene-status {
+  min-height: 38px;
+  padding: 10px 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border: 1px solid #c9dbd2;
+  border-radius: 10px;
+  background: #eef7f2;
+  color: #35624f;
+  font-size: 10px;
+}
+.scene-status strong { color: #1f6045; }
+.scene-status .next { color: #65746c; }
+
+/* 1 · Add job */
+.input-layout { min-height: 0; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(320px, .7fr); gap: 16px; }
+.job-input { min-height: 0; display: grid; grid-template-rows: auto auto 1fr; }
+.input-tabs { padding: 10px 15px 0; display: flex; gap: 7px; }
+.input-tab { padding: 7px 10px; border-radius: 8px; background: var(--soft); color: var(--muted); font-size: 10px; font-weight: 800; }
+.input-tab.active { background: var(--green-soft); color: var(--green); }
+.job-copy { margin: 12px 15px 15px; padding: 14px; overflow: hidden; border: 1px solid #e0e2dc; border-radius: 11px; background: #fafaf7; color: #505a53; font-size: 11px; line-height: 1.48; }
+.job-copy h3 { margin: 0 0 8px; color: var(--ink); font-size: 16px; letter-spacing: -.02em; }
+.job-copy p { margin: 0 0 8px; }
+.job-copy .job-meta { margin-bottom: 11px; color: var(--green); font-size: 10px; font-weight: 800; }
+.ready-card { min-height: 0; padding: 19px; display: flex; flex-direction: column; }
+.upload-mark { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 14px; background: var(--blue-soft); color: var(--blue); font-size: 18px; font-weight: 900; }
+.ready-card h2 { margin: 16px 0 5px; font-size: 20px; letter-spacing: -.03em; }
+.ready-card > p { margin: 0 0 16px; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.ready-list { display: grid; gap: 9px; margin-bottom: 17px; }
+.ready-item { display: grid; grid-template-columns: 18px 1fr; gap: 8px; color: #4f5b54; font-size: 10px; }
+.ready-check { width: 17px; height: 17px; display: grid; place-items: center; border-radius: 50%; background: var(--green-soft); color: var(--green); font-size: 9px; font-weight: 900; }
+.ready-card .button { margin-top: auto; width: 100%; }
+
+/* 2 · Find evidence */
+.analysis-layout { min-height: 0; display: grid; grid-template-columns: minmax(310px, .72fr) minmax(0, 1.28fr); gap: 16px; }
+.requirements { min-height: 0; }
+.requirement-list { padding: 7px 15px 12px; }
+.requirement { padding: 10px 0; display: grid; grid-template-columns: 1fr auto; gap: 10px; border-bottom: 1px solid #eceee9; font-size: 10px; }
+.requirement:last-child { border: 0; }
+.requirement strong { display: block; margin-bottom: 2px; font-size: 11px; }
+.requirement span { color: var(--muted); }
+.requirement .priority { align-self: center; color: var(--green); font-size: 9px; font-weight: 800; }
+.match-panel { min-height: 0; display: grid; grid-template-rows: auto auto 1fr; }
+.metric-row { padding: 12px 15px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.metric { padding: 9px 10px; border-radius: 9px; background: var(--soft); }
+.metric b { display: block; color: var(--green); font-size: 18px; line-height: 1; }
+.metric span { color: var(--muted); font-size: 8px; }
+.evidence-list { padding: 0 15px 13px; display: grid; gap: 8px; }
+.evidence { padding: 10px 11px; display: grid; grid-template-columns: 95px 1fr auto; gap: 11px; align-items: center; border: 1px solid #e2e4de; border-radius: 10px; }
+.evidence-source { color: var(--purple); font-size: 9px; font-weight: 800; }
+.evidence-copy strong { display: block; margin-bottom: 2px; font-size: 10px; }
+.evidence-copy span { color: var(--muted); font-size: 9px; }
+.match-badge { padding: 5px 7px; border-radius: 999px; background: var(--green-soft); color: var(--green); font-size: 8px; font-weight: 900; }
+
+/* 3 · Tailor CV */
+.cv-layout { min-height: 0; display: grid; grid-template-columns: minmax(350px, .82fr) minmax(0, 1.18fr); gap: 16px; }
+.mapping { min-height: 0; display: grid; grid-template-rows: auto 1fr; }
+.mapping-list { padding: 13px; display: grid; gap: 9px; align-content: start; }
+.mapping-item { padding: 10px; border: 1px solid #e2e4df; border-radius: 10px; }
+.mapping-item .map-top { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
+.mapping-item strong { font-size: 10px; }
+.mapping-item .included { color: var(--green); font-size: 8px; font-weight: 900; }
+.map-arrow { margin: 5px 0; color: #9aa29d; font-size: 9px; }
+.map-proof { padding: 7px 8px; border-radius: 7px; background: var(--purple-soft); color: #554b86; font-size: 9px; line-height: 1.35; }
+.cv-preview { min-height: 0; display: grid; grid-template-rows: auto 1fr; }
+.document-shell { min-height: 0; padding: 13px; background: #eceee9; border-radius: 0 0 15px 15px; }
+.paper { height: 100%; padding: 17px 20px; border: 1px solid #d7dad4; background: #fff; box-shadow: 0 7px 22px rgba(32, 38, 34, .08); }
+.paper-head { padding-bottom: 9px; display: flex; align-items: flex-start; justify-content: space-between; border-bottom: 2px solid #2d7057; }
+.paper-head strong { color: #245542; font-size: 16px; }
+.paper-head span { color: var(--muted); font-size: 7px; text-align: right; }
+.paper-section { margin-top: 10px; }
+.paper-section b { display: block; margin-bottom: 5px; color: #2e6a53; font-size: 7px; letter-spacing: .08em; text-transform: uppercase; }
+.paper-line { height: 5px; margin: 4px 0; border-radius: 99px; background: #dfe2dd; }
+.paper-line.dark { background: #aeb8b1; }
+.paper-line.highlight { height: auto; padding: 7px 8px; border-radius: 6px; background: #eff7f2; color: #35634f; font-size: 8px; line-height: 1.35; }
+.w92 { width: 92%; } .w84 { width: 84%; } .w76 { width: 76%; } .w66 { width: 66%; } .w54 { width: 54%; }
+
+/* 4 · Cover letter */
+.letter-layout { min-height: 0; display: grid; grid-template-rows: auto 1fr; gap: 12px; }
+.source-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.source-card { padding: 11px 12px; display: grid; grid-template-columns: 30px 1fr; gap: 9px; align-items: center; }
+.source-icon { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 9px; background: var(--purple-soft); color: var(--purple); font-size: 10px; font-weight: 900; }
+.source-card strong { display: block; font-size: 10px; }
+.source-card span { color: var(--muted); font-size: 8px; }
+.letter-workspace { min-height: 0; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(270px, .8fr); gap: 12px; }
+.letter-preview { min-height: 0; display: grid; grid-template-rows: auto 1fr; }
+.letter-paper { min-height: 0; margin: 12px; padding: 16px 18px; border: 1px solid #dfe1db; background: #fff; box-shadow: 0 6px 18px rgba(31, 38, 34, .07); color: #4f5852; font-size: 9px; line-height: 1.5; }
+.letter-paper h3 { margin: 0 0 5px; color: var(--ink); font-size: 13px; }
+.letter-paper p { margin: 8px 0; }
+.letter-paper mark { padding: 1px 2px; background: #e7f3ed; color: #2d654f; }
+.personalization { padding: 13px; }
+.personalization h3 { margin: 0 0 10px; font-size: 12px; }
+.personal-choice { padding: 9px 0; border-bottom: 1px solid #eceee9; }
+.personal-choice:last-child { border: 0; }
+.personal-choice strong { display: block; margin-bottom: 3px; font-size: 9px; }
+.personal-choice span { color: var(--muted); font-size: 8px; line-height: 1.35; }
+
+/* 5 · ATS */
+.ats-layout { min-height: 0; display: grid; grid-template-columns: minmax(250px, .6fr) minmax(0, 1.4fr); gap: 16px; }
+.score-card { padding: 18px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.score-ring { width: 132px; height: 132px; display: grid; place-items: center; border: 13px solid var(--green); border-left-color: #dce2dd; border-radius: 50%; position: relative; }
+.score-ring::before { content: ""; position: absolute; inset: 9px; border-radius: 50%; background: #fff; }
+.score-ring span { position: relative; color: var(--green); font-size: 31px; font-weight: 900; letter-spacing: -.05em; }
+.score-card h2 { margin: 15px 0 4px; font-size: 18px; }
+.score-card p { margin: 0; color: var(--muted); font-size: 9px; line-height: 1.4; }
+.score-card .score-note { margin-top: auto; padding-top: 14px; color: #88601c; font-size: 8px; line-height: 1.4; }
+.checks { min-height: 0; display: grid; grid-template-rows: auto 1fr auto; }
+.document-ready { padding: 12px 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.ready-doc { padding: 9px 10px; display: flex; align-items: center; justify-content: space-between; gap: 10px; border-radius: 9px; background: var(--soft); font-size: 9px; }
+.ready-doc strong { font-size: 10px; }
+.ready-doc span { color: var(--green); font-weight: 900; }
+.check-list { padding: 0 15px; display: grid; gap: 7px; align-content: start; }
+.check-item { padding: 8px 10px; display: grid; grid-template-columns: 20px 1fr auto; gap: 8px; align-items: center; border: 1px solid #e2e5df; border-radius: 9px; font-size: 9px; }
+.check-mark { width: 19px; height: 19px; display: grid; place-items: center; border-radius: 50%; background: var(--green-soft); color: var(--green); font-size: 9px; font-weight: 900; }
+.check-item strong { display: block; font-size: 10px; }
+.check-item span { color: var(--muted); font-size: 8px; }
+.check-result { color: var(--green) !important; font-weight: 900; }
+.ats-suggestion { margin: 10px 15px 13px; padding: 10px 11px; border: 1px solid #e5d4ae; border-radius: 9px; background: var(--amber-soft); color: #76571f; font-size: 9px; }
+.ats-suggestion strong { display: block; margin-bottom: 3px; }
+
+/* 6 · Save */
+.save-layout { min-height: 0; display: grid; grid-template-columns: minmax(330px, .8fr) minmax(0, 1.2fr); gap: 16px; }
+.save-choice { padding: 19px; display: flex; flex-direction: column; }
+.save-icon { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 13px; background: var(--purple-soft); color: var(--purple); font-size: 17px; font-weight: 900; }
+.save-choice h2 { margin: 15px 0 5px; font-size: 19px; letter-spacing: -.03em; }
+.save-choice > p { margin: 0 0 15px; color: var(--muted); font-size: 10px; line-height: 1.45; }
+.save-options { display: grid; gap: 8px; }
+.save-option { padding: 10px; display: grid; grid-template-columns: 18px 1fr; gap: 8px; border: 1px solid var(--line); border-radius: 9px; color: var(--muted); font-size: 9px; }
+.save-option.selected { border-color: #9dcaB5; background: var(--green-soft); color: #285c47; }
+.radio { width: 17px; height: 17px; display: grid; place-items: center; border: 1px solid #b7bdb9; border-radius: 50%; }
+.save-option.selected .radio { border-color: var(--green); color: var(--green); font-weight: 900; }
+.save-choice .button { margin-top: auto; }
+.variants { min-height: 0; display: grid; grid-template-rows: auto 1fr auto; }
+.variant-list { padding: 12px 14px; display: grid; gap: 8px; align-content: start; }
+.variant { padding: 10px 11px; display: grid; grid-template-columns: 35px 1fr auto; gap: 10px; align-items: center; border: 1px solid #e2e4df; border-radius: 9px; }
+.variant.new { border-color: #9ccab5; background: #f1f8f4; }
+.variant-icon { width: 34px; height: 38px; display: grid; place-items: center; border-radius: 8px; background: var(--soft); color: var(--blue); font-size: 8px; font-weight: 900; }
+.variant strong { display: block; font-size: 10px; }
+.variant span { color: var(--muted); font-size: 8px; }
+.new-badge { color: var(--green) !important; font-weight: 900; }
+.variant-proof { margin: 0 14px 13px; padding: 9px 10px; border-radius: 8px; background: var(--green-soft); color: #2d654f; font-size: 9px; }
+
+/* 7 · Export */
+.export-layout { min-height: 0; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr); gap: 16px; }
+.export-card { padding: 20px; display: grid; grid-template-rows: auto 1fr auto; }
+.success { display: flex; align-items: center; gap: 13px; }
+.success-mark { width: 45px; height: 45px; display: grid; place-items: center; border-radius: 50%; background: var(--green-soft); color: var(--green); font-size: 16px; font-weight: 900; }
+.success h2 { margin: 0 0 3px; font-size: 20px; }
+.success p { margin: 0; color: var(--muted); font-size: 10px; }
+.pdf-list { margin-top: 18px; display: grid; gap: 10px; align-content: start; }
+.pdf { padding: 13px; display: grid; grid-template-columns: 42px 1fr auto; gap: 12px; align-items: center; border: 1px solid var(--line); border-radius: 11px; }
+.pdf-icon { width: 41px; height: 46px; display: grid; place-items: center; border-radius: 8px; background: #f2e8e6; color: #a44f42; font-size: 9px; font-weight: 900; }
+.pdf strong { display: block; font-size: 11px; }
+.pdf span { color: var(--muted); font-size: 8px; }
+.pdf .button { min-width: 96px; color: #fff; }
+.export-note { padding-top: 13px; color: var(--muted); font-size: 8px; }
+.complete-card { padding: 18px; display: flex; flex-direction: column; }
+.complete-card h3 { margin: 0 0 14px; font-size: 13px; }
+.complete-step { padding: 8px 0; display: grid; grid-template-columns: 20px 1fr; gap: 8px; border-bottom: 1px solid #eceee9; color: var(--muted); font-size: 9px; }
+.complete-step:last-of-type { border: 0; }
+.complete-check { width: 18px; height: 18px; display: grid; place-items: center; border-radius: 50%; background: var(--green-soft); color: var(--green); font-size: 8px; font-weight: 900; }
+.complete-card .concept-caveat { margin-top: auto; padding: 10px; border-radius: 9px; background: var(--soft); color: var(--muted); font-size: 8px; line-height: 1.4; }
+
+.playing .view.active { animation: scene-in .45s ease both; }
+@keyframes scene-in { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
 </style>
 <script>
-const state=Math.min(4,Math.max(1,Number(new URLSearchParams(location.search).get('state'))||1));
-const fit=()=>{const capture=document.querySelector('.capture');if(!capture)return;const scale=Math.min(innerWidth/1440,innerHeight/1000);capture.style.left=`${(innerWidth-1440*scale)/2}px`;capture.style.top=`${(innerHeight-1000*scale)/2}px`;capture.style.transform=`scale(${scale})`};
-addEventListener('DOMContentLoaded',()=>{document.querySelector(`[data-view="${state}"]`)?.classList.add('active');fit()});
-addEventListener('resize',fit);
+const params = new URLSearchParams(location.search);
+let state = Math.min(7, Math.max(1, Number(params.get('state')) || 1));
+const fit = () => {
+  const capture = document.querySelector('.capture');
+  if (!capture) return;
+  const scale = Math.min(innerWidth / 1440, innerHeight / 900);
+  capture.style.left = `${(innerWidth - 1440 * scale) / 2}px`;
+  capture.style.top = `${(innerHeight - 900 * scale) / 2}px`;
+  capture.style.transform = `scale(${scale})`;
+};
+const show = (next) => {
+  state = Math.min(7, Math.max(1, next));
+  document.querySelectorAll('[data-view]').forEach((view) => view.classList.toggle('active', Number(view.dataset.view) === state));
+  document.querySelectorAll('[data-flow-step]').forEach((step) => {
+    const number = Number(step.dataset.flowStep);
+    step.classList.toggle('active', number === state);
+    step.classList.toggle('done', number < state);
+  });
+};
+addEventListener('DOMContentLoaded', () => {
+  show(state);
+  fit();
+  if (params.get('play') === '1' && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('playing');
+    setInterval(() => show(state === 7 ? 1 : state + 1), 5000);
+  }
+});
+addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowRight') show(state === 7 ? 1 : state + 1);
+  if (event.key === 'ArrowLeft') show(state === 1 ? 7 : state - 1);
+});
+addEventListener('resize', fit);
 </script>
 </head>
-<body><div class="capture"><div class="truth">Product visualization · synthetic data</div><div class="app"><aside class="sidebar"><div class="brand"><span class="brand-mark">S</span>SoherDocs</div><nav class="nav"><div class="nav-item"><span class="nav-icon"></span>Overview</div><div class="nav-item active"><span class="nav-icon"></span>Applications</div><div class="nav-item"><span class="nav-icon"></span>Profiles</div><div class="nav-item"><span class="nav-icon"></span>Documents</div><div class="nav-item"><span class="nav-icon"></span>Settings</div></nav><div class="sidebar-note"><strong>Private workspace</strong>Owned documents and exports stay isolated to this synthetic account.</div></aside><main class="main"><header class="topbar"><div class="breadcrumbs">Applications / <strong>Acme AB</strong></div><div class="profile"><span class="avatar">DC</span><span>Demo Candidate</span></div></header><div class="content">
+<body>
+<div class="capture">
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">S</span>SoherDocs</div>
+      <div class="flow-label">Application flow</div>
+      <div class="flow">
+        <div class="flow-step" data-flow-step="1"><span class="flow-number">1</span><div><strong>Add job</strong><span>Paste or upload</span></div></div>
+        <div class="flow-step" data-flow-step="2"><span class="flow-number">2</span><div><strong>Find evidence</strong><span>Search CV variants</span></div></div>
+        <div class="flow-step" data-flow-step="3"><span class="flow-number">3</span><div><strong>Tailor CV</strong><span>Match skills to role</span></div></div>
+        <div class="flow-step" data-flow-step="4"><span class="flow-number">4</span><div><strong>Write letter</strong><span>Personalize the draft</span></div></div>
+        <div class="flow-step" data-flow-step="5"><span class="flow-number">5</span><div><strong>Check ATS</strong><span>Score and improve</span></div></div>
+        <div class="flow-step" data-flow-step="6"><span class="flow-number">6</span><div><strong>Save CV</strong><span>Optional new variant</span></div></div>
+        <div class="flow-step" data-flow-step="7"><span class="flow-number">7</span><div><strong>Export PDFs</strong><span>Download directly</span></div></div>
+      </div>
+      <div class="profile-kb"><strong>Maya Chen · synthetic profile</strong>Profile knowledge is assembled from saved CV variants and personal details.<div class="kb-count">6 saved CV variants</div></div>
+    </aside>
 
-<section class="view" data-view="1"><div class="page-head"><div><h1>Acme AB · Systemutvecklare</h1><p>Application workspace · Swedish</p></div><div class="actions"><button class="button">Preview</button><button class="button primary">Continue tailoring</button></div></div><div class="workspace"><div class="document-pair"><div class="doc"><div class="paper"><div class="paper-header"><span class="candidate">Demo Candidate</span><span class="tiny">STOCKHOLM · SWEDEN<br>DEMO.CANDIDATE@EXAMPLE.COM</span></div><div class="paper-section"><b>Profile</b><div class="line dark w90"></div><div class="line w80"></div><div class="line w72"></div></div><div class="paper-section"><b>Core strengths</b><div class="line dark w62"></div><div class="line w90"></div><div class="line w80"></div><div class="line w72"></div></div><div class="paper-section"><b>Experience</b><div class="line dark w80"></div><div class="line w90"></div><div class="line w80"></div><div class="line w62"></div><div class="line dark w72"></div><div class="line w90"></div><div class="line w72"></div></div><div class="paper-section"><b>Education</b><div class="line dark w62"></div><div class="line w80"></div></div></div></div><div class="doc"><div class="paper"><div class="paper-header"><span class="candidate">Application letter</span><span class="tiny">22 JULY 2026</span></div><div class="paper-section"><b>Systemutvecklare · Acme AB</b><div class="line dark w80"></div></div><div class="paper-section"><div class="line w90"></div><div class="line w80"></div><div class="line w90"></div><div class="line w72"></div></div><div class="paper-section"><div class="line w80"></div><div class="line w90"></div><div class="line w62"></div><div class="line w90"></div></div><div class="paper-section"><div class="line w90"></div><div class="line w72"></div><div class="line w80"></div></div><div class="paper-section"><div class="line dark w48"></div><div class="line w62"></div></div></div></div></div><aside class="rail"><div class="card role-card"><h2>Systemutvecklare</h2><p>Acme AB · Anna Svensson</p><div class="chips"><span class="chip">Svenska</span><span class="chip">Data & AI</span><span class="chip">Local analysis</span></div></div><div class="card progress"><h3>Application progress</h3><div class="step done"><span class="step-dot">1</span><span>Profile selected</span></div><div class="step done"><span class="step-dot">2</span><span>Role analyzed</span></div><div class="step current"><span class="step-dot"></span><span>Tailor documents</span></div><div class="step"><span class="step-dot">4</span><span>Review and export</span></div></div><div class="card mini-proof">AI provider is not configured. Local analysis remains available and no provider call is made.</div></aside></div></section>
+    <main class="main">
+      <header class="topbar">
+        <div class="context">Applications / <strong>Northstar Labs · AI Product Engineer</strong></div>
+        <div class="truth">Concept demo · synthetic data · not runtime evidence</div>
+      </header>
+      <div class="content">
 
-<section class="view" data-view="2"><div class="page-head"><div><h1>Analyze the role</h1><p>Review extracted details before changing the application.</p></div><div class="actions"><button class="button">Clear</button><button class="button primary">Apply suggestions</button></div></div><div class="analysis-layout"><div class="card job-panel"><div class="card-head"><h2>Job description</h2><span>Synthetic Swedish input</span></div><div class="job-text"><h3>Systemutvecklare till Acme AB</h3><p>Vi söker dig som vill arbeta med systemutveckling, data och AI i ett tvärfunktionellt produktteam.</p><p>Du trivs med tydliga mål, eget ansvar och nära samarbete med användare och verksamhet.</p><p>Kontakta Anna Svensson vid frågor.</p></div><div class="analysis-actions"><button class="button dark">Analyze locally</button></div></div><div class="analysis-results"><div class="score-row"><div class="card match"><div class="score"><span>Local</span></div><div><h3>Analysis complete</h3><p>Company, role, contact, language, and track suggestions extracted.</p></div></div><div class="card confidence"><h3>Extraction confidence</h3><div class="meter"><span>Company</span><span class="bar"><i style="width:80%"></i></span><b>80%</b></div><div class="meter"><span>Language</span><span class="bar"><i style="width:100%"></i></span><b>100%</b></div><div class="meter"><span>Track</span><span class="bar"><i style="width:80%"></i></span><b>80%</b></div></div></div><div class="insight-grid"><div class="card insight"><h3>Suggested details</h3><div class="fact"><span>Company</span><strong>Acme AB</strong></div><div class="fact"><span>Role</span><strong>Systemutvecklare</strong></div><div class="fact"><span>Contact</span><strong>Anna Svensson</strong></div><div class="fact"><span>Language</span><strong>Swedish</strong></div></div><div class="card insight"><h3>Recommended track</h3><div class="fact"><span>Primary</span><strong>Teknik · Utveckling</strong></div><div class="fact"><span>Secondary</span><strong>Data · AI</strong></div><div class="fact"><span>Keywords</span><strong>systemutveckling · data · AI</strong></div><div class="fact"><span>Source</span><strong>Local analyzer</strong></div></div><div class="card recommendation"><div><h3>Ready to apply</h3><p>Suggestions remain advisory until you choose to apply them.</p></div><button class="button primary">Apply to application</button></div></div></div></div></section>
+        <section class="view active" data-view="1">
+          <div class="page-head"><div><div class="stage-kicker">Step 1 of 7 · Input</div><h1>Add the job posting</h1><p>Paste the role text or upload the original job-post PDF.</p></div><div class="page-note">The user starts with one source of truth: the role they want to apply for.</div></div>
+          <div class="input-layout">
+            <div class="card job-input">
+              <div class="card-head"><h2>Job posting</h2><span>northstar-ai-product-engineer.pdf · 1 page</span></div>
+              <div class="input-tabs"><span class="input-tab">Paste text</span><span class="input-tab active">Upload PDF</span></div>
+              <div class="job-copy"><h3>AI Product Engineer</h3><div class="job-meta">Northstar Labs · Stockholm / Hybrid · Full-time</div><p>Build reliable AI-assisted product experiences with a cross-functional team.</p><p><strong>What you will do</strong><br>Develop Python APIs, evaluate LLM features, improve product quality, and collaborate with design and customer teams.</p><p><strong>What we are looking for</strong><br>Python, API development, AI evaluation, product thinking, and clear written communication.</p></div>
+            </div>
+            <div class="card ready-card"><span class="upload-mark">PDF</span><h2>Ready to analyze</h2><p>SoherDocs will extract the role requirements, then compare them with Maya’s saved profile knowledge.</p><div class="ready-list"><div class="ready-item"><span class="ready-check">✓</span><span>Role and company details</span></div><div class="ready-item"><span class="ready-check">✓</span><span>Required skills and experience</span></div><div class="ready-item"><span class="ready-check">✓</span><span>Responsibilities and keywords</span></div><div class="ready-item"><span class="ready-check">✓</span><span>Language and application context</span></div></div><button class="button primary">Analyze job &amp; find matches</button></div>
+          </div>
+          <div class="scene-status"><span><strong>Input ready:</strong> one synthetic job posting</span><span class="next">Next · analyze requirements and search saved CV variants</span></div>
+        </section>
 
-<section class="view" data-view="3"><div class="page-head"><div><h1>Tailor the application</h1><p>Edit owned fields while both documents update in preview.</p></div><div class="actions"><button class="button">Review changes</button><button class="button primary">Review export</button></div></div><div class="tailor-layout"><div class="card editor"><div class="card-head"><h2>Application details</h2><span>Owned fields</span></div><div class="form"><div class="field"><label>Company</label><div class="input">Acme AB</div></div><div class="field"><label>Role title</label><div class="input">Systemutvecklare</div></div><div class="field"><label>Contact</label><div class="input">Anna Svensson</div></div><div class="field"><label>Motivation</label><div class="input textarea">Jag söker tjänsten som Systemutvecklare hos Acme AB. Jag motiveras särskilt av möjligheten att arbeta med systemutveckling, data och AI.</div></div><div class="suggestion"><strong>Reviewed suggestion</strong>Lead with the concrete role fit and keep the provider-neutral wording. Nothing changes until applied.</div></div></div><div class="preview-area"><div class="card preview"><div class="card-head"><h2>CV preview</h2><span>Live preview</span></div><div class="doc"><div class="paper"><div class="paper-header"><span class="candidate">Demo Candidate</span><span class="tiny">SYSTEMUTVECKLING · DATA · AI</span></div><div class="paper-section"><b>Profile</b><div class="line dark w90"></div><div class="line w80"></div><div class="line w72"></div><div class="diff">Role-relevant profile emphasis applied</div></div><div class="paper-section"><b>Experience</b><div class="line dark w72"></div><div class="line w90"></div><div class="line w80"></div><div class="line w62"></div><div class="line dark w80"></div><div class="line w90"></div><div class="line w72"></div></div><div class="paper-section"><b>Skills</b><div class="line dark w62"></div><div class="line w90"></div></div></div></div></div><div class="card preview"><div class="card-head"><h2>Cover letter</h2><span>Live preview</span></div><div class="doc"><div class="paper"><div class="paper-header"><span class="candidate">Acme AB</span><span class="tiny">22 JULY 2026</span></div><div class="paper-section"><b>Systemutvecklare</b><div class="line dark w80"></div><div class="diff">Specific motivation added from reviewed field</div></div><div class="paper-section"><div class="line w90"></div><div class="line w80"></div><div class="line w90"></div><div class="line w72"></div></div><div class="paper-section"><div class="line w80"></div><div class="line w90"></div><div class="line w62"></div><div class="line w90"></div></div><div class="paper-section"><div class="line dark w48"></div><div class="line w62"></div></div></div></div></div></div></div></section>
+        <section class="view" data-view="2">
+          <div class="page-head"><div><div class="stage-kicker">Step 2 of 7 · Analysis</div><h1>Find the strongest profile evidence</h1><p>AI extracts the requirements and searches across saved CV variants.</p></div><div class="page-note">Every match stays traceable to a synthetic source CV in this concept.</div></div>
+          <div class="analysis-layout">
+            <div class="card requirements"><div class="card-head"><h2>Job requirements</h2><span>12 extracted</span></div><div class="requirement-list"><div class="requirement"><div><strong>Python &amp; API development</strong><span>Build production AI services</span></div><span class="priority">Required</span></div><div class="requirement"><div><strong>LLM evaluation</strong><span>Measure quality and reliability</span></div><span class="priority">Required</span></div><div class="requirement"><div><strong>Product collaboration</strong><span>Work with design and customers</span></div><span class="priority">Required</span></div><div class="requirement"><div><strong>Clear communication</strong><span>Explain technical decisions</span></div><span class="priority">Preferred</span></div></div></div>
+            <div class="card match-panel"><div class="card-head"><h2>Knowledge-base matches</h2><span>Matching saved profile evidence only</span></div><div class="metric-row"><div class="metric"><b>6</b><span>CV variants searched</span></div><div class="metric"><b>9</b><span>evidence matches found</span></div><div class="metric"><b>4</b><span>priority requirements covered</span></div></div><div class="evidence-list"><div class="evidence"><span class="evidence-source">Platform CV</span><div class="evidence-copy"><strong>Built Python APIs for AI-assisted workflows</strong><span>Experience · Orbit Systems</span></div><span class="match-badge">Strong match</span></div><div class="evidence"><span class="evidence-source">Applied AI CV</span><div class="evidence-copy"><strong>Designed an evaluation harness for LLM outputs</strong><span>Project · Answer Quality Lab</span></div><span class="match-badge">Strong match</span></div><div class="evidence"><span class="evidence-source">Product CV</span><div class="evidence-copy"><strong>Shipped features with design and support teams</strong><span>Experience · Orbit Systems</span></div><span class="match-badge">Direct match</span></div><div class="evidence"><span class="evidence-source">Core profile</span><div class="evidence-copy"><strong>English · professional working proficiency</strong><span>Personal details · Languages</span></div><span class="match-badge">Confirmed</span></div></div></div>
+          </div>
+          <div class="scene-status"><span><strong>Analysis complete:</strong> 9 profile-backed matches found</span><span class="next">Next · select the most relevant evidence for the CV</span></div>
+        </section>
 
-<section class="view" data-view="4"><div class="page-head"><div><h1>Export preview</h1><p>Proposed HTML, PDF, and text artifacts for review.</p></div><div class="actions"><button class="button">Back to editor</button><button class="button primary">Open application</button></div></div><div class="export-layout"><div class="card export-card"><div class="success-row"><span class="success-mark">OK</span><div><h2>Export package preview</h2><p>CV and cover letter · HTML, PDF, and plain text</p></div></div><div class="files"><div class="file"><span class="file-icon">HTML</span><div><strong>cv.html</strong><span>Private artifact</span></div><span class="download">Download</span></div><div class="file"><span class="file-icon">PDF</span><div><strong>cv.pdf</strong><span>Private artifact</span></div><span class="download">Download</span></div><div class="file"><span class="file-icon">TXT</span><div><strong>cv.txt</strong><span>Private artifact</span></div><span class="download">Download</span></div><div class="file"><span class="file-icon">HTML</span><div><strong>cover-letter.html</strong><span>Private artifact</span></div><span class="download">Download</span></div><div class="file"><span class="file-icon">PDF</span><div><strong>cover-letter.pdf</strong><span>Private artifact</span></div><span class="download">Download</span></div><div class="file"><span class="file-icon">TXT</span><div><strong>cover-letter.txt</strong><span>Private artifact</span></div><span class="download">Download</span></div></div><div class="export-footer"><span>Application 001 · Acme AB</span><span>Concept preview</span></div></div><aside class="card activity"><h3>Activity</h3><div class="activity-item"><strong>Export package prepared</strong>Six proposed artifact links shown</div><div class="activity-item"><strong>Suggestions applied</strong>Company, role, contact, and track</div><div class="activity-item"><strong>Analyzed locally</strong>No provider or model call</div><div class="activity-item"><strong>Application created</strong>Synthetic account and profile</div><div class="activity-proof">Concept state: six export links are shown for this synthetic application.</div></aside></div></section>
+        <section class="view" data-view="3">
+          <div class="page-head"><div><div class="stage-kicker">Step 3 of 7 · Custom CV</div><h1>Build a role-matched CV</h1><p>Requirements are paired with relevant skills and experience from the profile knowledge base.</p></div><div class="page-note">The concept shows selection and emphasis—not invented experience.</div></div>
+          <div class="cv-layout">
+            <div class="card mapping"><div class="card-head"><h2>Requirement → profile evidence</h2><span>3 selected examples</span></div><div class="mapping-list"><div class="mapping-item"><div class="map-top"><strong>Python APIs</strong><span class="included">Included</span></div><div class="map-arrow">Matched from Platform CV ↓</div><div class="map-proof">Built and monitored Python APIs used by three internal product teams.</div></div><div class="mapping-item"><div class="map-top"><strong>LLM evaluation</strong><span class="included">Included</span></div><div class="map-arrow">Matched from Applied AI CV ↓</div><div class="map-proof">Created automated quality checks for groundedness, latency, and failure modes.</div></div><div class="mapping-item"><div class="map-top"><strong>Cross-functional delivery</strong><span class="included">Included</span></div><div class="map-arrow">Matched from Product CV ↓</div><div class="map-proof">Partnered with design and customer teams to ship and improve user-facing workflows.</div></div></div></div>
+            <div class="card cv-preview"><div class="card-head"><h2>Tailored CV preview</h2><span>AI Product Engineer · Northstar Labs</span></div><div class="document-shell"><div class="paper"><div class="paper-head"><strong>Maya Chen</strong><span>AI PRODUCT ENGINEER<br>STOCKHOLM · MAYA@EXAMPLE.COM</span></div><div class="paper-section"><b>Profile</b><div class="paper-line highlight">Product-minded software engineer focused on reliable AI workflows, Python APIs, and measurable quality.</div></div><div class="paper-section"><b>Relevant experience</b><div class="paper-line dark w76"></div><div class="paper-line highlight">Built and monitored Python APIs used across three internal product teams.</div><div class="paper-line w92"></div><div class="paper-line dark w66"></div><div class="paper-line highlight">Created automated LLM quality checks for groundedness, latency, and failure modes.</div></div><div class="paper-section"><b>Skills</b><div class="paper-line dark w54"></div><div class="paper-line w84"></div><div class="paper-line w66"></div></div></div></div></div>
+          </div>
+          <div class="scene-status"><span><strong>Custom CV drafted:</strong> role-relevant evidence selected from saved profiles</span><span class="next">Next · combine three inputs into a personal cover letter</span></div>
+        </section>
 
-</div></main></div></div></body>
+        <section class="view" data-view="4">
+          <div class="page-head"><div><div class="stage-kicker">Step 4 of 7 · Cover letter</div><h1>Write a personal cover letter</h1><p>Profile knowledge, the job posting, and personal details shape one tailored draft.</p></div><div class="page-note">The three source categories remain visible so the user can review the personalization.</div></div>
+          <div class="letter-layout">
+            <div class="source-row"><div class="card source-card"><span class="source-icon">KB</span><div><strong>Profile knowledge</strong><span>Skills, experience, and selected evidence</span></div></div><div class="card source-card"><span class="source-icon">JOB</span><div><strong>Job posting</strong><span>Role goals, requirements, and company context</span></div></div><div class="card source-card"><span class="source-icon">ME</span><div><strong>Personal details</strong><span>Motivation, tone, location, and contact data</span></div></div></div>
+            <div class="letter-workspace"><div class="card letter-preview"><div class="card-head"><h2>Cover-letter preview</h2><span>Personalized draft</span></div><div class="letter-paper"><h3>Northstar Labs · AI Product Engineer</h3><p>Hello Northstar Labs team,</p><p>I am applying for the AI Product Engineer role because it combines two areas I care about: <mark>building dependable AI workflows</mark> and turning product feedback into measurable improvements.</p><p>At Orbit Systems, I <mark>built Python APIs used by three internal product teams</mark> and partnered with design and customer-facing colleagues to improve the experience. I also created <mark>automated checks for LLM quality and failure modes</mark>—experience that directly supports your focus on reliable AI features.</p><p>I would welcome the opportunity to bring that product mindset and technical foundation to Northstar Labs.</p><p>Best,<br>Maya Chen</p></div></div><div class="card personalization"><h3>Why this draft is personal</h3><div class="personal-choice"><strong>Motivation</strong><span>Uses Maya’s preference for reliable, user-facing AI systems.</span></div><div class="personal-choice"><strong>Role connection</strong><span>Links the job’s API and evaluation needs to two saved profile examples.</span></div><div class="personal-choice"><strong>Company context</strong><span>Reflects the posting’s emphasis on cross-functional product work.</span></div><div class="personal-choice"><strong>Tone</strong><span>Uses Maya’s selected concise, professional writing style.</span></div></div></div>
+          </div>
+          <div class="scene-status"><span><strong>Cover letter drafted:</strong> all three input sources are represented</span><span class="next">Next · generate both documents and run ATS checks</span></div>
+        </section>
+
+        <section class="view" data-view="5">
+          <div class="page-head"><div><div class="stage-kicker">Step 5 of 7 · Generate &amp; check</div><h1>Review the ATS readiness score</h1><p>Both documents are generated, then the CV is checked for common ATS compatibility signals.</p></div><div class="page-note">Illustrative score only—not an employer ATS result, hiring prediction, or guarantee.</div></div>
+          <div class="ats-layout">
+            <div class="card score-card"><div class="score-ring"><span>88</span></div><h2>ATS readiness</h2><p>Strong compatibility for this synthetic role after tailoring.</p><div class="score-note">Demo score · advisory guidance only</div></div>
+            <div class="card checks"><div class="card-head"><h2>Generation &amp; checks</h2><span>CV + cover letter</span></div><div><div class="document-ready"><div class="ready-doc"><strong>Tailored CV</strong><span>✓ Generated</span></div><div class="ready-doc"><strong>Cover letter</strong><span>✓ Generated</span></div></div><div class="check-list"><div class="check-item"><span class="check-mark">✓</span><div><strong>Keywords</strong><span>24 of 26 priority terms represented naturally</span></div><span class="check-result">Passed</span></div><div class="check-item"><span class="check-mark">✓</span><div><strong>Structure</strong><span>Standard headings and readable section order</span></div><span class="check-result">Passed</span></div><div class="check-item"><span class="check-mark">✓</span><div><strong>Formatting</strong><span>No tables, text boxes, or image-only content</span></div><span class="check-result">Passed</span></div><div class="check-item"><span class="check-mark">✓</span><div><strong>Role evidence</strong><span>Required skills are supported by profile examples</span></div><span class="check-result">Strong</span></div></div></div><div class="ats-suggestion"><strong>One improvement suggested</strong>Add one measurable API performance result if that evidence exists in the profile knowledge base.</div></div>
+          </div>
+          <div class="scene-status"><span><strong>Documents ready:</strong> ATS checks complete with one advisory improvement</span><span class="next">Next · choose whether to save this CV as a new variant</span></div>
+        </section>
+
+        <section class="view" data-view="6">
+          <div class="page-head"><div><div class="stage-kicker">Step 6 of 7 · Optional save</div><h1>Save the tailored CV as a new variant</h1><p>The user decides whether this role-specific CV should join the personal knowledge base.</p></div><div class="page-note">Saving is optional. Export remains available if the user chooses “Not now.”</div></div>
+          <div class="save-layout">
+            <div class="card save-choice"><span class="save-icon">＋</span><h2>Keep this CV for future matching?</h2><p>Save a new role-specific version without replacing any existing CV variant.</p><div class="save-options"><div class="save-option"><span class="radio"></span><div><strong>Not now</strong><br>Continue to PDF export without saving.</div></div><div class="save-option selected"><span class="radio">●</span><div><strong>Save as a new variant</strong><br>Northstar Labs · AI Product Engineer</div></div></div><button class="button primary">Save new CV variant</button></div>
+            <div class="card variants"><div class="card-head"><h2>Profile knowledge base</h2><span>7 CV variants after save</span></div><div class="variant-list"><div class="variant new"><span class="variant-icon">CV</span><div><strong>Northstar Labs · AI Product Engineer</strong><span>Tailored variant · added now</span></div><span class="new-badge">New</span></div><div class="variant"><span class="variant-icon">CV</span><div><strong>Applied AI</strong><span>Evaluation, prompting, and ML projects</span></div><span>Existing</span></div><div class="variant"><span class="variant-icon">CV</span><div><strong>Platform Engineering</strong><span>Python, APIs, reliability, and infrastructure</span></div><span>Existing</span></div><div class="variant"><span class="variant-icon">CV</span><div><strong>Product Engineering</strong><span>User-facing delivery and collaboration</span></div><span>Existing</span></div></div><div class="variant-proof">Saved as a new variant. The six existing CVs remain unchanged.</div></div>
+          </div>
+          <div class="scene-status"><span><strong>Saved:</strong> one new custom CV variant added to the profile knowledge base</span><span class="next">Next · export the tailored CV and cover letter directly as PDFs</span></div>
+        </section>
+
+        <section class="view" data-view="7">
+          <div class="page-head"><div><div class="stage-kicker">Step 7 of 7 · Direct export</div><h1>Download both documents as PDFs</h1><p>The tailored application is ready for direct, separate PDF export.</p></div><div class="page-note">The buttons are illustrated in this concept recording; this portfolio page does not download files.</div></div>
+          <div class="export-layout">
+            <div class="card export-card"><div class="success"><span class="success-mark">✓</span><div><h2>Application package ready</h2><p>AI Product Engineer · Northstar Labs · English</p></div></div><div class="pdf-list"><div class="pdf"><span class="pdf-icon">PDF</span><div><strong>Maya-Chen_Northstar-AI-Product-Engineer_CV.pdf</strong><span>Tailored CV · ATS readiness 88 · 1 page</span></div><button class="button primary">Download CV</button></div><div class="pdf"><span class="pdf-icon">PDF</span><div><strong>Maya-Chen_Northstar_Cover-Letter.pdf</strong><span>Personal cover letter · 1 page</span></div><button class="button primary">Download letter</button></div></div><div class="export-note">Direct PDF export shown as intended product behavior in a synthetic concept visualization.</div></div>
+            <div class="card complete-card"><h3>Application workflow complete</h3><div class="complete-step"><span class="complete-check">✓</span><span>Job posting analyzed</span></div><div class="complete-step"><span class="complete-check">✓</span><span>Profile evidence matched</span></div><div class="complete-step"><span class="complete-check">✓</span><span>Custom CV and letter generated</span></div><div class="complete-step"><span class="complete-check">✓</span><span>ATS readiness checked</span></div><div class="complete-step"><span class="complete-check">✓</span><span>New CV variant saved</span></div><div class="complete-step"><span class="complete-check">✓</span><span>Two PDF exports prepared</span></div><div class="concept-caveat">Synthetic product concept · fabricated person, company, job posting, documents, and score · not runtime evidence.</div></div>
+          </div>
+          <div class="scene-status"><span><strong>Ready to apply:</strong> custom CV and cover letter prepared for direct PDF export</span><span class="next">Flow complete · the user remains in control of saving and downloading</span></div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+</div>
+</body>
 </html>
