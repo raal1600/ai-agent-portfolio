@@ -278,7 +278,16 @@ html[data-terminal-ui="shell-v2"] .ask-search {
   font-size: 11px;
 }
 html[data-terminal-ui="shell-v2"] .ask-body { grid-template-columns: minmax(320px, 44fr) minmax(360px, 56fr); }
-html[data-terminal-ui="shell-v2"] .ask-options { padding: 5px; border-right-color: var(--shell-line); }
+html[data-terminal-ui="shell-v2"] .ask-options {
+  padding: 5px;
+  overflow-y: scroll;
+  border-right-color: var(--shell-line);
+  scrollbar-color: var(--shell-accent) #090d10;
+  scrollbar-width: thin;
+}
+html[data-terminal-ui="shell-v2"] .ask-options::-webkit-scrollbar { width: 8px; }
+html[data-terminal-ui="shell-v2"] .ask-options::-webkit-scrollbar-track { background: #090d10; }
+html[data-terminal-ui="shell-v2"] .ask-options::-webkit-scrollbar-thumb { border: 2px solid #090d10; background: var(--shell-accent); }
 html[data-terminal-ui="shell-v2"] .ask-option {
   padding: 4px 6px;
   color: var(--shell-text);
@@ -443,42 +452,51 @@ html[data-terminal-ui="shell-v2"] .proof-error {
   color: var(--shell-danger);
 }
 
+html[data-terminal-ui="shell-v2"] .scene:not(.artifact-scene) .transcript > .agent-narrative {
+  flex: 1 1 230px;
+  align-self: stretch;
+  min-height: 170px;
+  margin-top: 0;
+}
 html[data-terminal-ui="shell-v2"] .agent-narrative {
   min-width: 0;
   display: grid;
-  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   border: 1px solid var(--shell-line-strong);
   background: #0a0f12;
   box-shadow: 0 12px 28px #00000024;
 }
 html[data-terminal-ui="shell-v2"] .agent-narrative-section {
   min-width: 0;
-  min-height: 76px;
-  padding: 9px 11px;
-  border-left: 3px solid var(--shell-warning);
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 17px;
+  border-left: 4px solid var(--shell-warning);
+  background: #0e1519;
 }
 html[data-terminal-ui="shell-v2"] .agent-narrative-section.dialogue {
-  border-left-color: var(--shell-accent);
-  border-left-width: 1px;
-  background: #10191e;
+  border-left: 1px solid var(--shell-line-strong);
+  border-top: 0;
+  background: #101d23;
 }
 html[data-terminal-ui="shell-v2"] .agent-narrative-label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 9px;
   color: var(--shell-warning);
-  font-size: 10px;
-  font-weight: 850;
-  letter-spacing: .055em;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .07em;
   text-transform: uppercase;
 }
 html[data-terminal-ui="shell-v2"] .agent-narrative-section.dialogue .agent-narrative-label { color: var(--shell-accent); }
 html[data-terminal-ui="shell-v2"] .agent-narrative p {
   margin: 0;
-  color: #c8d4d9;
-  font-size: 13px;
-  line-height: 1.4;
+  color: #d2dde1;
+  font-size: 15px;
+  line-height: 1.5;
 }
-html[data-terminal-ui="shell-v2"] .agent-narrative-section.dialogue p { color: var(--shell-text); }
+html[data-terminal-ui="shell-v2"] .agent-narrative-section.dialogue p { color: #e3edf0; }
 
 html[data-terminal-ui="shell-v2"] .terminal-bottom {
   gap: 6px;
@@ -566,9 +584,10 @@ html[data-terminal-ui="shell-v2"][data-mode="transcript"] .scene { border-bottom
     min-width: 0;
     overflow-wrap: anywhere;
   }
+  html[data-terminal-ui="shell-v2"] .scene:not(.artifact-scene) .transcript > .agent-narrative { flex: 0 0 auto; min-height: 0; }
   html[data-terminal-ui="shell-v2"] .agent-narrative { grid-template-columns: 1fr; }
-  html[data-terminal-ui="shell-v2"] .agent-narrative-section { min-height: 0; }
-  html[data-terminal-ui="shell-v2"] .agent-narrative-section.dialogue { border-left-width: 3px; border-top: 1px solid var(--shell-line); }
+  html[data-terminal-ui="shell-v2"] .agent-narrative-section { min-height: 120px; }
+  html[data-terminal-ui="shell-v2"] .agent-narrative-section.dialogue { border-left: 4px solid var(--shell-accent); border-top: 1px solid var(--shell-line); }
   html[data-terminal-ui="shell-v2"] .initiative-brief-head,
   html[data-terminal-ui="shell-v2"] .initiative-brief-foot { flex-direction: column; gap: 4px; }
   html[data-terminal-ui="shell-v2"] .initiative-brief-grid { grid-template-columns: 1fr; }
