@@ -313,6 +313,23 @@ button { font: inherit; }
 .statusbar .right { margin-left: auto; }
 .statusbar strong { color: var(--green); }
 
+html[data-view="idea"] .tabs,
+html[data-view="specification"] .tabs,
+html[data-view="idea"] .split-view,
+html[data-view="specification"] .split-view { grid-template-columns: 1fr; }
+html[data-view="idea"] .specification-tab,
+html[data-view="idea"] .specification-pane,
+html[data-view="specification"] .idea-tab,
+html[data-view="specification"] .idea-pane { display: none; }
+html[data-view] .note-pane { border-left: 0; }
+html[data-view] .note-scroll { width: min(100%, 1000px); margin: 0 auto; padding-left: 30px; padding-right: 30px; }
+html[data-view="idea"] .idea-pane .note-title { font-size: 28px; }
+html[data-view="idea"] .idea-pane .note-body { font-size: 11px; }
+html[data-view="idea"] .idea-pane .note-body h2 { font-size: 14px; }
+html[data-view="specification"] .specification-pane .note-scroll { padding-left: 28px; padding-right: 28px; }
+html[data-view="specification"] .specification-pane .note-title { font-size: 23px; }
+html[data-view] .statusbar::before { content: "Single generated artifact view"; color: var(--purple); font-weight: 700; }
+
 @media (max-width: 900px) {
   .obsidian-app { width: 100vw; height: auto; min-height: 100vh; grid-template-rows: 42px auto 30px; }
   .titlebar { grid-template-columns: 90px 1fr; }
