@@ -27,6 +27,54 @@
 
   document.addEventListener('DOMContentLoaded', async () => {
     const scenes = [...document.querySelectorAll('.scene')];
+    const composerPlaceholder = root.dataset.composerPlaceholder || 'Message SoherAgent or enter a command…';
+
+    scenes.forEach((scene) => {
+      if (scene.classList.contains('artifact-scene')) return;
+      const bottom = scene.querySelector('.terminal-bottom');
+      if (!bottom) return;
+      const transcriptEditor = scene.querySelector('.transcript > .editor');
+      if (transcriptEditor) bottom.prepend(transcriptEditor);
+      const existingEditor = bottom.querySelector('.editor');
+      if (existingEditor) {
+        existingEditor.classList.add('terminal-composer-existing');
+        existingEditor.setAttribute('aria-hidden', 'true');
+        const existingPrompt = existingEditor.querySelector('.editor-label');
+        if (existingPrompt && existingPrompt.textContent.trim() === '›') {
+          existingPrompt.textContent = 'you@pi:~$';
+        }
+        const valueProbe = existingEditor.cloneNode(true);
+        valueProbe.querySelectorAll('.editor-label, .cursor').forEach((element) => element.remove());
+        if (!valueProbe.textContent.trim()) {
+          const placeholder = document.createElement('span');
+          placeholder.className = 'terminal-composer-input';
+          placeholder.textContent = composerPlaceholder;
+          const cursor = existingEditor.querySelector('.cursor');
+          existingEditor.insertBefore(placeholder, cursor || null);
+        }
+        return;
+      }
+
+      const composer = document.createElement('div');
+      composer.className = 'terminal-composer';
+      composer.setAttribute('aria-hidden', 'true');
+
+      const prompt = document.createElement('span');
+      prompt.className = 'terminal-composer-prompt';
+      prompt.textContent = 'you@pi:~$';
+
+      const input = document.createElement('span');
+      input.className = 'terminal-composer-input';
+      input.textContent = composerPlaceholder;
+
+      const hint = document.createElement('span');
+      hint.className = 'terminal-composer-hint';
+      hint.textContent = 'Enter send · Esc stop';
+
+      composer.append(prompt, input, hint);
+      bottom.prepend(composer);
+    });
+
     const durations = scenes.map((scene) => Math.max(1000, Number(scene.dataset.duration) || 7000));
     const starts = [];
     let totalDurationMs = 0;

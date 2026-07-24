@@ -65,7 +65,10 @@ html[data-terminal-ui="shell-v2"] .scene-step { color: var(--shell-accent); font
 html[data-terminal-ui="shell-v2"] .scene-state,
 html[data-terminal-ui="shell-v2"] .scene-boundary { color: var(--shell-muted); }
 html[data-terminal-ui="shell-v2"] .scene-boundary { max-width: 520px; }
-html[data-terminal-ui="shell-v2"] .transcript { gap: 8px; }
+html[data-terminal-ui="shell-v2"] .scene-header.actual { border-left-color: var(--shell-success); }
+html[data-terminal-ui="shell-v2"] .scene-header.actual .scene-step { color: var(--shell-success); }
+html[data-terminal-ui="shell-v2"] .transcript { gap: 8px; padding: 8px 0 2px; }
+html[data-terminal-ui="shell-v2"] .scene:not(.artifact-scene) .transcript > :first-child { margin-top: auto; }
 
 html[data-terminal-ui="shell-v2"] .turn {
   width: 100%;
@@ -85,7 +88,10 @@ html[data-terminal-ui="shell-v2"] .turn.user {
   background: var(--shell-accent-soft);
 }
 html[data-terminal-ui="shell-v2"] .turn.agent { padding-left: 10px; border-left-color: var(--shell-success); }
+html[data-terminal-ui="shell-v2"] .turn.child { border-left-color: var(--shell-accent); background: var(--shell-accent-soft); }
 html[data-terminal-ui="shell-v2"] .turn.result { border-color: var(--shell-success); background: var(--shell-success-soft); }
+html[data-terminal-ui="shell-v2"] .turn.warning { border-color: var(--shell-warning); background: var(--shell-warning-soft); }
+html[data-terminal-ui="shell-v2"] .turn.danger { border-color: var(--shell-danger); background: var(--shell-danger-soft); }
 html[data-terminal-ui="shell-v2"] .speaker { color: var(--shell-muted); }
 html[data-terminal-ui="shell-v2"] .agent-name { color: var(--shell-accent); }
 
@@ -353,11 +359,22 @@ html[data-terminal-ui="shell-v2"] .card-title,
 html[data-terminal-ui="shell-v2"] .plan-number { color: var(--shell-accent); }
 html[data-terminal-ui="shell-v2"] .plan-row { border-top-color: var(--shell-line); }
 
-html[data-terminal-ui="shell-v2"] .checks { width: 100%; }
+html[data-terminal-ui="shell-v2"] .checks,
+html[data-terminal-ui="shell-v2"] .metrics { width: 100%; }
 html[data-terminal-ui="shell-v2"] .check { border-left-color: var(--shell-success); background: var(--shell-success-soft); color: var(--shell-text); }
 html[data-terminal-ui="shell-v2"] .check.no { border-left-color: var(--shell-danger); background: var(--shell-danger-soft); }
+html[data-terminal-ui="shell-v2"] .check.wait { border-left-color: var(--shell-warning); background: var(--shell-warning-soft); }
 html[data-terminal-ui="shell-v2"] .check strong { color: var(--shell-success); }
 html[data-terminal-ui="shell-v2"] .check.no strong { color: var(--shell-danger); }
+html[data-terminal-ui="shell-v2"] .check.wait strong { color: var(--shell-warning); }
+
+html[data-terminal-ui="shell-v2"] .metric {
+  border-color: var(--shell-line-strong);
+  background: #10171b;
+  color: var(--shell-text);
+}
+html[data-terminal-ui="shell-v2"] .metric small { color: var(--shell-muted); }
+html[data-terminal-ui="shell-v2"] .metric strong { color: var(--shell-success); }
 
 html[data-terminal-ui="shell-v2"] .command-output {
   width: 100%;
@@ -367,18 +384,115 @@ html[data-terminal-ui="shell-v2"] .command-output {
   color: var(--shell-text);
 }
 html[data-terminal-ui="shell-v2"] .command-output.success { border-left-color: var(--shell-success); background: var(--shell-success-soft); }
+html[data-terminal-ui="shell-v2"] .command-output.error { border-left-color: var(--shell-danger); background: var(--shell-danger-soft); }
 
-html[data-terminal-ui="shell-v2"] .editor {
+html[data-terminal-ui="shell-v2"] .native-selector {
+  width: 100%;
+  border: 1px solid var(--shell-line-strong);
+  background: #10171b;
+  color: var(--shell-text);
+}
+html[data-terminal-ui="shell-v2"] .native-selector .choice {
+  border-left: 3px solid transparent;
+  border-radius: 0;
+  color: var(--shell-text);
+}
+html[data-terminal-ui="shell-v2"] .native-selector .choice.selected {
+  border-left-color: var(--shell-accent);
+  background: var(--shell-focus);
+  color: var(--shell-accent);
+}
+html[data-terminal-ui="shell-v2"] .choice-description,
+html[data-terminal-ui="shell-v2"] .key-help { color: var(--shell-muted); }
+
+html[data-terminal-ui="shell-v2"] .pi-widget {
   border-color: var(--shell-line-strong);
+  background: #111b20;
+  color: var(--shell-muted);
+}
+html[data-terminal-ui="shell-v2"] .pi-widget strong { color: var(--shell-accent); }
+html[data-terminal-ui="shell-v2"] .pi-widget .danger { color: var(--shell-danger); }
+html[data-terminal-ui="shell-v2"] .notification {
+  max-width: 100%;
+  border-color: var(--shell-line-strong);
+  background: #10171b;
+  color: var(--shell-text);
+}
+html[data-terminal-ui="shell-v2"] .notification.success { border-color: #375645; background: var(--shell-success-soft); color: var(--shell-success); }
+html[data-terminal-ui="shell-v2"] .notification.warning { border-color: #66552e; background: var(--shell-warning-soft); color: var(--shell-warning); }
+html[data-terminal-ui="shell-v2"] .child-progress {
+  width: 100%;
+  border-color: var(--shell-line-strong);
+  background: #10171b;
+  color: var(--shell-text);
+}
+html[data-terminal-ui="shell-v2"] .child-head {
+  border-bottom-color: var(--shell-line);
+  background: var(--shell-panel-2);
+  color: var(--shell-muted);
+}
+html[data-terminal-ui="shell-v2"] .child-log { color: var(--shell-text); }
+html[data-terminal-ui="shell-v2"] .proof-links a {
+  border-color: var(--shell-line-strong);
+  background: #10171b;
+  color: var(--shell-accent);
+}
+html[data-terminal-ui="shell-v2"] .proof-error {
+  border-color: var(--shell-danger);
+  background: var(--shell-danger-soft);
+  color: var(--shell-danger);
+}
+
+html[data-terminal-ui="shell-v2"] .terminal-bottom {
+  gap: 6px;
+  padding-top: 5px;
+  border-top: 1px solid var(--shell-line);
+}
+html[data-terminal-ui="shell-v2"] .editor,
+html[data-terminal-ui="shell-v2"] .terminal-composer {
+  min-height: 52px;
+  border: 1px solid var(--shell-line-strong);
   border-radius: 0;
   background: #090d10;
   color: var(--shell-text);
 }
+html[data-terminal-ui="shell-v2"] .editor {
+  display: flex;
+  align-items: center;
+  padding: 9px 11px;
+}
 html[data-terminal-ui="shell-v2"] .editor-label { color: var(--shell-success); }
 html[data-terminal-ui="shell-v2"] .cursor { background: var(--shell-success); }
+html[data-terminal-ui="shell-v2"] .terminal-composer {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 9px 11px;
+}
+html[data-terminal-ui="shell-v2"] .terminal-composer-prompt {
+  color: var(--shell-success);
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+html[data-terminal-ui="shell-v2"] .terminal-composer-input {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--shell-muted);
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+html[data-terminal-ui="shell-v2"] .terminal-composer-hint {
+  color: #6f828b;
+  font-size: 10px;
+  white-space: nowrap;
+}
 html[data-terminal-ui="shell-v2"] .statusbar {
   padding: 5px 8px;
-  border-top: 1px solid var(--shell-line);
+  border-top: 0;
   background: #11191e;
   color: var(--shell-muted);
 }
@@ -388,6 +502,33 @@ html[data-terminal-ui="shell-v2"][data-mode="transcript"] .ask-overlay { width: 
 html[data-terminal-ui="shell-v2"][data-mode="transcript"] .scene { border-bottom-color: var(--shell-line); }
 
 @media (max-width: 760px) {
+  html[data-terminal-ui="shell-v2"] .recording-meta,
+  html[data-terminal-ui="shell-v2"] .evidence-badge { min-width: 0; max-width: 100%; box-sizing: border-box; }
+  html[data-terminal-ui="shell-v2"] .evidence-badge { white-space: normal; overflow-wrap: anywhere; }
+  html[data-terminal-ui="shell-v2"] .scene,
+  html[data-terminal-ui="shell-v2"] .scene-header,
+  html[data-terminal-ui="shell-v2"] .transcript,
+  html[data-terminal-ui="shell-v2"] .terminal-bottom,
+  html[data-terminal-ui="shell-v2"] .scene > *,
+  html[data-terminal-ui="shell-v2"] .transcript > *,
+  html[data-terminal-ui="shell-v2"] .terminal-bottom > * {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  html[data-terminal-ui="shell-v2"] .scene-header,
+  html[data-terminal-ui="shell-v2"] .transcript,
+  html[data-terminal-ui="shell-v2"] .terminal-bottom { width: 100%; }
+  html[data-terminal-ui="shell-v2"] .scene-header > div,
+  html[data-terminal-ui="shell-v2"] .pi-widget > *,
+  html[data-terminal-ui="shell-v2"] .action > *,
+  html[data-terminal-ui="shell-v2"] .plan-row > *,
+  html[data-terminal-ui="shell-v2"] .check,
+  html[data-terminal-ui="shell-v2"] .metric,
+  html[data-terminal-ui="shell-v2"] .child-head > * {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
   html[data-terminal-ui="shell-v2"] .initiative-brief-head,
   html[data-terminal-ui="shell-v2"] .initiative-brief-foot { flex-direction: column; gap: 4px; }
   html[data-terminal-ui="shell-v2"] .initiative-brief-grid { grid-template-columns: 1fr; }
@@ -398,6 +539,8 @@ html[data-terminal-ui="shell-v2"][data-mode="transcript"] .scene { border-bottom
   html[data-terminal-ui="shell-v2"] .briefing-grid p:last-child { border-bottom: 0; }
   html[data-terminal-ui="shell-v2"] .decision-receipt,
   html[data-terminal-ui="shell-v2"] .shell-command { grid-template-columns: 1fr; }
+  html[data-terminal-ui="shell-v2"] .terminal-composer { grid-template-columns: auto minmax(0, 1fr); }
+  html[data-terminal-ui="shell-v2"] .terminal-composer-hint { display: none; }
   html[data-terminal-ui="shell-v2"] .ask-body { grid-template-columns: 1fr; }
   html[data-terminal-ui="shell-v2"] .ask-options { border-right: 0; border-bottom: 1px solid var(--shell-line); }
 }
