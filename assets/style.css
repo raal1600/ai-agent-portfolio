@@ -223,6 +223,29 @@ h3 { font-size: clamp(1.35rem, 2.2vw, 2rem); line-height: 1.08; }
 .demo-panel-footer p strong { color: var(--ink); }
 .demo-panel-footer a { white-space: nowrap; font-weight: 700; }
 
+.artifact-demo { margin: 0; }
+.artifact-frame {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #deddd9;
+  box-shadow: var(--shadow);
+}
+.artifact-frame img { width: 100%; height: auto; transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .7s ease; }
+.artifact-frame:hover img { transform: scale(1.012); filter: contrast(1.015); }
+.artifact-demo figcaption {
+  margin-top: 22px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 34px;
+  font-size: .9rem;
+}
+.artifact-demo figcaption p { max-width: 820px; margin: 0; }
+.artifact-demo figcaption p strong { color: var(--ink); }
+.artifact-demo figcaption a { flex: none; font-weight: 750; white-space: nowrap; }
+
 .evidence-copy { max-width: 760px; }
 .evidence-copy h2 { margin-bottom: 24px; }
 .evidence-links { display: flex; flex-direction: column; align-items: flex-start; gap: 9px; margin-top: 25px; }
@@ -381,6 +404,8 @@ h3 { font-size: clamp(1.35rem, 2.2vw, 2rem); line-height: 1.08; }
   .demo-stage { min-height: 0; padding: 12px 0 0; background: transparent; }
   .demo-panel video { border-radius: 10px; }
   .demo-panel-footer { align-items: flex-start; flex-direction: column; }
+  .artifact-frame { border-radius: 10px; }
+  .artifact-demo figcaption { flex-direction: column; gap: 12px; }
   .workflow-chapters { margin-left: -6px; margin-right: -6px; grid-template-columns: repeat(7, minmax(138px, 1fr)); }
   .workflow-chapter { min-height: 80px; padding: 12px; grid-template-columns: 25px 1fr; gap: 7px; }
   .workflow-chapter strong { font-size: .8rem; }
@@ -454,4 +479,5 @@ h3 { font-size: clamp(1.35rem, 2.2vw, 2rem); line-height: 1.08; }
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
   .js [data-reveal] { opacity: 1; transform: none; }
   .demo-filmstrip { scroll-behavior: auto; scroll-snap-type: none; }
+  .artifact-frame img { transform: none !important; }
 }
