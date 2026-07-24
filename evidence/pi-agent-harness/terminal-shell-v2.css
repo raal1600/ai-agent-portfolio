@@ -114,6 +114,70 @@ html[data-terminal-ui="shell-v2"] .shell-tag {
   white-space: nowrap;
 }
 
+html[data-terminal-ui="shell-v2"] .initiative-brief {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--shell-line-strong);
+  border-left: 4px solid var(--shell-accent);
+  background: #10181d;
+}
+html[data-terminal-ui="shell-v2"] .initiative-brief-head {
+  padding: 7px 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--shell-line);
+  background: #18242a;
+  color: var(--shell-accent);
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: .045em;
+}
+html[data-terminal-ui="shell-v2"] .initiative-brief-head span:last-child {
+  color: var(--shell-text);
+  font-weight: 650;
+}
+html[data-terminal-ui="shell-v2"] .initiative-brief-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+html[data-terminal-ui="shell-v2"] .initiative-brief-field {
+  min-width: 0;
+  padding: 7px 10px;
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 10px;
+  border-right: 1px solid var(--shell-line);
+  border-bottom: 1px solid var(--shell-line);
+  color: var(--shell-text);
+  font-size: 12px;
+  line-height: 1.35;
+}
+html[data-terminal-ui="shell-v2"] .initiative-brief-field:nth-child(2n) { border-right: 0; }
+html[data-terminal-ui="shell-v2"] .initiative-brief-field.wide {
+  grid-column: 1 / -1;
+  border-right: 0;
+}
+html[data-terminal-ui="shell-v2"] .initiative-brief-field strong {
+  color: var(--shell-success);
+  font-size: 10px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+html[data-terminal-ui="shell-v2"] .initiative-brief-field.unresolved strong { color: var(--shell-warning); }
+html[data-terminal-ui="shell-v2"] .initiative-brief-foot {
+  padding: 6px 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 22px;
+  background: #090d10;
+  color: var(--shell-muted);
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
 html[data-terminal-ui="shell-v2"] .agent-briefing {
   border: 1px solid var(--shell-line-strong);
   background: #10181d;
@@ -236,6 +300,14 @@ html[data-terminal-ui="shell-v2"] .ask-footer {
 }
 html[data-terminal-ui="shell-v2"] .ask-version { color: var(--shell-accent); }
 
+html[data-terminal-ui="shell-v2"] .reviewer-scene .transcript { gap: 5px; }
+html[data-terminal-ui="shell-v2"] .reviewer-scene .briefing-grid p { padding-top: 5px; padding-bottom: 5px; font-size: 11px; }
+html[data-terminal-ui="shell-v2"] .reviewer-scene .ask-title { padding-top: 5px; padding-bottom: 5px; }
+html[data-terminal-ui="shell-v2"] .reviewer-scene .ask-prompt { padding-top: 5px; padding-bottom: 5px; }
+html[data-terminal-ui="shell-v2"] .reviewer-scene .ask-option { padding-top: 3px; padding-bottom: 3px; }
+html[data-terminal-ui="shell-v2"] .reviewer-scene .ask-detail { padding-top: 5px; padding-bottom: 5px; }
+html[data-terminal-ui="shell-v2"] .reviewer-scene .ask-footer { padding-top: 4px; padding-bottom: 4px; }
+
 html[data-terminal-ui="shell-v2"] .action-list {
   width: 100%;
   gap: 1px;
@@ -316,6 +388,11 @@ html[data-terminal-ui="shell-v2"][data-mode="transcript"] .ask-overlay { width: 
 html[data-terminal-ui="shell-v2"][data-mode="transcript"] .scene { border-bottom-color: var(--shell-line); }
 
 @media (max-width: 760px) {
+  html[data-terminal-ui="shell-v2"] .initiative-brief-head,
+  html[data-terminal-ui="shell-v2"] .initiative-brief-foot { flex-direction: column; gap: 4px; }
+  html[data-terminal-ui="shell-v2"] .initiative-brief-grid { grid-template-columns: 1fr; }
+  html[data-terminal-ui="shell-v2"] .initiative-brief-field,
+  html[data-terminal-ui="shell-v2"] .initiative-brief-field.wide { grid-column: auto; grid-template-columns: 1fr; gap: 3px; border-right: 0; }
   html[data-terminal-ui="shell-v2"] .briefing-grid { grid-template-columns: 1fr; }
   html[data-terminal-ui="shell-v2"] .briefing-grid p { border-right: 0; border-bottom: 1px solid var(--shell-line); }
   html[data-terminal-ui="shell-v2"] .briefing-grid p:last-child { border-bottom: 0; }
