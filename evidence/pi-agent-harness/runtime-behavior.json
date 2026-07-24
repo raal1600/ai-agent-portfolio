@@ -1,21 +1,21 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-07-23T13:52:13.899Z",
+  "capturedAt": "2026-07-24T02:18:28.389Z",
   "result": "pass",
   "evidenceKind": "actual-private-core-execution",
   "fixture": "synthetic-temporary-filesystem",
   "runtime": {
     "node": "v24.11.1",
     "platform": "darwin",
-    "durationMs": 62.879,
+    "durationMs": 21.958,
     "modules": [
       {
         "logicalName": "yolo-control/core.mjs",
-        "sha256": "312d142dc20f26685be000e4cc8273ff83572b9f63c2e478cb2ed4bb3e189367"
+        "sha256": "8b5381442d9fef292492bc81b8c5531ca0cc83189a283302c97aaddc1db746e3"
       },
       {
         "logicalName": "pi-yolo-delivery/core.mjs",
-        "sha256": "e6d1e7f1a61dc286ac48d541729ce51d9354f2d9884d66c6116bfd34b6929517"
+        "sha256": "a7c9b35d41ea33a8b43f8df401aaffab1de400df709fdbefb637e73cac898b98"
       }
     ]
   },
@@ -47,22 +47,11 @@
     "explicitResumeAccepted": true,
     "nonCanonicalQueueRejected": true,
     "canonicalQueueAccepted": true,
-    "mappedTargets": [
-      "a",
-      "b"
-    ],
-    "mappingOrder": [
-      "start-A",
-      "end-A",
-      "start-B",
-      "end-B"
-    ],
+    "mappedTargets": ["a", "b"],
+    "mappingOrder": ["start-A", "end-A", "start-B", "end-B"],
     "maximumMappingConcurrency": 1,
     "parallelGroupSize": 2,
-    "parallelGroupBatches": [
-      "batch-a",
-      "batch-b"
-    ],
+    "parallelGroupBatches": ["batch-a", "batch-b"],
     "mismatchedTargetsExcluded": true,
     "renewalLimitAfterTwoAttempts": 5,
     "oversizedRenewalRejected": true,
@@ -80,33 +69,43 @@
     "oldOwnerFencedAfterTakeover": true,
     "newOwnerOwnsAfterTakeover": true
   },
-  "testRun": {
-    "capturedAt": "2026-07-23T13:52:31.328023Z",
-    "result": "pass",
-    "runner": "node --test --test-reporter=spec",
-    "testFiles": 9,
-    "tests": 149,
-    "passed": 149,
-    "failed": 0,
-    "cancelled": 0,
-    "skipped": 0,
-    "durationMs": 933.608958,
-    "artifact": "pi-extension-tests.txt",
-    "artifactSha256": "753d1c941a819de36844b39abb3924293808045c769fcf40607c0837ea383ae4",
-    "logicalSuites": [
-      "yolo-control/core.test.mjs",
-      "pi-yolo-delivery/core.test.mjs",
-      "obsidian-boundary/core.test.mjs",
-      "obsidian-filesystem-first/filesystem-backend.test.mjs",
-      "obsidian-filesystem-first/folder-migration.test.mjs",
-      "pi-agent-inventory/automatic.test.mjs",
-      "pi-agent-inventory/core.test.mjs",
-      "pi-agent-inventory/launcher.test.mjs",
-      "pi-inventory-auto-sync/debounce.test.mjs"
-    ]
+  "capture": {
+    "kind": "actual-current-private-core-synthetic-fixture",
+    "capturedAt": "2026-07-24T02:18:28.389Z",
+    "sourceModules": ["yolo-control/core.mjs", "pi-yolo-delivery/core.mjs"],
+    "fixture": "temporary synthetic filesystem only",
+    "privateSourceExcluded": true
   },
   "publicRunner": {
     "artifact": "runtime-scenario.mjs",
     "sha256": "ec34264a5a826991cfab7f07827158e28171892a418a2189a35734bcf5233f5f"
-  }
+  },
+  "testRun": {
+    "capturedAt": "2026-07-24T02:20:46Z",
+    "command": "node --test --test-reporter=spec (9 current extension test files)",
+    "runner": "node --test --test-reporter=spec",
+    "suites": 0,
+    "testFiles": 9,
+    "logicalSuites": 9,
+    "tests": 155,
+    "passed": 155,
+    "failed": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0,
+    "durationMs": 812.260375,
+    "artifact": "pi-extension-tests.txt",
+    "artifactSha256": "610e1c7b2ec8311dc332268c8986aa5b301015fd2ac18814f0d9443423e94f71",
+    "sha256": "610e1c7b2ec8311dc332268c8986aa5b301015fd2ac18814f0d9443423e94f71",
+    "namedChecks": [
+      "parallel dispatch grouping requires matching explicit authority and never exceeds two",
+      "dedicated YOLO subagents preserve parent-only Obsidian authority"
+    ]
+  },
+  "notes": [
+    "Actual current private control and delivery cores were imported by the public synthetic runner.",
+    "The fixture used temporary synthetic state; no private notes, sessions, credentials, or production data are included.",
+    "Recordings 1–2 are sanitized proposed /plan on concept recreations; recordings 3–4 are sanitized recreations of reviewed current /yolo behavior.",
+    "The capture proves only the listed runtime safeguards and named current extension-test results at this point in time, not the synthetic V1-S1 story, next-batch state, commits, pushes, or deployment authority."
+  ]
 }

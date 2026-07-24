@@ -1,92 +1,26 @@
 <!doctype html>
-<html lang="en" data-mode="transcript">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SoherAgent 1 of 5 — Describe the change</title>
-  <script src="terminal-demo.js"></script>
-  <link rel="stylesheet" href="terminal-demo.css">
-</head>
-<body>
-<main class="capture">
-  <header class="recording-meta">
-    <div><strong>SoherAgent · 1 of 5</strong> · describe the change</div>
-    <div class="evidence-badge">Recreation · synthetic task</div>
-  </header>
-  <div class="terminal" role="region" aria-label="Terminal recreation showing a user describing a retry-status change and the agent preparing it for planning without starting code">
-    <div class="titlebar"><div class="lights"><span class="light"></span><span class="light"></span><span class="light"></span></div><div class="titlebar-title">pi · retry-status-demo</div></div>
-    <div class="screen timeline-4">
-
-      <section class="scene">
-        <header class="scene-header">
-          <div><h2 class="scene-step">1/5 · Describe</h2><div class="scene-state">Tell the agent what you need in normal language.</div></div>
-          <div class="scene-boundary">Planning first · no code changes</div>
-        </header>
-        <div class="transcript">
-          <div class="turn agent"><span class="speaker agent-name">SoherAgent</span>What should we improve?</div>
-        </div>
-        <div class="terminal-bottom">
-          <div class="editor"><span class="editor-label">›</span>Add a clear retry status so people know when a failed job will try again.<span class="cursor"></span></div>
-          <div class="statusbar"><div class="status-main"><strong>1/5 Describe</strong> · waiting for your request · <span class="off">code untouched</span></div><div class="status-keys">Enter send · ↑↓ history</div></div>
-        </div>
-      </section>
-
-      <section class="scene">
-        <header class="scene-header">
-          <div><h2 class="scene-step">1/5 · Describe</h2><div class="scene-state">The agent confirms the goal before making a plan.</div></div>
-          <div class="scene-boundary">One focused question · no assumptions</div>
-        </header>
-        <div class="transcript">
-          <div class="turn user"><span class="speaker">You</span>Add a clear retry status so people know when a failed job will try again.</div>
-          <div class="turn agent"><span class="speaker agent-name">SoherAgent</span>I’ll turn that into a plan before touching code. Should the status show the last error and the next retry time?</div>
-        </div>
-        <div class="terminal-bottom">
-          <div class="editor"><span class="editor-label">›</span>Yes. Keep the existing retry rules.<span class="cursor"></span></div>
-          <div class="statusbar"><div class="status-main"><strong>1/5 Describe</strong> · clarifying the outcome · <span class="off">code untouched</span></div><div class="status-keys">Enter send · Esc cancel</div></div>
-        </div>
-      </section>
-
-      <section class="scene">
-        <header class="scene-header">
-          <div><h2 class="scene-step">1/5 · Describe</h2><div class="scene-state">The request becomes a clear, reviewable idea.</div></div>
-          <div class="scene-boundary">Agent actions are visible as they happen</div>
-        </header>
-        <div class="transcript">
-          <div class="turn user"><span class="speaker">You</span>Yes. Keep the existing retry rules.</div>
-          <div class="action-list">
-            <div class="action done"><span class="action-label">saved</span><span>Retry-status idea</span><span class="action-state">done</span></div>
-            <div class="action done"><span class="action-label">captured</span><span>Status, last error, and next retry time</span><span class="action-state">done</span></div>
-            <div class="action done"><span class="action-label">bounded</span><span>Existing retry behavior stays unchanged</span><span class="action-state">done</span></div>
-          </div>
-        </div>
-        <div class="terminal-bottom">
-          <div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div>
-          <div class="statusbar"><div class="status-main"><strong>1/5 Describe</strong> · preparing the idea · <span class="off">code untouched</span></div><div class="status-keys">agent working · Esc stop</div></div>
-        </div>
-      </section>
-
-      <section class="scene">
-        <header class="scene-header">
-          <div><h2 class="scene-step">1/5 · Describe</h2><div class="scene-state">The idea is ready for your review.</div></div>
-          <div class="scene-boundary">Next decision: review the plan</div>
-        </header>
-        <div class="transcript">
-          <div class="turn result"><span class="speaker agent-name">SoherAgent</span><strong>Idea ready for review.</strong><br>The goal and limits are recorded. No code has started.</div>
-          <div class="checks">
-            <div class="check"><strong>✓ Goal</strong> · make failed jobs understandable</div>
-            <div class="check"><strong>✓ Show</strong> · status, error, next retry</div>
-            <div class="check no"><strong>× Change</strong> · retry rules</div>
-            <div class="check no"><strong>× Start</strong> · implementation</div>
-          </div>
-        </div>
-        <div class="terminal-bottom">
-          <div class="editor"><span class="editor-label">›</span>Show me the plan.<span class="cursor"></span></div>
-          <div class="statusbar"><div class="status-main"><strong>1/5 Describe</strong> · <span class="ok">idea ready</span> · <span class="off">code untouched</span></div><div class="status-keys">Enter continue · ↑↓ history</div></div>
-        </div>
-      </section>
-
-    </div>
-  </div>
-</main>
-</body>
-</html>
+<html lang="en" data-mode="transcript"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Plan the idea</title><script src="terminal-demo.js"></script><link rel="stylesheet" href="terminal-demo.css"></head><body><main class="capture"><header class="recording-meta"><h1><strong>SoherAgent · 1 of 5</strong> · Plan the idea</h1><div class="evidence-badge">Proposed /plan concept · sanitized recreation</div></header><div class="terminal" role="region" aria-label="Sanitized concept recreation of proposed plan automation for Retry Status Clarity"><div class="titlebar"><div class="lights"><span class="light"></span><span class="light"></span><span class="light"></span></div><div class="titlebar-title">pi · Retry Status Clarity</div><div class="titlebar-meta">Pi 0.80.7 · light · max</div></div><div class="screen"><section class="scene" id="scene-01" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 1 of 12 — Turn on autonomous planning</h2><div class="scene-state">Start the proposed planning orchestrator with one command.</div></div><div class="scene-boundary">Proposed command · not implemented runtime evidence</div></header>
+<div class="transcript"><div class="turn agent"><span class="speaker agent-name">SoherAgent</span><strong>/plan is a proposed automation concept.</strong> It would load the three current planning skills in order while keeping mandatory decisions with you.</div><div class="turn user"><span class="speaker agent-name">You</span>/plan on</div><div class="editor"><span class="editor-label">›</span>/plan on<span class="cursor"></span></div></div><div class="terminal-bottom"><div class="statusbar"><div class="status-main"><strong>Plan the idea</strong> · proposed /plan enabled · waiting for one brief</div><div class="status-keys">concept recreation · no execution authority</div></div></div></section><section class="scene" id="scene-02" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 2 of 12 — Share the brief</h2><div class="scene-state">Give one plain-language brief in the normal input surface.</div></div><div class="scene-boundary">Freeform brief · not ask_user</div></header>
+<div class="transcript"><div class="input-box"><span class="label">Your planning brief</span>Retry Status Clarity: make failed jobs show status, the latest safe error, and the next retry time without changing retry rules.</div><div class="turn user"><span class="speaker agent-name">You</span>Retry Status Clarity: make failed jobs show status, the latest safe error, and the next retry time without changing retry rules.</div></div><div class="terminal-bottom"><div class="statusbar"><div class="status-main"><strong>Plan the idea</strong> · proposed /plan concept · planning only</div><div class="status-keys">concept recreation · not implemented runtime</div></div></div></section><section class="scene" id="scene-03" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 3 of 12 — Load idea planning</h2><div class="scene-state">After the brief, /plan automatically loads develop-obsidian-idea.</div></div><div class="scene-boundary">Internal skill step · candidate-first discovery</div></header>
+<div class="transcript"><div class="action-list"><div class="action done"><span class="action-label">loaded</span><span>develop-obsidian-idea</span><span class="action-state">loaded</span></div><div class="action done"><span class="action-label">search</span><span>Active ideas and initiative Inbox</span><span class="action-state">bounded</span></div><div class="action done"><span class="action-label">match</span><span>No existing idea exactly matches this brief</span><span class="action-state">new capture</span></div><div class="action stop"><span class="action-label">authority</span><span>No specification, handoff, or worker</span><span class="action-state">none</span></div></div></div><div class="terminal-bottom"><div class="statusbar"><div class="status-main"><strong>Plan the idea</strong> · proposed /plan concept · planning only</div><div class="status-keys">concept recreation · not implemented runtime</div></div></div></section><section class="scene" id="scene-04" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 4 of 12 — Weigh evidence</h2><div class="scene-state">Evaluate evidence for and against before asking for approval.</div></div><div class="scene-boundary">Claims remain inspectable</div></header>
+<div class="transcript"><div class="plan-card"><div class="card-title">Evidence check</div><div class="plan-row"><span class="plan-number">+</span><span>Failed-job viewers cannot see what happens next</span><span class="plan-note">for</span></div><div class="plan-row"><span class="plan-number">+</span><span>Existing data exposes retry time and safe error</span><span class="plan-note">for</span></div><div class="plan-row"><span class="plan-number">−</span><span>More status detail may add noise</span><span class="plan-note">against</span></div><div class="plan-row"><span class="plan-number">?</span><span>Error text must remain redacted</span><span class="plan-note">constraint</span></div></div></div><div class="terminal-bottom"><div class="statusbar"><div class="status-main"><strong>Plan the idea</strong> · proposed /plan concept · planning only</div><div class="status-keys">concept recreation · not implemented runtime</div></div></div></section><section class="scene" id="scene-05" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 5 of 12 — Set scope boundaries</h2><div class="scene-state">Propose scope and explicit non-goals.</div></div><div class="scene-boundary">No execution or mutation yet</div></header>
+<div class="transcript"><div class="checks"><div class="check "><strong>In scope</strong> · status, latest safe error, next retry time</div><div class="check no"><strong>Non-goal</strong> · retry count, timing, or backoff rules</div><div class="check no"><strong>Non-goal</strong> · operator dashboard redesign</div><div class="check no"><strong>Not authorized</strong> · implementation, handoff, commit, push, deploy</div></div></div><div class="terminal-bottom"><div class="statusbar"><div class="status-main"><strong>Plan the idea</strong> · proposed /plan concept · planning only</div><div class="status-keys">concept recreation · not implemented runtime</div></div></div></section><section class="scene" id="scene-06" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 6 of 12 — Choose a working name</h2><div class="scene-state">Choose the durable working name.</div></div><div class="scene-boundary">Focused mandatory decision</div></header>
+<div class="transcript"><div class="ask-overlay" role="group" aria-label="Static ask_user depiction, scene 6 of 12"><div class="ask-title"><span>ask_user</span><span class="ask-version">v0.12.0</span></div><div><div class="ask-prompt"><strong>Question / context</strong><br>What working name should the initiative use?</div><div class="ask-search">⌕ Filter options</div></div><div class="ask-body"><div class="ask-options"><div class="ask-option selected"><span>></span><span>Retry Status Clarity<small>Matches the brief and intended outcome</small></span></div><div class="ask-option"><span></span><span>Retry Visibility<small>Shorter alternative</small></span></div><div class="ask-option"><span></span><span>Return to brief<small>Revise before naming</small></span></div></div><div class="ask-detail"><strong>Option preview</strong>Use “Retry Status Clarity” for the initiative capsule, idea, specification, and ticket provenance.</div></div><div class="ask-footer"><span>↑↓ navigate · Enter select · Esc cancel · alt+o hide/show · PgUp/PgDn question</span><span>focused decision</span></div></div></div><div class="terminal-bottom"><div class="statusbar"><div class="status-main"><strong>Plan the idea</strong> · proposed /plan concept · planning only</div><div class="status-keys">concept recreation · not implemented runtime</div></div></div></section><section class="scene" id="scene-07" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 7 of 12 — Prefer Pi as implementer</h2><div class="scene-state">Record a preferred implementer for later.</div></div><div class="scene-boundary">Preference only · grants no authority</div></header>
+<div class="transcript"><div class="ask-overlay" role="group" aria-label="Static ask_user depiction, scene 7 of 12"><div class="ask-title"><span>ask_user</span><span class="ask-version">v0.12.0</span></div><div><div class="ask-prompt"><strong>Question / context</strong><br>Who should be the preferred implementer?</div><div class="ask-search">⌕ Filter options</div></div><div class="ask-body"><div class="ask-options"><div class="ask-option selected"><span>></span><span>Pi<small>Preferred later implementer; no dispatch now</small></span></div><div class="ask-option"><span></span><span>Undecided<small>Choose during a future handoff</small></span></div></div><div class="ask-detail"><strong>Option preview</strong>Pi is recorded as a sticky implementer preference only. Planning does not create a worker, lease, or execution authority.</div></div><div class="ask-footer"><span>↑↓ navigate · Enter select · Esc cancel · alt+o hide/show · PgUp/PgDn question</span><span>focused decision</span></div></div></div><div class="terminal-bottom"><div class="statusbar"><div class="status-main"><strong>Plan the idea</strong> · proposed /plan concept · planning only</div><div class="status-keys">concept recreation · not implemented runtime</div></div></div></section><section class="scene" id="scene-08" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 8 of 12 — Accept reviewer limitation</h2><div class="scene-state">Record the reviewer preference and disclose the independence limit.</div></div><div class="scene-boundary">Preference only · warning visibly accepted</div></header>
+<div class="transcript"><div class="ask-overlay" role="group" aria-label="Static ask_user depiction, scene 8 of 12"><div class="ask-title"><span>ask_user</span><span class="ask-version">v0.12.0</span></div><div><div class="ask-prompt"><strong>Question / context</strong><br>Who should be the preferred reviewer?</div><div class="ask-search">⌕ Filter options</div></div><div class="ask-body"><div class="ask-options"><div class="ask-option selected"><span>></span><span>Pi — accept same-agent independence warning<small>Use Pi in a fresh, phase-separated read-only review</small></span></div><div class="ask-option"><span></span><span>Undecided<small>Choose a different reviewer during handoff</small></span></div></div><div class="ask-detail"><strong>Option preview</strong><strong>Warning accepted:</strong> using Pi for both preferences is not model-level independence. Any later review must be freshly scoped, phase-separated, and read-only.</div></div><div class="ask-footer"><span>↑↓ navigate · Enter select · Esc cancel · alt+o hide/show · PgUp/PgDn question</span><span>focused decision</span></div></div></div><div class="terminal-bottom"><div class="statusbar"><div class="status-main"><strong>Plan the idea</strong> · proposed /plan concept · planning only</div><div class="status-keys">concept recreation · not implemented runtime</div></div></div></section><section class="scene" id="scene-09" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 9 of 12 — Assemble the capsule</h2><div class="scene-state">Assemble the initiative capsule from approved inputs.</div></div><div class="scene-boundary">Still a proposed planning artifact</div></header>
+<div class="transcript"><div class="plan-card"><div class="card-title">Initiative capsule</div><div class="plan-row"><span class="plan-number">name</span><span>Retry Status Clarity</span><span class="plan-note">working name</span></div><div class="plan-row"><span class="plan-number">outcome</span><span>Explain failed status, safe error, and next retry</span><span class="plan-note">goal</span></div><div class="plan-row"><span class="plan-number">rules</span><span>Do not change retry behavior</span><span class="plan-note">non-goal</span></div><div class="plan-row"><span class="plan-number">prefs</span><span>Pi implementer · Pi reviewer with accepted warning</span><span class="plan-note">sticky only</span></div></div></div><div class="terminal-bottom"><div class="statusbar"><div class="status-main"><strong>Plan the idea</strong> · proposed /plan concept · planning only</div><div class="status-keys">concept recreation · not implemented runtime</div></div></div></section><section class="scene" id="scene-10" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 10 of 12 — Approve the idea</h2><div class="scene-state">Make the required final idea disposition.</div></div><div class="scene-boundary">Focused mandatory decision</div></header>
+<div class="transcript"><div class="ask-overlay" role="group" aria-label="Static ask_user depiction, scene 10 of 12"><div class="ask-title"><span>ask_user</span><span class="ask-version">v0.12.0</span></div><div><div class="ask-prompt"><strong>Question / context</strong><br>What is the final idea disposition?</div><div class="ask-search">⌕ Filter options</div></div><div class="ask-body"><div class="ask-options"><div class="ask-option selected"><span>></span><span>Approve idea<small>Allow specification planning to continue</small></span></div><div class="ask-option"><span></span><span>Hold<small>Keep evidence without advancing</small></span></div><div class="ask-option"><span></span><span>Decline<small>Record why planning should stop</small></span></div></div><div class="ask-detail"><strong>Option preview</strong>Approve only the idea, scope, evidence, and non-goals. This is not implementation or publication authority.</div></div><div class="ask-footer"><span>↑↓ navigate · Enter select · Esc cancel · alt+o hide/show · PgUp/PgDn question</span><span>focused decision</span></div></div></div><div class="terminal-bottom"><div class="statusbar"><div class="status-main"><strong>Plan the idea</strong> · proposed /plan concept · planning only</div><div class="status-keys">concept recreation · not implemented runtime</div></div></div></section><section class="scene" id="scene-11" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 11 of 12 — Save the checkpoint</h2><div class="scene-state">Write and verify the durable idea checkpoint sequentially.</div></div><div class="scene-boundary">Parent-owned, approval-gated Obsidian mutations</div></header>
+<div class="transcript"><div class="action-list"><div class="action done"><span class="action-label">write 1</span><span>Initiative capsule</span><span class="action-state">saved</span></div><div class="action done"><span class="action-label">write 2</span><span>Approved idea decision and preferences</span><span class="action-state">saved</span></div><div class="action done"><span class="action-label">link check</span><span>Brief → initiative → approved idea</span><span class="action-state">verified</span></div><div class="action stop"><span class="action-label">execution</span><span>No handoff, lease, or worker created</span><span class="action-state">false</span></div></div></div><div class="terminal-bottom"><div class="statusbar"><div class="status-main"><strong>Plan the idea</strong> · proposed /plan concept · planning only</div><div class="status-keys">concept recreation · not implemented runtime</div></div></div></section><section class="scene" id="scene-12" data-duration="7000" data-poster>
+<header class="scene-header"><div><h2 class="scene-step">Scene 12 of 12 — Continue from the checkpoint</h2><div class="scene-state">The idea is durable, so /plan can load specification planning without another command.</div></div><div class="scene-boundary">Approved planning is not execution authority</div></header>
+<div class="transcript"><div class="turn result"><span class="speaker agent-name">SoherAgent</span><strong>Durable checkpoint: idea approved.</strong> Proposed /plan now continues by loading develop-obsidian-spec internally.</div><div class="checks"><div class="check "><strong>Durable</strong> · initiative capsule + idea approval + provenance</div><div class="check "><strong>Next internal step</strong> · develop-obsidian-spec</div><div class="check no"><strong>Implementation</strong> · false</div><div class="check no"><strong>Publication</strong> · false</div></div></div><div class="terminal-bottom"><div class="statusbar"><div class="status-main"><strong>Plan the idea</strong> · checkpoint saved · /plan continues</div><div class="status-keys">concept recreation · no execution authority</div></div></div></section></div></div></main></body></html>

@@ -54,14 +54,21 @@ const setupDemoSwitcher = () => {
 const setupWorkflowDemo = () => {
   document.querySelectorAll('[data-workflow-demo]').forEach((demo) => {
     const video = demo.querySelector('video');
+    const filmstrip = demo.querySelector('.demo-filmstrip');
     const chapters = [...demo.querySelectorAll('[data-chapter-start]')];
     const status = demo.querySelector('[data-chapter-status]');
     if (!video || !chapters.length) return;
     let activeIndex = -1;
 
-    const setActive = (index) => {
+    const scrollToChapter = (chapter) => {
+      if (!filmstrip || !chapter) return;
+      const left = chapter.offsetLeft - filmstrip.offsetLeft - Math.max(0, (filmstrip.clientWidth - chapter.clientWidth) / 2);
+      filmstrip.scrollTo({ left, behavior: reduceMotion ? 'auto' : 'smooth' });
+    };
+
+    const setActive = (index, scroll = true) => {
       const active = Math.max(0, Math.min(index, chapters.length - 1));
-      if (active === activeIndex) return;
+      if (active === activeIndex) return false;
       activeIndex = active;
       chapters.forEach((chapter, chapterIndex) => {
         if (chapterIndex === active) chapter.setAttribute('aria-current', 'step');
@@ -75,33 +82,21 @@ const setupWorkflowDemo = () => {
         strong.textContent = `Step ${active + 1} · ${title}.`;
         status.replaceChildren(strong, document.createTextNode(description ? ` ${description}.` : ''));
       }
-    };
-
-    const seek = (index) => {
-      const start = Number(chapters[index].dataset.chapterStart) || 0;
-      const applySeek = () => {
-        video.currentTime = start + .01;
-        video.play().catch(() => {});
-      };
-      if (video.readyState >= 1) applySeek();
-      else video.addEventListener('loadedmetadata', applySeek, { once: true });
-      setActive(index);
+      if (scroll) scrollToChapter(chapter);
+      return true;
     };
 
     chapters.forEach((chapter, index) => {
       chapter.addEventListener('click', (event) => {
+        const start = Number(chapter.dataset.chapterStart);
+        const validClick = event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
+        const usableVideo = video.readyState >= 1 && !video.error && video.networkState !== HTMLMediaElement.NETWORK_NO_SOURCE;
+        const validTime = Number.isFinite(start) && start >= 0 && Number.isFinite(video.duration) && start < video.duration;
+        if (!validClick || !usableVideo || !validTime) return;
         event.preventDefault();
-        seek(index);
-      });
-      chapter.addEventListener('keydown', (event) => {
-        if (!['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'].includes(event.key)) return;
-        event.preventDefault();
-        let next = index;
-        if (event.key === 'Home') next = 0;
-        else if (event.key === 'End') next = chapters.length - 1;
-        else if (event.key === 'ArrowRight' || event.key === 'ArrowDown') next = (index + 1) % chapters.length;
-        else next = (index - 1 + chapters.length) % chapters.length;
-        chapters[next].focus();
+        video.currentTime = start + .01;
+        video.play().catch(() => {});
+        setActive(index);
       });
     });
 
@@ -110,7 +105,7 @@ const setupWorkflowDemo = () => {
       const active = chapters.reduce((result, chapter, index) => time >= Number(chapter.dataset.chapterStart) ? index : result, 0);
       setActive(active);
     });
-    setActive(0);
+    setActive(0, false);
   });
 };
 

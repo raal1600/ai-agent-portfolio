@@ -8,13 +8,13 @@ A small public portfolio for two private projects, presented through concise dem
 
 **[Open the five-step workflow demo](https://raal1600.github.io/ai-agent-portfolio/projects/pi-agent-harness.html#runtime-title)**
 
-Five terminal clips follow one synthetic task through description, plan review, exact authorization, bounded delivery, and verification. The first four are clearly labeled recreations; the fifth visualizes dated data captured from the private cores and test suite.
+Five chaptered terminal recordings follow **Retry Status Clarity** across the six planning, handoff, implementation, and review skills: a clearly labeled proposed `/plan on` concept leads into current `/yolo on` exact-batch authorization, reviewed delivery, and a required stop. Recordings 1–2 are sanitized concept recreations; recordings 3–4 recreate reviewed current `/yolo` behavior; recording 5 shows actual evidence from 30 runtime assertions and 155 passing tests.
 
 Evidence:
 
 - [Machine-readable runtime result](evidence/pi-agent-harness/runtime-behavior.json)
 - [Public synthetic runner](evidence/pi-agent-harness/runtime-scenario.mjs)
-- [Genuine 149-test Node output](evidence/pi-agent-harness/pi-extension-tests.txt)
+- [Genuine 155-test Node output](evidence/pi-agent-harness/pi-extension-tests.txt)
 
 ## SoherDocs
 

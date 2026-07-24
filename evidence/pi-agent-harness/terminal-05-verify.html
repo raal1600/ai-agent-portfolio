@@ -1,182 +1,33 @@
-<!doctype html>
-<html lang="en" data-mode="transcript">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SoherAgent 5 of 5 — Verify the safeguards</title>
-  <script src="terminal-demo.js"></script>
-  <link rel="stylesheet" href="terminal-demo.css">
-  <style>
-    .proof-error{display:none;position:fixed;inset:24px;z-index:20;align-items:center;justify-content:center;border:2px solid var(--danger);background:var(--danger-soft);color:var(--danger);font:700 22px/1.5 var(--mono);text-align:center}.proof-error a{color:inherit}
-  </style>
-</head>
-<body>
-<div class="proof-error" role="alert">Actual result data could not be loaded.<br><a href="runtime-behavior.json">Open runtime-behavior.json directly.</a></div>
-<main class="capture">
-  <header class="recording-meta">
-    <div><strong>SoherAgent · 5 of 5</strong> · verify the safeguards</div>
-    <div class="evidence-badge actual">Visualization of actual captured results</div>
-  </header>
-  <div class="terminal" role="region" aria-label="Terminal visualization of actual captured SoherAgent private-core and test results using synthetic temporary fixtures">
-    <div class="titlebar"><div class="lights"><span class="light"></span><span class="light"></span><span class="light"></span></div><div class="titlebar-title">terminal · public runner + captured Node test output</div></div>
-    <div class="screen timeline-5">
+<!doctype html><html lang="en" data-mode="transcript" data-proof-required><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Verify the boundaries</title><script>window.terminalDemoDataReady=new Promise((resolve,reject)=>{window.resolveTerminalDemoData=resolve;window.rejectTerminalDemoData=reject})</script><script src="terminal-demo.js"></script><link rel="stylesheet" href="terminal-demo.css"></head><body><main class="capture"><header class="recording-meta"><h1><strong>SoherAgent · 5 of 5</strong> · Verify the boundaries</h1><div class="evidence-badge actual">Actual captured core/test results</div></header><div class="terminal" role="region" aria-label="Terminal visualization of actual current core and extension-test evidence for SoherAgent boundaries"><div class="titlebar"><div class="lights"><span class="light"></span><span class="light"></span><span class="light"></span></div><div class="titlebar-title">pi · Retry Status Clarity</div><div class="titlebar-meta">Pi 0.80.7 · light · max</div></div><div class="proof-error" role="status" hidden><strong>Proof unavailable.</strong> Required runtime-behavior.json could not be loaded; capture failed closed.</div><div class="screen"><section class="scene" id="scene-01" data-duration="8000">
+<header class="scene-header actual"><div><h2 class="scene-step">Scene 1 of 10 — Load the captured runtime</h2><div class="scene-state">Current private cores ran against synthetic temporary fixtures.</div></div><div class="scene-boundary">Dated capture · private content excluded</div></header>
+<div class="transcript"><div class="turn user"><span class="speaker agent-name">You</span>Show the current proof.</div><div class="command-output ">$ YOLO_CONTROL_CORE_URL=&lt;private module&gt; \
+  PI_YOLO_CORE_URL=&lt;private module&gt; node runtime-scenario.mjs</div><div class="action-list"><div class="action done"><span class="action-label">captured</span><span data-bind="capturedAt">24 Jul 2026</span><span class="action-state">UTC</span></div><div class="action done"><span class="action-label">loaded</span><span>2 current private core modules</span><span class="action-state">current run</span></div></div><div class="metrics"><div class="metric"><small>runtime duration (ms)</small><strong data-bind="runtimeMs">21.958</strong></div></div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>5/5 · Verify · actual evidence</strong> · ACTUAL CAPTURE · synthetic fixture</div><div class="status-keys">runtime-behavior.json</div></div></div></section><section class="scene" id="scene-02" data-duration="8000">
+<header class="scene-header actual"><div><h2 class="scene-step">Scene 2 of 10 — Pass 30 core assertions</h2><div class="scene-state">All direct runtime assertions passed.</div></div><div class="scene-boundary">Observed core behavior · not a staged conversation</div></header>
+<div class="transcript"><div class="command-output success">✓ capability prerequisites and destructive separation
+✓ exact dispatch, pause, resume, and replay gates
+✓ mapping, leases, takeover, and cleanup</div><div class="turn result"><span class="speaker agent-name">SoherAgent</span><strong><span data-bind="assertions">30</span>/<span data-bind="assertions">30</span> direct assertions passed.</strong></div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>5/5 · Verify · actual evidence</strong> · runtime assertions passed</div><div class="status-keys">captured current run</div></div></div></section><section class="scene" id="scene-03" data-duration="8000">
+<header class="scene-header actual"><div><h2 class="scene-step">Scene 3 of 10 — Fence stale ownership</h2><div class="scene-state">A stale owner was fenced after takeover.</div></div><div class="scene-boundary">Exactly one current owner</div></header>
+<div class="transcript"><div class="command-output success">✓ stale takeover succeeded after timeout
+✓ old owner fenced after takeover
+✓ simultaneous race produced one owner</div><div class="checks"><div class="check "><strong>Stale owner fenced</strong> · <span data-bind="staleFenced">true</span></div><div class="check "><strong>Lease owners</strong> · <span data-bind="leaseOwners">1</span></div></div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>5/5 · Verify · actual evidence</strong> · ownership safeguards passed</div><div class="status-keys">synthetic temporary filesystem</div></div></div></section><section class="scene" id="scene-04" data-duration="8000">
+<header class="scene-header actual"><div><h2 class="scene-step">Scene 4 of 10 — Block replay</h2><div class="scene-state">Completed authority could not replay.</div></div><div class="scene-boundary">Changed authorized state may acquire later</div></header>
+<div class="transcript"><div class="command-output success">✓ completed digest rejected on replay
+✓ unchanged target stayed fenced
+✓ changed authorized state acquired later</div><div class="checks"><div class="check "><strong>Replay blocked</strong> · <span data-bind="replayBlocked">true</span></div><div class="check "><strong>Resume</strong> · explicit resume accepted</div></div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>5/5 · Verify · actual evidence</strong> · replay gate passed</div><div class="status-keys">actual core result</div></div></div></section><section class="scene" id="scene-05" data-duration="8000">
+<header class="scene-header actual"><div><h2 class="scene-step">Scene 5 of 10 — Map one at a time</h2><div class="scene-state">Wayfinder mapping stayed sequential.</div></div><div class="scene-boundary">Observed maximum = 1</div></header>
+<div class="transcript"><div class="command-output success">Target A map: start → end
+Target B map: start only after A ended</div><div class="metrics"><div class="metric"><small>mapping at once</small><strong data-bind="mappingMax">1</strong></div><div class="metric"><small>assertions</small><strong data-bind="assertions">30</strong></div></div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>5/5 · Verify · actual evidence</strong> · mapping maximum 1</div><div class="status-keys">actual core output</div></div></div></section><section class="scene" id="scene-06" data-duration="8000">
+<header class="scene-header actual"><div><h2 class="scene-step">Scene 6 of 10 — Cap parallel targets</h2><div class="scene-state">Explicitly eligible parallel delivery was capped at two.</div></div><div class="scene-boundary">Observed runtime concurrency boundary</div></header>
+<div class="transcript"><div class="metrics"><div class="metric"><small>parallel target maximum</small><strong data-bind="parallelMax">2</strong></div><div class="metric"><small>simultaneous lease owners</small><strong data-bind="leaseOwners">1</strong></div><div class="metric"><small>mapping maximum</small><strong data-bind="mappingMax">1</strong></div><div class="metric"><small>third target</small><strong class="off">excluded</strong></div></div><div class="turn agent"><span class="speaker agent-name">SoherAgent</span>The two-target maximum applies only to explicitly eligible isolated work. It does not authorize another batch.</div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>5/5 · Verify · actual evidence</strong> · parallel bound passed</div><div class="status-keys">actual core output</div></div></div></section><section class="scene" id="scene-07" data-duration="8000">
+<header class="scene-header actual"><div><h2 class="scene-step">Scene 7 of 10 — Check destructive separation</h2><div class="scene-state">Destructive separation held; one named extension test covers parent authority.</div></div><div class="scene-boundary">Core field plus explicitly labeled extension-test result</div></header>
+<div class="transcript"><div class="command-output success">✓ parallel dispatch grouping requires matching explicit authority and never exceeds two
+✓ dedicated YOLO subagents preserve parent-only Obsidian authority</div><div class="checks"><div class="check "><strong>Parent-only Obsidian authority</strong> · 1 named test passed</div><div class="check "><strong>Parallel grouping</strong> · 1 separately named bound test passed</div><div class="check no"><strong>Auto-destroy</strong> · <span data-bind="autoDestroy">OFF</span></div><div class="check no"><strong>Worker workflow writes</strong> · excluded</div></div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>5/5 · Verify · actual evidence</strong> · destructive capability false</div><div class="status-keys">actual result</div></div></div></section><section class="scene" id="scene-08" data-duration="8000">
+<header class="scene-header actual"><div><h2 class="scene-step">Scene 8 of 10 — Pass 155 extension tests</h2><div class="scene-state">The refreshed extension suite passed with zero failures.</div></div><div class="scene-boundary">Current public test artifact</div></header>
+<div class="transcript"><div class="command-output ">$ node --test --test-reporter=spec
 
-      <section class="scene">
-        <header class="scene-header actual">
-          <div><h2 class="scene-step">5/5 · Verify · actual data</h2><div class="scene-state">Captured <span data-bind="captureDate">23 Jul 2026</span> · synthetic temporary fixtures</div></div>
-          <div class="scene-boundary">Private modules executed · private content excluded</div>
-        </header>
-        <div class="transcript">
-          <div class="turn user"><span class="speaker">You</span>Show me the proof.</div>
-          <div class="turn agent"><span class="speaker agent-name">SoherAgent</span>This view renders a dated result from the real private control and delivery cores. The fixture data is synthetic.</div>
-          <div class="command-output"><span class="muted">$</span> YOLO_CONTROL_CORE_URL=&lt;private module&gt; \
-  PI_YOLO_CORE_URL=&lt;private module&gt; node runtime-scenario.mjs</div>
-          <div class="action-list">
-            <div class="action done"><span class="action-label">loaded</span><span><span data-bind="modulesExecuted">2</span> current private core modules</span><span class="action-state"><span data-bind="runtimeMs">62.879</span> ms</span></div>
-          </div>
-        </div>
-        <div class="terminal-bottom">
-          <div class="editor"><span class="editor-label">$</span><span class="cursor"></span></div>
-          <div class="statusbar"><div class="status-main"><strong>5/5 Verify</strong> · <span class="ok">ACTUAL CAPTURE</span> · synthetic fixture</div><div class="status-keys">result: runtime-behavior.json</div></div>
-        </div>
-      </section>
-
-      <section class="scene">
-        <header class="scene-header actual">
-          <div><h2 class="scene-step">5/5 · Verify · actual data</h2><div class="scene-state">The control core kept destructive authority separate.</div></div>
-          <div class="scene-boundary">Observed core behavior · not a staged UI claim</div>
-        </header>
-        <div class="transcript">
-          <div class="command-output success">✓ Full delivery selected its non-destructive prerequisites
-✓ Permanent deletion stayed <span class="off">OFF</span>
-✓ Missing capability blocked dispatch
-✓ Duplicate dispatch was blocked
-✓ Paused dispatch was blocked
-✓ Explicit resume was accepted</div>
-          <div class="checks">
-            <div class="check"><strong>✓ Permission controls</strong> · enabled</div>
-            <div class="check"><strong>✓ Safe note writes</strong> · enabled</div>
-            <div class="check no"><strong>× Auto-destroy</strong> · <span data-bind="autoDestroy">OFF</span></div>
-            <div class="check"><strong>✓ Replay gate</strong> · duplicate blocked</div>
-          </div>
-        </div>
-        <div class="terminal-bottom">
-          <div class="editor"><span class="editor-label">$</span></div>
-          <div class="statusbar"><div class="status-main"><strong>5/5 Verify</strong> · dispatch safeguards <span class="ok">passed</span> · auto-destroy <span class="off">OFF</span></div><div class="status-keys">captured <span data-bind="captureDate">23 Jul 2026</span></div></div>
-        </div>
-      </section>
-
-      <section class="scene">
-        <header class="scene-header actual">
-          <div><h2 class="scene-step">5/5 · Verify · actual data</h2><div class="scene-state">The delivery core enforced the advertised concurrency limits.</div></div>
-          <div class="scene-boundary">Map sequentially · run at most two approved targets</div>
-        </header>
-        <div class="transcript">
-          <div class="command-output success">✓ Target A mapped: start → end
-✓ Target B mapped only after A ended
-✓ Matching approved group selected
-✓ Third and mismatched targets excluded</div>
-          <div class="metrics">
-            <div class="metric"><small>mapping at once</small><strong data-bind="mappingMax">1</strong></div>
-            <div class="metric"><small>parallel targets max</small><strong data-bind="parallelMax">2</strong></div>
-            <div class="metric"><small>selected targets</small><strong data-bind="parallelMax">2</strong></div>
-            <div class="metric"><small>auto-destroy</small><strong class="off">OFF</strong></div>
-          </div>
-          <div class="turn agent"><span class="speaker agent-name">Observed result</span>Context mapping stayed one at a time. The approved parallel group was capped at two.</div>
-        </div>
-        <div class="terminal-bottom">
-          <div class="editor"><span class="editor-label">$</span></div>
-          <div class="statusbar"><div class="status-main"><strong>5/5 Verify</strong> · mapping max <span data-bind="mappingMax">1</span> · worker max <span data-bind="parallelMax">2</span></div><div class="status-keys">actual core output</div></div>
-        </div>
-      </section>
-
-      <section class="scene">
-        <header class="scene-header actual">
-          <div><h2 class="scene-step">5/5 · Verify · actual data</h2><div class="scene-state">Ownership, recovery, and replay safeguards ran on temporary files.</div></div>
-          <div class="scene-boundary">Exactly one owner · stale processes lose write authority</div>
-        </header>
-        <div class="transcript">
-          <div class="command-output success">✓ Simultaneous race produced exactly <span data-bind="leaseOwners">1</span> owner
-✓ Completed work could not replay
-✓ Changed authorized state could acquire later
-✓ Stale takeover succeeded after the timeout
-✓ The old owner could not own, heartbeat, or release</div>
-          <div class="checks">
-            <div class="check"><strong>✓ One owner</strong> · contention bounded</div>
-            <div class="check"><strong>✓ Replay blocked</strong> · <span data-bind="replayBlocked">true</span></div>
-            <div class="check"><strong>✓ Stale owner fenced</strong> · <span data-bind="staleFenced">true</span></div>
-            <div class="check"><strong>✓ Fixture cleanup</strong> · temporary only</div>
-          </div>
-          <div class="turn result"><span class="speaker">Runtime result</span><strong><span data-bind="assertions">30</span>/<span data-bind="assertions">30</span> direct assertions passed.</strong></div>
-        </div>
-        <div class="terminal-bottom">
-          <div class="editor"><span class="editor-label">$</span></div>
-          <div class="statusbar"><div class="status-main"><strong>5/5 Verify</strong> · ownership and recovery <span class="ok">passed</span></div><div class="status-keys">synthetic temporary filesystem</div></div>
-        </div>
-      </section>
-
-      <section class="scene">
-        <header class="scene-header actual">
-          <div><h2 class="scene-step">5/5 · Verify · actual data</h2><div class="scene-state">The captured extension test suite also finished with zero failures.</div></div>
-          <div class="scene-boundary">Proves core safeguards · not a production deployment</div>
-        </header>
-        <div class="transcript">
-          <div class="command-output"><span class="muted">$</span> node --test --test-reporter=spec
-
-<span class="ok">✓ <span data-bind="testsPassed">149</span> tests passed</span>
-<span class="off">× <span data-bind="testsFailed">0</span> tests failed</span></div>
-          <div class="metrics">
-            <div class="metric"><small>runtime assertions</small><strong data-bind="assertions">30</strong></div>
-            <div class="metric"><small>tests passed</small><strong data-bind="testsPassed">149</strong></div>
-            <div class="metric"><small>tests failed</small><strong data-bind="testsFailed">0</strong></div>
-            <div class="metric"><small>modules executed</small><strong data-bind="modulesExecuted">2</strong></div>
-          </div>
-          <div class="turn result"><span class="speaker agent-name">What this proves</span>Core capability gates, bounded concurrency, ownership, recovery, and replay protection behaved as asserted in this capture.</div>
-          <div class="turn warning"><span class="speaker">Scope</span>This is a visualization of captured core and test results—not a full live agent conversation or production run.</div>
-        </div>
-        <div class="terminal-bottom">
-          <div class="editor"><span class="editor-label">$</span><span class="cursor"></span></div>
-          <div class="statusbar"><div class="status-main"><strong>5/5 Verify</strong> · <span class="ok"><span data-bind="assertions">30</span>/<span data-bind="assertions">30</span> assertions · <span data-bind="testsPassed">149</span>/<span data-bind="testsTotal">149</span> tests</span></div><div class="status-keys">captured <span data-bind="captureDate">23 Jul 2026</span></div></div>
-        </div>
-      </section>
-
-    </div>
-  </div>
-</main>
-<script>
-const formatDate = (value) => new Intl.DateTimeFormat('en-GB', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'UTC' }).format(new Date(value));
-const text = (value) => String(value);
-fetch('runtime-behavior.json')
-  .then((response) => {
-    if (!response.ok) throw new Error('result unavailable');
-    return response.json();
-  })
-  .then((data) => {
-    const view = {
-      captureDate: formatDate(data.capturedAt),
-      modulesExecuted: data.summary.modulesExecuted,
-      runtimeMs: data.runtime.durationMs,
-      autoDestroy: data.summary.destructiveCapabilitySelected ? 'ON' : 'OFF',
-      mappingMax: data.summary.maximumMappingConcurrency,
-      parallelMax: data.summary.maximumParallelTargets,
-      leaseOwners: data.summary.simultaneousLeaseOwners,
-      replayBlocked: data.summary.replayBlocked,
-      staleFenced: data.summary.staleOwnerFenced,
-      assertions: data.summary.assertions,
-      testsPassed: data.testRun.passed,
-      testsFailed: data.testRun.failed,
-      testsTotal: data.testRun.tests
-    };
-    document.querySelectorAll('[data-bind]').forEach((node) => {
-      const value = view[node.dataset.bind];
-      if (value !== undefined) node.textContent = text(value);
-    });
-    document.documentElement.dataset.proofLoaded = 'true';
-  })
-  .catch(() => {
-    document.querySelector('.proof-error').style.display = 'flex';
-    document.documentElement.dataset.proofLoaded = 'error';
-  });
-</script>
-</body>
-</html>
+<span class="ok">✓ <span data-bind="testsPassed">155</span> tests passed</span>
+<span class="off">× <span data-bind="testsFailed">0</span> tests failed</span></div><div class="metrics"><div class="metric"><small>tests passed</small><strong data-bind="testsPassed">155</strong></div><div class="metric"><small>tests failed</small><strong data-bind="testsFailed">0</strong></div><div class="metric"><small>runtime assertions</small><strong data-bind="assertions">30</strong></div></div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>5/5 · Verify · actual evidence</strong> · 155/155 tests passed</div><div class="status-keys">pi-extension-tests.txt</div></div></div></section><section class="scene" id="scene-09" data-duration="8000">
+<header class="scene-header actual"><div><h2 class="scene-step">Scene 9 of 10 — Open public evidence</h2><div class="scene-state">Inspect every public evidence artifact directly.</div></div><div class="scene-boundary">Machine-readable result + source + full output</div></header>
+<div class="transcript"><div class="proof-links"><a href="runtime-behavior.json">runtime-behavior.json</a><a href="pi-extension-tests.txt">pi-extension-tests.txt</a><a href="runtime-scenario.mjs">runtime-scenario.mjs</a><a href="terminal-05-verify.html?transcript=1">full transcript</a></div><div class="turn agent"><span class="speaker agent-name">SoherAgent</span>The JSON binds the runtime result to module, public runner, and test-output artifact hashes. It proves only the listed runtime fields and named extension tests.</div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>5/5 · Verify · actual evidence</strong> · evidence links ready</div><div class="status-keys">open source artifacts</div></div></div></section><section class="scene" id="scene-10" data-duration="8000" data-poster>
+<header class="scene-header actual"><div><h2 class="scene-step">Scene 10 of 10 — State the proof boundary</h2><div class="scene-state">The captured boundary ends after reconciliation and replay fencing.</div></div><div class="scene-boundary">Actual result summary · story narration excluded</div></header>
+<div class="transcript"><div class="turn result"><span class="speaker agent-name">SoherAgent</span><strong>Verified.</strong> 30/30 runtime assertions and 155/155 tests passed. Mapping stayed at 1, parallel targets at 2, lease owners at 1; stale ownership and replay were fenced; destructive capability remained false.<br><span class="muted">This actual core/test proof does not prove the synthetic V1-S1 story, next-batch state, commits, pushes, deployment authority, the sanitized narration, or a live full conversation.</span></div><div class="checks"><div class="check "><strong>Reconciliation</strong> · completion recorded</div><div class="check "><strong>Parent authority</strong> · named test passed</div><div class="check no"><strong>Completed replay</strong> · blocked</div><div class="check no"><strong>Destructive capability</strong> · false</div></div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>5/5 · Verify · actual evidence</strong> · verified · stop boundary intact</div><div class="status-keys">dated evidence, not production deployment</div></div></div></section></div></div></main><script>const formatDate=v=>new Intl.DateTimeFormat('en-GB',{day:'2-digit',month:'short',year:'numeric',timeZone:'UTC'}).format(new Date(v));fetch('runtime-behavior.json').then(r=>{if(!r.ok)throw Error(`HTTP ${r.status}`);return r.json()}).then(data=>{const v={capturedAt:formatDate(data.capturedAt),runtimeMs:data.runtime.durationMs,assertions:data.summary.assertions,mappingMax:data.summary.maximumMappingConcurrency,parallelMax:data.summary.maximumParallelTargets,leaseOwners:data.summary.simultaneousLeaseOwners,replayBlocked:data.summary.replayBlocked,staleFenced:data.summary.staleOwnerFenced,autoDestroy:data.summary.destructiveCapabilitySelected?'ON':'OFF',testsPassed:data.testRun.passed,testsFailed:data.testRun.failed};document.querySelectorAll('[data-bind]').forEach(n=>{if(v[n.dataset.bind]!==undefined)n.textContent=String(v[n.dataset.bind])});document.documentElement.dataset.proofLoaded='true';window.resolveTerminalDemoData?.(data)}).catch(error=>{document.documentElement.dataset.proofLoaded='error';const panel=document.querySelector('.proof-error');panel.hidden=false;panel.append(document.createTextNode(` ${error.message||'Fetch failed'}`));window.rejectTerminalDemoData?.(error)});</script></body></html>

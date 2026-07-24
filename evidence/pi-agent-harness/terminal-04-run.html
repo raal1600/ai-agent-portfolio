@@ -1,125 +1,33 @@
-<!doctype html>
-<html lang="en" data-mode="transcript">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SoherAgent 4 of 5 — Run the approved work</title>
-  <script src="terminal-demo.js"></script>
-  <link rel="stylesheet" href="terminal-demo.css">
-</head>
-<body>
-<main class="capture">
-  <header class="recording-meta">
-    <div><strong>SoherAgent · 4 of 5</strong> · run the approved work</div>
-    <div class="evidence-badge">Recreation · synthetic task</div>
-  </header>
-  <div class="terminal" role="region" aria-label="Terminal recreation showing two approved tasks mapped one at a time, implemented by at most two isolated workers, validated sequentially, reviewed, fixed within bounds, and completed without starting later work">
-    <div class="titlebar"><div class="lights"><span class="light"></span><span class="light"></span><span class="light"></span></div><div class="titlebar-title">pi · retry-status-demo</div></div>
-    <div class="screen timeline-5">
-
-      <section class="scene">
-        <header class="scene-header">
-          <div><h2 class="scene-step">4/5 · Run</h2><div class="scene-state">The parent checks each authorized item before starting.</div></div>
-          <div class="scene-boundary">Context is checked one item at a time</div>
-        </header>
-        <div class="transcript">
-          <div class="turn user"><span class="speaker">You</span>/yolo</div>
-          <div class="turn agent"><span class="speaker agent-name">SoherAgent</span>Two approved items are ready. I’m checking their scope and dependencies before any worker starts.</div>
-          <div class="action-list">
-            <div class="action done"><span class="action-label">checked</span><span>Retry status · approved scope is current</span><span class="action-state">done first</span></div>
-            <div class="action active"><span class="action-label">checking</span><span>Error summary · approved scope and dependencies</span><span class="action-state">now</span></div>
-          </div>
-        </div>
-        <div class="terminal-bottom">
-          <div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div>
-          <div class="statusbar"><div class="status-main"><strong>4/5 Run</strong> · checking context <span class="accent">1 at a time</span> · 0 workers</div><div class="status-keys">/yolo inspect or pause</div></div>
-        </div>
-      </section>
-
-      <section class="scene">
-        <header class="scene-header">
-          <div><h2 class="scene-step">4/5 · Run</h2><div class="scene-state">Independent work may overlap, but only in isolated work areas.</div></div>
-          <div class="scene-boundary">Maximum 2 workers · parent keeps workflow control</div>
-        </header>
-        <div class="transcript">
-          <div class="turn agent"><span class="speaker agent-name">SoherAgent</span>Both items are independent. Starting two isolated workers—the approved maximum.</div>
-          <div class="action-list">
-            <div class="action active"><span class="action-label">worker 1</span><span>Retry status · reproduce the failing behavior</span><span class="action-state">running</span></div>
-            <div class="action active"><span class="action-label">worker 2</span><span>Error summary · reproduce the failing behavior</span><span class="action-state">running</span></div>
-            <div class="action stop"><span class="action-label">blocked</span><span>Combined view · not part of this authorization</span><span class="action-state">not started</span></div>
-          </div>
-          <div class="turn warning"><span class="speaker agent-name">SoherAgent</span>Workers can change only their own files. They cannot update workflow records, commit, push, deploy, or start another task.</div>
-        </div>
-        <div class="terminal-bottom">
-          <div class="editor"><span class="editor-label">›</span></div>
-          <div class="statusbar"><div class="status-main"><strong>4/5 Run</strong> · <span class="ok">2/2 isolated workers</span> · parent coordinating</div><div class="status-keys">/yolo inspect or pause</div></div>
-        </div>
-      </section>
-
-      <section class="scene">
-        <header class="scene-header">
-          <div><h2 class="scene-step">4/5 · Run</h2><div class="scene-state">Workers return changes; the parent validates them one at a time.</div></div>
-          <div class="scene-boundary">Parallel build · sequential integration</div>
-        </header>
-        <div class="transcript">
-          <div class="action-list">
-            <div class="action done"><span class="action-label">retry status</span><span>Failing check reproduced → small fix → focused checks passed</span><span class="action-state">returned</span></div>
-            <div class="action done"><span class="action-label">error summary</span><span>Failing check reproduced → small fix → focused checks passed</span><span class="action-state">returned</span></div>
-          </div>
-          <div class="turn agent"><span class="speaker agent-name">SoherAgent</span>Both workers finished. I’m inspecting, testing, and integrating their changes one item at a time.</div>
-          <div class="action-list">
-            <div class="action done"><span class="action-label">parent</span><span>Retry status · diff and required checks verified</span><span class="action-state">review-ready</span></div>
-            <div class="action active"><span class="action-label">parent</span><span>Error summary · diff and required checks</span><span class="action-state">validating</span></div>
-          </div>
-        </div>
-        <div class="terminal-bottom">
-          <div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div>
-          <div class="statusbar"><div class="status-main"><strong>4/5 Run</strong> · parent validating <span class="accent">1 at a time</span> · workers settled</div><div class="status-keys">/yolo inspect or pause</div></div>
-        </div>
-      </section>
-
-      <section class="scene">
-        <header class="scene-header">
-          <div><h2 class="scene-step">4/5 · Run</h2><div class="scene-state">Fresh review checks both code quality and the approved plan.</div></div>
-          <div class="scene-boundary">Review is read-only · fixes stay bounded</div>
-        </header>
-        <div class="transcript">
-          <div class="action-list">
-            <div class="action done"><span class="action-label">review</span><span>Retry status · standards pass · plan pass</span><span class="action-state">passed</span></div>
-            <div class="action warn"><span class="action-label">review</span><span>Error summary · empty state needs clearer text</span><span class="action-state">change needed</span></div>
-            <div class="action done"><span class="action-label">fix 1/2</span><span>Error summary · update only the empty-state text</span><span class="action-state">checks passed</span></div>
-            <div class="action done"><span class="action-label">re-review</span><span>Error summary · standards pass · plan pass</span><span class="action-state">passed</span></div>
-          </div>
-          <div class="turn agent"><span class="speaker agent-name">SoherAgent</span>One item passed immediately. The other needed one small, in-scope fix and then passed a fresh review.</div>
-        </div>
-        <div class="terminal-bottom">
-          <div class="editor"><span class="editor-label">›</span></div>
-          <div class="statusbar"><div class="status-main"><strong>4/5 Run</strong> · <span class="ok">2 reviews passed</span> · remediation 1/2</div><div class="status-keys">/yolo inspect or pause</div></div>
-        </div>
-      </section>
-
-      <section class="scene">
-        <header class="scene-header">
-          <div><h2 class="scene-step">4/5 · Run</h2><div class="scene-state">The approved work completes, then automation stops.</div></div>
-          <div class="scene-boundary">Ready later does not mean authorized now</div>
-        </header>
-        <div class="transcript">
-          <div class="turn result"><span class="speaker agent-name">SoherAgent</span><strong>Both approved items are complete.</strong><br>The combined view is now ready, but it has not been authorized.</div>
-          <div class="checks">
-            <div class="check"><strong>✓ Complete</strong> · retry status</div>
-            <div class="check"><strong>✓ Complete</strong> · error summary</div>
-            <div class="check wait"><strong>○ Ready later</strong> · combined view</div>
-            <div class="check no"><strong>× Automatic start</strong> · next work</div>
-          </div>
-        </div>
-        <div class="terminal-bottom">
-          <div class="editor"><span class="editor-label">›</span>Show me the proof.<span class="cursor"></span></div>
-          <div class="statusbar"><div class="status-main"><strong>4/5 Run</strong> · Full delivery on · <span class="warn">paused — no authorized work</span></div><div class="status-keys">Enter continue · /yolo inspect</div></div>
-        </div>
-      </section>
-
-    </div>
-  </div>
-</main>
-</body>
-</html>
+<!doctype html><html lang="en" data-mode="transcript"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Deliver and review</title><script src="terminal-demo.js"></script><link rel="stylesheet" href="terminal-demo.css"></head><body><main class="capture"><header class="recording-meta"><h1><strong>SoherAgent · 4 of 5</strong> · Deliver and review</h1><div class="evidence-badge">Sanitized recreation · reviewed /yolo behavior</div></header><div class="terminal" role="region" aria-label="Sanitized terminal recreation of automatic exact-batch delivery, review, remediation, and stop boundaries"><div class="titlebar"><div class="lights"><span class="light"></span><span class="light"></span><span class="light"></span></div><div class="titlebar-title">pi · Retry Status Clarity</div><div class="titlebar-meta">Pi 0.80.7 · light · max</div></div><div class="screen"><section class="scene" id="scene-01" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 1 of 14 — Attach to V1-S1</h2><div class="scene-state">Automatic delivery attaches to the exact authorized batch.</div></div><div class="scene-boundary">No ask_user dialogs inside a valid batch</div></header>
+<div class="transcript"><div class="pi-widget"><strong>Session automation (/yolo)</strong><span>Full delivery: active · V1-S1 · implementing T01</span><span class="danger">Auto-destroy OFF</span></div><div class="action-list"><div class="action done"><span class="action-label">authority</span><span>Digest and exact batch match</span><span class="action-state">accepted</span></div><div class="action done"><span class="action-label">lease</span><span>Exact V1-S1 lease · one active owner acquired</span><span class="action-state">V1-S1</span></div><div class="action stop"><span class="action-label">outside</span><span>V1-S2 and destructive actions</span><span class="action-state">fenced</span></div></div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>4/5 · Deliver and review</strong> · implement phase · one lease owner</div><div class="status-keys">/yolo inspect or pause</div></div></div></section><section class="scene" id="scene-02" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 2 of 14 — Map T01 sequentially</h2><div class="scene-state">Wayfinder maps approved targets sequentially.</div></div><div class="scene-boundary">Maximum mapping concurrency = 1</div></header>
+<div class="transcript"><div class="pi-widget"><strong>Session automation (/yolo)</strong><span>Full delivery: active · mapping T01</span><span class="danger">Auto-destroy OFF</span></div><div class="action-list"><div class="action active"><span class="action-label">mapping</span><span>T01 Retry timing</span><span class="action-state">1 active</span></div><div class="action warn"><span class="action-label">waiting</span><span>T02 Last error</span><span class="action-state">starts after T01 map</span></div><div class="action stop"><span class="action-label">excluded</span><span>V1-S2 Combined summary</span><span class="action-state">not authorized</span></div></div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>4/5 · Deliver and review</strong> · mapping 1 at a time</div><div class="status-keys">parent controls routing</div></div></div></section><section class="scene" id="scene-03" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 3 of 14 — Save a runtime checkpoint</h2><div class="scene-state">The parent records a runtime checkpoint before dispatch.</div></div><div class="scene-boundary">Resumable state does not widen authority</div></header>
+<div class="transcript"><div class="pi-widget"><strong>Session automation (/yolo)</strong><span>Full delivery: active · T01 mapped</span><span class="danger">Auto-destroy OFF</span></div><div class="command-output success">checkpoint: phase=implement
+ticket=T01
+authority=digest-bound
+resume=exact target only</div><div class="checks"><div class="check "><strong>Mapping max</strong> · 1 observed</div><div class="check "><strong>Lease owner</strong> · 1</div><div class="check no"><strong>Replay</strong> · completed work cannot re-enter</div><div class="check no"><strong>Next batch</strong> · off</div></div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>4/5 · Deliver and review</strong> · checkpoint saved</div><div class="status-keys">automatic dispatch continues</div></div></div></section><section class="scene" id="scene-04" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 4 of 14 — Reproduce the failure</h2><div class="scene-state">The authorized Pi implementer loads implement-obsidian-ticket inside a restricted child.</div></div><div class="scene-boundary">Child may edit only its leased code scope</div></header>
+<div class="transcript"><div class="pi-widget"><strong>Session automation (/yolo)</strong><span>Full delivery: active · T01 · child running</span><span class="danger">Auto-destroy OFF</span></div><div class="child-progress"><div class="child-head"><strong>yolo-implementer · T01</strong><span>restricted writer</span></div><div class="child-log"><span>Loaded implement-obsidian-ticket for the exact lease</span><span>Ran focused retry-status test</span><span>Observed: next retry time missing after failure</span></div></div><div class="command-output error">$ node --test test/retry-status.test.mjs
+✗ expected next retry time; received empty</div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>4/5 · Deliver and review</strong> · implementer reproduced failing test</div><div class="status-keys">child cannot mutate workflow records</div></div></div></section><section class="scene" id="scene-05" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 5 of 14 — Apply a narrow fix</h2><div class="scene-state">The implementer makes one narrow fix and proves it.</div></div><div class="scene-boundary">No speculative refactor</div></header>
+<div class="transcript"><div class="pi-widget"><strong>Session automation (/yolo)</strong><span>Full delivery: active · T01 · validating child result</span><span class="danger">Auto-destroy OFF</span></div><div class="child-progress"><div class="child-head"><strong>yolo-implementer · T01</strong><span>returning to parent</span></div><div class="child-log"><span>Updated existing retry-status formatter only</span><span>Preserved retry timing and backoff rules</span><span>Focused test: PASS · related test: PASS</span></div></div><div class="turn child"><span class="speaker agent-name">Child session</span>Changed files and checks returned. No commit, push, deploy, vault mutation, or delegation.</div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>4/5 · Deliver and review</strong> · child result returned</div><div class="status-keys">parent validation next</div></div></div></section><section class="scene" id="scene-06" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 6 of 14 — Validate and move the note</h2><div class="scene-state">The parent inspects, tests, integrates, and updates workflow state.</div></div><div class="scene-boundary">Canonical Obsidian mutation is parent-only</div></header>
+<div class="transcript"><div class="pi-widget"><strong>Session automation (/yolo)</strong><span>Full delivery: active · T01 · parent validation</span><span class="danger">Auto-destroy OFF</span></div><div class="action-list"><div class="action done"><span class="action-label">inspect</span><span>Scope and diff</span><span class="action-state">passed</span></div><div class="action done"><span class="action-label">tests</span><span>Focused and required checks</span><span class="action-state">passed</span></div><div class="action done"><span class="action-label">integrate</span><span>Canonical workspace + same batch note implement → review</span><span class="action-state">parent-owned</span></div><div class="action done"><span class="action-label">obsidian</span><span>T01 → review-ready</span><span class="action-state">parent-owned</span></div></div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>4/5 · Deliver and review</strong> · T01 review-ready</div><div class="status-keys">review worker next</div></div></div></section><section class="scene" id="scene-07" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 7 of 14 — Run standards review</h2><div class="scene-state">The authorized Pi reviewer loads review-obsidian-ticket in a fresh read-only child.</div></div><div class="scene-boundary">Read-only child role · same-agent limitation accepted</div></header>
+<div class="transcript"><div class="pi-widget"><strong>Session automation (/yolo)</strong><span>Full delivery: active · T01 · reviewing</span><span class="danger">Auto-destroy OFF</span></div><div class="child-progress"><div class="child-head"><strong>yolo-reviewer · standards pass</strong><span>read-only reviewer</span></div><div class="child-log"><span>Loaded review-obsidian-ticket for this exact ticket</span><span>Checked repository, security, scope, and maintainability</span><span>No unrelated files or authority changes</span></div></div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>4/5 · Deliver and review</strong> · standards pass complete</div><div class="status-keys">specification pass next</div></div></div></section><section class="scene" id="scene-08" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 8 of 14 — Run specification review</h2><div class="scene-state">The same review remains separate for specification fit.</div></div><div class="scene-boundary">Acceptance criteria checked independently</div></header>
+<div class="transcript"><div class="pi-widget"><strong>Session automation (/yolo)</strong><span>Full delivery: active · T01 · specification pass</span><span class="danger">Auto-destroy OFF</span></div><div class="child-progress"><div class="child-head"><strong>yolo-reviewer · specification pass</strong><span>read-only reviewer</span></div><div class="child-log"><span>A1 waiting state includes next retry time: PASS</span><span>A2 retrying state label: PASS</span><span>A3 exhausted safe error: detail mismatch</span></div></div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>4/5 · Deliver and review</strong> · review decision pending</div><div class="status-keys">exact result contract</div></div></div></section><section class="scene" id="scene-09" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 9 of 14 — Return changes required</h2><div class="scene-state">Review returns CHANGES_REQUIRED with a bounded finding.</div></div><div class="scene-boundary">Not a general redesign request</div></header>
+<div class="transcript"><div class="pi-widget"><strong>Session automation (/yolo)</strong><span>Full delivery: active · T01 · remediation required</span><span class="danger">Auto-destroy OFF</span></div><div class="turn warning"><span class="speaker agent-name">Boundary</span><strong>CHANGES_REQUIRED</strong><br>The exhausted state labels the attempt but omits the safe latest-error summary required by A3.</div><div class="checks"><div class="check "><strong>In scope</strong> · add safe summary to exhausted state</div><div class="check no"><strong>Out of scope</strong> · retry rules, stack traces, refactor</div><div class="check wait"><strong>Normal remediation</strong> · cycle 1 of 3</div></div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>4/5 · Deliver and review</strong> · bounded remediation queued</div><div class="status-keys">no user popup in authorized batch</div></div></div></section><section class="scene" id="scene-10" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 10 of 14 — Remediate cycle 1 of 3</h2><div class="scene-state">Automatic remediation uses the same lease boundary.</div></div><div class="scene-boundary">Cycle 1 of 3 · normal CHANGES_REQUIRED path</div></header>
+<div class="transcript"><div class="pi-widget"><strong>Session automation (/yolo)</strong><span>Full delivery: active · T01 · normal remediation cycle 1/3</span><span class="danger">Auto-destroy OFF</span></div><div class="child-progress"><div class="child-head"><strong>yolo-implementer · T01 remediation</strong><span>restricted remediation</span></div><div class="child-log"><span>Verified CHANGES_REQUIRED finding and same authority</span><span>Added existing redacted error summary to exhausted state</span><span>Focused acceptance tests: PASS</span></div></div><div class="action-list"><div class="action done"><span class="action-label">parent</span><span>Diff and tests revalidated</span><span class="action-state">review-ready</span></div></div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>4/5 · Deliver and review</strong> · normal remediation cycle 1/3 complete</div><div class="status-keys">fresh review required</div></div></div></section><section class="scene" id="scene-11" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 11 of 14 — Pass fresh review</h2><div class="scene-state">Fresh phase-separated read-only review returns PASS.</div></div><div class="scene-boundary">Same-agent limitation accepted · both passes rerun</div></header>
+<div class="transcript"><div class="pi-widget"><strong>Session automation (/yolo)</strong><span>Full delivery: active · T01 · re-review</span><span class="danger">Auto-destroy OFF</span></div><div class="child-progress"><div class="child-head"><strong>yolo-reviewer · fresh review</strong><span>read-only reviewer</span></div><div class="child-log"><span>Standards pass: PASS</span><span>Specification pass A1–A3: PASS</span><span>No scope or authority findings</span></div></div><div class="turn result"><span class="speaker agent-name">SoherAgent</span><strong>PASS</strong></div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>4/5 · Deliver and review</strong> · T01 accepted</div><div class="status-keys">parent marks completion</div></div></div></section><section class="scene" id="scene-12" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 12 of 14 — Move the note to T02</h2><div class="scene-state">T01 completes; T02 follows in the same exact batch.</div></div><div class="scene-boundary">One story path · not two simultaneous batches</div></header>
+<div class="transcript"><div class="pi-widget"><strong>Session automation (/yolo)</strong><span>Full delivery: active · V1-S1 · T02 review</span><span class="danger">Auto-destroy OFF</span></div><div class="action-list"><div class="action done"><span class="action-label">parent</span><span>Canonical batch note: review T01 → implement T02</span><span class="action-state">canonical</span></div><div class="action done"><span class="action-label">mapping</span><span>T02 mapped after T01</span><span class="action-state">max 1</span></div><div class="action done"><span class="action-label">implement</span><span>Safe latest-error view + tests</span><span class="action-state">returned</span></div><div class="action done"><span class="action-label">review</span><span>Standards + specification</span><span class="action-state">PASS</span></div></div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>4/5 · Deliver and review</strong> · T02 accepted</div><div class="status-keys">single authorized batch</div></div></div></section><section class="scene" id="scene-13" data-duration="7000">
+<header class="scene-header"><div><h2 class="scene-step">Scene 13 of 14 — Complete the batch note</h2><div class="scene-state">The parent reconciles and archives the finished batch.</div></div><div class="scene-boundary">Completion must be proven</div></header>
+<div class="transcript"><div class="pi-widget"><strong>Session automation (/yolo)</strong><span>Full delivery: active · V1-S1 · reconciling</span><span class="danger">Auto-destroy OFF</span></div><div class="action-list"><div class="action done"><span class="action-label">reconcile</span><span>Canonical batch note → Completed after T01 and T02 pass</span><span class="action-state">consistent</span></div><div class="action done"><span class="action-label">archive</span><span>Post-route archive and link checks</span><span class="action-state">finished</span></div><div class="action done"><span class="action-label">lease</span><span>Released after completion</span><span class="action-state">settled</span></div><div class="action done"><span class="action-label">reason</span><span>completion-proven</span><span class="action-state">recorded</span></div></div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>4/5 · Deliver and review</strong> · batch finished</div><div class="status-keys">parent-owned final state</div></div></div></section><section class="scene" id="scene-14" data-duration="7000" data-poster>
+<header class="scene-header"><div><h2 class="scene-step">Scene 14 of 14 — Stop before V1-S2</h2><div class="scene-state">Automation stops at the next batch boundary.</div></div><div class="scene-boundary">Ready later ≠ authorized now</div></header>
+<div class="transcript"><div class="pi-widget"><strong>Session automation (/yolo)</strong><span>Full delivery: idle · next-batch-ready · no authority</span><span class="danger">Auto-destroy OFF</span></div><div class="turn result"><span class="speaker agent-name">SoherAgent</span><strong>V1-S1 is complete.</strong> V1-S2 Combined summary is eligible for a new handoff and authorization decision, but automatic progression is not authorized.</div><div class="checks"><div class="check "><strong>Finished</strong> · T01 + T02</div><div class="check "><strong>General cap</strong> · parallel targets ≤ 2 when explicitly eligible</div><div class="check no"><strong>V1-S2</strong> · not started</div><div class="check no"><strong>Commit/push/deploy</strong> · not authorized</div></div></div><div class="terminal-bottom"><div class="editor"><span class="editor-label">›</span><span class="cursor"></span></div><div class="statusbar"><div class="status-main"><strong>4/5 · Deliver and review</strong> · paused · no authorized work</div><div class="status-keys">new decision required</div></div></div></section></div></div></main></body></html>
