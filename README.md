@@ -4,7 +4,7 @@ A static customer-facing services website with three guided project showcases. T
 
 **[Open the portfolio](https://raal1600.github.io/ai-agent-portfolio/)**
 
-The customer website is prepared on `feature/customer-facing-website` for review. It has not been merged or deployed. The public link still shows the existing production site.
+The customer website is on [`feature/customer-facing-website`](https://github.com/raal1600/ai-agent-portfolio/tree/feature/customer-facing-website) for review. It has not been merged or deployed. The public link still shows the existing production site.
 
 Read the [discovery and architecture decision](docs/customer-website-discovery.md) and [implementation handoff](docs/customer-website-handoff.md) for evidence limits, validation and remaining decisions.
 
@@ -47,7 +47,7 @@ Run `serve` or `preview` one at a time: both use port 8110. Browser verification
 
 ## Hosting and portability
 
-Production currently uses GitHub's generated Pages workflow on `main`, including Jekyll processing; no repository-owned CI workflow exists. Starting commit: `0cf02f0e6f5ace36858af5f13fcd3ed3900f2325`. The exact administrative Pages source setting could not be read, but the public URL and successful deployment of this commit were verified. No production settings or DNS were changed, and this branch was not pushed.
+Production currently uses GitHub's generated Pages workflow on `main`, including Jekyll processing; no repository-owned CI workflow exists. Starting commit: `0cf02f0e6f5ace36858af5f13fcd3ed3900f2325`. Before publishing the feature branch for review, an authenticated settings check confirmed legacy Pages publishing from `main` at `/`, with no custom domain. No production settings or DNS were changed. Publishing this feature branch does not publish the website.
 
 `npm run build` produces an allowlisted `dist/` containing only site pages, assets, evidence, sitemap and robots. It refuses to replace an unrecognized output directory and validates ownership of its own output before rebuilding. Git data, test outputs, tools, and local documentation are not exported. Current production does not use `dist/`; the export is for local preview or a future approved hosting choice.
 

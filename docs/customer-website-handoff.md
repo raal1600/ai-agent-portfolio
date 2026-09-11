@@ -4,11 +4,11 @@
 
 Implemented locally on `feature/customer-facing-website` in the isolated sibling worktree `ai-agent-portfolio-customer-site`. Base commit: `0cf02f0e6f5ace36858af5f13fcd3ed3900f2325`. The original checkout remains on `add-hektor-agent-demo` at that commit; its clean tracked/untracked state and older local `main` reference are preserved. Existing ignored capture, dependency and test directories in that checkout were not touched.
 
-Nothing was pushed, merged, or deployed. No branch was deleted, no history rewritten, and no DNS, domain, or production setting was changed.
+The initial implementation was delivered as local commits. The user subsequently requested visibility on GitHub, authorizing publication of the feature branch for review. Nothing was merged or deployed. No branch was deleted, no history rewritten, and no DNS, domain, or production setting was changed.
 
 ## Discovery and implementation
 
-The repository is a framework-free static portfolio: HTML, shared CSS and JavaScript, recorded videos, synthetic visualizations, and dated evidence. It contains no running customer-facing agent service or private agent implementation. GitHub's generated Pages workflow deploys `main` with a Jekyll build. The public site and deployment commit were verified; administrative Pages source settings were unavailable to the read used here. No repository-owned push or PR workflow exists.
+The repository is a framework-free static portfolio: HTML, shared CSS and JavaScript, recorded videos, synthetic visualizations, and dated evidence. It contains no running customer-facing agent service or private agent implementation. GitHub's generated Pages workflow deploys `main` with a Jekyll build. The public site and deployment commit were verified. An authenticated follow-up check before branch publication confirmed legacy Pages publishing from `main` at `/`, with no custom domain. No repository-owned push or PR workflow exists.
 
 The lowest-risk choice was to extend the static site. The new homepage provides services, clearly labelled demos, technical credibility, an approach, practical FAQ, and LinkedIn contact. A small HTML/CSS diagram explains an agent workflow without implying that it runs here. The existing visual palette and typography carry into the new design. No framework, runtime dependency, analytics, tracker, backend, or paid infrastructure was added.
 

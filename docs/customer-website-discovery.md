@@ -45,3 +45,7 @@ Verified published identity: **Rami Halabi**. Verified contact destination: the 
 6. Validate local links, semantic metadata, mobile/desktop layouts, keyboard/no-JS navigation, media playback and chapter controls with the existing browser tooling. Distinguish historical private-core test evidence from tests run for this change.
 
 This minimizes risk: no framework migration, no new runtime, no backend, no changes to production settings, and no rewriting of demos. Services describe work available to scope, while demo labels describe only what is present. Assumptions: English services copy, the existing public name and LinkedIn destination remain appropriate, and the documented Pages URL remains the canonical location until a future approved move.
+
+## Follow-up before branch publication
+
+After the local implementation handoff, the user requested that the work be visible on GitHub. An authenticated Pages settings read then confirmed `build_type: legacy`, source branch `main`, source path `/`, and no custom domain. The remote `main` still points to the original `0cf02f0` commit. This supports publishing only the feature branch for review without changing the live website. The original discovery findings above record what was known before implementation.
