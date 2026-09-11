@@ -10,7 +10,7 @@ const base = remote ?? 'http://127.0.0.1:8111'
 const manifest = JSON.parse(readFileSync('evidence/hektor-agent/recording.json', 'utf8'))
 const out = resolve('test-results')
 mkdirSync(out, { recursive: true })
-const pages = ['index.html', 'projects/hektor-agent.html', 'projects/soherdocs.html', 'projects/pi-agent-harness.html', 'evidence/hektor-agent/hektor-demo-transcript.html']
+const pages = ['index.html', 'work.html', 'projects/hektor-agent.html', 'projects/soherdocs.html', 'projects/pi-agent-harness.html', 'evidence/hektor-agent/hektor-demo-transcript.html']
 // Validate local assets and fragment destinations in the new service and transcript.
 for (const file of ['projects/hektor-agent.html', 'evidence/hektor-agent/hektor-demo-transcript.html']) {
   const html = readFileSync(file, 'utf8')
@@ -48,8 +48,8 @@ try {
       })
       if (problems.length) throw new Error(`${file}, ${viewport.width}px: ${problems.join('; ')}`)
       if (file === 'index.html') {
-        if (await page.locator('.project-row').count() !== 3) throw new Error('Expected three services')
-        await page.locator('.project-row').last().scrollIntoViewIfNeeded()
+        if (await page.locator('.demo-card').count() !== 3) throw new Error('Expected three demo showcases')
+        await page.locator('.demo-card').last().scrollIntoViewIfNeeded()
         await page.waitForFunction(() => [...document.querySelectorAll('.hektor-visual img')].every(img => img.complete && img.naturalWidth))
         await page.screenshot({ path: `${out}/home-${viewport.width}.png` })
       }

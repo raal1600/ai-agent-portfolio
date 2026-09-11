@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f3f1ea"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="65" y="58" width="49" height="49" rx="10" fill="#202d25"/><text x="73" y="94" fill="#f3f1ea" font-size="29" font-weight="700">rh.</text>
+    <text x="130" y="91" fill="#171817" font-size="23" font-weight="700">Rami Halabi</text>
+    <text x="65" y="191" fill="#585b55" font-size="16" letter-spacing="2">CUSTOM AI AGENT DEVELOPMENT</text>
+    <text x="61" y="283" fill="#171817" font-size="65" font-weight="700" letter-spacing="-3">Built for your work.</text>
+    <text x="61" y="362" fill="#676c63" font-size="65" font-weight="700" letter-spacing="-3">Connected to your systems.</text>
+    <text x="65" y="426" fill="#585b55" font-size="24">Knowledge. Tools. Workflows. People in control.</text>
+    <line x1="65" y1="493" x2="1135" y2="493" stroke="#d4d1c6"/>
+    <rect x="65" y="530" width="230" height="42" rx="5" fill="#3158df"/><text x="87" y="558" fill="#fff" font-size="18" font-weight="700">Explore the demos ↗</text>
+    <text x="1135" y="558" text-anchor="end" fill="#585b55" font-size="17">Custom AI agents. Practical engineering.</text>
+  </g>
+</svg>

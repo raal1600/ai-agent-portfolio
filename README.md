@@ -1,8 +1,57 @@
-# Rami Halabi — selected systems
+# Rami Halabi — custom AI agents and selected work
 
-A public portfolio for three projects, presented through concise demos, product views, concept presentations, and available runtime evidence.
+A static customer-facing services website with three guided project showcases. The homepage explains custom AI agent development, services, engineering boundaries, approach, and project enquiries. The original compact portfolio is preserved at `work.html`; existing project and evidence URLs are unchanged.
 
 **[Open the portfolio](https://raal1600.github.io/ai-agent-portfolio/)**
+
+The customer website is prepared on `feature/customer-facing-website` for review. It has not been merged or deployed. The public link still shows the existing production site.
+
+Read the [discovery and architecture decision](docs/customer-website-discovery.md) and [implementation handoff](docs/customer-website-handoff.md) for evidence limits, validation and remaining decisions.
+
+## Website development
+
+No framework, backend, runtime package, or publishing build is required. HTML and generated SEO files are committed so the existing Pages setup can continue serving static files after a separately approved release. The new homepage works without JavaScript; demo pages retain their existing controls.
+
+From the feature worktree:
+
+```sh
+npm run serve
+# http://127.0.0.1:8110/ — customer homepage
+# http://127.0.0.1:8110/work.html — compact portfolio
+```
+
+Node is sufficient for serving, metadata, static checks and building. Use Node 22+ for the optional capture tooling as previously documented; website checks were also run with the available Node 20.17.0.
+
+```sh
+# Browser verification only: install the existing locked tools.
+# Skip the FFmpeg installer when you do not need to record videos.
+npm ci --ignore-scripts
+npm run check
+npm run build
+npm run verify
+npm run verify:customer
+npm run preview
+# http://127.0.0.1:8110/ — the built dist/ website
+```
+
+Run `serve` or `preview` one at a time: both use port 8110. Browser verification uses installed Chrome on Windows, or Playwright Chromium on other systems (`npx playwright-core install chromium`). No tests contact LinkedIn or submit an enquiry. `verify:customer` requires a current `dist/` build and tests it beneath a URL prefix as well as at an origin root. Screenshots are written to ignored `test-results/`.
+
+## Content, contact and SEO
+
+- Edit `index.html` for customer copy, `work.html` for the compact portfolio, and `assets/customer.css` for the new homepage styling. Shared demo styles and playback logic are preserved.
+- `site.config.mjs` centralizes the canonical site URL, published name, contact destination and main pages. Contact uses the LinkedIn profile already published in this repository. No form backend, email or booking URL is configured. LinkedIn may require sign-in.
+- After editing titles, descriptions or configuration, run `npm run metadata`. It updates marked metadata blocks, marked contact links, Person structured data, `sitemap.xml` and `robots.txt`. `npm run check` detects stale output.
+- Social preview source is `assets/social-preview.svg`; `npm run render:social` creates its checked-in PNG with the existing browser tool. Neither the generator nor any third-party script runs in the visitor's browser.
+- The sitemap lists the homepage, compact portfolio and three project pages. Supporting transcripts remain accessible through normal links. No dates, reviews, ratings or customer claims are generated.
+- Crawlers only use `robots.txt` at an **origin root**. The file at `/ai-agent-portfolio/robots.txt` cannot control the GitHub Pages origin; no domain-root configuration was changed. The sitemap can be submitted directly if you have webmaster access. For an eventual dedicated-origin move, put this file at the root.
+
+## Hosting and portability
+
+Production currently uses GitHub's generated Pages workflow on `main`, including Jekyll processing; no repository-owned CI workflow exists. Starting commit: `0cf02f0e6f5ace36858af5f13fcd3ed3900f2325`. The exact administrative Pages source setting could not be read, but the public URL and successful deployment of this commit were verified. No production settings or DNS were changed, and this branch was not pushed.
+
+`npm run build` produces an allowlisted `dist/` containing only site pages, assets, evidence, sitemap and robots. It refuses to replace an unrecognized output directory and validates ownership of its own output before rebuilding. Git data, test outputs, tools, and local documentation are not exported. Current production does not use `dist/`; the export is for local preview or a future approved hosting choice.
+
+For a later migration, retain every `projects/` and `evidence/` path, update `site.config.mjs`, regenerate metadata, and serve the static export. A changed hostname or path prefix needs planned redirects from old URLs. No migration is performed here. Avoid uploading the whole development checkout to a new host.
 
 ## SoherAgent
 
@@ -49,7 +98,7 @@ npm run verify
 
 `npm run record:hektor` captures every rendered slide from the public Swedish deck and encodes them into an H.264 MP4 using the durations in `evidence/hektor-agent/storyboard.json`. It also regenerates the Hektor service page, poster, transcript, chapter/caption tracks, and capture manifest. Edit that storyboard or `scripts/record-hektor.mjs` before regenerating. The script stops if source headings differ; update the source revision when deliberately recording a changed deck. Screenshots are actual presentation captures; no simulated product interface or audio is added. Review generated files before publishing.
 
-`npm run verify -- https://raal1600.github.io/ai-agent-portfolio` checks a deployed site instead of the local preview.
+After an approved release, `npm run verify -- https://raal1600.github.io/ai-agent-portfolio` checks the matching deployed version instead of the local preview. Until then, the production homepage differs from this branch and will not satisfy its new homepage checks.
 
 ## Source access
 

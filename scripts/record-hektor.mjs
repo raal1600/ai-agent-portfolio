@@ -61,7 +61,7 @@ await new Promise((done, reject) => {
 writeFileSync(join(dir, 'hektor-demo.sv.vtt'), 'WEBVTT\n\n' + data.slides.map(s => `${s.number}\n${stamp(s.start)} --> ${stamp(s.end)}\n${s.summary}\n`).join('\n'))
 writeFileSync(join(dir, 'hektor-demo.chapters.vtt'), 'WEBVTT\n\n' + data.chapters.map(c => `${stamp(c.start)} --> ${stamp(c.end)}\n${c.title}\n`).join('\n'))
 
-const header = `<header class="site-header"><a class="brand" href="../index.html">Rami Halabi</a><nav class="site-nav" aria-label="Huvudmeny"><a href="../index.html">Work</a><a href="pi-agent-harness.html">SoherAgent</a><a href="soherdocs.html">SoherDocs</a><a href="hektor-agent.html" aria-current="page">Hektor Agent</a></nav></header>`
+const header = `<header class="site-header"><a class="brand" href="../index.html">Rami Halabi</a><nav class="site-nav" aria-label="Huvudmeny"><a href="../index.html#services">Tjänster</a><a href="../index.html#contact">Kontakt</a><a href="../work.html">Work</a><a href="pi-agent-harness.html">SoherAgent</a><a href="soherdocs.html">SoherDocs</a><a href="hektor-agent.html" aria-current="page">Hektor Agent</a></nav></header>`
 writeFileSync('projects/hektor-agent.html', `<!doctype html>
 <html lang="sv">
 <head>
@@ -104,9 +104,9 @@ ${data.chapters.map((c, i) => `        <a class="workflow-chapter" href="../evid
     <div class="hektor-values" data-reveal><div><h3>Hjälp fler kunder</h3><p>Ge tydliga svar med Hektors godkända kunskap och en väg till mänsklig hjälp.</p></div><div><h3>Avlasta teamet</h3><p>Förbered underlag och anteckningar så att medarbetarna kan fokusera på nästa steg.</p></div><div><h3>Behåll kontrollen</h3><p>Hektor bestämmer information, åtkomst och när en människa tar över.</p></div></div>
     <p class="visualization-note" data-reveal>Detta är erbjudandets inriktning. Omfattning och kostnadsram preciseras i offert. Kapacitet och automatiseringsgrad är ännu inte uppmätta.</p>
   </section>
-  <section class="source-note" data-reveal><p>Vill du prata om hur Hektor Agent kan avlasta kundservice?</p><a href="https://www.linkedin.com/in/rami-halabi-2a5573195/">Kontakta Rami på LinkedIn</a></section>
+  <section class="source-note" data-reveal><p>Vill du prata om hur Hektor Agent kan avlasta kundservice?</p><a data-contact href="https://www.linkedin.com/in/rami-halabi-2a5573195/">Kontakta Rami på LinkedIn</a></section>
 </main>
-<footer class="site-footer"><p>Hektor Agent · kundnytta, avlastning och kontroll.</p><nav aria-label="Sidfotsmeny"><a href="../index.html">Work</a><a href="pi-agent-harness.html">SoherAgent</a><a href="soherdocs.html">SoherDocs</a></nav></footer>
+<footer class="site-footer"><p>Hektor Agent · kundnytta, avlastning och kontroll.</p><nav aria-label="Sidfotsmeny"><a href="../work.html">Work</a><a href="pi-agent-harness.html">SoherAgent</a><a href="soherdocs.html">SoherDocs</a></nav></footer>
 </body></html>
 `)
 
