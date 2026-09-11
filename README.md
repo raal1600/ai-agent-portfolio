@@ -74,7 +74,7 @@ normalize LF line endings for cross-platform verification.
 
 | Demo | Public material | Limits |
 | --- | --- | --- |
-| SoherAgent | Bilingual planning, delegation, control and review presentation; original English technical recordings | Concepts and recreations are distinct from the 24 July 2026 capture: 30 runtime assertions and 155 test results. No customer deployment is claimed. |
+| SoherAgent | Bilingual concept presentation explaining planning, coordination, use cases and human review | Illustrates the idea. Technical evidence, recording provenance and historical test results are absent from the customer journey. |
 | SoherDocs | Document-tool-service concept with CV tailoring as the current example | No live document endpoint is exposed. Contracts and other document types are future scope. |
 | Hektor Agent | Support concept covering knowledge, chat, proposed voice, handover and reviewed staff dictation | Hektor is the proposal subject, not this business's identity or a verified endorsement. Telephone and case integrations are not demonstrated. |
 
@@ -85,7 +85,9 @@ an employer result or hiring prediction. Other document types need their own
 sources, templates and review rules.
 
 - `projects/pi-agent-harness.html` retains all five technical recordings and
-  66 chapter links. `projects/soheragent.html` is the new bilingual overview.
+  66 chapter links for existing bookmarks. It is unlinked from the customer
+  journey, omitted from the sitemap and marked noindex. `projects/soheragent.html`
+  is the bilingual concept overview. See [the simplification note](docs/soheragent-concept-only.md).
 - `projects/soherdocs.html` and `projects/hektor-agent.html` retain their URLs
   and now show the selected-language presentation.
 - `projects/soherdocs-original.html` and `projects/hektor-agent-original.html`

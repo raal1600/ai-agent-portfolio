@@ -17,6 +17,5 @@ export default {
         ]),
       ]
     }),
-    { path: 'projects/pi-agent-harness.html', image: 'evidence/pi-agent-harness/terminal-05-verify-poster.png', imageAlt: 'SoherAgent terminal showing dated runtime and test evidence.' },
   ],
 }

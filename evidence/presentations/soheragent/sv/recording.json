@@ -1,7 +1,7 @@
 {
   "demo": "soheragent",
   "language": "sv",
-  "recordedAt": "2026-09-11T18:53:43.750Z",
+  "recordedAt": "2026-09-11T19:32:22.778Z",
   "method": "Local Slidev browser captures encoded as a silent H.264 presentation. Illustrative slides, not a recording of live agent execution.",
   "slidevVersion": "52.19.1",
   "durationSeconds": 128,
@@ -10,7 +10,7 @@
   "audio": false,
   "sourceHashNormalization": "UTF-8 with LF line endings",
   "sources": {
-    "content/demos.mjs": "b7985667b593053be85a789aa9c74093797192abc1a19d1841915357fd05c89d",
+    "content/demos.mjs": "1ed4cb15bee0b837d180202684c56b7f65f2f1b924e2a40e8e94b299873ed9fe",
     "content/hektor.mjs": "bc0f04ffdec1856c162af77a1eaa126981cac57a94bb8ad99d8638892e96a8e7",
     "presentations/components/PitchSlide.vue": "4bdb7e8429be6dd766e925abab5cf809a712c334b29caf10664886c1a89a9b68",
     "presentations/style.css": "caea88afba7b65d0b1936a2a6caf8998d283adf9ab50d39f7bcfa6f7d4846db8",
@@ -18,7 +18,7 @@
     "presentations/soheragent.sv.md": "ecd14b850630281f6b6d43816524d0a553f3491a074b732e44b21b4cdbac7b8a",
     "scripts/capture-slide.mjs": "d30961df36b2f88860bee42eabcb4dfb2ca7cf4654132aa58f26e7a57c07b7d3"
   },
-  "videoSha256": "8a8ec59a590d0a3babcc2ff660590d1ed576986c48819c988627ad6ae6093613",
+  "videoSha256": "1efe39855106deb80dac92cb5f6f19999c26f4ac183dbd7c1d5a2f8e820d6f2c",
   "slides": [
     {
       "id": "overview",
@@ -45,43 +45,43 @@
       "start": 32,
       "end": 48,
       "image": "slide-03.png",
-      "sha256": "51c03d3cd0576fcf23d894452a1d8d533b4a8f8d78a9559371e3423bbe8a7906"
+      "sha256": "ff97e7e36dc17febd5702897b5df93891551fbb1b9b45b38bce86affc6c541fe"
     },
     {
       "id": "coordinate",
       "number": 4,
-      "title": "Delegera uppgifter. Behåll ett tydligt ansvar.",
+      "title": "Dela upp arbetet. Behåll en gemensam plan.",
       "start": 48,
       "end": 64,
       "image": "slide-04.png",
-      "sha256": "1a56b83dfa6d26bb6d8d4666ab0bf46dfbb978f5fd009487de394b981d7c9d79"
+      "sha256": "2fb9b3b0e830f3ea2f7f7c76b01987e028d807354e09561101ed8e68a3882733"
     },
     {
       "id": "controls",
       "number": 5,
-      "title": "Kontroll är en del av arbetsflödet.",
+      "title": "Ert team sätter ramarna.",
       "start": 64,
       "end": 80,
       "image": "slide-05.png",
-      "sha256": "177f430ca02cc66425794a0fa38bfc9c1c82935453c1ea21729aaac2c8ed4b0f"
+      "sha256": "bf0494154e44932f459c9799fd947c0da3e83dabbfbd3a63fa8f10fa97fa757e"
     },
     {
-      "id": "evidence",
+      "id": "use-cases",
       "number": 6,
-      "title": "Se vad som faktiskt verifierades.",
+      "title": "Börja med arbete ert team behöver få gjort.",
       "start": 80,
       "end": 96,
       "image": "slide-06.png",
-      "sha256": "3239934f1b4c1769c0a17c4172f51aad9d7312578c57aeb94f2e3881789c678c"
+      "sha256": "3d7022a1b8d0ec04d3b7a51e800f93cbec1afe5c080334996537ae4cbb12c9ab"
     },
     {
       "id": "review",
       "number": 7,
-      "title": "Ett resultat behöver sitt underlag.",
+      "title": "Ert team avgör nästa steg.",
       "start": 96,
       "end": 112,
       "image": "slide-07.png",
-      "sha256": "9456cc07840d017db9dffa27e750064ade209a044f85530f1faa0ac9a72a5c58"
+      "sha256": "20192d4c1071fbf5e31f49c39925db21ec65893000c251f28a8170c57b272821"
     },
     {
       "id": "next-step",

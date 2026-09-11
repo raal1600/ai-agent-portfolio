@@ -1,7 +1,7 @@
 {
   "demo": "soherdocs",
   "language": "en",
-  "recordedAt": "2026-09-11T18:54:10.060Z",
+  "recordedAt": "2026-09-11T19:32:49.783Z",
   "method": "Local Slidev browser captures encoded as a silent H.264 presentation. Illustrative slides, not a recording of live agent execution.",
   "slidevVersion": "52.19.1",
   "durationSeconds": 128,
@@ -10,7 +10,7 @@
   "audio": false,
   "sourceHashNormalization": "UTF-8 with LF line endings",
   "sources": {
-    "content/demos.mjs": "b7985667b593053be85a789aa9c74093797192abc1a19d1841915357fd05c89d",
+    "content/demos.mjs": "1ed4cb15bee0b837d180202684c56b7f65f2f1b924e2a40e8e94b299873ed9fe",
     "content/hektor.mjs": "bc0f04ffdec1856c162af77a1eaa126981cac57a94bb8ad99d8638892e96a8e7",
     "presentations/components/PitchSlide.vue": "4bdb7e8429be6dd766e925abab5cf809a712c334b29caf10664886c1a89a9b68",
     "presentations/style.css": "caea88afba7b65d0b1936a2a6caf8998d283adf9ab50d39f7bcfa6f7d4846db8",
