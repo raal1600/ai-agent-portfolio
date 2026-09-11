@@ -7,8 +7,9 @@ export const root = fileURLToPath(new URL('../', import.meta.url))
 const escape = value => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
 const decode = value => value.replaceAll('&amp;', '&').replaceAll('&quot;', '"').replaceAll('&lt;', '<').replaceAll('&gt;', '>')
 
-export function metadata({ check = false } = {}) {
-  const base = new URL(config.url)
+export function metadata({ check = false, directory = root, url = config.url } = {}) {
+  const root = resolve(directory)
+  const base = new URL(url)
   if (!['https:', 'http:'].includes(base.protocol) || base.search || base.hash || !base.pathname.endsWith('/')) throw new Error('Site URL must be an absolute HTTP(S) URL ending in / without a query or fragment')
   const update = (path, content) => {
     if (check) {

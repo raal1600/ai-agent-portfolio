@@ -8,6 +8,8 @@ The customer website is on [`feature/customer-facing-website`](https://github.co
 
 Read the [discovery and architecture decision](docs/customer-website-discovery.md) and [implementation handoff](docs/customer-website-handoff.md) for evidence limits, validation and remaining decisions.
 
+To keep main's website and a separate customer preview online together, see the [combined Pages publishing setup](docs/pages-preview.md). It mirrors the multi-branch approach used by Hektor and is prepared for review; activation requires an approved deployment change.
+
 ## Website development
 
 No framework, backend, runtime package, or publishing build is required. HTML and generated SEO files are committed so the existing Pages setup can continue serving static files after a separately approved release. The new homepage works without JavaScript; demo pages retain their existing controls.
