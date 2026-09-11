@@ -10,23 +10,23 @@ Att generera kod är ett steg. Ett användbart utvecklingsflöde behöver också
 
 3
 00:00:32.000 --> 00:00:48.000
-De befintliga konceptinspelningarna använder ett tänkt projekt för analys av tjänsteavtal. De visar planering, inte en levererad kundprodukt.
+Till exempel vill ett team ha ett internt verktyg för att förstå tjänsteavtal. Bestäm vad det ska göra och vilken information det får använda.
 
 4
 00:00:48.000 --> 00:01:04.000
-Den visade styrningen skiljer den samordnande huvudagenten från utförande delagenter. Parallellt arbete har uttryckliga gränser.
+En samordnande agent håller i planen. Andra agenter tar hand om avgränsade uppgifter och lämnar tillbaka resultaten för granskning.
 
 5
 00:01:04.000 --> 00:01:20.000
-Det tekniska underlaget fokuserar på samordning. Det handlar om specifika testade beteenden, inte en garanti för varje framtida integration.
+Ni väljer uppgiften och verktygen. Agenten arbetar inom de ramarna och lämnar besluten till ert team.
 
 6
 00:01:20.000 --> 00:01:36.000
-Den ursprungliga verifieringen är daterad 24 juli 2026. Resultaten gäller det scenariot och den versionen; de är inte ett aktuellt produktionsmått.
+Möjliga utgångspunkter är ett internt verktyg, en koppling mellan system eller en avgränsad ändring i befintlig programvara.
 
 7
 00:01:36.000 --> 00:01:52.000
-En användbar överlämning låter granskaren förstå ändringen, se vad som kontrollerats och avgöra nästa steg.
+Agenten presenterar den föreslagna ändringen och eventuella öppna frågor. Ert team granskar resultatet innan det godkänns.
 
 8
 00:01:52.000 --> 00:02:08.000

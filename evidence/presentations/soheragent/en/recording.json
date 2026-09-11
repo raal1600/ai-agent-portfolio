@@ -1,7 +1,7 @@
 {
   "demo": "soheragent",
   "language": "en",
-  "recordedAt": "2026-09-11T18:53:17.724Z",
+  "recordedAt": "2026-09-11T19:31:56.532Z",
   "method": "Local Slidev browser captures encoded as a silent H.264 presentation. Illustrative slides, not a recording of live agent execution.",
   "slidevVersion": "52.19.1",
   "durationSeconds": 128,
@@ -10,7 +10,7 @@
   "audio": false,
   "sourceHashNormalization": "UTF-8 with LF line endings",
   "sources": {
-    "content/demos.mjs": "b7985667b593053be85a789aa9c74093797192abc1a19d1841915357fd05c89d",
+    "content/demos.mjs": "1ed4cb15bee0b837d180202684c56b7f65f2f1b924e2a40e8e94b299873ed9fe",
     "content/hektor.mjs": "bc0f04ffdec1856c162af77a1eaa126981cac57a94bb8ad99d8638892e96a8e7",
     "presentations/components/PitchSlide.vue": "4bdb7e8429be6dd766e925abab5cf809a712c334b29caf10664886c1a89a9b68",
     "presentations/style.css": "caea88afba7b65d0b1936a2a6caf8998d283adf9ab50d39f7bcfa6f7d4846db8",
@@ -18,7 +18,7 @@
     "presentations/soheragent.en.md": "bdd6cb5d7da909850415322b251074d3d90a25581bd83ea0971775b21425dfdc",
     "scripts/capture-slide.mjs": "d30961df36b2f88860bee42eabcb4dfb2ca7cf4654132aa58f26e7a57c07b7d3"
   },
-  "videoSha256": "c906f133c8211aec5acd5dbffd5b07b63c5a8f2c897eaf1f33c0449539f00124",
+  "videoSha256": "785a75be2159a9d098ffdd569bf179332bfc6a7e2dd8566890e876e6b09a52e8",
   "slides": [
     {
       "id": "overview",
@@ -45,43 +45,43 @@
       "start": 32,
       "end": 48,
       "image": "slide-03.png",
-      "sha256": "2d258af962c3870c007319c1e5d12a0e85f30416a9cc2d98702d8486862f1f30"
+      "sha256": "044e7edb8d13e4883ab0a36f6ba353e00216043e024e79cc49ee03a9bb0444a2"
     },
     {
       "id": "coordinate",
       "number": 4,
-      "title": "Delegate tasks. Keep one source of authority.",
+      "title": "Divide the work. Keep a shared plan.",
       "start": 48,
       "end": 64,
       "image": "slide-04.png",
-      "sha256": "2849c1fecd6474a4bbf4bcbec5c867957156c2332a2761c89cea27457603de2b"
+      "sha256": "748bbc7779cfdf13d8300c63312d08e0ceec542d5a5c79a8e86ea46cc22ea72d"
     },
     {
       "id": "controls",
       "number": 5,
-      "title": "Control is part of the workflow.",
+      "title": "Your team sets the boundaries.",
       "start": 64,
       "end": 80,
       "image": "slide-05.png",
-      "sha256": "6a5f8c69a604c12d61c63b4ccb876b84456c81de6af8abd98c9bb884e1c61025"
+      "sha256": "0312e0564666e20dddf4f318c734f8eb970e03bc7eeaf09087d125b73e9bf45b"
     },
     {
-      "id": "evidence",
+      "id": "use-cases",
       "number": 6,
-      "title": "Inspect what was actually verified.",
+      "title": "Start with work your team needs done.",
       "start": 80,
       "end": 96,
       "image": "slide-06.png",
-      "sha256": "57709145f7faa2a1a6dbc62e69b3644a9f84fcf29b03f326dbb7ebdfc35f013f"
+      "sha256": "dddb8cd5c15cbb36716dfa8a8006d51997c4f65b4bafddb41c05df61a88758bd"
     },
     {
       "id": "review",
       "number": 7,
-      "title": "A result should come with its evidence.",
+      "title": "Your team decides what happens next.",
       "start": 96,
       "end": 112,
       "image": "slide-07.png",
-      "sha256": "9ffaca34f6d60b1bbb1f14685d5db956c3874fe9c8d5b73d556148eca48a799f"
+      "sha256": "bcaa5ae22060779f3272d3ece4fcbdc42bf1f945fb458fc92e48b97941b18074"
     },
     {
       "id": "next-step",

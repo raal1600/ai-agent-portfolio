@@ -10,23 +10,23 @@ Generating code is one step. A useful development workflow also needs shared con
 
 3
 00:00:32.000 --> 00:00:48.000
-The existing concept recordings use an imagined service-contract intelligence project. They show planning, not a delivered customer product.
+For example, a team wants an internal tool to understand service contracts. Agree what it should do and which information it may use.
 
 4
 00:00:48.000 --> 00:01:04.000
-The demonstrated control design separates the coordinating parent from task workers. Parallel work is bounded rather than unlimited.
+A coordinating agent holds the plan. Other agents take on specific tasks and bring their results back for review.
 
 5
 00:01:04.000 --> 00:01:20.000
-The technical evidence focuses on coordination mechanics. These are specific tested behaviors, not a guarantee for every future integration.
+You choose the scope and the tools. The agent works within those limits and brings decisions back to your team.
 
 6
 00:01:20.000 --> 00:01:36.000
-The original verification capture is dated 24 July 2026. Its results belong to that scenario and revision; they are not a current production benchmark.
+Possible starting points include an internal tool, a connection between systems or a focused change to existing software.
 
 7
 00:01:36.000 --> 00:01:52.000
-A useful handover lets a reviewer understand the change, see what was checked and decide what happens next.
+The agent presents the proposed change and any open questions. Your team reviews the result before accepting it.
 
 8
 00:01:52.000 --> 00:02:08.000
