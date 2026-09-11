@@ -1,5 +1,7 @@
 # Customer website handoff
 
+**Publication update:** After the initial handoff below, the user approved publishing both versions together. Workflow-only PR #1 was merged and Pages was switched to GitHub Actions. The original portfolio remains at `https://raal1600.github.io/ai-agent-portfolio/`; the customer branch is published at `https://raal1600.github.io/ai-agent-portfolio/preview/`. See [current publishing instructions](pages-preview.md). The following sections record the original local implementation handoff.
+
 ## Delivery and Git safety
 
 Implemented locally on `feature/customer-facing-website` in the isolated sibling worktree `ai-agent-portfolio-customer-site`. Base commit: `0cf02f0e6f5ace36858af5f13fcd3ed3900f2325`. The original checkout remains on `add-hektor-agent-demo` at that commit; its clean tracked/untracked state and older local `main` reference are preserved. Existing ignored capture, dependency and test directories in that checkout were not touched.

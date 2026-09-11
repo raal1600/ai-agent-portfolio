@@ -4,15 +4,15 @@ A static customer-facing services website with three guided project showcases. T
 
 **[Open the portfolio](https://raal1600.github.io/ai-agent-portfolio/)**
 
-The customer website is on [`feature/customer-facing-website`](https://github.com/raal1600/ai-agent-portfolio/tree/feature/customer-facing-website) for review. It has not been merged or deployed. The public link still shows the existing production site.
+The [customer website preview](https://raal1600.github.io/ai-agent-portfolio/preview/) is published from [`feature/customer-facing-website`](https://github.com/raal1600/ai-agent-portfolio/tree/feature/customer-facing-website). The [existing portfolio](https://raal1600.github.io/ai-agent-portfolio/) remains at the original URL. Only the shared publishing workflow was merged into main; the customer homepage remains on its separate branch.
 
 Read the [discovery and architecture decision](docs/customer-website-discovery.md) and [implementation handoff](docs/customer-website-handoff.md) for evidence limits, validation and remaining decisions.
 
-To keep main's website and a separate customer preview online together, see the [combined Pages publishing setup](docs/pages-preview.md). It mirrors the multi-branch approach used by Hektor and is prepared for review; activation requires an approved deployment change.
+The [combined Pages publishing setup](docs/pages-preview.md) keeps both versions online using the multi-branch approach used by Hektor. It was activated with user approval through [PR #1](https://github.com/raal1600/ai-agent-portfolio/pull/1).
 
 ## Website development
 
-No framework, backend, runtime package, or publishing build is required. HTML and generated SEO files are committed so the existing Pages setup can continue serving static files after a separately approved release. The new homepage works without JavaScript; demo pages retain their existing controls.
+No framework, backend, or runtime package is required. HTML and generated SEO files are committed; the publishing workflow assembles the two static versions into one artifact. The new homepage works without JavaScript; demo pages retain their existing controls.
 
 From the feature worktree:
 
@@ -49,7 +49,7 @@ Run `serve` or `preview` one at a time: both use port 8110. Browser verification
 
 ## Hosting and portability
 
-Production currently uses GitHub's generated Pages workflow on `main`, including Jekyll processing; no repository-owned CI workflow exists. Starting commit: `0cf02f0e6f5ace36858af5f13fcd3ed3900f2325`. Before publishing the feature branch for review, an authenticated settings check confirmed legacy Pages publishing from `main` at `/`, with no custom domain. No production settings or DNS were changed. Publishing this feature branch does not publish the website.
+Production originally used GitHub's generated Pages workflow on `main`, including Jekyll processing. Starting commit: `0cf02f0e6f5ace36858af5f13fcd3ed3900f2325`. With user approval, workflow-only PR #1 was merged at `38ca1c52270b338f4980a86805190ba2f4a5a86f` and Pages was switched to GitHub Actions. The manual **Publish portfolio and customer preview** workflow now assembles main at `/` and the customer branch under `/preview/`. No DNS or custom domain was changed. To refresh either version, run that workflow from main; a feature-branch push alone does not publish it.
 
 `npm run build` produces an allowlisted `dist/` containing only site pages, assets, evidence, sitemap and robots. It refuses to replace an unrecognized output directory and validates ownership of its own output before rebuilding. Git data, test outputs, tools, and local documentation are not exported. Current production does not use `dist/`; the export is for local preview or a future approved hosting choice.
 
@@ -100,7 +100,7 @@ npm run verify
 
 `npm run record:hektor` captures every rendered slide from the public Swedish deck and encodes them into an H.264 MP4 using the durations in `evidence/hektor-agent/storyboard.json`. It also regenerates the Hektor service page, poster, transcript, chapter/caption tracks, and capture manifest. Edit that storyboard or `scripts/record-hektor.mjs` before regenerating. The script stops if source headings differ; update the source revision when deliberately recording a changed deck. Screenshots are actual presentation captures; no simulated product interface or audio is added. Review generated files before publishing.
 
-After an approved release, `npm run verify -- https://raal1600.github.io/ai-agent-portfolio` checks the matching deployed version instead of the local preview. Until then, the production homepage differs from this branch and will not satisfy its new homepage checks.
+`npm run verify -- https://raal1600.github.io/ai-agent-portfolio/preview` checks the deployed customer version. Use `npm run verify:pages -- https://raal1600.github.io/ai-agent-portfolio` to check both published versions together; the root homepage remains the original portfolio.
 
 ## Source access
 

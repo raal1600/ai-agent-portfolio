@@ -8,8 +8,10 @@ import config from '../site.config.mjs'
 
 const output = resolve(root, 'test-results')
 mkdirSync(output, { recursive: true })
-const server = await serve(root, 0)
-const base = `http://127.0.0.1:${server.address().port}/pages-dist`
+const remote = process.argv[2]?.replace(/\/$/, '')
+const server = remote ? null : await serve(root, 0)
+const base = remote ?? `http://127.0.0.1:${server.address().port}/pages-dist`
+const basePath = new URL(base).pathname.replace(/\/$/, '')
 const errors = []
 let browser
 try {
@@ -33,7 +35,7 @@ try {
       } else await page.locator('.project-row').last().scrollIntoViewIfNeeded()
       await page.waitForFunction(() => [...document.images].every(image => image.complete && image.naturalWidth))
       await page.evaluate(() => scrollTo(0, 0))
-      await page.screenshot({ path: resolve(output, `pages-${version ? 'preview' : 'main'}-${width}.png`), fullPage: true })
+      await page.screenshot({ path: resolve(output, `pages-${remote ? 'live-' : ''}${version ? 'preview' : 'main'}-${width}.png`), fullPage: true })
       for (const project of ['pi-agent-harness', 'soherdocs', 'hektor-agent']) {
         assert((await page.goto(`${url}/projects/${project}.html`)).ok())
         if (project === 'pi-agent-harness') await page.locator('[role="tab"]').last().click()
@@ -52,7 +54,7 @@ try {
         }, { start })
         await video.evaluate(media => media.pause())
         await page.locator('.site-header .brand').click()
-        assert.equal(new URL(page.url()).pathname, `/pages-dist${version}/index.html`, 'Return navigation must stay in the selected version')
+        assert.equal(new URL(page.url()).pathname, `${basePath}${version}/index.html`, 'Return navigation must stay in the selected version')
       }
       assert((await page.goto(`${url}/evidence/pi-agent-harness/terminal-01-describe.html?transcript=1#scene-13`)).ok())
       assert.equal(new URL(page.url()).hash, '#scene-13')
@@ -71,4 +73,4 @@ try {
   await plain.close()
   assert.deepEqual(errors, [])
   console.log('PASS: main and preview work together below a project path, mobile/desktop media and navigation, no-JS fallback and no browser errors.')
-} finally { await browser?.close(); server.close() }
+} finally { await browser?.close(); server?.close() }
