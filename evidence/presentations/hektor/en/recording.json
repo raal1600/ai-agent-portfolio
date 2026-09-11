@@ -1,94 +1,152 @@
 {
   "demo": "hektor",
   "language": "en",
-  "recordedAt": "2026-09-11T17:39:41.061Z",
+  "recordedAt": "2026-09-11T18:55:13.971Z",
   "method": "Local Slidev browser captures encoded as a silent H.264 presentation. Illustrative slides, not a recording of live agent execution.",
   "slidevVersion": "52.19.1",
-  "durationSeconds": 128,
+  "durationSeconds": 150,
   "width": 1600,
   "height": 900,
   "audio": false,
   "sourceHashNormalization": "UTF-8 with LF line endings",
   "sources": {
-    "content/demos.mjs": "9612c118b4d534d4115971286cd193a87cafeeabb47c5a62eec58249c1644562",
-    "presentations/components/PitchSlide.vue": "4bdb7e8429be6dd766e925abab5cf809a712c334b29caf10664886c1a89a9b68",
-    "presentations/style.css": "caea88afba7b65d0b1936a2a6caf8998d283adf9ab50d39f7bcfa6f7d4846db8",
+    "content/hektor.mjs": "bc0f04ffdec1856c162af77a1eaa126981cac57a94bb8ad99d8638892e96a8e7",
+    "content/hektor-translation.mjs": "504dfe74fc406d2742a6c298b90a13da12522ceb33e5720538a9964a0f19a6b4",
+    "presentations/hektor/en.md": "40ebbdc0780a0241ca47af25cb3f67b51252645cec8a1b6a2721ca83feecda1b",
+    "presentations/hektor/style.css": "24a6fa39685be1be45ebcfbf1870e0dd540b592a1c516f9d16c7055b7607ce9f",
+    "presentations/hektor/components/DeckHeaderEnglish.vue": "4f71bb8e3563163b959ea88443469093931c736fb504aa76b2cfcb066e2c3779",
+    "presentations/hektor/components/DeckFooter.vue": "c246f33ae5095622c80d4210cbaf197440a2ee3c54c79e8dfb5d39e11e92ff3c",
+    "presentations/hektor/components/DeckIcon.vue": "de20f5d3276864ffb06350b861982f3f09b983959a524aa838f06fe3adc0d919",
     "presentations/package-lock.json": "5427ffd95e719252cba788612e1d08cc0281dfed6099619c0dc89d2e292f2ee8",
-    "presentations/hektor.en.md": "a6040d0f4583fd8d0d1f68ef292edc4024b47622d34f9737ba646ea5c91c9bdf"
+    "scripts/capture-slide.mjs": "d30961df36b2f88860bee42eabcb4dfb2ca7cf4654132aa58f26e7a57c07b7d3"
   },
-  "videoSha256": "c69fde19f1d17d2d5ece02ecc5694102b95c778c8a79bfb8b15dcc06ab4c27e8",
+  "videoSha256": "37ba1de7f2c0c6199950107f005158c4a92f866be79a569d85c08a6fb2a51608",
   "slides": [
     {
-      "id": "overview",
+      "id": "introduktion",
       "number": 1,
-      "title": "One support workflow.\nPeople stay in control.",
+      "title": "Hektor Demo",
       "start": 0,
-      "end": 16,
+      "end": 8,
       "image": "slide-01.png",
-      "sha256": "21c88cbafa4b75c6372c83b433f20c6e4f679380ce16d2025043f4db228568ab"
+      "sha256": "e51bd72d706335707642664b08d2b9274d5aa756126d006428947ae7bd79a6cc"
     },
     {
-      "id": "knowledge",
+      "id": "kundnytta",
       "number": 2,
-      "title": "Start with knowledge the team approves.",
-      "start": 16,
-      "end": 32,
+      "title": "Faster help. An easier customer experience.",
+      "start": 8,
+      "end": 18,
       "image": "slide-02.png",
-      "sha256": "63143388b99e93b66e141596bff592c49087f2ef593f0e5d61b13a3eab840563"
+      "sha256": "4002323643a6106b816cd94ba64980b7e080318236ee2f6c0c83b53c778f701a"
     },
     {
-      "id": "chat",
+      "id": "mindre-dubbelarbete",
       "number": 3,
-      "title": "A useful answer knows its limits.",
-      "start": 32,
-      "end": 48,
+      "title": "The same questions. Less repeated work.",
+      "start": 18,
+      "end": 28,
       "image": "slide-03.png",
-      "sha256": "ba3e062f40a1a632843969d90e47e61b8a5c102bdd783e0e8f79e6d9f2a58831"
+      "sha256": "264475ac53950d2dbde7a60ef5fab14ffa9263b788c18d60e746acc8a5ad4177"
     },
     {
-      "id": "voice",
+      "id": "tre-kanaler",
       "number": 4,
-      "title": "The same support logic, in a voice flow.",
-      "start": 48,
-      "end": 64,
+      "title": "One agent. Three ways to help.",
+      "start": 28,
+      "end": 36,
       "image": "slide-04.png",
-      "sha256": "5cb69297d1457be42fc89ef0e84200a2902f36ff56e347ba9733ae48549bb87e"
+      "sha256": "5df0110dc956bba8b017477709ab0e8e7585427acda494854fec53e3b6beb75b"
     },
     {
-      "id": "handover",
+      "id": "chatt",
       "number": 5,
-      "title": "Hand over the context, not just the call.",
-      "start": 64,
-      "end": 80,
+      "title": "How customers could get help in chat.",
+      "start": 36,
+      "end": 48,
       "image": "slide-05.png",
-      "sha256": "173851b46b485856b9a72abe3c80d7a92704addc9ffc29d697c21e418711037e"
+      "sha256": "c3e2615a93eb2e0300edb845dd3b084af4bc72243acffcc08f1f5edd85c10800"
     },
     {
-      "id": "dictation",
+      "id": "kunskap",
       "number": 6,
-      "title": "Turn a staff note into a reviewable draft.",
-      "start": 80,
-      "end": 96,
+      "title": "Hektor’s knowledge behind every answer.",
+      "start": 48,
+      "end": 58,
       "image": "slide-06.png",
-      "sha256": "1e410967f931c94083133d1e05159c76a61c8fd747e9fdcd934b7bfe2e38254b"
+      "sha256": "6b23de35e3a90d48bf81754ec12872070f3d6f47a20e0ecbb95eb4e4ff28c0e8"
     },
     {
-      "id": "boundaries",
+      "id": "telefon",
       "number": 7,
-      "title": "Decide the boundaries before connecting tools.",
-      "start": 96,
-      "end": 112,
+      "title": "The same help when customers call.",
+      "start": 58,
+      "end": 74,
       "image": "slide-07.png",
-      "sha256": "ecb4c6e14586253a05e7cab47c50ba612350d87132d1e7466e6c7f50d553082d"
+      "sha256": "73abe2facc7b1829626369920e447ace456d141ee76bbc1754d5eb601d09de20"
     },
     {
-      "id": "next-step",
+      "id": "overlamning",
       "number": 8,
-      "title": "Start with one recurring support need.",
-      "start": 112,
-      "end": 128,
+      "title": "The next colleague gets the context.",
+      "start": 74,
+      "end": 86,
       "image": "slide-08.png",
-      "sha256": "ea811f06c87dd3669b516e613c454af4488de2d76ed3016e11f06a76e129e59d"
+      "sha256": "80bb100d3d42dafd1093401e34fe5a5963e439e3d0672c864d4555a50afa739a"
+    },
+    {
+      "id": "diktering",
+      "number": 9,
+      "title": "Describe what happened. Get the note ready.",
+      "start": 86,
+      "end": 98,
+      "image": "slide-09.png",
+      "sha256": "e1b74d399e0f990050191dffab1528e0729f2bc3ab4d9df33e5a0c7a30c0ad02"
+    },
+    {
+      "id": "kontroll",
+      "number": 10,
+      "title": "Hektor sets the boundaries.",
+      "start": 98,
+      "end": 108,
+      "image": "slide-10.png",
+      "sha256": "23d27209838235b7303f2e05f892f6c604541766323e5c58f131b77fed1f6c79"
+    },
+    {
+      "id": "ansvar",
+      "number": 11,
+      "title": "The agent handles routine work. The team takes it forward.",
+      "start": 108,
+      "end": 118,
+      "image": "slide-11.png",
+      "sha256": "5a33528226d07ea1cee79a9d91a2d99c29144e9f1d24f1aaa74fa7f65e7b2085"
+    },
+    {
+      "id": "kapacitet",
+      "number": 12,
+      "title": "More customer contacts with the same team.",
+      "start": 118,
+      "end": 128,
+      "image": "slide-12.png",
+      "sha256": "6a580fdb4e6809ff5caa8ef5cfa26072914ba2c56f51684db245829fe3eb1393"
+    },
+    {
+      "id": "samlat-varde",
+      "number": 13,
+      "title": "This is the value for Hektor.",
+      "start": 128,
+      "end": 138,
+      "image": "slide-13.png",
+      "sha256": "f3342812ebf4d093b8ac40fe66089dbc422b7e818b7c634e29bab4ffaca8ff41"
+    },
+    {
+      "id": "erbjudande",
+      "number": 14,
+      "title": "One agent. Value for a whole team.",
+      "start": 138,
+      "end": 150,
+      "image": "slide-14.png",
+      "sha256": "0d5bf7b6a1bb009747d7c7629517aac7a937990b4c70f2a58e688c69faad3798"
     }
   ]
 }

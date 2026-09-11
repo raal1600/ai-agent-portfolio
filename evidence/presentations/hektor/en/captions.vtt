@@ -1,33 +1,57 @@
 WEBVTT
 
 1
-00:00:00.000 --> 00:00:16.000
-Hektor Agent is a concept for answering recurring questions, handing over with context and preparing documentation for review.
+00:00:00.000 --> 00:00:08.000
+One shared agent for web chat, telephone and staff dictation. The aim is to help customers and support the team.
 
 2
-00:00:16.000 --> 00:00:32.000
-The company chooses which information the agent may use. The proposed workflow turns that material into an answer with a route back to its source.
+00:00:08.000 --> 00:00:18.000
+Common questions can get answers outside staffed support hours. Several customers can receive help at once, with a clear route to a person.
 
 3
-00:00:32.000 --> 00:00:48.000
-Illustrative conversation about Wi-Fi calling. General guidance is different from checking a customer account.
+00:00:18.000 --> 00:00:28.000
+Reuse approved knowledge for answers, guidance and documentation. Free time for questions that need experience and personal contact.
 
 4
-00:00:48.000 --> 00:01:04.000
-Voice is a proposed channel in this concept. This presentation does not demonstrate a live telephone connection.
+00:00:28.000 --> 00:00:36.000
+Chat and telephone help customers. Dictation helps staff prepare a case note.
 
 5
-00:01:04.000 --> 00:01:20.000
-An illustrative handover gives the next person a concise starting point. It separates what was explained from what still needs checking.
+00:00:36.000 --> 00:00:48.000
+An illustrative answer about Wi-Fi calling shows how a customer could receive a clear explanation based on Hektor’s information, with a way to contact support.
 
 6
-00:01:20.000 --> 00:01:36.000
-The concept includes dictation after a support interaction. Staff review the draft before it becomes an approved case note.
+00:00:48.000 --> 00:00:58.000
+Hektor chooses the information: FAQs, guidance, services and terms. Hektor also decides when a person takes over.
 
 7
-00:01:36.000 --> 00:01:52.000
-A support system needs explicit decisions about information, permissions and responsibility. Integrations and capacity must be validated for the chosen scope.
+00:00:58.000 --> 00:01:14.000
+The illustrative Swedish-language phone conversation answers a general question about Wi-Fi calling. When asked about a subscription, the agent explains that it has no account access and helps the customer reach support. The slide text is translated into English.
 
 8
-00:01:52.000 --> 00:02:08.000
-We can scope a support workflow around your approved knowledge and team. Validate one useful flow before expanding channels or permissions.
+00:01:14.000 --> 00:01:26.000
+A proposed support brief gathers the customer’s request, what has been explained and the next step. The example explicitly states that no subscription check was performed.
+
+9
+00:01:26.000 --> 00:01:38.000
+A staff member dictates. Hektor prepares the text. The staff member reviews and corrects it before an approved note is saved through an authorized integration.
+
+10
+00:01:38.000 --> 00:01:48.000
+Hektor approves information, access and human follow-up. Personal support requires approved integrations, identity checks and appropriate permissions.
+
+11
+00:01:48.000 --> 00:01:58.000
+The agent can explain common questions, guide people and prepare case information. The team retains responsibility for exceptions, sensitive issues, decisions and customer relationships.
+
+12
+00:01:58.000 --> 00:02:08.000
+One shared service can support several staff members. Capacity must be adapted to traffic and agreements; the presentation shows no measured level of automation.
+
+13
+00:02:08.000 --> 00:02:18.000
+More accessible customer service, less recurring work, easier documentation and continued control for Hektor.
+
+14
+00:02:18.000 --> 00:02:30.000
+The commercial direction is one agent at the cost of one support employee, with the potential to automate a whole team’s recurring work. Scope and cost are defined in a quote. The effect has not yet been measured.

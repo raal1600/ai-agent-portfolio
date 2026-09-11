@@ -69,7 +69,7 @@ try {
   assert.equal(await page.locator('[data-contact]').first().getAttribute('href'), config.contact)
   await page.goto(base + '/preview/projects/hektor-agent.html')
   await page.locator('[data-chapter-start]').first().click()
-  assert(page.url().includes('/preview/evidence/presentations/hektor/en/index.html#overview'))
+  assert(page.url().includes('/preview/evidence/presentations/hektor/en/index.html#introduktion'))
   await plain.close()
   assert.deepEqual(errors, [])
   console.log('PASS: main and preview work together below a project path, mobile/desktop media and navigation, no-JS fallback and no browser errors.')

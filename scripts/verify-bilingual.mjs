@@ -5,7 +5,7 @@ import { createHash } from 'node:crypto'
 import { resolve } from 'node:path'
 import { serve } from './serve.mjs'
 import { root } from './metadata.mjs'
-import { demos, languages, slidesFor } from '../content/demos.mjs'
+import { demos, languages, slidesFor, chaptersFor } from '../content/demos.mjs'
 import config from '../site.config.mjs'
 
 const remote = process.argv[2]?.replace(/\/$/, '')
@@ -21,7 +21,7 @@ try {
   page.on('request', request => { if (!request.url().startsWith(base + '/') && !request.url().endsWith('/favicon.ico')) errors.push(`Unexpected external request: ${request.url()}`) })
   for (const demo of demos) for (const lang of languages) {
     const prefix = lang === 'sv' ? 'sv/' : '', other = lang === 'sv' ? 'en' : 'sv'
-    const dir = `evidence/presentations/${demo.id}/${lang}`, slides = slidesFor(demo, lang)
+    const dir = `evidence/presentations/${demo.id}/${lang}`, slides = slidesFor(demo, lang), chapters = chaptersFor(demo,lang)
     const record = JSON.parse(readFileSync(resolve(root, dir, 'recording.json'), 'utf8'))
     assert.equal(record.videoSha256, hash(`${dir}/walkthrough.mp4`), 'Recording hash')
     assert.equal(record.audio, false)
@@ -29,6 +29,10 @@ try {
     for (const [source, expected] of Object.entries(record.sources)) assert.equal(hash(source, true), expected, `Stale recording source: ${source}`)
     assert.deepEqual(record.slides.map(s => [s.id, s.start, s.end]), slides.map(s => [s.id, s.start, s.end]))
     for (const s of record.slides) assert.equal(hash(`${dir}/${s.image}`), s.sha256)
+    if (demo.id === 'hektor' && lang === 'sv') {
+      assert.equal(record.videoSha256,hash('evidence/hektor-agent/hektor-demo.mp4'),'The completed Swedish Hektor video must remain unchanged')
+      for (const s of record.slides) assert.equal(s.sha256,hash(`evidence/hektor-agent/slides/${String(s.number).padStart(2,'0')}.png`),'Original Hektor artwork must be preserved')
+    }
     const response = await page.goto(`${base}/${prefix}${demo.path}`)
     assert(response.ok())
     assert.equal(await page.locator('html').getAttribute('lang'), lang)
@@ -36,10 +40,23 @@ try {
     const media = await page.locator('video').evaluate(async v => { await v.play(); v.pause(); return { duration: v.duration, width: v.videoWidth, height: v.videoHeight } })
     assert(Math.abs(media.duration - record.durationSeconds) < .2)
     assert.equal(media.width, 1600); assert.equal(media.height, 900)
+    const videoUrl = new URL(await page.locator('video source').getAttribute('src'),page.url()).href
+    const servedVideo = await page.request.get(videoUrl)
+    assert(servedVideo.ok())
+    assert.equal(createHash('sha256').update(await servedVideo.body()).digest('hex'),record.videoSha256,'The served video must be the corrected recording, including on Pages')
+    const posterUrl = new URL(await page.locator('video').getAttribute('poster'),page.url()).href
+    const servedPoster = await page.request.get(posterUrl)
+    assert(servedPoster.ok())
+    assert.equal(createHash('sha256').update(await servedPoster.body()).digest('hex'),record.slides[0].sha256,'The served poster must be the corrected capture')
+    assert.equal(await page.locator('[data-chapter-id]').count(),chapters.length)
+    for (const [i,c] of chapters.entries()) {
+      await page.locator('[data-chapter-id]').nth(i).click()
+      await page.waitForFunction(t => Math.abs(document.querySelector('video').currentTime - t) < 2,c.start)
+      await page.locator('video').evaluate(v=>v.pause())
+      assert.equal(await page.locator('[aria-current="step"]').getAttribute('data-chapter-id'),c.id)
+    }
     const fingerprints = new Set()
     for (const [i, s] of slides.entries()) {
-      await page.locator('[data-chapter-id]').nth(i).click()
-      await page.waitForFunction(t => Math.abs(document.querySelector('video').currentTime - t) < 2, s.start)
       const frame = await page.locator('video').evaluate(async (v, t) => {
         v.pause()
         await new Promise(done => { v.addEventListener('seeked', done, { once: true }); v.currentTime = t })
@@ -48,7 +65,8 @@ try {
         return canvas.toDataURL()
       }, s.start + s.seconds / 2)
       assert(!fingerprints.has(frame), 'Duplicated or blank slide frame'); fingerprints.add(frame)
-      assert.equal(await page.locator('[aria-current="step"]').getAttribute('data-chapter-id'), s.id)
+      const chapter = chapters.find(c => s.start >= c.start && s.start < c.end)
+      assert.equal(await page.locator('[aria-current="step"]').getAttribute('data-chapter-id'), chapter.id)
     }
     const cues = await page.locator('video').evaluate(async v => {
       const track = [...v.textTracks].find(t => t.kind === 'captions'); track.mode = 'hidden'
@@ -71,7 +89,7 @@ try {
     await page.locator('[data-language-link]').click()
     assert.equal(new URL(page.url()).hash, '#' + slides[4].id)
     assert.equal(await page.locator('html').getAttribute('lang'), other)
-    console.log(`PASS ${demo.name} ${lang}: 8 decoded slides, captions, provenance and language-position switching`)
+    console.log(`PASS ${demo.name} ${lang}: ${slides.length} decoded slides, ${chapters.length} chapters, captions, provenance and language-position switching`)
   }
   // The selected language must persist through normal site navigation and links.
   for (const lang of languages) {
@@ -89,12 +107,12 @@ try {
   for (const lang of languages) for (const d of demos) {
     await fallback.goto(`${base}/${lang === 'sv' ? 'sv/' : ''}${d.path}`)
     await fallback.locator('[data-chapter-id]').last().click()
-    assert.equal(new URL(fallback.url()).hash, '#next-step')
+    assert.equal(new URL(fallback.url()).hash, '#' + chaptersFor(d,lang).at(-1).id)
     assert.equal(await fallback.locator('html').getAttribute('lang'), lang)
-    assert.equal(await fallback.locator('.transcript-slide').count(), 8)
+    assert.equal(await fallback.locator('.transcript-slide').count(), d.slides.length)
     // Even without JS, the other-language link resolves to the same transcript.
     await fallback.locator('[data-language-link]').click()
-    assert.equal(await fallback.locator('.transcript-slide').count(), 8)
+    assert.equal(await fallback.locator('.transcript-slide').count(), d.slides.length)
   }
   await plain.close()
   assert.deepEqual(errors, [])

@@ -4,9 +4,10 @@ A static customer website with English and Swedish pages, services and three
 presentation-led demos. Slidev is used to create recordings; visitors receive
 static HTML, images and silent MP4s. There is no public agent backend.
 
-This revision is on `feature/bilingual-demos`, based on customer commit
-`e4ee929f1c245bcb45d2c423b8ad4f1d39a8d534`. Read the
-[discovery and implementation decision](docs/bilingual-demos.md).
+The bilingual implementation is documented in the
+[discovery and implementation decision](docs/bilingual-demos.md). The follow-up
+[Hektor restoration and recording correction](docs/demo-restoration.md) preserves
+the completed Hektor presentation and removes captured Slidev navigation labels.
 
 ## Run locally
 
@@ -31,10 +32,13 @@ No form submission, tracking or paid infrastructure is configured.
 - `content/demos.mjs`: paired demo descriptions and slide content. Shared IDs,
   order and timings keep the two languages aligned.
 - `scripts/generate-site.mjs`: shared static templates and text tracks.
-- `presentations/`: six generated Slidev entries, one shared Vue component,
-  styling and an isolated package/lockfile.
+- `presentations/`: paired SoherAgent/SoherDocs entries and a shared Vue layout;
+  `presentations/hektor/` preserves the completed Hektor design and full English
+  translation. All use the isolated authoring package/lockfile.
 - `evidence/presentations/{soheragent,soherdocs,hektor}/{en,sv}/`: public slides,
-  128-second silent videos, captions, chapters, transcripts and capture manifests.
+  silent videos, captions, chapters, transcripts and capture manifests. SoherAgent
+  and SoherDocs have eight slides / 128 seconds each. Hektor retains all 14 slides,
+  seven chapters and its original 150-second duration in both languages.
 - `assets/language.js`: carries video time and transcript anchors when switching
   language. URLs determine language; no automatic redirect or storage is needed.
 
@@ -55,8 +59,10 @@ npm run check
 npm run build
 ```
 
-`npm run record:hektor` refreshes both languages of the new Hektor presentation;
-the original Swedish assets remain untouched. `FFMPEG_PATH` may point to an
+`npm run record:hektor` records the English translation of the completed Hektor
+deck and restores the Swedish video/images byte-for-byte from the originals.
+`npm run generate` builds its translated source from `content/hektor-translation.mjs`.
+`FFMPEG_PATH` may point to an
 existing executable; otherwise `ffmpeg-static` supplies it. Recording and tests
 use installed Chrome on Windows or Playwright Chromium elsewhere. Install the
 latter with `npx playwright-core install chromium`. For tests without the FFmpeg
@@ -108,7 +114,7 @@ npm run verify:pages
 The named sibling has the same public files as main plus the publishing workflow.
 Any current main checkout can be supplied instead. `verify:customer` checks 320,
 390, 768 and 1440 pixel layouts, navigation, keyboard controls and the original
-SoherAgent/CV recordings. `verify:bilingual` checks six recordings, 48 decoded
+SoherAgent/CV recordings. `verify:bilingual` checks six recordings, 60 decoded
 slide intervals, captions, provenance, language/position switching and no-JS
 transcripts. `verify` checks the original 14-slide Hektor video. Screenshots go
 to ignored `test-results/`. Tests submit no enquiries.
