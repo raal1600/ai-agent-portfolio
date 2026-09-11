@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "generate": "node scripts/generate-decks.mjs && node scripts/generate-site.mjs && node scripts/metadata.mjs",
+    "generate": "node scripts/generate-hektor.mjs && node scripts/generate-decks.mjs && node scripts/generate-site.mjs && node scripts/metadata.mjs",
     "record:hektor": "node scripts/record-presentations.mjs hektor && npm run generate",
     "record:presentations": "node scripts/record-presentations.mjs && npm run generate",
     "metadata": "node scripts/metadata.mjs",

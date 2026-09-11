@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 import { dirname, relative, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { createHash } from 'node:crypto'
 import config from '../site.config.mjs'
 
 export const root = fileURLToPath(new URL('../', import.meta.url))
@@ -25,7 +26,9 @@ export function metadata({ check = false, directory = root, url = config.url } =
     const description = decode(html.match(/<meta name="description" content="([^"]+)"/)?.[1] ?? '')
     if (!title || !description) throw new Error(`Missing title or description: ${page.path}`)
     const canonical = new URL(page.path.replace(/(^|\/)index\.html$/, '$1'), base).href
-    const image = new URL(page.image, base).href
+    const imageUrl = new URL(page.image, base)
+    imageUrl.searchParams.set('v', createHash('sha256').update(readFileSync(resolve(root,page.image))).digest('hex').slice(0,12))
+    const image = imageUrl.href
     const favicon = relative(dirname(file), resolve(root, 'assets/favicon.svg')).replaceAll('\\', '/')
     const locale = html.includes('<html lang="sv">') ? 'sv_SE' : 'en_US'
     const tags = [

@@ -1,3 +1,5 @@
+import { hektorSlides, hektorChapters } from './hektor.mjs'
+
 // Paired content is the source for Slidev, the website, captions and transcripts.
 // A shared ID and timing make the same chapter addressable in both languages.
 const pair = (en, sv) => ({ en, sv })
@@ -99,40 +101,10 @@ export const demos = [
     disclosure: pair('Hektor is the subject of this support concept, not the name of this development business or a verified customer endorsement. Telephone and case-system integrations remain unverified. Examples are illustrative.', 'Hektor är ämnet för detta supportkoncept, inte namnet på denna utvecklingsverksamhet eller en verifierad kundreferens. Telefon- och ärendesystemintegrationer återstår att verifiera. Exemplen är illustrativa.'),
     fit: pair('For support teams exploring answers from approved knowledge, better handovers and reviewed case notes.', 'För supportteam som vill utforska svar från godkänd kunskap, bättre överlämningar och granskade ärendeanteckningar.'),
     next: pair('Bring a recurring support question and the source your team trusts. We can scope the answer, escalation path and systems involved.', 'Ta med en återkommande supportfråga och den källa ert team litar på. Vi kan definiera svaret, vägen till mänsklig hjälp och berörda system.'),
-    slides: [
-      slide('overview', 'cover', pair('One support workflow.\nPeople stay in control.', 'Ett supportflöde.\nMänniskan behåller kontrollen.'), pair('Hektor Agent is a concept for answering recurring questions, handing over with context and preparing documentation for review.', 'Hektor Agent är ett koncept för att besvara återkommande frågor, lämna över med sammanhang och förbereda dokumentation för granskning.'), [item(pair('Chat · proposed voice · staff dictation', 'Chatt · föreslagen röst · personaldiktering'), pair('Concept presentation · illustrative scenarios', 'Konceptpresentation · illustrativa scenarier'))]),
-      slide('knowledge', 'flow', pair('Start with knowledge the team approves.', 'Börja med kunskap som teamet godkänner.'), pair('The company chooses which information the agent may use. The proposed workflow turns that material into an answer with a route back to its source.', 'Företaget väljer vilken information agenten får använda. Det föreslagna flödet gör underlaget till ett svar med en väg tillbaka till källan.'), [
-        item(pair('Approved sources', 'Godkända källor'), pair('FAQs, guides and support instructions.', 'Vanliga frågor, guider och supportinstruktioner.')),
-        item(pair('Relevant context', 'Relevant sammanhang'), pair('Find material that addresses the question.', 'Hitta underlag som besvarar frågan.')),
-        item(pair('A grounded answer', 'Ett förankrat svar'), pair('Explain clearly; escalate when the source is insufficient.', 'Förklara tydligt; lämna över när underlaget inte räcker.')),
-      ]),
-      slide('chat', 'chat', pair('A useful answer knows its limits.', 'Ett användbart svar känner sina gränser.'), pair('Illustrative conversation about Wi-Fi calling. General guidance is different from checking a customer account.', 'Illustrativt samtal om Wi-Fi-samtal. Allmän vägledning är något annat än att kontrollera ett kundkonto.'), [
-        item(pair('Customer', 'Kund'), pair('Can I use Wi-Fi calling with my phone?', 'Kan jag använda Wi-Fi-samtal med min telefon?')),
-        item(pair('Support agent', 'Supportagent'), pair('I can explain the setup using the approved guide. I cannot check your subscription here; I can help you contact the team for that.', 'Jag kan förklara inställningarna med den godkända guiden. Jag kan inte kontrollera ditt abonnemang här, men jag kan hjälpa dig vidare till teamet.')),
-        item(pair('Source boundary', 'Källgräns'), pair('Guide-based explanation · no claimed account access', 'Förklaring från guide · ingen påstådd kontoåtkomst')),
-      ]),
-      slide('voice', 'split', pair('The same support logic, in a voice flow.', 'Samma supportlogik i ett röstflöde.'), pair('Voice is a proposed channel in this concept. This presentation does not demonstrate a live telephone connection.', 'Röst är en föreslagen kanal i konceptet. Presentationen demonstrerar ingen aktiv telefonanslutning.'), [
-        item(pair('During a conversation', 'Under ett samtal'), pair('Understand the question, explain supported steps and recognize when a person is needed.', 'Förstå frågan, förklara belagda steg och upptäck när en människa behövs.')),
-        item(pair('Before implementation', 'Före implementation'), pair('Agree telephony, identity checks, data access and escalation rules.', 'Bestäm telefoni, identitetskontroller, dataåtkomst och regler för överlämning.')),
-      ]),
-      slide('handover', 'document', pair('Hand over the context, not just the call.', 'Lämna över sammanhanget, inte bara samtalet.'), pair('An illustrative handover gives the next person a concise starting point. It separates what was explained from what still needs checking.', 'En illustrativ överlämning ger nästa person en kort startpunkt. Den skiljer det som förklarats från det som fortfarande behöver kontrolleras.'), [
-        item(pair('Customer needs', 'Kunden behöver'), pair('Help enabling Wi-Fi calling.', 'Hjälp att aktivera Wi-Fi-samtal.')),
-        item(pair('Already explained', 'Redan förklarat'), pair('General setup steps from the approved guide.', 'Allmänna inställningssteg från den godkända guiden.')),
-        item(pair('Still to check', 'Återstår att kontrollera'), pair('Subscription support and any account-specific conditions.', 'Abonnemangsstöd och eventuella kontospecifika villkor.')),
-      ]),
-      slide('dictation', 'flow', pair('Turn a staff note into a reviewable draft.', 'Gör en personalanteckning till ett granskningsbart utkast.'), pair('The concept includes dictation after a support interaction. Staff review the draft before it becomes an approved case note.', 'Konceptet omfattar diktering efter en supportkontakt. Personalen granskar utkastet innan det blir en godkänd ärendeanteckning.'), [
-        item(pair('Dictate', 'Diktera'), pair('Staff describe what happened and the next step.', 'Personalen beskriver vad som hände och nästa steg.')),
-        item(pair('Structure', 'Strukturera'), pair('Prepare a concise draft from the note.', 'Förbered ett kort och strukturerat utkast.')),
-        item(pair('Review', 'Granska'), pair('A person corrects and approves the case note.', 'En människa rättar och godkänner ärendeanteckningen.')),
-      ]),
-      slide('boundaries', 'cards', pair('Decide the boundaries before connecting tools.', 'Bestäm gränserna innan verktygen kopplas in.'), pair('A support system needs explicit decisions about information, permissions and responsibility. Integrations and capacity must be validated for the chosen scope.', 'Ett supportsystem behöver uttryckliga beslut om information, behörigheter och ansvar. Integrationer och kapacitet måste valideras för den valda omfattningen.'), [
-        item(pair('Information', 'Information'), pair('Which knowledge is approved and who maintains it?', 'Vilken kunskap är godkänd och vem underhåller den?')),
-        item(pair('Actions', 'Åtgärder'), pair('What may the agent read, prepare or change?', 'Vad får agenten läsa, förbereda eller ändra?')),
-        item(pair('Escalation', 'Överlämning'), pair('When must a person take over?', 'När måste en människa ta över?')),
-      ]),
-      slide('next-step', 'closing', pair('Start with one recurring support need.', 'Börja med ett återkommande supportbehov.'), pair('We can scope a support workflow around your approved knowledge and team. Validate one useful flow before expanding channels or permissions.', 'Vi kan utforma ett supportflöde runt er godkända kunskap och ert team. Validera ett användbart flöde innan kanaler eller behörigheter utökas.'), [item(pair('A question → a supported answer → a next step', 'En fråga → ett belagt svar → ett nästa steg'), pair('A support concept to adapt to your company.', 'Ett supportkoncept att anpassa till ert företag.'))]),
-    ],
-  },
+    presentationDirectory: 'presentations/hektor',
+    presentationFile: { en: 'en.md', sv: 'sv.md' },
+    chapters: hektorChapters,
+    slides: hektorSlides,  },
 ]
 
 export const languages = ['en', 'sv']
@@ -144,4 +116,13 @@ export const slidesFor = (demo, lang) => {
     start = result.end
     return result
   })
+}
+
+export const chaptersFor = (demo, lang) => {
+  const slides = slidesFor(demo, lang)
+  return demo.chapters ? demo.chapters.map((c,i) => ({
+    id: slides[c.slide - 1].id, title: c.title[lang], summary: c.description[lang],
+    start: slides[c.slide - 1].start,
+    end: slides[(demo.chapters[i + 1]?.slide ?? slides.length + 1) - 2].end,
+  })) : slides
 }

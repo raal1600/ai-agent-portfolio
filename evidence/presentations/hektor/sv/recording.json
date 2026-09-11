@@ -1,94 +1,146 @@
 {
   "demo": "hektor",
   "language": "sv",
-  "recordedAt": "2026-09-11T17:40:07.770Z",
-  "method": "Local Slidev browser captures encoded as a silent H.264 presentation. Illustrative slides, not a recording of live agent execution.",
-  "slidevVersion": "52.19.1",
-  "durationSeconds": 128,
+  "recordedAt": "2026-09-11T00:09:51.562Z",
+  "method": "Original completed Hektor recording and all 14 slide images reused byte-for-byte. No redesign or re-encoding.",
+  "sourceRepository": "https://github.com/H-Sami/hektor-chat-pitch",
+  "sourceRevision": "b287401",
+  "durationSeconds": 150,
   "width": 1600,
   "height": 900,
   "audio": false,
   "sourceHashNormalization": "UTF-8 with LF line endings",
   "sources": {
-    "content/demos.mjs": "9612c118b4d534d4115971286cd193a87cafeeabb47c5a62eec58249c1644562",
-    "presentations/components/PitchSlide.vue": "4bdb7e8429be6dd766e925abab5cf809a712c334b29caf10664886c1a89a9b68",
-    "presentations/style.css": "caea88afba7b65d0b1936a2a6caf8998d283adf9ab50d39f7bcfa6f7d4846db8",
-    "presentations/package-lock.json": "5427ffd95e719252cba788612e1d08cc0281dfed6099619c0dc89d2e292f2ee8",
-    "presentations/hektor.sv.md": "616d53190dbf79d4e0e07ec45cb0192ba3581a5372e57707ae2f79afb16b5989"
+    "evidence/hektor-agent/recording.json": "6be77dbad67b4e4383af4a8e0fd3dbcc73afb2c0c0b9b74eb1d18d7bf33c71f2",
+    "evidence/hektor-agent/storyboard.json": "e54a8b5531e13ae5adea5f702f68864853e34748b8f331daaf71354207e07c2b"
   },
-  "videoSha256": "f9690f906864bf37ccb54c495f8a42e69b22ff1c9d3782dffb18b6eb1ab091bb",
+  "videoSha256": "198853985a596191ca19258675bcbcb4371e677a0963a36e92dcf7d38aa077e8",
   "slides": [
     {
-      "id": "overview",
       "number": 1,
-      "title": "Ett supportflöde.\nMänniskan behåller kontrollen.",
+      "title": "Hektor Demo",
       "start": 0,
-      "end": 16,
+      "end": 8,
       "image": "slide-01.png",
-      "sha256": "d59d38adeb37c415305a63fe6d0f2dd8edfcae188c276d1d0446fc7f63c690cf"
+      "sha256": "c5e21fbdaf57d861e66e5351afdcd64f48a05d7a8e568a0ba563d66d0074c68b",
+      "id": "introduktion"
     },
     {
-      "id": "knowledge",
       "number": 2,
-      "title": "Börja med kunskap som teamet godkänner.",
-      "start": 16,
-      "end": 32,
+      "title": "Snabbare hjälp. En enklare kundvardag.",
+      "start": 8,
+      "end": 18,
       "image": "slide-02.png",
-      "sha256": "bf3f95957102df145370eae2ff18610823c1f82277920ad9b18c220c2464112d"
+      "sha256": "fe9c65e43fc84b2886e5dbf4160d597d9c2c6f0032d8c5651340998f85694316",
+      "id": "kundnytta"
     },
     {
-      "id": "chat",
       "number": 3,
-      "title": "Ett användbart svar känner sina gränser.",
-      "start": 32,
-      "end": 48,
+      "title": "Samma frågor. Mindre dubbelarbete.",
+      "start": 18,
+      "end": 28,
       "image": "slide-03.png",
-      "sha256": "17b78289595694ed5306eb2fcc21cc87540f348563dc6fe314a50800df95fe37"
+      "sha256": "72755d571bf2d516e88b0553cc47a0a609e01c84195e5ceb438892606a83b0da",
+      "id": "mindre-dubbelarbete"
     },
     {
-      "id": "voice",
       "number": 4,
-      "title": "Samma supportlogik i ett röstflöde.",
-      "start": 48,
-      "end": 64,
+      "title": "En agent. Tre sätt att skapa nytta.",
+      "start": 28,
+      "end": 36,
       "image": "slide-04.png",
-      "sha256": "fdc803a308e0dbb8e33ec3e5f53574737f6dcc81ed708389998e5d2af73ea6c7"
+      "sha256": "763c0187b1d7183364a7c546917721d1d541bd6a5e8e2b4e0152da375df889df",
+      "id": "tre-kanaler"
     },
     {
-      "id": "handover",
       "number": 5,
-      "title": "Lämna över sammanhanget, inte bara samtalet.",
-      "start": 64,
-      "end": 80,
+      "title": "Så kan kunden få hjälp i chatten.",
+      "start": 36,
+      "end": 48,
       "image": "slide-05.png",
-      "sha256": "2925d61cc77eaffb0b5d8de4a8abd8643be478e9139bd19fbc501e9689602c43"
+      "sha256": "4eee7986a8eb1428c5dfdc0962d7c49fd7f0aa9746d9adf47d767303056d45a1",
+      "id": "chatt"
     },
     {
-      "id": "dictation",
       "number": 6,
-      "title": "Gör en personalanteckning till ett granskningsbart utkast.",
-      "start": 80,
-      "end": 96,
+      "title": "Hektors kunskap bakom varje svar.",
+      "start": 48,
+      "end": 58,
       "image": "slide-06.png",
-      "sha256": "536658d1c3b1910dc34c771f7998d3296b0a4abca5d4bdc36d3896b93ff02fd2"
+      "sha256": "0b00e3274534d358d3782c28e4929dc5db4b3e6f1e490c666ec0ef25837bbc2c",
+      "id": "kunskap"
     },
     {
-      "id": "boundaries",
       "number": 7,
-      "title": "Bestäm gränserna innan verktygen kopplas in.",
-      "start": 96,
-      "end": 112,
+      "title": "Samma hjälp, även när kunden ringer.",
+      "start": 58,
+      "end": 74,
       "image": "slide-07.png",
-      "sha256": "399902527f4c0a03ea80b6643f19a1f530f092722bc7adb20f630084582b62b3"
+      "sha256": "d65e0a1a5f0bf9e1cfd62956bfab6134acfc0db042a8436e16ae200920efd1c5",
+      "id": "telefon"
     },
     {
-      "id": "next-step",
       "number": 8,
-      "title": "Börja med ett återkommande supportbehov.",
-      "start": 112,
-      "end": 128,
+      "title": "Nästa kollega får med sig bakgrunden.",
+      "start": 74,
+      "end": 86,
       "image": "slide-08.png",
-      "sha256": "dbf1c11bc4e9c39298455f5caf222cddac60206bd625e994e1b87ffea0983298"
+      "sha256": "b3367adf8c19fe8dd928b17a793417238311160ab2372e7151dbd1b96dd192c4",
+      "id": "overlamning"
+    },
+    {
+      "number": 9,
+      "title": "Berätta vad som hänt. Få anteckningen klar.",
+      "start": 86,
+      "end": 98,
+      "image": "slide-09.png",
+      "sha256": "cd5a84334e147b0248ccebc6a1a754bed38d2101976a2f25109d3ab0465f6810",
+      "id": "diktering"
+    },
+    {
+      "number": 10,
+      "title": "Hektor sätter gränserna.",
+      "start": 98,
+      "end": 108,
+      "image": "slide-10.png",
+      "sha256": "8533fd19a7f34dad487381915ac79a4292dfe3d711b3e2de5a237aadeb2a4b6a",
+      "id": "kontroll"
+    },
+    {
+      "number": 11,
+      "title": "Agenten tar rutinen. Teamet tar det vidare.",
+      "start": 108,
+      "end": 118,
+      "image": "slide-11.png",
+      "sha256": "184d8cb4ac8fa76ba344ec4bbdc23caf5acea5e7257f11cd4a6bd5395f9a678e",
+      "id": "ansvar"
+    },
+    {
+      "number": 12,
+      "title": "Fler kundkontakter med samma team.",
+      "start": 118,
+      "end": 128,
+      "image": "slide-12.png",
+      "sha256": "e2d8e57f3161d6dbf09dc8163ae4d356679048666e92a1d215ef15081750f8f8",
+      "id": "kapacitet"
+    },
+    {
+      "number": 13,
+      "title": "Det här är värdet för Hektor.",
+      "start": 128,
+      "end": 138,
+      "image": "slide-13.png",
+      "sha256": "8df053317a78bf4b399dc54ace91c6b116b39cb81382f54d8f1bcfe681e7a94a",
+      "id": "samlat-varde"
+    },
+    {
+      "number": 14,
+      "title": "En agent. Värde för ett helt team.",
+      "start": 138,
+      "end": 150,
+      "image": "slide-14.png",
+      "sha256": "afd6f268a4683a82c8c5e76602385c694e55dcd8e8bf9998dfef344587133038",
+      "id": "erbjudande"
     }
   ]
 }
