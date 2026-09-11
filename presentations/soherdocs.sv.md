@@ -1,6 +1,6 @@
 ---
 theme: default
-title: SoherDocs — SV
+title: Soher Docs — SV
 lang: sv
 colorSchema: light
 transition: none

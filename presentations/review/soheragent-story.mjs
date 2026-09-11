@@ -3,7 +3,7 @@ export const story = [
   {
     stage: ['The idea', 'Idén'],
     title: ['From a business request\nto software you can review.', 'Från verksamhetens behov\ntill programvara att granska.'],
-    intro: ['SoherAgent is a concept for coordinating software agents around a shared plan, connected tools and human decisions.', 'SoherAgent är ett koncept för att samordna mjukvaruagenter med en gemensam plan, anslutna verktyg och mänskliga beslut.'],
+    intro: ['Soher Agent is a concept for coordinating software agents around a shared plan, connected tools and human decisions.', 'Soher Agent är ett koncept för att samordna mjukvaruagenter med en gemensam plan, anslutna verktyg och mänskliga beslut.'],
     labels: [['Your request', 'Ditt behov'], ['A shared plan', 'En gemensam plan'], ['Coordinated work', 'Samordnat arbete'], ['Your decision', 'Ditt beslut']],
     note: ['One example. From request to review.', 'Ett exempel. Från behov till granskning.'],
   },

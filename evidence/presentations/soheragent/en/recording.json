@@ -1,7 +1,7 @@
 {
   "demo": "soheragent",
   "language": "en",
-  "recordedAt": "2026-09-11T20:52:42.566Z",
+  "recordedAt": "2026-09-11T21:08:06.510Z",
   "method": "Local Slidev browser captures encoded as a silent H.264 presentation. Illustrative slides, not a recording of live agent execution.",
   "slidevVersion": "52.19.1",
   "durationSeconds": 128,
@@ -11,14 +11,14 @@
   "sourceHashNormalization": "UTF-8 with LF line endings",
   "sources": {
     "content/soheragent.mjs": "c60c96d625515fa72698c3e4380c2a6b3bcc6b8ad3c632df1588d246d0e9030d",
-    "presentations/review/soheragent-story.mjs": "10bb70a19f278f0690664e65661f6fc158770a6d78213228dc429a08b57d577b",
-    "presentations/components/SoherAgentStory.vue": "d34af765bd02953fafac409f850f2a177519e14e3b20baac5458113840b4f4ba",
+    "presentations/review/soheragent-story.mjs": "d03e5c2e52a3fe964fccadeb821f9129adad7f86bbb12f6c07bf82fb25f8435c",
+    "presentations/components/SoherAgentStory.vue": "58e44540dc9639c2ee663a3504c5602a0eb888dd67d4f2a5544759fcd13469ad",
     "presentations/style.css": "caea88afba7b65d0b1936a2a6caf8998d283adf9ab50d39f7bcfa6f7d4846db8",
     "presentations/package-lock.json": "5427ffd95e719252cba788612e1d08cc0281dfed6099619c0dc89d2e292f2ee8",
-    "presentations/soheragent.en.md": "8207fb9cf836e531885e9ac38081eeabbc64d89b6d3781929560594e8e5bd22b",
+    "presentations/soheragent.en.md": "0b62efc499a6b8f6e2d60d19ffab5df1704a7b8250d3464a5d67d592c47d315b",
     "scripts/capture-slide.mjs": "d30961df36b2f88860bee42eabcb4dfb2ca7cf4654132aa58f26e7a57c07b7d3"
   },
-  "videoSha256": "5673fb5115ee8eaed33a6780f07bf6d880baed014eb308c36f4214f735df5d24",
+  "videoSha256": "84374316c3ae6f52730e8d8efadbc4aebc58de2533a3eec16a691dc44bd9ad65",
   "slides": [
     {
       "id": "overview",
@@ -27,7 +27,7 @@
       "start": 0,
       "end": 16,
       "image": "slide-01.png",
-      "sha256": "626cca4162dc4b31bceffad0c5ebe9ac220b7bdde7a54cadf7c24be1faf31e2d"
+      "sha256": "d9256b37b251b04561a396090d507aebd7f2ad5f17e2d9c8b784e045672ba05d"
     },
     {
       "id": "problem",
@@ -36,7 +36,7 @@
       "start": 16,
       "end": 32,
       "image": "slide-02.png",
-      "sha256": "8077c9cc74493cd05d7d91728afc43e42d9e7c8da3e6fb8164eef3f4836a5d00"
+      "sha256": "32fc0356a8c7a5603d02f5c35dcad1f4ded18674002cf4b68b0cde45b67f4fdc"
     },
     {
       "id": "plan",
@@ -45,7 +45,7 @@
       "start": 32,
       "end": 48,
       "image": "slide-03.png",
-      "sha256": "1c49b8e2f56d37399fd30f0063c2f7273f840c343b3856977886c8df246e9305"
+      "sha256": "894a7669dbc499977767932197609660aabb8f3e64afd4215b9b2b4522fc7938"
     },
     {
       "id": "coordinate",
@@ -54,7 +54,7 @@
       "start": 48,
       "end": 64,
       "image": "slide-04.png",
-      "sha256": "a2e5bdc91afda8c6b144dfa5eef4c536dbe47ca5d407d3f4c6be431cf81a5072"
+      "sha256": "7c159d16d510edb7a08344eb45d13516ae39824202dc345a69afe684cabdfd81"
     },
     {
       "id": "controls",
@@ -63,7 +63,7 @@
       "start": 64,
       "end": 80,
       "image": "slide-05.png",
-      "sha256": "3a971c252045e3e2c7c69ce0cb3284326fe27ec32115c471c4e871638141c8ee"
+      "sha256": "24fdf379cc4691eca323538defe98d424ca417d902489b8cacae1e0d85aa34b2"
     },
     {
       "id": "review",
@@ -72,7 +72,7 @@
       "start": 80,
       "end": 96,
       "image": "slide-06.png",
-      "sha256": "e0760927c5bb8cb5cb13ebe26b8f15d3b6ddc1899de13f0e94323ce05bb1ece7"
+      "sha256": "dfd9a0d1c7223995158c36aad66ff10e41767bef1384aac929cb94d73accb68d"
     },
     {
       "id": "use-cases",
@@ -81,7 +81,7 @@
       "start": 96,
       "end": 112,
       "image": "slide-07.png",
-      "sha256": "5017be93968ca2755ed08981dd700e13c51e9acc7a1dd8331cf6d87708a99047"
+      "sha256": "06bbbabd714df1a6fa12a5380d30bbc4b7909f6c4a75bb118ae637a6d089f76c"
     },
     {
       "id": "next-step",
@@ -90,7 +90,7 @@
       "start": 112,
       "end": 128,
       "image": "slide-08.png",
-      "sha256": "0440263511a52ea63922b7459e9c16b940c5827439aa367c3c23e3ba9fcb3ea5"
+      "sha256": "66782080f485d57dbc848266e6f5f9e3b7e6dc1e0ab4d68699d9dc4e751771dc"
     }
   ]
 }

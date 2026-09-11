@@ -1,6 +1,6 @@
 ---
 theme: default
-title: SoherAgent — SV
+title: Soher Agent — SV
 lang: sv
 colorSchema: light
 transition: none

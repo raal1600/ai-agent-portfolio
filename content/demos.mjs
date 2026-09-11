@@ -9,7 +9,7 @@ const item = (title, text) => ({ title, text })
 
 export const demos = [
   {
-    id: 'soheragent', name: 'SoherAgent', path: 'projects/soheragent.html', accent: 'green',
+    id: 'soheragent', name: 'Soher Agent', path: 'projects/soheragent.html', accent: 'green',
     category: pair('Engineering agent', 'Agent för utveckling'),
     tagline: pair('From an idea to work you can review.', 'Från idé till arbete du kan granska.'),
     description: pair('An engineering-agent concept that turns a request into a plan, coordinates the work and brings the result back for your team to review.', 'Ett koncept för en utvecklingsagent som gör en begäran till en plan, samordnar arbetet och lämnar resultatet till ert team för granskning.'),
@@ -21,19 +21,19 @@ export const demos = [
     slides: soherAgentSlides,
   },
   {
-    id: 'soherdocs', name: 'SoherDocs', path: 'projects/soherdocs.html', accent: 'blue',
+    id: 'soherdocs', name: 'Soher Docs', path: 'projects/soherdocs.html', accent: 'blue',
     category: pair('Document tool service', 'Verktygstjänst för dokument'),
     tagline: pair('A document tool your agent can use.', 'Ett dokumentverktyg för din agent.'),
-    description: pair('SoherDocs is designed as a tool service an agent can call to tailor a document from approved material and a target brief. The current example is a CV; other document types are future scope.', 'SoherDocs är utformat som en verktygstjänst som en agent kan anropa för att anpassa ett dokument utifrån godkänt underlag och ett syfte. CV är det aktuella exemplet; andra dokumenttyper är framtida omfattning.'),
+    description: pair('Soher Docs is designed as a tool service an agent can call to tailor a document from approved material and a target brief. The current example is a CV; other document types are future scope.', 'Soher Docs är utformat som en verktygstjänst som en agent kan anropa för att anpassa ett dokument utifrån godkänt underlag och ett syfte. CV är det aktuella exemplet; andra dokumenttyper är framtida omfattning.'),
     status: pair('Tool-service concept · synthetic CV example', 'Koncept för verktygstjänst · fiktivt CV-exempel'),
     disclosure: pair('This presentation illustrates the intended service and workflow with synthetic examples. The public repository does not expose a live document API. Contract tailoring is a possible future extension, not a demonstrated feature.', 'Presentationen visar den avsedda tjänsten och arbetsflödet med fiktiva exempel. Det publika repositoryt exponerar inget fungerande dokument-API. Anpassning av avtal är en möjlig framtida utökning, inte en demonstrerad funktion.'),
     fit: pair('For document-heavy workflows where an agent needs a focused drafting tool, approved source material and a reviewable output.', 'För dokumentintensiva flöden där en agent behöver ett avgränsat skrivverktyg, godkänt källmaterial och ett resultat som går att granska.'),
     next: pair('Bring a document type, its source material and the rules for a good result. We can define the tool contract, review step and integration.', 'Ta med en dokumenttyp, dess underlag och kriterier för ett bra resultat. Vi kan definiera verktygets gränssnitt, granskningssteg och integration.'),
     slides: [
-      slide('overview', 'cover', pair('The agent coordinates.\nSoherDocs tailors the document.', 'Agenten samordnar.\nSoherDocs anpassar dokumentet.'), pair('A focused tool service for a larger agent workflow. CV tailoring is the current illustration of the idea.', 'En avgränsad verktygstjänst i ett större agentflöde. CV-anpassning är den aktuella illustrationen av idén.'), [item(pair('Agent → document tool → reviewed output', 'Agent → dokumentverktyg → granskat resultat'), pair('Service concept · synthetic examples', 'Tjänstekoncept · fiktiva exempel'))]),
+      slide('overview', 'cover', pair('The agent coordinates.\nSoher Docs tailors the document.', 'Agenten samordnar.\nSoher Docs anpassar dokumentet.'), pair('A focused tool service for a larger agent workflow. CV tailoring is the current illustration of the idea.', 'En avgränsad verktygstjänst i ett större agentflöde. CV-anpassning är den aktuella illustrationen av idén.'), [item(pair('Agent → document tool → reviewed output', 'Agent → dokumentverktyg → granskat resultat'), pair('Service concept · synthetic examples', 'Tjänstekoncept · fiktiva exempel'))]),
       slide('roles', 'flow', pair('One workflow. Distinct responsibilities.', 'Ett arbetsflöde. Tydliga ansvarsområden.'), pair('The tool is one capability the agent uses. It does not need to own the conversation or every step of the business process.', 'Verktyget är en förmåga som agenten använder. Det behöver inte sköta samtalet eller varje steg i verksamhetens process.'), [
         item(pair('Your agent', 'Er agent'), pair('Understands the request and chooses when to call the tool.', 'Förstår begäran och väljer när verktyget ska anropas.')),
-        item(pair('SoherDocs', 'SoherDocs'), pair('Uses source material and a target brief to prepare a tailored draft.', 'Använder källmaterial och ett syfte för att förbereda ett anpassat utkast.')),
+        item(pair('Soher Docs', 'Soher Docs'), pair('Uses source material and a target brief to prepare a tailored draft.', 'Använder källmaterial och ett syfte för att förbereda ett anpassat utkast.')),
         item(pair('Your workflow', 'Ert arbetsflöde'), pair('Reviews, approves and decides where the document goes.', 'Granskar, godkänner och avgör vart dokumentet ska skickas.')),
       ]),
       slide('inputs', 'split', pair('Useful drafts start with useful inputs.', 'Bra utkast börjar med bra underlag.'), pair('This is a conceptual service boundary, not a published API schema. The actual input and output contract would be agreed during implementation.', 'Detta är en konceptuell tjänstegräns, inte ett publicerat API-schema. Det faktiska in- och utdataformatet bestäms vid implementation.'), [
