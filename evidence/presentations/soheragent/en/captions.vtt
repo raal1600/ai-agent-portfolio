@@ -2,32 +2,32 @@ WEBVTT
 
 1
 00:00:00.000 --> 00:00:16.000
-SoherAgent explores how software agents can move from a request to reviewable work, with a person deciding what is accepted.
+SoherAgent is a concept for coordinating software agents around a shared plan, connected tools and human decisions.
 
 2
 00:00:16.000 --> 00:00:32.000
-Generating code is one step. A useful development workflow also needs shared context, ownership and a way to judge the result.
+Example: your team needs an internal tool to find service contracts and see when they renew.
 
 3
 00:00:32.000 --> 00:00:48.000
-For example, a team wants an internal tool to understand service contracts. Agree what it should do and which information it may use.
+Turn the request into a small, reviewable scope. Resolve open questions with the team.
 
 4
 00:00:48.000 --> 00:01:04.000
-A coordinating agent holds the plan. Other agents take on specific tasks and bring their results back for review.
+A coordinator divides the work, connects the results and brings unresolved questions back to a person.
 
 5
 00:01:04.000 --> 00:01:20.000
-You choose the scope and the tools. The agent works within those limits and brings decisions back to your team.
+The workflow is designed around the systems you allow it to use and the actions you approve.
 
 6
 00:01:20.000 --> 00:01:36.000
-Possible starting points include an internal tool, a connection between systems or a focused change to existing software.
+The proposed handoff brings the software change, checks and open questions together for your reviewer.
 
 7
 00:01:36.000 --> 00:01:52.000
-The agent presents the proposed change and any open questions. Your team reviews the result before accepting it.
+The target is a tool your team can assess in a test environment before deciding how to introduce it.
 
 8
 00:01:52.000 --> 00:02:08.000
-We can scope an engineering-agent workflow around your tools, permissions and review process. The first conversation starts with the work your team needs to do.
+I can help shape a custom agent workflow around your systems, permissions and review process.

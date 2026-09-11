@@ -1,7 +1,7 @@
 {
   "demo": "soheragent",
   "language": "en",
-  "recordedAt": "2026-09-11T19:31:56.532Z",
+  "recordedAt": "2026-09-11T20:52:42.566Z",
   "method": "Local Slidev browser captures encoded as a silent H.264 presentation. Illustrative slides, not a recording of live agent execution.",
   "slidevVersion": "52.19.1",
   "durationSeconds": 128,
@@ -10,87 +10,87 @@
   "audio": false,
   "sourceHashNormalization": "UTF-8 with LF line endings",
   "sources": {
-    "content/demos.mjs": "1ed4cb15bee0b837d180202684c56b7f65f2f1b924e2a40e8e94b299873ed9fe",
-    "content/hektor.mjs": "bc0f04ffdec1856c162af77a1eaa126981cac57a94bb8ad99d8638892e96a8e7",
-    "presentations/components/PitchSlide.vue": "4bdb7e8429be6dd766e925abab5cf809a712c334b29caf10664886c1a89a9b68",
+    "content/soheragent.mjs": "c60c96d625515fa72698c3e4380c2a6b3bcc6b8ad3c632df1588d246d0e9030d",
+    "presentations/review/soheragent-story.mjs": "10bb70a19f278f0690664e65661f6fc158770a6d78213228dc429a08b57d577b",
+    "presentations/components/SoherAgentStory.vue": "d34af765bd02953fafac409f850f2a177519e14e3b20baac5458113840b4f4ba",
     "presentations/style.css": "caea88afba7b65d0b1936a2a6caf8998d283adf9ab50d39f7bcfa6f7d4846db8",
     "presentations/package-lock.json": "5427ffd95e719252cba788612e1d08cc0281dfed6099619c0dc89d2e292f2ee8",
-    "presentations/soheragent.en.md": "bdd6cb5d7da909850415322b251074d3d90a25581bd83ea0971775b21425dfdc",
+    "presentations/soheragent.en.md": "8207fb9cf836e531885e9ac38081eeabbc64d89b6d3781929560594e8e5bd22b",
     "scripts/capture-slide.mjs": "d30961df36b2f88860bee42eabcb4dfb2ca7cf4654132aa58f26e7a57c07b7d3"
   },
-  "videoSha256": "785a75be2159a9d098ffdd569bf179332bfc6a7e2dd8566890e876e6b09a52e8",
+  "videoSha256": "5673fb5115ee8eaed33a6780f07bf6d880baed014eb308c36f4214f735df5d24",
   "slides": [
     {
       "id": "overview",
       "number": 1,
-      "title": "An agent needs a plan.\nAnd clear boundaries.",
+      "title": "From a business request\nto software you can review.",
       "start": 0,
       "end": 16,
       "image": "slide-01.png",
-      "sha256": "161429cb11f4cc3cf9c3128661e334cf8d6379c66806c6b8f2d1e022fae6c814"
+      "sha256": "626cca4162dc4b31bceffad0c5ebe9ac220b7bdde7a54cadf7c24be1faf31e2d"
     },
     {
       "id": "problem",
       "number": 2,
-      "title": "The hard part is coordinating the work.",
+      "title": "Start with a problem\nyour team recognizes.",
       "start": 16,
       "end": 32,
       "image": "slide-02.png",
-      "sha256": "1939f6d6c1575f090fe8ecb100afcf29e285132d7fe84cf7001275f2a72ff19b"
+      "sha256": "8077c9cc74493cd05d7d91728afc43e42d9e7c8da3e6fb8164eef3f4836a5d00"
     },
     {
       "id": "plan",
       "number": 3,
-      "title": "Make the task concrete before execution.",
+      "title": "Agree on the work\nbefore the agents begin.",
       "start": 32,
       "end": 48,
       "image": "slide-03.png",
-      "sha256": "044e7edb8d13e4883ab0a36f6ba353e00216043e024e79cc49ee03a9bb0444a2"
+      "sha256": "1c49b8e2f56d37399fd30f0063c2f7273f840c343b3856977886c8df246e9305"
     },
     {
       "id": "coordinate",
       "number": 4,
-      "title": "Divide the work. Keep a shared plan.",
+      "title": "Different tasks.\nOne shared plan.",
       "start": 48,
       "end": 64,
       "image": "slide-04.png",
-      "sha256": "748bbc7779cfdf13d8300c63312d08e0ceec542d5a5c79a8e86ea46cc22ea72d"
+      "sha256": "a2e5bdc91afda8c6b144dfa5eef4c536dbe47ca5d407d3f4c6be431cf81a5072"
     },
     {
       "id": "controls",
       "number": 5,
-      "title": "Your team sets the boundaries.",
+      "title": "Tools make the work possible.\nPermissions set the limits.",
       "start": 64,
       "end": 80,
       "image": "slide-05.png",
-      "sha256": "0312e0564666e20dddf4f318c734f8eb970e03bc7eeaf09087d125b73e9bf45b"
-    },
-    {
-      "id": "use-cases",
-      "number": 6,
-      "title": "Start with work your team needs done.",
-      "start": 80,
-      "end": 96,
-      "image": "slide-06.png",
-      "sha256": "dddb8cd5c15cbb36716dfa8a8006d51997c4f65b4bafddb41c05df61a88758bd"
+      "sha256": "3a971c252045e3e2c7c69ce0cb3284326fe27ec32115c471c4e871638141c8ee"
     },
     {
       "id": "review",
+      "number": 6,
+      "title": "Make the handoff\neasy to judge.",
+      "start": 80,
+      "end": 96,
+      "image": "slide-06.png",
+      "sha256": "e0760927c5bb8cb5cb13ebe26b8f15d3b6ddc1899de13f0e94323ce05bb1ece7"
+    },
+    {
+      "id": "use-cases",
       "number": 7,
-      "title": "Your team decides what happens next.",
+      "title": "A useful internal tool.\nA clear next decision.",
       "start": 96,
       "end": 112,
       "image": "slide-07.png",
-      "sha256": "bcaa5ae22060779f3272d3ece4fcbdc42bf1f945fb458fc92e48b97941b18074"
+      "sha256": "5017be93968ca2755ed08981dd700e13c51e9acc7a1dd8331cf6d87708a99047"
     },
     {
       "id": "next-step",
       "number": 8,
-      "title": "Start with one reviewable task.",
+      "title": "Bring one task\nyour company needs done.",
       "start": 112,
       "end": 128,
       "image": "slide-08.png",
-      "sha256": "f0b8cb8737ac7ca17fd7cc38920be1ba7f160c7a5776353c4418f9fc2cffa060"
+      "sha256": "0440263511a52ea63922b7459e9c16b940c5827439aa367c3c23e3ba9fcb3ea5"
     }
   ]
 }

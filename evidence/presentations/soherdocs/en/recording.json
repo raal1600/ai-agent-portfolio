@@ -1,7 +1,7 @@
 {
   "demo": "soherdocs",
   "language": "en",
-  "recordedAt": "2026-09-11T19:32:49.783Z",
+  "recordedAt": "2026-09-11T20:51:20.606Z",
   "method": "Local Slidev browser captures encoded as a silent H.264 presentation. Illustrative slides, not a recording of live agent execution.",
   "slidevVersion": "52.19.1",
   "durationSeconds": 128,
@@ -10,7 +10,7 @@
   "audio": false,
   "sourceHashNormalization": "UTF-8 with LF line endings",
   "sources": {
-    "content/demos.mjs": "1ed4cb15bee0b837d180202684c56b7f65f2f1b924e2a40e8e94b299873ed9fe",
+    "content/demos.mjs": "8ef7ecbd22b94f9e24a4b17b8c80dcc0b9eeadc4af1ed341da37d16dbb5ceb47",
     "content/hektor.mjs": "bc0f04ffdec1856c162af77a1eaa126981cac57a94bb8ad99d8638892e96a8e7",
     "presentations/components/PitchSlide.vue": "4bdb7e8429be6dd766e925abab5cf809a712c334b29caf10664886c1a89a9b68",
     "presentations/style.css": "caea88afba7b65d0b1936a2a6caf8998d283adf9ab50d39f7bcfa6f7d4846db8",
@@ -18,7 +18,7 @@
     "presentations/soherdocs.en.md": "d5246e3a0b771e94dfa550842d812012518b3c4f4bbef0ad1936e75cb81fa82b",
     "scripts/capture-slide.mjs": "d30961df36b2f88860bee42eabcb4dfb2ca7cf4654132aa58f26e7a57c07b7d3"
   },
-  "videoSha256": "dab6313f7be295f33bfdf7cfe7a4e35b0cae8f47a81ddf1a825869c104f64f26",
+  "videoSha256": "fc25b5a5e46672e01eeeef6926bd36200827d5aebbbf4c75e20279f39e322674",
   "slides": [
     {
       "id": "overview",
@@ -27,7 +27,7 @@
       "start": 0,
       "end": 16,
       "image": "slide-01.png",
-      "sha256": "cdd97976ff2f82cd55ecd374656ed747dfe537377fd72c5c9f6996cb0a938dab"
+      "sha256": "8d6e6eb713906eeaf220104e85086f5eced93983b182c1c6958c4a7a063385dc"
     },
     {
       "id": "roles",
@@ -36,7 +36,7 @@
       "start": 16,
       "end": 32,
       "image": "slide-02.png",
-      "sha256": "6f8a5c7bd1601b79dacf3c14005198304ea3cda279504db27ba73be27af84bdd"
+      "sha256": "d93d87c86508df5048b6ae75fe8684952664b9cda6584d7f7e3072e59c9518f5"
     },
     {
       "id": "inputs",
@@ -45,7 +45,7 @@
       "start": 32,
       "end": 48,
       "image": "slide-03.png",
-      "sha256": "1a452fee53709b481c77b79acf73fe2e57eca88705ee8702ea5a03cfbf191fc6"
+      "sha256": "132fafacecc0ad77f61805033e7f48611e1b1405ff96d4a56f2de539704e002b"
     },
     {
       "id": "cv-example",
@@ -54,7 +54,7 @@
       "start": 48,
       "end": 64,
       "image": "slide-04.png",
-      "sha256": "f1f0d262a5d97013f0c04cfc7de66ac841b8b29bd96eb9ad57bfed184ad074b8"
+      "sha256": "988f4f9f51e80f0004d7e0585a086fd2af545781b1ccf20834d63733edfa776c"
     },
     {
       "id": "cv-workflow",
@@ -63,7 +63,7 @@
       "start": 64,
       "end": 80,
       "image": "slide-05.png",
-      "sha256": "0e15c1cc4b70359d64239c5fc92634d5f5b45bc5982737f233e0d90d8d4c07a8"
+      "sha256": "90bf645a34d601c1d0c6d0359902a478e229d8ffcb342a1d71997456b02f254e"
     },
     {
       "id": "review",
@@ -72,7 +72,7 @@
       "start": 80,
       "end": 96,
       "image": "slide-06.png",
-      "sha256": "abe25b69c324b146d3630f25ad30740f140aa9e60793fa35b1951a1be6e64a6e"
+      "sha256": "014f8fee42fa265906eeb5bd219c2c1bd08905bf7b1515d3ecf587df47a1fad8"
     },
     {
       "id": "future-documents",
@@ -81,7 +81,7 @@
       "start": 96,
       "end": 112,
       "image": "slide-07.png",
-      "sha256": "adaac175a7ec0ebd36586590f0f3ad6a14095d1b0105ff97884ef74fb6165387"
+      "sha256": "236eefe1000dc6e7e6fef6da6d34721f8f12ab1db62cbef0b8f02effd68484f4"
     },
     {
       "id": "next-step",
@@ -90,7 +90,7 @@
       "start": 112,
       "end": 128,
       "image": "slide-08.png",
-      "sha256": "078a5c891d7c9a646efd3b40afe947b792cf4fb655a77fc7d1a5a07c90d4c5ec"
+      "sha256": "4553e945df2d4da57fad8e5f3550e3ed25c08b9e906cb85cdd68535a4d30d7c0"
     }
   ]
 }

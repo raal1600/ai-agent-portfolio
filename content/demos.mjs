@@ -1,4 +1,5 @@
 import { hektorSlides, hektorChapters } from './hektor.mjs'
+import { soherAgentSlides } from './soheragent.mjs'
 
 // Paired content is the source for Slidev, the website, captions and transcripts.
 // A shared ID and timing make the same chapter addressable in both languages.
@@ -16,39 +17,8 @@ export const demos = [
     disclosure: pair('An illustrated concept for planning, coordinating and reviewing software-development work, with a person deciding what to approve.', 'Ett illustrerat koncept för att planera, samordna och granska mjukvaruutveckling, där en människa avgör vad som godkänns.'),
     fit: pair('For teams exploring agent-assisted software delivery while retaining control over scope, permissions and acceptance.', 'För team som vill utforska agentstödd mjukvaruutveckling med kontroll över omfattning, behörigheter och godkännande.'),
     next: pair('Bring a development task and your review process. We can define a bounded workflow and the checks it should pass.', 'Ta med en utvecklingsuppgift och er granskningsprocess. Vi kan definiera ett avgränsat flöde och de kontroller det ska klara.'),
-    slides: [
-      slide('overview', 'cover', pair('An agent needs a plan.\nAnd clear boundaries.', 'En agent behöver en plan.\nOch tydliga ramar.'), pair('SoherAgent explores how software agents can move from a request to reviewable work, with a person deciding what is accepted.', 'SoherAgent utforskar hur mjukvaruagenter kan gå från en begäran till granskningsbart arbete, där en människa avgör vad som godkänns.'), [item(pair('Request → plan → execute → review', 'Begäran → plan → utför → granska'), pair('A guided engineering workflow', 'Ett väglett utvecklingsflöde'))]),
-      slide('problem', 'cards', pair('The hard part is coordinating the work.', 'Det svåra är att samordna arbetet.'), pair('Generating code is one step. A useful development workflow also needs shared context, ownership and a way to judge the result.', 'Att generera kod är ett steg. Ett användbart utvecklingsflöde behöver också gemensam kontext, ansvar och ett sätt att bedöma resultatet.'), [
-        item(pair('What should change?', 'Vad ska ändras?'), pair('Turn a broad request into an explicit scope and acceptance criteria.', 'Gör en bred begäran till en tydlig omfattning och acceptanskriterier.')),
-        item(pair('Who can do what?', 'Vem får göra vad?'), pair('Assign bounded tasks and permissions before execution.', 'Tilldela avgränsade uppgifter och behörigheter före körning.')),
-        item(pair('How do we check it?', 'Hur kontrollerar vi det?'), pair('Keep outputs and checks available for human review.', 'Gör resultat och kontroller tillgängliga för mänsklig granskning.')),
-      ]),
-      slide('plan', 'flow', pair('Make the task concrete before execution.', 'Gör uppgiften konkret före körning.'), pair('For example, a team wants an internal tool to understand service contracts. Agree what it should do and which information it may use.', 'Till exempel vill ett team ha ett internt verktyg för att förstå tjänsteavtal. Bestäm vad det ska göra och vilken information det får använda.'), [
-        item(pair('A request', 'En begäran'), pair('Help a team understand service contracts.', 'Hjälp ett team att förstå tjänsteavtal.')),
-        item(pair('A reviewed specification', 'En granskad specifikation'), pair('Define inputs, boundaries and expected outputs.', 'Definiera indata, gränser och förväntade resultat.')),
-        item(pair('A work plan', 'En arbetsplan'), pair('Break the scope into steps that can be checked.', 'Dela upp arbetet i steg som går att kontrollera.')),
-      ]),
-      slide('coordinate', 'flow', pair('Divide the work. Keep a shared plan.', 'Dela upp arbetet. Behåll en gemensam plan.'), pair('A coordinating agent holds the plan. Other agents take on specific tasks and bring their results back for review.', 'En samordnande agent håller i planen. Andra agenter tar hand om avgränsade uppgifter och lämnar tillbaka resultaten för granskning.'), [
-        item(pair('Coordinator', 'Samordnare'), pair('Holds the approved scope and delegates work.', 'Håller den godkända omfattningen och delegerar arbete.')),
-        item(pair('Task workers', 'Delagenter'), pair('Operate within assigned task boundaries.', 'Arbetar inom tilldelade uppgiftsgränser.')),
-        item(pair('Review point', 'Granskningspunkt'), pair('Collect outputs, checks and unresolved questions.', 'Samlar resultat, kontroller och öppna frågor.')),
-      ]),
-      slide('controls', 'cards', pair('Your team sets the boundaries.', 'Ert team sätter ramarna.'), pair('You choose the scope and the tools. The agent works within those limits and brings decisions back to your team.', 'Ni väljer uppgiften och verktygen. Agenten arbetar inom de ramarna och lämnar besluten till ert team.'), [
-        item(pair('An agreed task', 'En överenskommen uppgift'), pair('Focus on the work approved for this request.', 'Fokusera på det arbete som godkänts för uppgiften.')),
-        item(pair('Allowed tools', 'Tillåtna verktyg'), pair('Use only agreed systems and information.', 'Använd bara överenskomna system och information.')),
-        item(pair('Human checkpoints', 'Mänskliga beslut'), pair('Ask for a decision when work needs approval.', 'Be om ett beslut när arbetet behöver godkännas.')),
-      ]),
-      { ...slide('use-cases', 'cards', pair('Start with work your team needs done.', 'Börja med arbete ert team behöver få gjort.'), pair('Possible starting points include an internal tool, a connection between systems or a focused change to existing software.', 'Möjliga utgångspunkter är ett internt verktyg, en koppling mellan system eller en avgränsad ändring i befintlig programvara.'), [
-        item(pair('An internal tool', 'Ett internt verktyg'), pair('Help staff find and work with approved information.', 'Hjälp medarbetare att hitta och arbeta med godkänd information.')),
-        item(pair('A system connection', 'En systemkoppling'), pair('Connect a defined step between existing tools.', 'Koppla ihop ett avgränsat steg mellan befintliga verktyg.')),
-        item(pair('A software change', 'En programändring'), pair('Prepare a focused improvement for your team to review.', 'Förbered en avgränsad förbättring som ert team kan granska.')),
-      ]), aliases: ['evidence'] },
-      slide('review', 'split', pair('Your team decides what happens next.', 'Ert team avgör nästa steg.'), pair('The agent presents the proposed change and any open questions. Your team reviews the result before accepting it.', 'Agenten presenterar den föreslagna ändringen och eventuella öppna frågor. Ert team granskar resultatet innan det godkänns.'), [
-        item(pair('Agent prepares', 'Agenten förbereder'), pair('Proposed change · a clear summary · remaining questions', 'Föreslagen ändring · en tydlig sammanfattning · kvarstående frågor')),
-        item(pair('A person decides', 'En människa avgör'), pair('Accept · request changes · adjust scope', 'Godkänn · begär ändringar · justera omfattningen')),
-      ]),
-      slide('next-step', 'closing', pair('Start with one reviewable task.', 'Börja med en uppgift som går att granska.'), pair('We can scope an engineering-agent workflow around your tools, permissions and review process. The first conversation starts with the work your team needs to do.', 'Vi kan utforma ett agentflöde för utveckling runt era verktyg, behörigheter och granskningar. Det första samtalet börjar med arbetet ert team behöver få gjort.'), [item(pair('Bring the task. Define the checks.', 'Ta med uppgiften. Definiera kontrollerna.'), pair('Custom engineering, scoped to your systems.', 'Skräddarsydd utveckling utifrån era system.'))]),
-    ],
+    presentationComponent: 'SoherAgentStory',
+    slides: soherAgentSlides,
   },
   {
     id: 'soherdocs', name: 'SoherDocs', path: 'projects/soherdocs.html', accent: 'blue',
