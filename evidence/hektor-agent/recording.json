@@ -1,0 +1,185 @@
+{
+  "recordedAt": "2026-09-11T00:09:51.562Z",
+  "source": "https://h-sami.github.io/hektor-chat-pitch/hektor-demo",
+  "sourceRepository": "https://github.com/H-Sami/hektor-chat-pitch",
+  "sourceBranch": "hektor-demo-sv",
+  "sourceRevision": "b287401",
+  "method": "Lossless browser captures of all 14 rendered slides, held for the storyboard durations and encoded as H.264 MP4. No audio or fabricated runtime footage.",
+  "durationSeconds": 150,
+  "width": 1600,
+  "height": 900,
+  "slideCount": 14,
+  "videoSha256": "198853985a596191ca19258675bcbcb4371e677a0963a36e92dcf7d38aa077e8",
+  "chapters": [
+    {
+      "slide": 1,
+      "title": "Kundnyttan",
+      "description": "Snabbare hjälp och mindre rutin",
+      "start": 0,
+      "end": 28,
+      "id": "introduktion"
+    },
+    {
+      "slide": 4,
+      "title": "Chatt och kunskap",
+      "description": "Hektors information bakom svaret",
+      "start": 28,
+      "end": 58,
+      "id": "tre-kanaler"
+    },
+    {
+      "slide": 7,
+      "title": "Telefon på svenska",
+      "description": "Ett begripligt svar och en gräns",
+      "start": 58,
+      "end": 74,
+      "id": "telefon"
+    },
+    {
+      "slide": 8,
+      "title": "Överlämning",
+      "description": "Bakgrunden följer med",
+      "start": 74,
+      "end": 86,
+      "id": "overlamning"
+    },
+    {
+      "slide": 9,
+      "title": "Diktering",
+      "description": "Berätta, granska och godkänn",
+      "start": 86,
+      "end": 98,
+      "id": "diktering"
+    },
+    {
+      "slide": 10,
+      "title": "Team och kontroll",
+      "description": "Agenten avlastar, Hektor bestämmer",
+      "start": 98,
+      "end": 128,
+      "id": "kontroll"
+    },
+    {
+      "slide": 13,
+      "title": "Erbjudandet",
+      "description": "En agent. Värde för ett helt team",
+      "start": 128,
+      "end": 150,
+      "id": "samlat-varde"
+    }
+  ],
+  "slides": [
+    {
+      "number": 1,
+      "title": "Hektor Demo",
+      "start": 0,
+      "end": 8,
+      "image": "slides/01.png",
+      "sha256": "c5e21fbdaf57d861e66e5351afdcd64f48a05d7a8e568a0ba563d66d0074c68b"
+    },
+    {
+      "number": 2,
+      "title": "Snabbare hjälp. En enklare kundvardag.",
+      "start": 8,
+      "end": 18,
+      "image": "slides/02.png",
+      "sha256": "fe9c65e43fc84b2886e5dbf4160d597d9c2c6f0032d8c5651340998f85694316"
+    },
+    {
+      "number": 3,
+      "title": "Samma frågor. Mindre dubbelarbete.",
+      "start": 18,
+      "end": 28,
+      "image": "slides/03.png",
+      "sha256": "72755d571bf2d516e88b0553cc47a0a609e01c84195e5ceb438892606a83b0da"
+    },
+    {
+      "number": 4,
+      "title": "En agent. Tre sätt att skapa nytta.",
+      "start": 28,
+      "end": 36,
+      "image": "slides/04.png",
+      "sha256": "763c0187b1d7183364a7c546917721d1d541bd6a5e8e2b4e0152da375df889df"
+    },
+    {
+      "number": 5,
+      "title": "Så kan kunden få hjälp i chatten.",
+      "start": 36,
+      "end": 48,
+      "image": "slides/05.png",
+      "sha256": "4eee7986a8eb1428c5dfdc0962d7c49fd7f0aa9746d9adf47d767303056d45a1"
+    },
+    {
+      "number": 6,
+      "title": "Hektors kunskap bakom varje svar.",
+      "start": 48,
+      "end": 58,
+      "image": "slides/06.png",
+      "sha256": "0b00e3274534d358d3782c28e4929dc5db4b3e6f1e490c666ec0ef25837bbc2c"
+    },
+    {
+      "number": 7,
+      "title": "Samma hjälp, även när kunden ringer.",
+      "start": 58,
+      "end": 74,
+      "image": "slides/07.png",
+      "sha256": "d65e0a1a5f0bf9e1cfd62956bfab6134acfc0db042a8436e16ae200920efd1c5"
+    },
+    {
+      "number": 8,
+      "title": "Nästa kollega får med sig bakgrunden.",
+      "start": 74,
+      "end": 86,
+      "image": "slides/08.png",
+      "sha256": "b3367adf8c19fe8dd928b17a793417238311160ab2372e7151dbd1b96dd192c4"
+    },
+    {
+      "number": 9,
+      "title": "Berätta vad som hänt. Få anteckningen klar.",
+      "start": 86,
+      "end": 98,
+      "image": "slides/09.png",
+      "sha256": "cd5a84334e147b0248ccebc6a1a754bed38d2101976a2f25109d3ab0465f6810"
+    },
+    {
+      "number": 10,
+      "title": "Hektor sätter gränserna.",
+      "start": 98,
+      "end": 108,
+      "image": "slides/10.png",
+      "sha256": "8533fd19a7f34dad487381915ac79a4292dfe3d711b3e2de5a237aadeb2a4b6a"
+    },
+    {
+      "number": 11,
+      "title": "Agenten tar rutinen. Teamet tar det vidare.",
+      "start": 108,
+      "end": 118,
+      "image": "slides/11.png",
+      "sha256": "184d8cb4ac8fa76ba344ec4bbdc23caf5acea5e7257f11cd4a6bd5395f9a678e"
+    },
+    {
+      "number": 12,
+      "title": "Fler kundkontakter med samma team.",
+      "start": 118,
+      "end": 128,
+      "image": "slides/12.png",
+      "sha256": "e2d8e57f3161d6dbf09dc8163ae4d356679048666e92a1d215ef15081750f8f8"
+    },
+    {
+      "number": 13,
+      "title": "Det här är värdet för Hektor.",
+      "start": 128,
+      "end": 138,
+      "image": "slides/13.png",
+      "sha256": "8df053317a78bf4b399dc54ace91c6b116b39cb81382f54d8f1bcfe681e7a94a"
+    },
+    {
+      "number": 14,
+      "title": "En agent. Värde för ett helt team.",
+      "start": 138,
+      "end": 150,
+      "image": "slides/14.png",
+      "sha256": "afd6f268a4683a82c8c5e76602385c694e55dcd8e8bf9998dfef344587133038"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "ai-agent-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "record:hektor": "node scripts/record-hektor.mjs",
+    "serve": "node scripts/serve.mjs",
+    "verify": "node scripts/verify-portfolio.mjs"
+  },
+  "devDependencies": {
+    "ffmpeg-static": "5.3.0",
+    "playwright-core": "1.63.0"
+  }
+}

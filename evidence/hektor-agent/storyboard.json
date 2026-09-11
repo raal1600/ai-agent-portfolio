@@ -1,0 +1,33 @@
+{
+  "source": "https://h-sami.github.io/hektor-chat-pitch/hektor-demo",
+  "repository": "https://github.com/H-Sami/hektor-chat-pitch",
+  "branch": "hektor-demo-sv",
+  "revision": "b287401",
+  "language": "sv",
+  "disclosure": "Inspelad konceptpresentation. Illustrativa flöden, inte en driftsatt telefonintegration.",
+  "slides": [
+    { "id": "introduktion", "title": "Hektor Demo", "seconds": 8, "summary": "En gemensam agent för webbchatt, telefon och personalens diktering. Målet är att hjälpa kunder och avlasta teamet." },
+    { "id": "kundnytta", "title": "Snabbare hjälp. En enklare kundvardag.", "seconds": 10, "summary": "Vanliga frågor kan få svar även utanför bemannad support. Flera kunder kan få hjälp samtidigt, med en tydlig väg till en människa." },
+    { "id": "mindre-dubbelarbete", "title": "Samma frågor. Mindre dubbelarbete.", "seconds": 10, "summary": "Återanvänd godkänd kunskap för svar, vägledning och dokumentation. Frigör tid för frågor som behöver erfarenhet och personlig kontakt." },
+    { "id": "tre-kanaler", "title": "En agent. Tre sätt att skapa nytta.", "seconds": 8, "summary": "Chatt och telefon hjälper kunden. Diktering hjälper medarbetaren att förbereda en ärendeanteckning." },
+    { "id": "chatt", "title": "Så kan kunden få hjälp i chatten.", "seconds": 12, "summary": "Ett illustrativt svar om wifi-samtal visar hur kunden kan få en begriplig förklaring med stöd i Hektors information och möjlighet att kontakta supporten." },
+    { "id": "kunskap", "title": "Hektors kunskap bakom varje svar.", "seconds": 10, "summary": "Hektor väljer informationen: vanliga frågor, vägledning, tjänster och villkor. Hektor bestämmer också när en människa tar över." },
+    { "id": "telefon", "title": "Samma hjälp, även när kunden ringer.", "seconds": 16, "summary": "Det svenska exempelsamtalet besvarar en allmän fråga om wifi-samtal. När kunden frågar om sitt abonnemang är agenten tydlig med att den saknar åtkomst och hjälper kunden vidare." },
+    { "id": "overlamning", "title": "Nästa kollega får med sig bakgrunden.", "seconds": 12, "summary": "Ett föreslaget supportunderlag samlar kundens önskemål, det som förklarats och nästa steg. Exemplet visar uttryckligen att ingen abonnemangskontroll har gjorts." },
+    { "id": "diktering", "title": "Berätta vad som hänt. Få anteckningen klar.", "seconds": 12, "summary": "Medarbetaren dikterar. Hektor förbereder texten. Medarbetaren granskar och rättar innan en godkänd anteckning sparas genom en behörig koppling." },
+    { "id": "kontroll", "title": "Hektor sätter gränserna.", "seconds": 10, "summary": "Hektor godkänner information, åtkomst och mänsklig uppföljning. Personlig support kräver godkända kopplingar, identitetskontroll och rätt behörighet." },
+    { "id": "ansvar", "title": "Agenten tar rutinen. Teamet tar det vidare.", "seconds": 10, "summary": "Agenten kan förklara vanliga frågor, guida och förbereda underlag. Teamet behåller ansvar för undantag, känsliga frågor, beslut och kundrelationer." },
+    { "id": "kapacitet", "title": "Fler kundkontakter med samma team.", "seconds": 10, "summary": "En gemensam tjänst kan avlasta flera medarbetare. Kapaciteten behöver anpassas till trafik och avtal; presentationen visar ingen uppmätt automatiseringsgrad." },
+    { "id": "samlat-varde", "title": "Det här är värdet för Hektor.", "seconds": 10, "summary": "Tillgängligare kundservice, mindre återkommande arbete, enklare dokumentation och fortsatt kontroll hos Hektor." },
+    { "id": "erbjudande", "title": "En agent. Värde för ett helt team.", "seconds": 12, "summary": "Erbjudandets inriktning är en agent till kostnaden av en supportmedarbetare, med potential att automatisera ett helt teams återkommande arbete. Omfattning och kostnadsram preciseras i offert. Effekten är ännu inte uppmätt." }
+  ],
+  "chapters": [
+    { "slide": 1, "title": "Kundnyttan", "description": "Snabbare hjälp och mindre rutin" },
+    { "slide": 4, "title": "Chatt och kunskap", "description": "Hektors information bakom svaret" },
+    { "slide": 7, "title": "Telefon på svenska", "description": "Ett begripligt svar och en gräns" },
+    { "slide": 8, "title": "Överlämning", "description": "Bakgrunden följer med" },
+    { "slide": 9, "title": "Diktering", "description": "Berätta, granska och godkänn" },
+    { "slide": 10, "title": "Team och kontroll", "description": "Agenten avlastar, Hektor bestämmer" },
+    { "slide": 13, "title": "Erbjudandet", "description": "En agent. Värde för ett helt team" }
+  ]
+}

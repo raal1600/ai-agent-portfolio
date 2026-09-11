@@ -79,7 +79,7 @@ const setupWorkflowDemo = () => {
         const title = chapter.querySelector('strong')?.textContent?.trim() || `Chapter ${active + 1}`;
         const description = chapter.querySelector('span > span')?.textContent?.trim() || '';
         const strong = document.createElement('strong');
-        strong.textContent = `Step ${active + 1} · ${title}.`;
+        strong.textContent = `${demo.dataset.stepLabel || 'Step'} ${active + 1} · ${title}.`;
         status.replaceChildren(strong, document.createTextNode(description ? ` ${description}.` : ''));
       }
       if (scroll) scrollToChapter(chapter);
