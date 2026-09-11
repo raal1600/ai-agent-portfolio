@@ -1,4 +1,4 @@
-// Review-only storyboard. Published demo copy and recordings remain independent.
+// Approved storyboard shared by the Slidev deck and published demo transcript.
 export const story = [
   {
     stage: ['The idea', 'Idén'],

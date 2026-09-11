@@ -2,32 +2,32 @@ WEBVTT
 
 1
 00:00:00.000 --> 00:00:16.000
-SoherAgent utforskar hur mjukvaruagenter kan gå från en begäran till granskningsbart arbete, där en människa avgör vad som godkänns.
+SoherAgent är ett koncept för att samordna mjukvaruagenter med en gemensam plan, anslutna verktyg och mänskliga beslut.
 
 2
 00:00:16.000 --> 00:00:32.000
-Att generera kod är ett steg. Ett användbart utvecklingsflöde behöver också gemensam kontext, ansvar och ett sätt att bedöma resultatet.
+Exempel: teamet behöver ett internt verktyg för att hitta serviceavtal och se när de förnyas.
 
 3
 00:00:32.000 --> 00:00:48.000
-Till exempel vill ett team ha ett internt verktyg för att förstå tjänsteavtal. Bestäm vad det ska göra och vilken information det får använda.
+Gör önskemålet till ett avgränsat uppdrag som går att granska. Red ut öppna frågor med teamet.
 
 4
 00:00:48.000 --> 00:01:04.000
-En samordnande agent håller i planen. Andra agenter tar hand om avgränsade uppgifter och lämnar tillbaka resultaten för granskning.
+En samordnare delar upp arbetet, sammanför resultaten och lyfter olösta frågor till en människa.
 
 5
 00:01:04.000 --> 00:01:20.000
-Ni väljer uppgiften och verktygen. Agenten arbetar inom de ramarna och lämnar besluten till ert team.
+Arbetsflödet utformas efter de system du ger tillgång till och de åtgärder du godkänner.
 
 6
 00:01:20.000 --> 00:01:36.000
-Möjliga utgångspunkter är ett internt verktyg, en koppling mellan system eller en avgränsad ändring i befintlig programvara.
+Den tänkta överlämningen samlar programändringen, kontrollerna och öppna frågor för din granskare.
 
 7
 00:01:36.000 --> 00:01:52.000
-Agenten presenterar den föreslagna ändringen och eventuella öppna frågor. Ert team granskar resultatet innan det godkänns.
+Målet är ett verktyg som teamet kan bedöma i en testmiljö innan ni bestämmer hur det ska införas.
 
 8
 00:01:52.000 --> 00:02:08.000
-Vi kan utforma ett agentflöde för utveckling runt era verktyg, behörigheter och granskningar. Det första samtalet börjar med arbetet ert team behöver få gjort.
+Jag kan hjälpa dig att utforma ett anpassat agentflöde utifrån era system, behörigheter och sätt att granska arbetet.

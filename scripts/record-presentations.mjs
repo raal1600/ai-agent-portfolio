@@ -49,7 +49,7 @@ try {
       if (!ready) throw new Error(`Slidev did not become ready: ${output}`)
       for (const s of slides) {
         await page.goto(`http://localhost:3035/${s.number}`, { waitUntil: 'networkidle' })
-        let pitch = page.locator(demo.id === 'hektor' ? '.slidev-page:visible .slidev-layout' : '.slidev-page:visible .pitch').first()
+        let pitch = page.locator(demo.id === 'hektor' ? '.slidev-page:visible .slidev-layout' : demo.id === 'soheragent' ? '.slidev-page:visible .sa-story' : '.slidev-page:visible .pitch').first()
         await pitch.waitFor({ timeout: 60000 })
         await page.evaluate(() => document.fonts.ready)
         await page.waitForFunction(() => [...document.querySelectorAll('.slidev-page .mermaid')].filter(el => el.getBoundingClientRect().width).every(el => el.shadowRoot?.querySelector('svg')))
@@ -94,7 +94,9 @@ try {
       encoder.once('error', reject)
       encoder.once('exit', code => code === 0 ? done() : reject(new Error(`FFmpeg exit ${code}`)))
     })
-    const sources = demo.id === 'hektor'
+    const sources = demo.id === 'soheragent'
+      ? ['content/soheragent.mjs','presentations/review/soheragent-story.mjs','presentations/components/SoherAgentStory.vue','presentations/style.css','presentations/package-lock.json',`presentations/soheragent.${lang}.md`,'scripts/capture-slide.mjs']
+      : demo.id === 'hektor'
       ? ['content/hektor.mjs','content/hektor-translation.mjs','presentations/hektor/en.md','presentations/hektor/style.css','presentations/hektor/components/DeckHeaderEnglish.vue','presentations/hektor/components/DeckFooter.vue','presentations/hektor/components/DeckIcon.vue','presentations/package-lock.json','scripts/capture-slide.mjs']
       : ['content/demos.mjs', 'content/hektor.mjs', 'presentations/components/PitchSlide.vue', 'presentations/style.css', 'presentations/package-lock.json', `presentations/${demo.id}.${lang}.md`, 'scripts/capture-slide.mjs']
     writeFileSync(resolve(root, dir, 'recording.json'), JSON.stringify({ demo: demo.id, language: lang, recordedAt: new Date().toISOString(), method: 'Local Slidev browser captures encoded as a silent H.264 presentation. Illustrative slides, not a recording of live agent execution.', slidevVersion: '52.19.1', durationSeconds: duration, width: 1600, height: 900, audio: false, sourceHashNormalization: 'UTF-8 with LF line endings', sources: Object.fromEntries(sources.map(path => [path, hash(path, true)])), videoSha256: hash(`${dir}/walkthrough.mp4`), slides: slides.map(s => ({ id: s.id, number: s.number, title: s.title, start: s.start, end: s.end, image: `slide-${String(s.number).padStart(2, '0')}.png`, sha256: hash(`${dir}/slide-${String(s.number).padStart(2, '0')}.png`) })) }, null, 2) + '\n')

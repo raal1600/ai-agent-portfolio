@@ -1,5 +1,8 @@
 # SoherAgent visual storyboard — review before recording
 
+This folder preserves the review snapshot. The approved story has subsequently
+been integrated into the customer demo; see [publication notes](../../publish-soheragent-storyboard.md).
+
 Eight slides, in English and Swedish, rendered from the local Slidev project.
 This proposal follows one illustrative software assignment: an internal tool
 for finding service contracts. It describes the intended workflow, not a live

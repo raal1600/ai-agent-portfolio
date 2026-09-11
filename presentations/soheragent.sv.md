@@ -10,37 +10,37 @@ fonts:
   sans: Segoe UI
   provider: none
 defaults:
-  layout: default
+  layout: none
 drawings:
   persist: false
 ---
 
-<PitchSlide demo="soheragent" locale="sv" :index="0" />
+<SoherAgentStory demo="soheragent" locale="sv" :index="0" />
 
 ---
 
-<PitchSlide demo="soheragent" locale="sv" :index="1" />
+<SoherAgentStory demo="soheragent" locale="sv" :index="1" />
 
 ---
 
-<PitchSlide demo="soheragent" locale="sv" :index="2" />
+<SoherAgentStory demo="soheragent" locale="sv" :index="2" />
 
 ---
 
-<PitchSlide demo="soheragent" locale="sv" :index="3" />
+<SoherAgentStory demo="soheragent" locale="sv" :index="3" />
 
 ---
 
-<PitchSlide demo="soheragent" locale="sv" :index="4" />
+<SoherAgentStory demo="soheragent" locale="sv" :index="4" />
 
 ---
 
-<PitchSlide demo="soheragent" locale="sv" :index="5" />
+<SoherAgentStory demo="soheragent" locale="sv" :index="5" />
 
 ---
 
-<PitchSlide demo="soheragent" locale="sv" :index="6" />
+<SoherAgentStory demo="soheragent" locale="sv" :index="6" />
 
 ---
 
-<PitchSlide demo="soheragent" locale="sv" :index="7" />
+<SoherAgentStory demo="soheragent" locale="sv" :index="7" />
