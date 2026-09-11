@@ -1,7 +1,7 @@
 {
   "demo": "soheragent",
   "language": "sv",
-  "recordedAt": "2026-09-11T20:53:10.177Z",
+  "recordedAt": "2026-09-11T21:08:33.385Z",
   "method": "Local Slidev browser captures encoded as a silent H.264 presentation. Illustrative slides, not a recording of live agent execution.",
   "slidevVersion": "52.19.1",
   "durationSeconds": 128,
@@ -11,14 +11,14 @@
   "sourceHashNormalization": "UTF-8 with LF line endings",
   "sources": {
     "content/soheragent.mjs": "c60c96d625515fa72698c3e4380c2a6b3bcc6b8ad3c632df1588d246d0e9030d",
-    "presentations/review/soheragent-story.mjs": "10bb70a19f278f0690664e65661f6fc158770a6d78213228dc429a08b57d577b",
-    "presentations/components/SoherAgentStory.vue": "d34af765bd02953fafac409f850f2a177519e14e3b20baac5458113840b4f4ba",
+    "presentations/review/soheragent-story.mjs": "d03e5c2e52a3fe964fccadeb821f9129adad7f86bbb12f6c07bf82fb25f8435c",
+    "presentations/components/SoherAgentStory.vue": "58e44540dc9639c2ee663a3504c5602a0eb888dd67d4f2a5544759fcd13469ad",
     "presentations/style.css": "caea88afba7b65d0b1936a2a6caf8998d283adf9ab50d39f7bcfa6f7d4846db8",
     "presentations/package-lock.json": "5427ffd95e719252cba788612e1d08cc0281dfed6099619c0dc89d2e292f2ee8",
-    "presentations/soheragent.sv.md": "549dde983986a4599bebb0520c3cf2f5d13558a66d5c551fa288fdac1cca1067",
+    "presentations/soheragent.sv.md": "e106c800965a3b3c6e81570605a791fbe4d2a846a012ba9a4de6bc7b6d96bc00",
     "scripts/capture-slide.mjs": "d30961df36b2f88860bee42eabcb4dfb2ca7cf4654132aa58f26e7a57c07b7d3"
   },
-  "videoSha256": "db41efb31082a5ca7c5443f0d4e8d67850572e797d341e6ccd637e13d0fa024e",
+  "videoSha256": "a81445c466e6e811784e27e062c9eb3f5625e3cca6cd7dd495d00812256862c1",
   "slides": [
     {
       "id": "overview",
@@ -27,7 +27,7 @@
       "start": 0,
       "end": 16,
       "image": "slide-01.png",
-      "sha256": "7d6ee0d9823c8069fb84ade41f6b4e478b81a0a6052e8e89ee7021368456c8a1"
+      "sha256": "fe4b2b4b3c285d9a356e326665187103fe50e0c51f28cfb556ad7574be3d9c3f"
     },
     {
       "id": "problem",
@@ -36,7 +36,7 @@
       "start": 16,
       "end": 32,
       "image": "slide-02.png",
-      "sha256": "29afd40b2cb008fe3786f11338dab28b5b7adac9226bb7e878b7eb469a8854c0"
+      "sha256": "0c3fe5296754731607ce56c0600a6dc62a1c76599ae1662352ca0d2af5edfc6c"
     },
     {
       "id": "plan",
@@ -45,7 +45,7 @@
       "start": 32,
       "end": 48,
       "image": "slide-03.png",
-      "sha256": "a21221bebb906d5e0cbf56dc462020cdb8013c0986a0c70ac5569d4d1255024c"
+      "sha256": "78466978e0dc5188e2569d3795a3ec41a5ae3a01ef9c8809863d27387738a35a"
     },
     {
       "id": "coordinate",
@@ -54,7 +54,7 @@
       "start": 48,
       "end": 64,
       "image": "slide-04.png",
-      "sha256": "9fbc3d2656ea7502a5e7e4b8404ab5bc183fb4519163e344185cb1de8946e8da"
+      "sha256": "acce96da4d4f80590e39a653a1e6b6a1cf210a3dd9a02acc84b14f2958c4cc0e"
     },
     {
       "id": "controls",
@@ -63,7 +63,7 @@
       "start": 64,
       "end": 80,
       "image": "slide-05.png",
-      "sha256": "de0175776b940eda7f1a2fed3bc69684d7d9c95bb1c3e420aa7b00ac1fc91f51"
+      "sha256": "28333d9696b6106b716ae9bde9194735546a3a32c2c50297d2785d626391b85d"
     },
     {
       "id": "review",
@@ -72,7 +72,7 @@
       "start": 80,
       "end": 96,
       "image": "slide-06.png",
-      "sha256": "f507959ea6875dc154db2a9de7e1b19512aec23f785d359014553ee605eb107b"
+      "sha256": "1ad61d8eee0c63eb3bd3aedab26680c2ec21c0e0654a3eb49908e965ec72fd4f"
     },
     {
       "id": "use-cases",
@@ -81,7 +81,7 @@
       "start": 96,
       "end": 112,
       "image": "slide-07.png",
-      "sha256": "bbeb72aa3aca5693a62d846ead46208de3968d33924f57cbbbfdd0842832d1d0"
+      "sha256": "496493ac61204c3d872ed9c48c932ece70a6319bb72ffbc8f3d571b5301c6e23"
     },
     {
       "id": "next-step",
@@ -90,7 +90,7 @@
       "start": 112,
       "end": 128,
       "image": "slide-08.png",
-      "sha256": "d9c90451f5b80f7986da8ae5f3dac4c8df84bdf24d23ad6585e547eff7cb5944"
+      "sha256": "5eccb33cd1b03ad68de81169eeeb333b53e4c5613b507b5027b36968c25c5c16"
     }
   ]
 }

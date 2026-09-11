@@ -7,7 +7,7 @@ const s = computed(() => localized(props.index, props.locale))
 
 <template>
   <article class="sa-story" :class="[{ dark: index === 0 || index === 7 }, `scene-${index}`]" :lang="locale">
-    <header><div class="brand"><i></i>Soher<span>Agent</span></div><span>{{ locale === 'sv' ? 'KONCEPTPRESENTATION' : 'CONCEPT PRESENTATION' }}</span><b>{{ locale.toUpperCase() }}</b></header>
+    <header><div class="brand"><i></i>Soher<span>&nbsp;Agent</span></div><span>{{ locale === 'sv' ? 'KONCEPTPRESENTATION' : 'CONCEPT PRESENTATION' }}</span><b>{{ locale.toUpperCase() }}</b></header>
     <main>
       <div class="heading"><p class="eyebrow">{{ s.stage }}</p><h1>{{ s.title }}</h1><p class="intro">{{ s.intro }}</p></div>
 

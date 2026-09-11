@@ -1,7 +1,7 @@
 {
   "demo": "soherdocs",
   "language": "sv",
-  "recordedAt": "2026-09-11T20:51:47.016Z",
+  "recordedAt": "2026-09-11T21:09:32.410Z",
   "method": "Local Slidev browser captures encoded as a silent H.264 presentation. Illustrative slides, not a recording of live agent execution.",
   "slidevVersion": "52.19.1",
   "durationSeconds": 128,
@@ -10,24 +10,24 @@
   "audio": false,
   "sourceHashNormalization": "UTF-8 with LF line endings",
   "sources": {
-    "content/demos.mjs": "8ef7ecbd22b94f9e24a4b17b8c80dcc0b9eeadc4af1ed341da37d16dbb5ceb47",
+    "content/demos.mjs": "ecf47fc7fc59b7ba839484191c4277ad64c8502a4429e2864d86e7187c9f22d5",
     "content/hektor.mjs": "bc0f04ffdec1856c162af77a1eaa126981cac57a94bb8ad99d8638892e96a8e7",
     "presentations/components/PitchSlide.vue": "4bdb7e8429be6dd766e925abab5cf809a712c334b29caf10664886c1a89a9b68",
     "presentations/style.css": "caea88afba7b65d0b1936a2a6caf8998d283adf9ab50d39f7bcfa6f7d4846db8",
     "presentations/package-lock.json": "5427ffd95e719252cba788612e1d08cc0281dfed6099619c0dc89d2e292f2ee8",
-    "presentations/soherdocs.sv.md": "4571b587f56ec9a0452cfc76b257e03672b23656097792ebfb512467c6eee31e",
+    "presentations/soherdocs.sv.md": "032a4c0264ede6863a6d97d04d78ed283589d4d51b54134fb99a6a6adbf735ed",
     "scripts/capture-slide.mjs": "d30961df36b2f88860bee42eabcb4dfb2ca7cf4654132aa58f26e7a57c07b7d3"
   },
-  "videoSha256": "72e8b330041995ff00a546e474f0fd0be61621f41ea574d3771be07733672e24",
+  "videoSha256": "075a8c2e96e895cbc576f054dfc67a371baaef63d35f87a0b6274a0ecb731ed3",
   "slides": [
     {
       "id": "overview",
       "number": 1,
-      "title": "Agenten samordnar.\nSoherDocs anpassar dokumentet.",
+      "title": "Agenten samordnar.\nSoher Docs anpassar dokumentet.",
       "start": 0,
       "end": 16,
       "image": "slide-01.png",
-      "sha256": "1944dff88092a146d43f4f6718556246137dfd7bc214131d45cad73701b128d1"
+      "sha256": "e3255f29f93683a57a7953e345f5ca16c6b118ce6545d94e425045c1e1c57f2a"
     },
     {
       "id": "roles",
@@ -36,7 +36,7 @@
       "start": 16,
       "end": 32,
       "image": "slide-02.png",
-      "sha256": "63590b39bd71aef783777c4065fb28a460c0122d3611ca466f1818c6f1a4f1f2"
+      "sha256": "90bed416e5fb99e9ca71386c05cec1f6853dda0ace906a94ecdbfd29577192c2"
     },
     {
       "id": "inputs",
@@ -45,7 +45,7 @@
       "start": 32,
       "end": 48,
       "image": "slide-03.png",
-      "sha256": "bb5aeec881039a9ce6cec925cca79e11243fc2590e9a55eab5f9aa0d6de444fd"
+      "sha256": "ee35221ac2a8ad0d767aeb5eb8123b6566829da9d265e884a839cb0c5ea63491"
     },
     {
       "id": "cv-example",
@@ -54,7 +54,7 @@
       "start": 48,
       "end": 64,
       "image": "slide-04.png",
-      "sha256": "f4b2df93d0af0e21c34b143281a2ea0ffaf51cc88025ddd84a48719953889df4"
+      "sha256": "3ef228786bb8fc31489b842946c17b47c15c767fa3c8ec595ea4229c4058b2f0"
     },
     {
       "id": "cv-workflow",
@@ -63,7 +63,7 @@
       "start": 64,
       "end": 80,
       "image": "slide-05.png",
-      "sha256": "6f9fe355e1bc1639068c484f7b4c78f607ae6593d7f9173c629d8ab320f0e301"
+      "sha256": "df2322f67c655d5d05e7727a275bec2242498e4c35b12c485690b43964fb906f"
     },
     {
       "id": "review",
@@ -72,7 +72,7 @@
       "start": 80,
       "end": 96,
       "image": "slide-06.png",
-      "sha256": "d088ab93a1725b09d06259c97ce2f45c060f45bc9699c945fdcb70be9e283b2f"
+      "sha256": "15b615b591f9f5f731397618108bc8aeb2e5b605413b4932db2f176eb589c3af"
     },
     {
       "id": "future-documents",
@@ -81,7 +81,7 @@
       "start": 96,
       "end": 112,
       "image": "slide-07.png",
-      "sha256": "09e808c2041bce7deee6758a78f81ad2a68c5edba2fab8ffeb3a64c6f97d164f"
+      "sha256": "d18cd873f9f92ba32fcef65dc3150e36bf2d4974b1484f3e72fb2e65b2da4630"
     },
     {
       "id": "next-step",
@@ -90,7 +90,7 @@
       "start": 112,
       "end": 128,
       "image": "slide-08.png",
-      "sha256": "17e31cd0c87fe3b5c390da308dec591d7c03c2a9e1764b6a88bc558573fd3390"
+      "sha256": "1d587859f495e446e8efdad62cf2e845ab69f9a470ed5ff13dbf7bc97b663a58"
     }
   ]
 }

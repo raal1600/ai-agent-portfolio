@@ -1,7 +1,7 @@
 {
   "demo": "soherdocs",
   "language": "en",
-  "recordedAt": "2026-09-11T20:51:20.606Z",
+  "recordedAt": "2026-09-11T21:09:06.031Z",
   "method": "Local Slidev browser captures encoded as a silent H.264 presentation. Illustrative slides, not a recording of live agent execution.",
   "slidevVersion": "52.19.1",
   "durationSeconds": 128,
@@ -10,24 +10,24 @@
   "audio": false,
   "sourceHashNormalization": "UTF-8 with LF line endings",
   "sources": {
-    "content/demos.mjs": "8ef7ecbd22b94f9e24a4b17b8c80dcc0b9eeadc4af1ed341da37d16dbb5ceb47",
+    "content/demos.mjs": "ecf47fc7fc59b7ba839484191c4277ad64c8502a4429e2864d86e7187c9f22d5",
     "content/hektor.mjs": "bc0f04ffdec1856c162af77a1eaa126981cac57a94bb8ad99d8638892e96a8e7",
     "presentations/components/PitchSlide.vue": "4bdb7e8429be6dd766e925abab5cf809a712c334b29caf10664886c1a89a9b68",
     "presentations/style.css": "caea88afba7b65d0b1936a2a6caf8998d283adf9ab50d39f7bcfa6f7d4846db8",
     "presentations/package-lock.json": "5427ffd95e719252cba788612e1d08cc0281dfed6099619c0dc89d2e292f2ee8",
-    "presentations/soherdocs.en.md": "d5246e3a0b771e94dfa550842d812012518b3c4f4bbef0ad1936e75cb81fa82b",
+    "presentations/soherdocs.en.md": "67e36d3d59bc010a682d8547c844ca37ed0dafa51a63c22ea12978c849e407fe",
     "scripts/capture-slide.mjs": "d30961df36b2f88860bee42eabcb4dfb2ca7cf4654132aa58f26e7a57c07b7d3"
   },
-  "videoSha256": "fc25b5a5e46672e01eeeef6926bd36200827d5aebbbf4c75e20279f39e322674",
+  "videoSha256": "a25ef4c44e199f2847f3b486389c3831738db41701847e92a5c55c0962524482",
   "slides": [
     {
       "id": "overview",
       "number": 1,
-      "title": "The agent coordinates.\nSoherDocs tailors the document.",
+      "title": "The agent coordinates.\nSoher Docs tailors the document.",
       "start": 0,
       "end": 16,
       "image": "slide-01.png",
-      "sha256": "8d6e6eb713906eeaf220104e85086f5eced93983b182c1c6958c4a7a063385dc"
+      "sha256": "75be74a6c1fe12469408fc07f11c7f9b8aa53dfa3f22266b6b9a1f4c154ad141"
     },
     {
       "id": "roles",
@@ -36,7 +36,7 @@
       "start": 16,
       "end": 32,
       "image": "slide-02.png",
-      "sha256": "d93d87c86508df5048b6ae75fe8684952664b9cda6584d7f7e3072e59c9518f5"
+      "sha256": "513a6df9ddf47f9c797673e23b5536fb2ef46b9a4ecf9dc28790c63769148e8e"
     },
     {
       "id": "inputs",
@@ -45,7 +45,7 @@
       "start": 32,
       "end": 48,
       "image": "slide-03.png",
-      "sha256": "132fafacecc0ad77f61805033e7f48611e1b1405ff96d4a56f2de539704e002b"
+      "sha256": "c8e1ec161d0e1169c3ef4594f0e66e14db6dd968f68ca73e45d9a1bfc962364a"
     },
     {
       "id": "cv-example",
@@ -54,7 +54,7 @@
       "start": 48,
       "end": 64,
       "image": "slide-04.png",
-      "sha256": "988f4f9f51e80f0004d7e0585a086fd2af545781b1ccf20834d63733edfa776c"
+      "sha256": "35d03b07a879c5c1b3a28dcad6d69c5e3905be2980d957166f0a1e8736e8abdb"
     },
     {
       "id": "cv-workflow",
@@ -63,7 +63,7 @@
       "start": 64,
       "end": 80,
       "image": "slide-05.png",
-      "sha256": "90bf645a34d601c1d0c6d0359902a478e229d8ffcb342a1d71997456b02f254e"
+      "sha256": "453a5d1d5d994043ceac6e34a347fcbecfe20c1897da0c02fd36e1329a4a9f88"
     },
     {
       "id": "review",
@@ -72,7 +72,7 @@
       "start": 80,
       "end": 96,
       "image": "slide-06.png",
-      "sha256": "014f8fee42fa265906eeb5bd219c2c1bd08905bf7b1515d3ecf587df47a1fad8"
+      "sha256": "45c4a8ae66d8c6c7d6fd4a369ae2ad6fb40284bf65ca920dd4c2a9b87a27f5d1"
     },
     {
       "id": "future-documents",
@@ -81,7 +81,7 @@
       "start": 96,
       "end": 112,
       "image": "slide-07.png",
-      "sha256": "236eefe1000dc6e7e6fef6da6d34721f8f12ab1db62cbef0b8f02effd68484f4"
+      "sha256": "a2beeb9423153e8240d0e3ec68d356998179b111474767ee7d3044771b4b3f36"
     },
     {
       "id": "next-step",
@@ -90,7 +90,7 @@
       "start": 112,
       "end": 128,
       "image": "slide-08.png",
-      "sha256": "4553e945df2d4da57fad8e5f3550e3ed25c08b9e906cb85cdd68535a4d30d7c0"
+      "sha256": "f13f621827553a099760dbcd9daa25c0b78c1a1b4674f7efd7c96e17c6a83c29"
     }
   ]
 }
