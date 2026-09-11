@@ -1,109 +1,135 @@
-# Rami Halabi — custom AI agents and selected work
+# Rami Halabi — custom AI agents and tool services
 
-A static customer-facing services website with three guided project showcases. The homepage explains custom AI agent development, services, engineering boundaries, approach, and project enquiries. The original compact portfolio is preserved at `work.html`; existing project and evidence URLs are unchanged.
+A static customer website with English and Swedish pages, services and three
+presentation-led demos. Slidev is used to create recordings; visitors receive
+static HTML, images and silent MP4s. There is no public agent backend.
 
-**[Open the portfolio](https://raal1600.github.io/ai-agent-portfolio/)**
+This revision is on `feature/bilingual-demos`, based on customer commit
+`e4ee929f1c245bcb45d2c423b8ad4f1d39a8d534`. Read the
+[discovery and implementation decision](docs/bilingual-demos.md).
 
-The [customer website preview](https://raal1600.github.io/ai-agent-portfolio/preview/) is published from [`feature/customer-facing-website`](https://github.com/raal1600/ai-agent-portfolio/tree/feature/customer-facing-website). The [existing portfolio](https://raal1600.github.io/ai-agent-portfolio/) remains at the original URL. Only the shared publishing workflow was merged into main; the customer homepage remains on its separate branch.
+## Run locally
 
-Read the [discovery and architecture decision](docs/customer-website-discovery.md) and [implementation handoff](docs/customer-website-handoff.md) for evidence limits, validation and remaining decisions.
-
-The [combined Pages publishing setup](docs/pages-preview.md) keeps both versions online using the multi-branch approach used by Hektor. It was activated with user approval through [PR #1](https://github.com/raal1600/ai-agent-portfolio/pull/1).
-
-## Website development
-
-No framework, backend, or runtime package is required. HTML and generated SEO files are committed; the publishing workflow assembles the two static versions into one artifact. The new homepage works without JavaScript; demo pages retain their existing controls.
-
-From the feature worktree:
+Node is enough to serve and build the committed site.
 
 ```sh
-npm run serve
-# http://127.0.0.1:8110/ — customer homepage
-# http://127.0.0.1:8110/work.html — compact portfolio
-```
-
-Node is sufficient for serving, metadata, static checks and building. Use Node 22+ for the optional capture tooling as previously documented; website checks were also run with the available Node 20.17.0.
-
-```sh
-# Browser verification only: install the existing locked tools.
-# Skip the FFmpeg installer when you do not need to record videos.
-npm ci --ignore-scripts
 npm run check
 npm run build
-npm run verify
-npm run verify:customer
 npm run preview
-# http://127.0.0.1:8110/ — the built dist/ website
+# English: http://127.0.0.1:8110/
+# Swedish: http://127.0.0.1:8110/sv/
 ```
 
-Run `serve` or `preview` one at a time: both use port 8110. Browser verification uses installed Chrome on Windows, or Playwright Chromium on other systems (`npx playwright-core install chromium`). No tests contact LinkedIn or submit an enquiry. `verify:customer` requires a current `dist/` build and tests it beneath a URL prefix as well as at an origin root. Screenshots are written to ignored `test-results/`.
+`npm run serve` serves source instead of `dist/`. Run one preview server at a
+time; both use port 8110. Contact uses the repository's verified
+[LinkedIn profile](https://www.linkedin.com/in/rami-halabi-2a5573195/).
+No form submission, tracking or paid infrastructure is configured.
 
-## Content, contact and SEO
+## Authoring
 
-- Edit `index.html` for customer copy, `work.html` for the compact portfolio, and `assets/customer.css` for the new homepage styling. Shared demo styles and playback logic are preserved.
-- `site.config.mjs` centralizes the canonical site URL, published name, contact destination and main pages. Contact uses the LinkedIn profile already published in this repository. No form backend, email or booking URL is configured. LinkedIn may require sign-in.
-- After editing titles, descriptions or configuration, run `npm run metadata`. It updates marked metadata blocks, marked contact links, Person structured data, `sitemap.xml` and `robots.txt`. `npm run check` detects stale output.
-- Social preview source is `assets/social-preview.svg`; `npm run render:social` creates its checked-in PNG with the existing browser tool. Neither the generator nor any third-party script runs in the visitor's browser.
-- The sitemap lists the homepage, compact portfolio and three project pages. Supporting transcripts remain accessible through normal links. No dates, reviews, ratings or customer claims are generated.
-- Crawlers only use `robots.txt` at an **origin root**. The file at `/ai-agent-portfolio/robots.txt` cannot control the GitHub Pages origin; no domain-root configuration was changed. The sitemap can be submitted directly if you have webmaster access. For an eventual dedicated-origin move, put this file at the root.
+- `content/site.mjs`: paired homepage, services, approach, contact and UI copy.
+- `content/demos.mjs`: paired demo descriptions and slide content. Shared IDs,
+  order and timings keep the two languages aligned.
+- `scripts/generate-site.mjs`: shared static templates and text tracks.
+- `presentations/`: six generated Slidev entries, one shared Vue component,
+  styling and an isolated package/lockfile.
+- `evidence/presentations/{soheragent,soherdocs,hektor}/{en,sv}/`: public slides,
+  128-second silent videos, captions, chapters, transcripts and capture manifests.
+- `assets/language.js`: carries video time and transcript anchors when switching
+  language. URLs determine language; no automatic redirect or storage is needed.
 
-## Hosting and portability
-
-Production originally used GitHub's generated Pages workflow on `main`, including Jekyll processing. Starting commit: `0cf02f0e6f5ace36858af5f13fcd3ed3900f2325`. With user approval, workflow-only PR #1 was merged at `38ca1c52270b338f4980a86805190ba2f4a5a86f` and Pages was switched to GitHub Actions. The manual **Publish portfolio and customer preview** workflow now assembles main at `/` and the customer branch under `/preview/`. No DNS or custom domain was changed. To refresh either version, run that workflow from main; a feature-branch push alone does not publish it.
-
-`npm run build` produces an allowlisted `dist/` containing only site pages, assets, evidence, sitemap and robots. It refuses to replace an unrecognized output directory and validates ownership of its own output before rebuilding. Git data, test outputs, tools, and local documentation are not exported. Current production does not use `dist/`; the export is for local preview or a future approved hosting choice.
-
-For a later migration, retain every `projects/` and `evidence/` path, update `site.config.mjs`, regenerate metadata, and serve the static export. A changed hostname or path prefix needs planned redirects from old URLs. No migration is performed here. Avoid uploading the whole development checkout to a new host.
-
-## SoherAgent
-
-**[Open the five-step workflow demo](https://raal1600.github.io/ai-agent-portfolio/projects/pi-agent-harness.html#runtime-title)**
-
-Five chaptered terminal recordings follow an imagined **Service Contract Intelligence MVP** project initiative across the six planning, handoff, implementation, and review skills: a clearly labeled proposed `/plan on` concept leads into current `/yolo on` exact-batch authorization, reviewed delivery, and a required stop. The scenario is a portfolio interpretation of a public role brief, not a claim about the employer’s requirements or a deployed product. Recordings 1–2 are sanitized concept recreations; recordings 3–4 recreate reviewed current `/yolo` behavior; recording 5 shows actual evidence from 30 runtime assertions and 155 passing tests.
-
-Evidence:
-
-- [Machine-readable runtime result](evidence/pi-agent-harness/runtime-behavior.json)
-- [Public synthetic runner](evidence/pi-agent-harness/runtime-scenario.mjs)
-- [Genuine 155-test Node output](evidence/pi-agent-harness/pi-extension-tests.txt)
-
-## SoherDocs
-
-**[Open the seven-step workflow recording](https://raal1600.github.io/ai-agent-portfolio/projects/soherdocs.html#product-view)**
-
-One 35-second synthetic product-concept recording follows the full flow: add a job posting, search evidence across saved CV variants, tailor the CV, write a personal cover letter, generate both documents and check ATS readiness, optionally save a new CV variant, and export both PDFs directly.
-
-## Hektor Agent
-
-**[Watch the Swedish Hektor Demo](https://raal1600.github.io/ai-agent-portfolio/projects/hektor-agent.html#product-view)**
-
-A silent 2½-minute video made from all **14 slides** of the Swedish Hektor Demo, with seven chapter links, optional Swedish text descriptions, and a readable transcript. It covers web chat, Swedish telephone support, human handover, reviewed staff dictation, and the value for a support team. This is a concept presentation, not footage of an operating telephone integration or measured savings.
-
-- [Download the video](https://raal1600.github.io/ai-agent-portfolio/evidence/hektor-agent/hektor-demo.mp4)
-- [Read the walkthrough](https://raal1600.github.io/ai-agent-portfolio/evidence/hektor-agent/hektor-demo-transcript.html)
-- [Open the Swedish presentation](https://h-sami.github.io/hektor-chat-pitch/hektor-demo/)
-- [Download the presentation PDF](https://h-sami.github.io/hektor-chat-pitch/hektor-demo/Hektor-Demo.pdf)
-- [Capture provenance and timings](evidence/hektor-agent/recording.json)
-
-The commercial direction is one agent at the cost of one support employee, with the potential to automate recurring work across a team. Scope and cost must be defined in a quote; actual capacity and automation are not yet measured.
-
-## Local preview and Hektor recording
-
-The portfolio is a static site; publishing does not require a build. The optional recording tools use Node.js 22+ and installed Chrome on Windows (or Playwright Chromium on other systems).
+Edit the sources/templates and run `npm run generate`. Generated HTML and
+Markdown are committed to keep publication simple. Recording requires Node
+22.12+, the isolated Slidev dependencies and a browser.
 
 ```sh
 npm ci
-npm run serve
-# Open http://127.0.0.1:8110
-npm run verify
+npm --prefix presentations ci
+npm run generate
+npm --prefix presentations run dev
+# http://localhost:3030/ — SoherAgent English in Slidev
+# Stop authoring before recording.
+npm run record:presentations
+npm run generate
+npm run check
+npm run build
 ```
 
-`npm run record:hektor` captures every rendered slide from the public Swedish deck and encodes them into an H.264 MP4 using the durations in `evidence/hektor-agent/storyboard.json`. It also regenerates the Hektor service page, poster, transcript, chapter/caption tracks, and capture manifest. Edit that storyboard or `scripts/record-hektor.mjs` before regenerating. The script stops if source headings differ; update the source revision when deliberately recording a changed deck. Screenshots are actual presentation captures; no simulated product interface or audio is added. Review generated files before publishing.
+`npm run record:hektor` refreshes both languages of the new Hektor presentation;
+the original Swedish assets remain untouched. `FFMPEG_PATH` may point to an
+existing executable; otherwise `ffmpeg-static` supplies it. Recording and tests
+use installed Chrome on Windows or Playwright Chromium elsewhere. Install the
+latter with `npx playwright-core install chromium`. For tests without the FFmpeg
+installer, use `npm ci --ignore-scripts`. Public pages load no third-party fonts
+or scripts. Capture manifests hash images, video and sources; text-source hashes
+normalize LF line endings for cross-platform verification.
 
-`npm run verify -- https://raal1600.github.io/ai-agent-portfolio/preview` checks the deployed customer version. Use `npm run verify:pages -- https://raal1600.github.io/ai-agent-portfolio` to check both published versions together; the root homepage remains the original portfolio.
+## Demo boundaries and preserved material
 
-## Source access
+| Demo | Public material | Limits |
+| --- | --- | --- |
+| SoherAgent | Bilingual planning, delegation, control and review presentation; original English technical recordings | Concepts and recreations are distinct from the 24 July 2026 capture: 30 runtime assertions and 155 test results. No customer deployment is claimed. |
+| SoherDocs | Document-tool-service concept with CV tailoring as the current example | No live document endpoint is exposed. Contracts and other document types are future scope. |
+| Hektor Agent | Support concept covering knowledge, chat, proposed voice, handover and reviewed staff dictation | Hektor is the proposal subject, not this business's identity or a verified endorsement. Telephone and case integrations are not demonstrated. |
 
-SoherAgent and SoherDocs implementation source remains private. Supervised review or time-bounded read-only access can be arranged for an identified technical interviewer after scope confirmation. The Hektor presentation source is public and linked from its demo.
+SoherDocs is a focused tool within an agent workflow: approved source material
+and a target brief go in; a tailored draft goes through review. Its original CV
+visualization uses synthetic data, including an advisory ATS score that is not
+an employer result or hiring prediction. Other document types need their own
+sources, templates and review rules.
 
-[LinkedIn — Rami Halabi](https://www.linkedin.com/in/rami-halabi-2a5573195/)
+- `projects/pi-agent-harness.html` retains all five technical recordings and
+  66 chapter links. `projects/soheragent.html` is the new bilingual overview.
+- `projects/soherdocs.html` and `projects/hektor-agent.html` retain their URLs
+  and now show the selected-language presentation.
+- `projects/soherdocs-original.html` and `projects/hektor-agent-original.html`
+  retain the original players as labeled supporting material.
+- All original `evidence/` files and URLs remain unchanged. Original evidence
+  retains its source language; primary presentations and customer pages are
+  bilingual. Archive notices link to both localized presentations.
+- `work.html` remains the gallery URL with localized cards. Swedish routes mirror
+  the customer pages beneath `sv/`; readable transcripts live beside the media.
+
+## Validation
+
+```sh
+npm run check
+npm run build
+npm run verify:customer
+npm run verify:bilingual
+npm run verify
+
+# Combined export requires a separate checkout of main:
+npm run build:pages -- ../ai-agent-portfolio-pages-preview
+npm run check:pages
+npm run verify:pages
+```
+
+The named sibling has the same public files as main plus the publishing workflow.
+Any current main checkout can be supplied instead. `verify:customer` checks 320,
+390, 768 and 1440 pixel layouts, navigation, keyboard controls and the original
+SoherAgent/CV recordings. `verify:bilingual` checks six recordings, 48 decoded
+slide intervals, captions, provenance, language/position switching and no-JS
+transcripts. `verify` checks the original 14-slide Hektor video. Screenshots go
+to ignored `test-results/`. Tests submit no enquiries.
+
+## Pages and migration
+
+The approved manual workflow on main publishes the existing portfolio at
+[the root URL](https://raal1600.github.io/ai-agent-portfolio/) and checks out
+`feature/customer-facing-website` for
+[the customer preview](https://raal1600.github.io/ai-agent-portfolio/preview/).
+See [Pages operations](docs/pages-preview.md). Pushing this feature branch does
+not publish it. This revision changes no workflow, Pages setting, domain or DNS.
+The combined export copies main byte-for-byte and places customer pages under
+`/preview/`, with `noindex, follow`.
+
+`site.config.mjs` centralizes the URL, name and contact. Metadata includes
+canonicals, reciprocal language alternates, social previews, verified Person
+data and a sitemap of pages/transcripts. Project-level robots.txt cannot control
+the GitHub Pages origin root.
+
+For a later move, use static hosting, update the config, regenerate metadata
+and plan redirects. Retain `sv/`, `projects/` and `evidence/` paths. Upload
+`dist/`, not the entire development checkout. No migration or publication is
+performed by generating and validating this feature.

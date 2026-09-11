@@ -10,9 +10,9 @@ const base = remote ?? 'http://127.0.0.1:8111'
 const manifest = JSON.parse(readFileSync('evidence/hektor-agent/recording.json', 'utf8'))
 const out = resolve('test-results')
 mkdirSync(out, { recursive: true })
-const pages = ['index.html', 'work.html', 'projects/hektor-agent.html', 'projects/soherdocs.html', 'projects/pi-agent-harness.html', 'evidence/hektor-agent/hektor-demo-transcript.html']
+const pages = ['index.html', 'work.html', 'projects/hektor-agent-original.html', 'projects/soherdocs-original.html', 'projects/pi-agent-harness.html', 'evidence/hektor-agent/hektor-demo-transcript.html']
 // Validate local assets and fragment destinations in the new service and transcript.
-for (const file of ['projects/hektor-agent.html', 'evidence/hektor-agent/hektor-demo-transcript.html']) {
+for (const file of ['projects/hektor-agent-original.html', 'evidence/hektor-agent/hektor-demo-transcript.html']) {
   const html = readFileSync(file, 'utf8')
   for (const match of html.matchAll(/(?:href|src)="([^"<>]+)"/g)) {
     const url = match[1]
@@ -53,7 +53,7 @@ try {
         await page.waitForFunction(() => [...document.querySelectorAll('.hektor-visual img')].every(img => img.complete && img.naturalWidth))
         await page.screenshot({ path: `${out}/home-${viewport.width}.png` })
       }
-      if (file === 'projects/hektor-agent.html') {
+      if (file === 'projects/hektor-agent-original.html') {
         await page.locator('#product-view').scrollIntoViewIfNeeded()
         await page.waitForFunction(() => document.querySelector('video')?.readyState >= 2)
         await page.locator('video').evaluate(async v => { await v.play(); v.pause() })
@@ -84,7 +84,7 @@ try {
   }
   // Decode a frame inside every slide interval, including the final offer.
   const page = await browser.newPage({ viewport: { width: 1600, height: 1000 } })
-  await page.goto(`${base}/projects/hektor-agent.html`)
+  await page.goto(`${base}/projects/hektor-agent-original.html`)
   await page.waitForFunction(() => document.querySelector('video')?.readyState >= 2)
   const fingerprints = new Set()
   for (const slide of manifest.slides) {
@@ -106,7 +106,7 @@ try {
   // Chapter anchors remain useful if JavaScript is disabled.
   const plain = await browser.newContext({ javaScriptEnabled: false })
   const fallback = await plain.newPage()
-  await fallback.goto(`${base}/projects/hektor-agent.html`)
+  await fallback.goto(`${base}/projects/hektor-agent-original.html`)
   await fallback.locator('[data-chapter-start]').nth(4).click()
   if (!fallback.url().endsWith('hektor-demo-transcript.html#diktering')) throw new Error('Transcript fallback failed')
   await plain.close()

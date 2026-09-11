@@ -6,7 +6,7 @@ import { metadata, root } from './metadata.mjs'
 import config from '../site.config.mjs'
 
 const publicPaths = ['index.html', 'assets', 'projects', 'evidence']
-const optionalPaths = ['work.html', 'sitemap.xml', 'robots.txt', '404.html', '.nojekyll']
+const optionalPaths = ['work.html', 'sv', 'sitemap.xml', 'robots.txt', '404.html', '.nojekyll']
 const markerText = 'ai-agent-portfolio combined Pages output\n'
 
 function filesBelow(directory) {

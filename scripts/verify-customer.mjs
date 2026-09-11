@@ -48,10 +48,10 @@ try {
         }
         await page.locator('#demos').scrollIntoViewIfNeeded()
         await page.waitForFunction(() => [...document.images].every(image => image.complete && image.naturalWidth))
-        assert.equal(await page.locator('[data-contact]').getAttribute('href'), config.contact)
+        assert.equal(await page.locator('[data-contact]').first().getAttribute('href'), config.contact)
         assert.equal(await page.locator('form').count(), 0)
         for (const id of ['services', 'demos', 'approach', 'contact']) {
-          await page.locator(`.site-nav a[href="#${id}"]`).click()
+          await page.locator(`.site-nav a[href$="#${id}"]`).click()
           assert.equal(new URL(page.url()).hash, `#${id}`)
         }
         const summary = page.locator('summary').first()
@@ -77,7 +77,7 @@ try {
   const page = await browser.newPage({ reducedMotion: 'reduce' })
   page.on('pageerror', error => errors.push(error.message))
   // SoherDocs: actual playback, all seven seeks and loaded caption cues.
-  await page.goto(`${base}/projects/soherdocs.html`)
+  await page.goto(`${base}/projects/soherdocs-original.html`)
   await page.waitForFunction(() => document.querySelector('video').readyState >= 2)
   const duration = await page.locator('video').evaluate(async video => { await video.play(); video.pause(); return video.duration })
   assert(Math.abs(duration - 35) < .2)
@@ -128,17 +128,17 @@ try {
   try {
     await page.goto(`http://127.0.0.1:${originServer.address().port}/`)
     await page.locator('.demo-card h3 a').first().click()
-    assert(new URL(page.url()).pathname === '/projects/pi-agent-harness.html')
+    assert(new URL(page.url()).pathname === '/projects/soheragent.html')
     assert.equal((await page.request.get(`http://127.0.0.1:${originServer.address().port}/site.config.mjs`)).status(), 404)
   } finally { originServer.close() }
   const plain = await browser.newContext({ javaScriptEnabled: false, reducedMotion: 'reduce', viewport: { width: 390, height: 844 } })
   const fallback = await plain.newPage()
   await fallback.goto(`${base}/index.html`)
-  await fallback.locator('.site-nav a[href="#contact"]').click()
-  assert.equal(await fallback.locator('[data-contact]').getAttribute('href'), config.contact)
+  await fallback.locator('.site-nav a[href$="#contact"]').click()
+  assert.equal(await fallback.locator('[data-contact]').first().getAttribute('href'), config.contact)
   await fallback.locator('summary').first().click()
   assert(await fallback.locator('details').first().getAttribute('open') !== null)
-  for (const project of ['soherdocs', 'pi-agent-harness']) {
+  for (const project of ['soherdocs-original', 'pi-agent-harness']) {
     await fallback.goto(`${base}/projects/${project}.html`)
     if (project === 'pi-agent-harness') assert.equal(await fallback.locator('[role="tabpanel"]:visible').count(), 5)
     await fallback.locator('[data-chapter-start]').first().click()
@@ -147,7 +147,7 @@ try {
   await plain.close()
   assert.deepEqual(errors, [])
   // Existing evidence is immutable in this change, including recordings and proof files.
-  const changedEvidence = execFileSync('git', ['diff', '--name-only', '0cf02f0e6f5ace36858af5f13fcd3ed3900f2325', '--', 'evidence'], { cwd: root, encoding: 'utf8' }).trim()
+  const changedEvidence = execFileSync('git', ['diff', '--name-only', '--diff-filter=DMRT', '0cf02f0e6f5ace36858af5f13fcd3ed3900f2325', '--', 'evidence'], { cwd: root, encoding: 'utf8' }).trim()
   assert.equal(changedEvidence, '', 'Existing evidence changed')
   console.log('PASS: source evidence unchanged, portable export, truthful contact, no-JS fallbacks and no browser errors.')
 } finally { await browser?.close(); server.close() }

@@ -1,0 +1,94 @@
+{
+  "demo": "hektor",
+  "language": "en",
+  "recordedAt": "2026-09-11T17:39:41.061Z",
+  "method": "Local Slidev browser captures encoded as a silent H.264 presentation. Illustrative slides, not a recording of live agent execution.",
+  "slidevVersion": "52.19.1",
+  "durationSeconds": 128,
+  "width": 1600,
+  "height": 900,
+  "audio": false,
+  "sourceHashNormalization": "UTF-8 with LF line endings",
+  "sources": {
+    "content/demos.mjs": "9612c118b4d534d4115971286cd193a87cafeeabb47c5a62eec58249c1644562",
+    "presentations/components/PitchSlide.vue": "4bdb7e8429be6dd766e925abab5cf809a712c334b29caf10664886c1a89a9b68",
+    "presentations/style.css": "caea88afba7b65d0b1936a2a6caf8998d283adf9ab50d39f7bcfa6f7d4846db8",
+    "presentations/package-lock.json": "5427ffd95e719252cba788612e1d08cc0281dfed6099619c0dc89d2e292f2ee8",
+    "presentations/hektor.en.md": "a6040d0f4583fd8d0d1f68ef292edc4024b47622d34f9737ba646ea5c91c9bdf"
+  },
+  "videoSha256": "c69fde19f1d17d2d5ece02ecc5694102b95c778c8a79bfb8b15dcc06ab4c27e8",
+  "slides": [
+    {
+      "id": "overview",
+      "number": 1,
+      "title": "One support workflow.\nPeople stay in control.",
+      "start": 0,
+      "end": 16,
+      "image": "slide-01.png",
+      "sha256": "21c88cbafa4b75c6372c83b433f20c6e4f679380ce16d2025043f4db228568ab"
+    },
+    {
+      "id": "knowledge",
+      "number": 2,
+      "title": "Start with knowledge the team approves.",
+      "start": 16,
+      "end": 32,
+      "image": "slide-02.png",
+      "sha256": "63143388b99e93b66e141596bff592c49087f2ef593f0e5d61b13a3eab840563"
+    },
+    {
+      "id": "chat",
+      "number": 3,
+      "title": "A useful answer knows its limits.",
+      "start": 32,
+      "end": 48,
+      "image": "slide-03.png",
+      "sha256": "ba3e062f40a1a632843969d90e47e61b8a5c102bdd783e0e8f79e6d9f2a58831"
+    },
+    {
+      "id": "voice",
+      "number": 4,
+      "title": "The same support logic, in a voice flow.",
+      "start": 48,
+      "end": 64,
+      "image": "slide-04.png",
+      "sha256": "5cb69297d1457be42fc89ef0e84200a2902f36ff56e347ba9733ae48549bb87e"
+    },
+    {
+      "id": "handover",
+      "number": 5,
+      "title": "Hand over the context, not just the call.",
+      "start": 64,
+      "end": 80,
+      "image": "slide-05.png",
+      "sha256": "173851b46b485856b9a72abe3c80d7a92704addc9ffc29d697c21e418711037e"
+    },
+    {
+      "id": "dictation",
+      "number": 6,
+      "title": "Turn a staff note into a reviewable draft.",
+      "start": 80,
+      "end": 96,
+      "image": "slide-06.png",
+      "sha256": "1e410967f931c94083133d1e05159c76a61c8fd747e9fdcd934b7bfe2e38254b"
+    },
+    {
+      "id": "boundaries",
+      "number": 7,
+      "title": "Decide the boundaries before connecting tools.",
+      "start": 96,
+      "end": 112,
+      "image": "slide-07.png",
+      "sha256": "ecb4c6e14586253a05e7cab47c50ba612350d87132d1e7466e6c7f50d553082d"
+    },
+    {
+      "id": "next-step",
+      "number": 8,
+      "title": "Start with one recurring support need.",
+      "start": 112,
+      "end": 128,
+      "image": "slide-08.png",
+      "sha256": "ea811f06c87dd3669b516e613c454af4488de2d76ed3016e11f06a76e129e59d"
+    }
+  ]
+}

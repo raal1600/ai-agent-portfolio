@@ -1,0 +1,94 @@
+{
+  "demo": "soheragent",
+  "language": "sv",
+  "recordedAt": "2026-09-11T17:38:18.131Z",
+  "method": "Local Slidev browser captures encoded as a silent H.264 presentation. Illustrative slides, not a recording of live agent execution.",
+  "slidevVersion": "52.19.1",
+  "durationSeconds": 128,
+  "width": 1600,
+  "height": 900,
+  "audio": false,
+  "sourceHashNormalization": "UTF-8 with LF line endings",
+  "sources": {
+    "content/demos.mjs": "9612c118b4d534d4115971286cd193a87cafeeabb47c5a62eec58249c1644562",
+    "presentations/components/PitchSlide.vue": "4bdb7e8429be6dd766e925abab5cf809a712c334b29caf10664886c1a89a9b68",
+    "presentations/style.css": "caea88afba7b65d0b1936a2a6caf8998d283adf9ab50d39f7bcfa6f7d4846db8",
+    "presentations/package-lock.json": "5427ffd95e719252cba788612e1d08cc0281dfed6099619c0dc89d2e292f2ee8",
+    "presentations/soheragent.sv.md": "ecd14b850630281f6b6d43816524d0a553f3491a074b732e44b21b4cdbac7b8a"
+  },
+  "videoSha256": "4425a60b8478eb3241bb282ed0741a79e4fef91e1898e0c231ff9da1fbcd1910",
+  "slides": [
+    {
+      "id": "overview",
+      "number": 1,
+      "title": "En agent behöver en plan.\nOch tydliga ramar.",
+      "start": 0,
+      "end": 16,
+      "image": "slide-01.png",
+      "sha256": "60255931b64800be85528761329a1ca6790d5abb969ed8dc76fd370e570c39d1"
+    },
+    {
+      "id": "problem",
+      "number": 2,
+      "title": "Det svåra är att samordna arbetet.",
+      "start": 16,
+      "end": 32,
+      "image": "slide-02.png",
+      "sha256": "2aa345407e8285b5791c8779e8deabf0bf1ff2017093978fa8f4d757c5d2c178"
+    },
+    {
+      "id": "plan",
+      "number": 3,
+      "title": "Gör uppgiften konkret före körning.",
+      "start": 32,
+      "end": 48,
+      "image": "slide-03.png",
+      "sha256": "51c03d3cd0576fcf23d894452a1d8d533b4a8f8d78a9559371e3423bbe8a7906"
+    },
+    {
+      "id": "coordinate",
+      "number": 4,
+      "title": "Delegera uppgifter. Behåll ett tydligt ansvar.",
+      "start": 48,
+      "end": 64,
+      "image": "slide-04.png",
+      "sha256": "1a56b83dfa6d26bb6d8d4666ab0bf46dfbb978f5fd009487de394b981d7c9d79"
+    },
+    {
+      "id": "controls",
+      "number": 5,
+      "title": "Kontroll är en del av arbetsflödet.",
+      "start": 64,
+      "end": 80,
+      "image": "slide-05.png",
+      "sha256": "177f430ca02cc66425794a0fa38bfc9c1c82935453c1ea21729aaac2c8ed4b0f"
+    },
+    {
+      "id": "evidence",
+      "number": 6,
+      "title": "Se vad som faktiskt verifierades.",
+      "start": 80,
+      "end": 96,
+      "image": "slide-06.png",
+      "sha256": "3239934f1b4c1769c0a17c4172f51aad9d7312578c57aeb94f2e3881789c678c"
+    },
+    {
+      "id": "review",
+      "number": 7,
+      "title": "Ett resultat behöver sitt underlag.",
+      "start": 96,
+      "end": 112,
+      "image": "slide-07.png",
+      "sha256": "9456cc07840d017db9dffa27e750064ade209a044f85530f1faa0ac9a72a5c58"
+    },
+    {
+      "id": "next-step",
+      "number": 8,
+      "title": "Börja med en uppgift som går att granska.",
+      "start": 112,
+      "end": 128,
+      "image": "slide-08.png",
+      "sha256": "4259a80bb3cded98b6d3b786a6d9a4785717095dc231fa30e7fd92806f328636"
+    }
+  ]
+}

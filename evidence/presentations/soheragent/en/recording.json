@@ -1,0 +1,94 @@
+{
+  "demo": "soheragent",
+  "language": "en",
+  "recordedAt": "2026-09-11T17:37:49.604Z",
+  "method": "Local Slidev browser captures encoded as a silent H.264 presentation. Illustrative slides, not a recording of live agent execution.",
+  "slidevVersion": "52.19.1",
+  "durationSeconds": 128,
+  "width": 1600,
+  "height": 900,
+  "audio": false,
+  "sourceHashNormalization": "UTF-8 with LF line endings",
+  "sources": {
+    "content/demos.mjs": "9612c118b4d534d4115971286cd193a87cafeeabb47c5a62eec58249c1644562",
+    "presentations/components/PitchSlide.vue": "4bdb7e8429be6dd766e925abab5cf809a712c334b29caf10664886c1a89a9b68",
+    "presentations/style.css": "caea88afba7b65d0b1936a2a6caf8998d283adf9ab50d39f7bcfa6f7d4846db8",
+    "presentations/package-lock.json": "5427ffd95e719252cba788612e1d08cc0281dfed6099619c0dc89d2e292f2ee8",
+    "presentations/soheragent.en.md": "bdd6cb5d7da909850415322b251074d3d90a25581bd83ea0971775b21425dfdc"
+  },
+  "videoSha256": "2871e8546720b2e0e3c7495ed1ce4e3c674f86e6c4088f6fc88cf64c396b6b51",
+  "slides": [
+    {
+      "id": "overview",
+      "number": 1,
+      "title": "An agent needs a plan.\nAnd clear boundaries.",
+      "start": 0,
+      "end": 16,
+      "image": "slide-01.png",
+      "sha256": "0779aa9ee8433c1ef1464862a8e22aaf9c467a2ae69d49af749c448275d5a661"
+    },
+    {
+      "id": "problem",
+      "number": 2,
+      "title": "The hard part is coordinating the work.",
+      "start": 16,
+      "end": 32,
+      "image": "slide-02.png",
+      "sha256": "1939f6d6c1575f090fe8ecb100afcf29e285132d7fe84cf7001275f2a72ff19b"
+    },
+    {
+      "id": "plan",
+      "number": 3,
+      "title": "Make the task concrete before execution.",
+      "start": 32,
+      "end": 48,
+      "image": "slide-03.png",
+      "sha256": "2d258af962c3870c007319c1e5d12a0e85f30416a9cc2d98702d8486862f1f30"
+    },
+    {
+      "id": "coordinate",
+      "number": 4,
+      "title": "Delegate tasks. Keep one source of authority.",
+      "start": 48,
+      "end": 64,
+      "image": "slide-04.png",
+      "sha256": "2849c1fecd6474a4bbf4bcbec5c867957156c2332a2761c89cea27457603de2b"
+    },
+    {
+      "id": "controls",
+      "number": 5,
+      "title": "Control is part of the workflow.",
+      "start": 64,
+      "end": 80,
+      "image": "slide-05.png",
+      "sha256": "6a5f8c69a604c12d61c63b4ccb876b84456c81de6af8abd98c9bb884e1c61025"
+    },
+    {
+      "id": "evidence",
+      "number": 6,
+      "title": "Inspect what was actually verified.",
+      "start": 80,
+      "end": 96,
+      "image": "slide-06.png",
+      "sha256": "57709145f7faa2a1a6dbc62e69b3644a9f84fcf29b03f326dbb7ebdfc35f013f"
+    },
+    {
+      "id": "review",
+      "number": 7,
+      "title": "A result should come with its evidence.",
+      "start": 96,
+      "end": 112,
+      "image": "slide-07.png",
+      "sha256": "9ffaca34f6d60b1bbb1f14685d5db956c3874fe9c8d5b73d556148eca48a799f"
+    },
+    {
+      "id": "next-step",
+      "number": 8,
+      "title": "Start with one reviewable task.",
+      "start": 112,
+      "end": 128,
+      "image": "slide-08.png",
+      "sha256": "f0b8cb8737ac7ca17fd7cc38920be1ba7f160c7a5776353c4418f9fc2cffa060"
+    }
+  ]
+}

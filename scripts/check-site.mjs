@@ -6,7 +6,7 @@ import config from '../site.config.mjs'
 
 metadata({ check: true })
 const walk = dir => readdirSync(dir, { withFileTypes: true }).flatMap(entry => entry.isDirectory() ? walk(resolve(dir, entry.name)) : [resolve(dir, entry.name)])
-const files = ['index.html', 'work.html', ...walk(resolve(root, 'projects')), ...walk(resolve(root, 'evidence'))].map(file => resolve(root, file)).filter(file => file.endsWith('.html'))
+const files = ['index.html', 'work.html', ...walk(resolve(root, 'sv')), ...walk(resolve(root, 'projects')), ...walk(resolve(root, 'evidence'))].map(file => resolve(root, file)).filter(file => file.endsWith('.html'))
 let links = 0
 for (const file of files) {
   const html = readFileSync(file, 'utf8')

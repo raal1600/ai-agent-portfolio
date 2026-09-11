@@ -1,0 +1,94 @@
+{
+  "demo": "hektor",
+  "language": "sv",
+  "recordedAt": "2026-09-11T17:40:07.770Z",
+  "method": "Local Slidev browser captures encoded as a silent H.264 presentation. Illustrative slides, not a recording of live agent execution.",
+  "slidevVersion": "52.19.1",
+  "durationSeconds": 128,
+  "width": 1600,
+  "height": 900,
+  "audio": false,
+  "sourceHashNormalization": "UTF-8 with LF line endings",
+  "sources": {
+    "content/demos.mjs": "9612c118b4d534d4115971286cd193a87cafeeabb47c5a62eec58249c1644562",
+    "presentations/components/PitchSlide.vue": "4bdb7e8429be6dd766e925abab5cf809a712c334b29caf10664886c1a89a9b68",
+    "presentations/style.css": "caea88afba7b65d0b1936a2a6caf8998d283adf9ab50d39f7bcfa6f7d4846db8",
+    "presentations/package-lock.json": "5427ffd95e719252cba788612e1d08cc0281dfed6099619c0dc89d2e292f2ee8",
+    "presentations/hektor.sv.md": "616d53190dbf79d4e0e07ec45cb0192ba3581a5372e57707ae2f79afb16b5989"
+  },
+  "videoSha256": "f9690f906864bf37ccb54c495f8a42e69b22ff1c9d3782dffb18b6eb1ab091bb",
+  "slides": [
+    {
+      "id": "overview",
+      "number": 1,
+      "title": "Ett supportflöde.\nMänniskan behåller kontrollen.",
+      "start": 0,
+      "end": 16,
+      "image": "slide-01.png",
+      "sha256": "d59d38adeb37c415305a63fe6d0f2dd8edfcae188c276d1d0446fc7f63c690cf"
+    },
+    {
+      "id": "knowledge",
+      "number": 2,
+      "title": "Börja med kunskap som teamet godkänner.",
+      "start": 16,
+      "end": 32,
+      "image": "slide-02.png",
+      "sha256": "bf3f95957102df145370eae2ff18610823c1f82277920ad9b18c220c2464112d"
+    },
+    {
+      "id": "chat",
+      "number": 3,
+      "title": "Ett användbart svar känner sina gränser.",
+      "start": 32,
+      "end": 48,
+      "image": "slide-03.png",
+      "sha256": "17b78289595694ed5306eb2fcc21cc87540f348563dc6fe314a50800df95fe37"
+    },
+    {
+      "id": "voice",
+      "number": 4,
+      "title": "Samma supportlogik i ett röstflöde.",
+      "start": 48,
+      "end": 64,
+      "image": "slide-04.png",
+      "sha256": "fdc803a308e0dbb8e33ec3e5f53574737f6dcc81ed708389998e5d2af73ea6c7"
+    },
+    {
+      "id": "handover",
+      "number": 5,
+      "title": "Lämna över sammanhanget, inte bara samtalet.",
+      "start": 64,
+      "end": 80,
+      "image": "slide-05.png",
+      "sha256": "2925d61cc77eaffb0b5d8de4a8abd8643be478e9139bd19fbc501e9689602c43"
+    },
+    {
+      "id": "dictation",
+      "number": 6,
+      "title": "Gör en personalanteckning till ett granskningsbart utkast.",
+      "start": 80,
+      "end": 96,
+      "image": "slide-06.png",
+      "sha256": "536658d1c3b1910dc34c771f7998d3296b0a4abca5d4bdc36d3896b93ff02fd2"
+    },
+    {
+      "id": "boundaries",
+      "number": 7,
+      "title": "Bestäm gränserna innan verktygen kopplas in.",
+      "start": 96,
+      "end": 112,
+      "image": "slide-07.png",
+      "sha256": "399902527f4c0a03ea80b6643f19a1f530f092722bc7adb20f630084582b62b3"
+    },
+    {
+      "id": "next-step",
+      "number": 8,
+      "title": "Börja med ett återkommande supportbehov.",
+      "start": 112,
+      "end": 128,
+      "image": "slide-08.png",
+      "sha256": "dbf1c11bc4e9c39298455f5caf222cddac60206bd625e994e1b87ffea0983298"
+    }
+  ]
+}
