@@ -1,0 +1,68 @@
+# Like Hektor's Publish decks: every deployment contains BOTH required branches.
+# / -> main; /preview/ -> feature/customer-facing-website.
+# Manual publishing only. Branch pushes never deploy this workflow.
+name: Publish portfolio and customer preview
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out current main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: production
+          persist-credentials: false
+
+      - name: Check out customer website
+        uses: actions/checkout@v4
+        with:
+          ref: feature/customer-facing-website
+          path: customer
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Validate the customer website source
+        working-directory: customer
+        run: node scripts/check-site.mjs
+
+      - name: Assemble both branches without changing either source
+        working-directory: customer
+        run: node scripts/build-pages.mjs ../production
+
+      - name: Validate both published versions
+        working-directory: customer
+        run: node scripts/verify-pages.mjs
+
+      - name: Upload the combined site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: customer/pages-dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish both versions together
+        id: deployment
+        uses: actions/deploy-pages@v4
