@@ -31,7 +31,7 @@ export function verifyPages(directory = resolve(root, 'pages-dist')) {
   }
   for (const page of config.pages) {
     const html = readFileSync(resolve(base, 'preview', page.path), 'utf8')
-    const expected = new URL(page.path === 'index.html' ? '' : page.path, new URL('preview/', config.url)).href
+    const expected = new URL(page.path.replace(/(^|\/)index\.html$/, '$1'), new URL('preview/', config.url)).href
     assert(html.includes(`<link rel="canonical" href="${expected}">`), `Preview canonical: ${page.path}`)
     assert(html.includes(`<meta property="og:url" content="${expected}">`), `Preview social URL: ${page.path}`)
   }

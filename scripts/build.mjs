@@ -15,7 +15,7 @@ if (existsSync(destination)) {
 mkdirSync(destination)
 writeFileSync(marker, 'ai-agent-portfolio build output\n')
 // Explicit public allowlist: no Git, tooling, local recordings, or test artifacts.
-for (const path of ['index.html', 'work.html', 'projects', 'assets', 'evidence', 'sitemap.xml', 'robots.txt']) {
+for (const path of ['index.html', 'work.html', 'sv', 'projects', 'assets', 'evidence', 'sitemap.xml', 'robots.txt']) {
   cpSync(resolve(root, path), resolve(destination, path), { recursive: true, filter: source => {
     if (lstatSync(source).isSymbolicLink()) throw new Error(`Symlink in public files: ${source}`)
     return true

@@ -1,0 +1,33 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:16.000
+En avgränsad verktygstjänst i ett större agentflöde. CV-anpassning är den aktuella illustrationen av idén.
+
+2
+00:00:16.000 --> 00:00:32.000
+Verktyget är en förmåga som agenten använder. Det behöver inte sköta samtalet eller varje steg i verksamhetens process.
+
+3
+00:00:32.000 --> 00:00:48.000
+Detta är en konceptuell tjänstegräns, inte ett publicerat API-schema. Det faktiska in- och utdataformatet bestäms vid implementation.
+
+4
+00:00:48.000 --> 00:01:04.000
+Använd en jobbannons som mål och en sparad profil som underlag. Lyft relevant erfarenhet utan att hitta på meriter.
+
+5
+00:01:04.000 --> 00:01:20.000
+Den befintliga visualiseringen i sju steg omfattar jobbannons, sparat CV-underlag, anpassat CV, personligt brev, vägledande granskning, valfri lagring och PDF-export.
+
+6
+00:01:20.000 --> 00:01:36.000
+Mänsklig granskning ingår i det tänkta flödet. Den ursprungliga vägledande ATS-poängen använder fiktiva data; den är inte ett arbetsgivarresultat eller en prognos för anställning.
+
+7
+00:01:36.000 --> 00:01:52.000
+Andra dokumenttyper behöver egna källor, mallar och granskningsregler. De behöver avgränsas och valideras var för sig.
+
+8
+00:01:52.000 --> 00:02:08.000
+Börja med en dokumenttyp och ett tydligt användningsfall. Vi kan utforma verktyget runt er agent, ert underlag och er godkännandeprocess.

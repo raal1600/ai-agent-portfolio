@@ -1,0 +1,33 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:16.000
+SoherAgent explores how software agents can move from a request to reviewable work, with a person deciding what is accepted.
+
+2
+00:00:16.000 --> 00:00:32.000
+Generating code is one step. A useful development workflow also needs shared context, ownership and a way to judge the result.
+
+3
+00:00:32.000 --> 00:00:48.000
+The existing concept recordings use an imagined service-contract intelligence project. They show planning, not a delivered customer product.
+
+4
+00:00:48.000 --> 00:01:04.000
+The demonstrated control design separates the coordinating parent from task workers. Parallel work is bounded rather than unlimited.
+
+5
+00:01:04.000 --> 00:01:20.000
+The technical evidence focuses on coordination mechanics. These are specific tested behaviors, not a guarantee for every future integration.
+
+6
+00:01:20.000 --> 00:01:36.000
+The original verification capture is dated 24 July 2026. Its results belong to that scenario and revision; they are not a current production benchmark.
+
+7
+00:01:36.000 --> 00:01:52.000
+A useful handover lets a reviewer understand the change, see what was checked and decide what happens next.
+
+8
+00:01:52.000 --> 00:02:08.000
+We can scope an engineering-agent workflow around your tools, permissions and review process. The first conversation starts with the work your team needs to do.

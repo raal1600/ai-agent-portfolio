@@ -1,0 +1,94 @@
+{
+  "demo": "soherdocs",
+  "language": "sv",
+  "recordedAt": "2026-09-11T17:39:14.359Z",
+  "method": "Local Slidev browser captures encoded as a silent H.264 presentation. Illustrative slides, not a recording of live agent execution.",
+  "slidevVersion": "52.19.1",
+  "durationSeconds": 128,
+  "width": 1600,
+  "height": 900,
+  "audio": false,
+  "sourceHashNormalization": "UTF-8 with LF line endings",
+  "sources": {
+    "content/demos.mjs": "9612c118b4d534d4115971286cd193a87cafeeabb47c5a62eec58249c1644562",
+    "presentations/components/PitchSlide.vue": "4bdb7e8429be6dd766e925abab5cf809a712c334b29caf10664886c1a89a9b68",
+    "presentations/style.css": "caea88afba7b65d0b1936a2a6caf8998d283adf9ab50d39f7bcfa6f7d4846db8",
+    "presentations/package-lock.json": "5427ffd95e719252cba788612e1d08cc0281dfed6099619c0dc89d2e292f2ee8",
+    "presentations/soherdocs.sv.md": "4571b587f56ec9a0452cfc76b257e03672b23656097792ebfb512467c6eee31e"
+  },
+  "videoSha256": "2022ee67373465c45740db33750852b911074850acfbb751f1948a4d0edaf533",
+  "slides": [
+    {
+      "id": "overview",
+      "number": 1,
+      "title": "Agenten samordnar.\nSoherDocs anpassar dokumentet.",
+      "start": 0,
+      "end": 16,
+      "image": "slide-01.png",
+      "sha256": "d4dda56da62912ac37609babaf2db0ed942d5df0a541d6dc5f089b1bfe03966f"
+    },
+    {
+      "id": "roles",
+      "number": 2,
+      "title": "Ett arbetsflöde. Tydliga ansvarsområden.",
+      "start": 16,
+      "end": 32,
+      "image": "slide-02.png",
+      "sha256": "5aba20abdaf5eaf50def69da7c512cd766822a1c566055bc0be2f1b024478c21"
+    },
+    {
+      "id": "inputs",
+      "number": 3,
+      "title": "Bra utkast börjar med bra underlag.",
+      "start": 32,
+      "end": 48,
+      "image": "slide-03.png",
+      "sha256": "255f76c9c302af8b512605c9026f481b20cb4a8538cb2d98e77b55347bf2b803"
+    },
+    {
+      "id": "cv-example",
+      "number": 4,
+      "title": "Aktuellt exempel: anpassa ett CV till en roll.",
+      "start": 48,
+      "end": 64,
+      "image": "slide-04.png",
+      "sha256": "f449c3246cbc0d6bc5541ed5cac4e74d15aa3078db60133cced70ebf31fedea6"
+    },
+    {
+      "id": "cv-workflow",
+      "number": 5,
+      "title": "CV-genomgången visar hela flödet.",
+      "start": 64,
+      "end": 80,
+      "image": "slide-05.png",
+      "sha256": "e70ced81613d51fb963c5bb70df094f9a4ce5660fd607b8a983abb3cb22e4f77"
+    },
+    {
+      "id": "review",
+      "number": 6,
+      "title": "Anpassning ska inte hitta på fakta.",
+      "start": 80,
+      "end": 96,
+      "image": "slide-06.png",
+      "sha256": "5ca723a7bd06d7cc85dc16344609729fdbb92e3b0ccbe25db187a23d0c9815f9"
+    },
+    {
+      "id": "future-documents",
+      "number": 7,
+      "title": "CV är exemplet.\nDokument är den större inriktningen.",
+      "start": 96,
+      "end": 112,
+      "image": "slide-07.png",
+      "sha256": "23d908cc979e0bf5f64b3a30d46de384be259e396a506951d236667278c2335d"
+    },
+    {
+      "id": "next-step",
+      "number": 8,
+      "title": "Vilket dokument behöver ert arbetsflöde?",
+      "start": 112,
+      "end": 128,
+      "image": "slide-08.png",
+      "sha256": "d9f4d6782b4dc468e56b8b681e549c1eee16847fb135c91479bb8e5f44557df8"
+    }
+  ]
+}

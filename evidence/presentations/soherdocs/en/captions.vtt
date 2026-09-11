@@ -1,0 +1,33 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:16.000
+A focused tool service for a larger agent workflow. CV tailoring is the current illustration of the idea.
+
+2
+00:00:16.000 --> 00:00:32.000
+The tool is one capability the agent uses. It does not need to own the conversation or every step of the business process.
+
+3
+00:00:32.000 --> 00:00:48.000
+This is a conceptual service boundary, not a published API schema. The actual input and output contract would be agreed during implementation.
+
+4
+00:00:48.000 --> 00:01:04.000
+Use a job posting as the target and a saved profile as evidence. Emphasize relevant experience without inventing qualifications.
+
+5
+00:01:04.000 --> 00:01:20.000
+The existing seven-step visualization covers a job posting, saved CV evidence, tailored CV, cover letter, advisory review, optional saving and PDF export.
+
+6
+00:01:20.000 --> 00:01:36.000
+Human review is part of the intended workflow. The original advisory ATS score uses fabricated data; it is not an employer result or a hiring prediction.
+
+7
+00:01:36.000 --> 00:01:52.000
+Other document types need their own sources, templates and review rules. They should be scoped and validated separately.
+
+8
+00:01:52.000 --> 00:02:08.000
+Start with one document type and one clear use case. We can design the tool around your agent, your source material and your approval process.

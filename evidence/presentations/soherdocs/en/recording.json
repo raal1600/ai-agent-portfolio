@@ -1,0 +1,94 @@
+{
+  "demo": "soherdocs",
+  "language": "en",
+  "recordedAt": "2026-09-11T17:38:46.236Z",
+  "method": "Local Slidev browser captures encoded as a silent H.264 presentation. Illustrative slides, not a recording of live agent execution.",
+  "slidevVersion": "52.19.1",
+  "durationSeconds": 128,
+  "width": 1600,
+  "height": 900,
+  "audio": false,
+  "sourceHashNormalization": "UTF-8 with LF line endings",
+  "sources": {
+    "content/demos.mjs": "9612c118b4d534d4115971286cd193a87cafeeabb47c5a62eec58249c1644562",
+    "presentations/components/PitchSlide.vue": "4bdb7e8429be6dd766e925abab5cf809a712c334b29caf10664886c1a89a9b68",
+    "presentations/style.css": "caea88afba7b65d0b1936a2a6caf8998d283adf9ab50d39f7bcfa6f7d4846db8",
+    "presentations/package-lock.json": "5427ffd95e719252cba788612e1d08cc0281dfed6099619c0dc89d2e292f2ee8",
+    "presentations/soherdocs.en.md": "d5246e3a0b771e94dfa550842d812012518b3c4f4bbef0ad1936e75cb81fa82b"
+  },
+  "videoSha256": "012a67289eb5b4182309a532cc56d3b4743087a49a1379d5a749fbcbf6f60dda",
+  "slides": [
+    {
+      "id": "overview",
+      "number": 1,
+      "title": "The agent coordinates.\nSoherDocs tailors the document.",
+      "start": 0,
+      "end": 16,
+      "image": "slide-01.png",
+      "sha256": "816b318eda09669ef7127be7640869de93ec7026c7e623a1e202e6e3b7fd656f"
+    },
+    {
+      "id": "roles",
+      "number": 2,
+      "title": "One workflow. Distinct responsibilities.",
+      "start": 16,
+      "end": 32,
+      "image": "slide-02.png",
+      "sha256": "6f8a5c7bd1601b79dacf3c14005198304ea3cda279504db27ba73be27af84bdd"
+    },
+    {
+      "id": "inputs",
+      "number": 3,
+      "title": "Useful drafts start with useful inputs.",
+      "start": 32,
+      "end": 48,
+      "image": "slide-03.png",
+      "sha256": "1a452fee53709b481c77b79acf73fe2e57eca88705ee8702ea5a03cfbf191fc6"
+    },
+    {
+      "id": "cv-example",
+      "number": 4,
+      "title": "Current example: tailor a CV to a role.",
+      "start": 48,
+      "end": 64,
+      "image": "slide-04.png",
+      "sha256": "f1f0d262a5d97013f0c04cfc7de66ac841b8b29bd96eb9ad57bfed184ad074b8"
+    },
+    {
+      "id": "cv-workflow",
+      "number": 5,
+      "title": "The CV walkthrough shows the full journey.",
+      "start": 64,
+      "end": 80,
+      "image": "slide-05.png",
+      "sha256": "0e15c1cc4b70359d64239c5fc92634d5f5b45bc5982737f233e0d90d8d4c07a8"
+    },
+    {
+      "id": "review",
+      "number": 6,
+      "title": "Tailoring should not invent the facts.",
+      "start": 80,
+      "end": 96,
+      "image": "slide-06.png",
+      "sha256": "abe25b69c324b146d3630f25ad30740f140aa9e60793fa35b1951a1be6e64a6e"
+    },
+    {
+      "id": "future-documents",
+      "number": 7,
+      "title": "A CV is the example.\nDocuments are the wider direction.",
+      "start": 96,
+      "end": 112,
+      "image": "slide-07.png",
+      "sha256": "adaac175a7ec0ebd36586590f0f3ad6a14095d1b0105ff97884ef74fb6165387"
+    },
+    {
+      "id": "next-step",
+      "number": 8,
+      "title": "What document does your workflow need?",
+      "start": 112,
+      "end": 128,
+      "image": "slide-08.png",
+      "sha256": "078a5c891d7c9a646efd3b40afe947b792cf4fb655a77fc7d1a5a07c90d4c5ec"
+    }
+  ]
+}

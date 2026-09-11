@@ -24,7 +24,7 @@ export function metadata({ check = false, directory = root, url = config.url } =
     const title = decode(html.match(/<title>([^<]+)<\/title>/)?.[1] ?? '')
     const description = decode(html.match(/<meta name="description" content="([^"]+)"/)?.[1] ?? '')
     if (!title || !description) throw new Error(`Missing title or description: ${page.path}`)
-    const canonical = new URL(page.path === 'index.html' ? '' : page.path, base).href
+    const canonical = new URL(page.path.replace(/(^|\/)index\.html$/, '$1'), base).href
     const image = new URL(page.image, base).href
     const favicon = relative(dirname(file), resolve(root, 'assets/favicon.svg')).replaceAll('\\', '/')
     const locale = html.includes('<html lang="sv">') ? 'sv_SE' : 'en_US'
@@ -46,8 +46,13 @@ export function metadata({ check = false, directory = root, url = config.url } =
       `<meta name="twitter:image" content="${escape(image)}">`,
       `<meta name="twitter:image:alt" content="${escape(page.imageAlt)}">`,
     ]
-    if (page.path === 'index.html') {
-      const data = { '@context': 'https://schema.org', '@type': 'Person', name: config.name, url: base.href, sameAs: [config.contact] }
+    if (page.alternate) {
+      const otherLang = page.lang === 'sv' ? 'en' : 'sv'
+      const alternate = new URL(page.alternate.replace(/(^|\/)index\.html$/, '$1'), base).href
+      tags.push(`<link rel="alternate" hreflang="${page.lang}" href="${escape(canonical)}">`, `<link rel="alternate" hreflang="${otherLang}" href="${escape(alternate)}">`, `<link rel="alternate" hreflang="x-default" href="${escape(page.lang === 'en' ? canonical : alternate)}">`)
+    }
+    if (['index.html', 'sv/index.html'].includes(page.path)) {
+      const data = { '@context': 'https://schema.org', '@type': 'Person', name: config.name, url: canonical, sameAs: [config.contact] }
       tags.push(`<script type="application/ld+json">${JSON.stringify(data).replaceAll('<', '\\u003c')}</script>`)
     }
     const block = `<!-- site-meta:start -->\n  ${tags.join('\n  ')}\n  <!-- site-meta:end -->`
@@ -55,7 +60,7 @@ export function metadata({ check = false, directory = root, url = config.url } =
     html = html.replace(/(<a\b[^>]*\bdata-contact\b[^>]*\bhref=")[^"]*(")/g, `$1${escape(config.contact)}$2`)
     update(page.path, html)
   }
-  const entries = config.pages.map(page => `  <url><loc>${escape(new URL(page.path === 'index.html' ? '' : page.path, base).href)}</loc></url>`)
+  const entries = config.pages.map(page => `  <url><loc>${escape(new URL(page.path.replace(/(^|\/)index\.html$/, '$1'), base).href)}</loc></url>`)
   update('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.join('\n')}\n</urlset>\n`)
   // robots.txt is effective only at an origin root; see README for project Pages hosting.
   update('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${new URL('sitemap.xml', base).href}\n`)
