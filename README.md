@@ -34,7 +34,7 @@ npm run verify
 
 The home page and product pages are generated from the product data in `scripts/build-site.py`. Edit the data there, then run `python3 scripts/build-site.py .` and `npm run verify`. Card thumbnails come from `scripts/make-thumbs.py` (needs Pillow).
 
-`npm run verify` opens every page at 1440 px and 390 px and fails on broken local links or fragments, broken images, horizontal scrolling, console errors, or any axe WCAG 2.2 A/AA violation. It also searches every published file for the names listed in `scripts/verify-portfolio.mjs`. External links are listed in `test-results/verify-report.json` but never opened.
+`npm run verify` opens every page at 1440 px and 390 px, in the dark and light themes, and fails on broken local links or fragments, broken images, horizontal scrolling, console errors, or any axe WCAG 2.2 A/AA violation. It also searches every published file for the names listed in `scripts/verify-portfolio.mjs`. External links are listed in `test-results/verify-report.json` but never opened.
 
 ## Source access
 

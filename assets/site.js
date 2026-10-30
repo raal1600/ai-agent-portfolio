@@ -131,7 +131,22 @@ const setupPageIndex = () => {
   update();
 };
 
+const setupThemeToggle = () => {
+  const root = document.documentElement;
+  const button = document.querySelector('[data-theme-toggle]');
+  if (!button) return;
+  const label = button.querySelector('[data-theme-label]');
+  const show = () => { label.textContent = root.dataset.theme === 'light' ? 'Dark mode' : 'Light mode'; };
+  button.addEventListener('click', () => {
+    root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
+    try { localStorage.setItem('theme', root.dataset.theme); } catch { /* the choice lasts for this page only */ }
+    show();
+  });
+  show();
+};
+
 reveal();
 setupDemoSwitcher();
 setupWorkflowDemo();
 setupPageIndex();
+setupThemeToggle();

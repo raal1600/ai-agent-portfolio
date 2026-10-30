@@ -1,17 +1,21 @@
 /* Portfolio design: matches the one-page CV.
-   White paper, blue-grey ink, one muted blue accent. Serif headings, sans-serif text, monospace for dates and stack tags.
+   Blue-grey ink on paper, one muted blue accent. Serif headings, sans-serif text, monospace for dates and stack tags.
+   Dark is the default theme; data-theme="light" on <html> switches to the CV's white paper.
    Layout: a 1120px column; sections use a narrow label column on the left, like the CV. */
 :root {
-  --paper: #ffffff;
-  --wash: #f4f6f8;        /* quiet fill for notes, code and image tiles */
-  --ink: #1c2229;
-  --ink-soft: #444f5b;
-  --ink-muted: #5f6975;   /* 5.6:1 on white */
-  --rule: #dde2e7;
-  --rule-strong: #c4ccd4;
-  --accent: #24506b;      /* links, labels, focus */
-  --accent-ink: #1b3e53;
-  --accent-wash: #eef3f6;
+  --paper: #12171c;
+  --wash: #1a2128;        /* quiet fill for notes, code and image tiles */
+  --ink: #e6eaee;
+  --ink-soft: #b4bec8;
+  --ink-muted: #8f9ba7;   /* 6:1 on the paper */
+  --rule: #29323b;
+  --rule-strong: #3b4651;
+  --accent: #8fbad6;      /* links, labels, focus */
+  --accent-ink: #b7d4e8;
+  --accent-wash: #1a2935;
+  --on-accent: #0e1820;   /* text on an accent fill */
+  --bar: rgba(18, 23, 28, .94);
+  color-scheme: dark;
 
   --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
   --font-body: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
@@ -20,6 +24,20 @@
   --measure: 68ch;
   --label-col: 11rem;
   --index-bar: 52px;      /* height of the sticky "On this page" bar */
+}
+:root[data-theme="light"] {
+  --paper: #ffffff;
+  --wash: #f4f6f8;
+  --ink: #1c2229;
+  --ink-soft: #444f5b;
+  --ink-muted: #5f6975;   /* 5.6:1 on white */
+  --rule: #dde2e7;
+  --rule-strong: #c4ccd4;
+  --accent: #24506b;
+  --accent-ink: #1b3e53;
+  --accent-wash: #eef3f6;
+  --on-accent: #ffffff;
+  --bar: rgba(255, 255, 255, .96);
   color-scheme: light;
 }
 
@@ -62,6 +80,12 @@ p, li { text-wrap: pretty; }
 .site-nav { display: flex; flex-wrap: wrap; gap: 4px 22px; font-size: .95rem; }
 .site-nav a { color: var(--ink-soft); text-decoration: none; }
 .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--accent); text-decoration: underline; }
+.site-nav { align-items: baseline; }
+/* Theme switch: shown only when the script that remembers the choice has run */
+.theme-toggle { display: none; align-items: center; gap: 6px; font: inherit; font-size: .9rem; color: var(--ink-soft); background: none; border: 1px solid var(--rule-strong); border-radius: 999px; padding: 2px 10px 2px 8px; cursor: pointer; }
+.js .theme-toggle { display: inline-flex; }
+.theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
+.theme-toggle svg { width: 14px; height: 14px; flex: none; }
 
 .site-footer { border-top: 1px solid var(--rule); margin-top: 96px; color: var(--ink-muted); font-size: .92rem; }
 .site-footer .wrap { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 10px 32px; padding-block: 32px 44px; }
@@ -82,9 +106,9 @@ p, li { text-wrap: pretty; }
 .date { font-family: var(--font-mono); font-size: .8rem; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
 .area-num { font-family: var(--font-mono); font-size: .78rem; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
 
-.button { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border: 1px solid var(--accent); border-radius: 3px; background: var(--accent); color: #fff; font-weight: 600; text-decoration: none; }
+.button { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border: 1px solid var(--accent); border-radius: 3px; background: var(--accent); color: var(--on-accent); font-weight: 600; text-decoration: none; }
 .button::after { content: "↓"; font-weight: 400; }
-.button:hover { background: var(--accent-ink); border-color: var(--accent-ink); color: #fff; text-decoration: none; }
+.button:hover { background: var(--accent-ink); border-color: var(--accent-ink); color: var(--on-accent); text-decoration: none; }
 
 /* Pictures: thumbnails and the typographic tile used when a product has no image */
 .card-media, .hero-media { display: block; text-decoration: none; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--rule); border-radius: 4px; background: var(--wash); }
@@ -139,7 +163,7 @@ p, li { text-wrap: pretty; }
 .facts dd { margin: 0; }
 
 /* "On this page": sticky bar of section links */
-.page-index { position: sticky; top: 0; z-index: 5; background: rgba(255, 255, 255, .96); border-block: 1px solid var(--rule); }
+.page-index { position: sticky; top: 0; z-index: 5; background: var(--bar); border-block: 1px solid var(--rule); }
 .page-index ol { list-style: none; margin: 0; padding: 0; display: flex; gap: 0 28px; overflow-x: auto; scrollbar-width: none; min-height: var(--index-bar); align-items: center; }
 .page-index ol::-webkit-scrollbar { display: none; }
 .page-index li { flex: none; }
@@ -253,3 +277,8 @@ p, li { text-wrap: pretty; }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* Theme switch icon: a sun offers light mode, a moon offers dark mode */
+.theme-toggle .icon-moon { display: none; }
+[data-theme="light"] .theme-toggle .icon-sun { display: none; }
+[data-theme="light"] .theme-toggle .icon-moon { display: block; }

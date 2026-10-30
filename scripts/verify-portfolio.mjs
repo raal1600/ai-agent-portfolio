@@ -47,13 +47,14 @@ for (const page of pages) {
   }
 }
 
-// 3. Browser checks.
+// 3. Browser checks, in the default dark theme and the light theme.
 const server = await serve(root, 8111)
 const browser = await chromium.launch({ channel: 'chrome' })
 const pageProblems = [], axeProblems = []
 try {
-  for (const viewport of [{ width: 1440, height: 1000 }, { width: 390, height: 844 }]) {
+  for (const theme of ['dark', 'light']) for (const viewport of [{ width: 1440, height: 1000 }, { width: 390, height: 844 }]) {
     const context = await browser.newContext({ viewport, reducedMotion: 'reduce' })
+    await context.addInitScript(t => { try { localStorage.setItem('theme', t) } catch {} }, theme)
     for (const file of pages) {
       const page = await context.newPage()
       const errors = []
@@ -72,11 +73,11 @@ try {
         for (const img of document.images) if (!img.naturalWidth) found.push(`broken image ${img.getAttribute('src')}`)
         return found
       })
-      for (const issue of [...issues, ...errors]) pageProblems.push(`${file} @${viewport.width}px: ${issue}`)
+      for (const issue of [...issues, ...errors]) pageProblems.push(`${file} @${viewport.width}px ${theme}: ${issue}`)
       await page.addScriptTag({ content: axeSource })
       const result = await page.evaluate(() => window.axe.run(document, { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'] } }))
-      for (const v of result.violations) axeProblems.push(`${file} @${viewport.width}px: ${v.id} (${v.impact}) x${v.nodes.length}: ${v.nodes[0].target.join(' ')}`)
-      if (viewport.width === 390 || file === 'index.html') await page.screenshot({ path: join(out, `${file.replace(/[\\/]/g, '_')}-${viewport.width}.png`), fullPage: true })
+      for (const v of result.violations) axeProblems.push(`${file} @${viewport.width}px ${theme}: ${v.id} (${v.impact}) x${v.nodes.length}: ${v.nodes[0].target.join(' ')}`)
+      if (viewport.width === 390 || file === 'index.html') await page.screenshot({ path: join(out, `${file.replace(/[\\/]/g, '_')}-${viewport.width}-${theme}.png`), fullPage: true })
       await page.close()
     }
     await context.close()
@@ -87,7 +88,7 @@ try {
 
 const report = { pages: pages.length, nameHits, linkProblems, pageProblems, axeProblems, externalLinks: [...external].sort() }
 writeFileSync(join(out, 'verify-report.json'), JSON.stringify(report, null, 2))
-console.log(`Pages checked: ${pages.length} at 1440 and 390 px`)
+console.log(`Pages checked: ${pages.length} at 1440 and 390 px, dark and light`)
 for (const [label, list] of [['Name search hits', nameHits], ['Link problems', linkProblems], ['Page problems', pageProblems], ['Axe violations', axeProblems]]) {
   console.log(`${label}: ${list.length}`)
   list.slice(0, 40).forEach(x => console.log('  ' + x))
