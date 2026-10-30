@@ -14,7 +14,7 @@
 <body>
 <a class="skip-link" href="#content">Skip to content</a>
 <header class="site-header"><div class="wrap">
-<a class="brand" href="../index.html">Rami Halabi</a>
+<p class="brand-line"><a class="brand" href="../index.html">Rami Halabi</a><span class="brand-role">Software developer · Stockholm</span></p>
 <nav class="site-nav" aria-label="Main">
 <a href="../index.html">Products</a>
 <a href="https://www.linkedin.com/in/rami-halabi-2a5573195/">LinkedIn</a>
@@ -24,33 +24,40 @@
 <main id="content">
 <div class="wrap">
 <section class="product-hero" aria-labelledby="title">
-<p class="eyebrow">AI agent tooling</p>
+<div class="hero-text">
+<p class="eyebrow"><a href="../index.html#agents">AI agent tooling</a></p>
 <h1 id="title">Customer service agent</h1>
 <p class="lead">A concept for one agent that answers chat and phone in Swedish, hands over to staff with context, and turns dictation into reviewed notes.</p>
+<p class="hero-actions"><a class="button" href="#demo">See the demo</a></p>
+</div>
+
 <dl class="facts">
 <div><dt>When</dt><dd class="date">Jul 2026</dd></div>
 <div><dt>Status</dt><dd>Concept presentation; nothing deployed</dd></div>
 <div><dt>Source</dt><dd>No source; concept only</dd></div>
 <div><dt>Stack</dt><dd><ul class="tags"><li>Concept</li><li>Chat</li><li>Telephony</li><li>Dictation</li></ul></dd></div>
 </dl>
-<p class="hero-actions"><a href="#demo">See the demo</a></p>
 </section>
-<section class="block" aria-labelledby="problem"><h2 id="problem">Problem and idea</h2><div class="block-body"><p>Support teams answer the same questions every day, write the same notes, and are closed when many customers need help.</p><p>The idea: one agent that uses the team’s approved knowledge across web chat, phone and staff dictation, with a clear limit where a person takes over and every note reviewed before it is saved.</p></div></section>
-<section class="block" aria-labelledby="how"><h2 id="how">How it works</h2><div class="block-body"><ol class="flow" aria-label="Diagram: how Customer service agent works"><li><strong>Customer asks</strong><span>Web chat or phone, in Swedish</span></li><li><strong>Agent answers</strong><span>Only from approved knowledge</span></li><li><strong>Handover</strong><span>A person takes over with the background attached</span></li><li><strong>Dictation</strong><span>Staff dictate; the agent drafts the case note</span></li><li><strong>Review</strong><span>Staff check and approve before anything is saved</span></li></ol></div></section>
+</div>
+<nav class="page-index" aria-label="On this page"><div class="wrap"><ol><li><a href="#problem">Problem</a></li><li><a href="#how">How it works</a></li><li><a href="#demo">Demo</a></li><li><a href="#built">What I built</a></li><li><a href="#stack">Stack</a></li><li><a href="#quality">Evidence</a></li><li><a href="#limits">Limits</a></li></ol></div></nav>
+<div class="wrap">
+<section class="block" id="problem" aria-labelledby="problem-title"><h2 id="problem-title">Problem and idea</h2><div class="block-body"><p>Support teams answer the same questions every day, write the same notes, and are closed when many customers need help.</p><p>The idea: one agent that uses the team’s approved knowledge across web chat, phone and staff dictation, with a clear limit where a person takes over and every note reviewed before it is saved.</p></div></section>
+<section class="block" id="how" aria-labelledby="how-title"><h2 id="how-title">How it works</h2><div class="block-body"><ol class="flow" aria-label="Diagram: how Customer service agent works"><li><strong>Customer asks</strong><span>Web chat or phone, in Swedish</span></li><li><strong>Agent answers</strong><span>Only from approved knowledge</span></li><li><strong>Handover</strong><span>A person takes over with the background attached</span></li><li><strong>Dictation</strong><span>Staff dictate; the agent drafts the case note</span></li><li><strong>Review</strong><span>Staff check and approve before anything is saved</span></li></ol></div></section>
 <section class="block" id="demo" aria-labelledby="demo-title"><h2 id="demo-title">Demo</h2><div class="block-body"><p>The concept was presented as a 14-slide deck in seven parts. Each part in short:</p><ol class="walkthrough"><li><strong>Customer value</strong><span>Common questions get an answer even when the support desk is closed, and many customers can be helped at once.</span></li><li><strong>Chat and knowledge</strong><span>Answers come only from the organisation’s approved knowledge, so the agent explains instead of guessing.</span></li><li><strong>Phone in Swedish</strong><span>A clear spoken answer, and a clear limit for what the agent will not handle.</span></li><li><strong>Handover</strong><span>When a person is needed, the background follows the case so the customer does not repeat themselves.</span></li><li><strong>Dictation</strong><span>Staff describe the case; the agent drafts the note; staff review and approve it.</span></li><li><strong>Team and control</strong><span>The organisation decides what the agent knows, what it can access and when a person takes over.</span></li><li><strong>The offer</strong><span>One agent at roughly the cost of one support employee, with scope and price set in a quote.</span></li></ol><p class="note">The earlier video of this presentation carried the client’s branding, so it is not published here.</p></div></section>
-<section class="block" aria-labelledby="built"><h2 id="built">What I built</h2><div class="block-body"><ul><li>Turned the presentation into a chaptered, silent walkthrough video with Swedish captions and a readable transcript.</li><li>Wrote the recording script that captured each slide at fixed timings.</li></ul></div></section>
-<section class="block" aria-labelledby="stack"><h2 id="stack">Stack</h2><div class="block-body"><ul class="tags"><li>Node.js</li><li>Playwright</li><li>ffmpeg</li><li>WebVTT</li></ul></div></section>
-<section class="block" aria-labelledby="quality"><h2 id="quality">Quality evidence</h2><div class="block-body"><ul class="checklist"><li>Chapters, captions and a full text transcript, so the walkthrough works without sound.</li></ul></div></section>
-<section class="block" aria-labelledby="limits"><h2 id="limits">Current limits</h2><div class="block-body"><ul><li>This is a concept. The phone and case-system integrations are not built or verified.</li><li>Capacity and savings have not been measured.</li></ul></div></section>
+<section class="block" id="built" aria-labelledby="built-title"><h2 id="built-title">What I built</h2><div class="block-body"><ul><li>Turned the presentation into a chaptered, silent walkthrough video with Swedish captions and a readable transcript.</li><li>Wrote the recording script that captured each slide at fixed timings.</li></ul></div></section>
+<section class="block" id="stack" aria-labelledby="stack-title"><h2 id="stack-title">Stack</h2><div class="block-body"><ul class="tags"><li>Node.js</li><li>Playwright</li><li>ffmpeg</li><li>WebVTT</li></ul></div></section>
+<section class="block" id="quality" aria-labelledby="quality-title"><h2 id="quality-title">Quality evidence</h2><div class="block-body"><ul class="checklist"><li>Chapters, captions and a full text transcript, so the walkthrough works without sound.</li></ul></div></section>
+<section class="block" id="limits" aria-labelledby="limits-title"><h2 id="limits-title">Current limits</h2><div class="block-body"><ul><li>This is a concept. The phone and case-system integrations are not built or verified.</li><li>Capacity and savings have not been measured.</li></ul></div></section>
 <nav class="next-links" aria-label="More products">
-<a href="pi-agent-harness.html">Previous: SoherAgent</a>
-<a href="blender-asset-director.html">Next: Blender Asset Director</a>
+<a class="next-link" href="pi-agent-harness.html"><span>Previous</span>SoherAgent</a>
+<a class="next-link next" href="blender-asset-director.html"><span>Next</span>Blender Asset Director</a>
 </nav>
 </div>
 </main>
 <footer class="site-footer"><div class="wrap">
-<p>Rami Halabi · Software developer, Stockholm</p>
-<p>Static site, no tracking.</p>
+<p><span class="brand-small">Rami Halabi</span> · Software developer, Stockholm</p>
+<nav class="footer-nav" aria-label="Footer"><a href="../index.html">All products</a><a href="https://www.linkedin.com/in/rami-halabi-2a5573195/">LinkedIn</a><a href="https://github.com/raal1600">GitHub</a></nav>
+<p class="footer-note">Static site, no tracking.</p>
 </div></footer>
 </body>
 </html>
