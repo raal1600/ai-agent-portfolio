@@ -23,7 +23,7 @@ const pages = files.filter(f => f.endsWith('.html')).map(f => relative(root, f))
 
 // 1. Names of clients, employers, partners and people. Matched case-insensitively in text files and file paths.
 const banned = /\b(miun|mittuniversitet|mid sweden university|nord univ|interreg|lilly|vidaxl|dropxl|hngz55|sics|cosafe|volvo|hektor|h-sami|barbro|ingrid|gränslös)/i
-const textTypes = new Set(['.html', '.css', '.js', '.mjs', '.json', '.md', '.txt', '.vtt', '.yml', '.yaml', '.svg'])
+const textTypes = new Set(['.py', '.html', '.css', '.js', '.mjs', '.json', '.md', '.txt', '.vtt', '.yml', '.yaml', '.svg'])
 const nameHits = []
 for (const file of files) {
   const rel = relative(root, file)

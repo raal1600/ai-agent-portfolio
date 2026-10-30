@@ -15,7 +15,7 @@
 <body>
 <a class="skip-link" href="#content">Skip to content</a>
 <header class="site-header"><div class="wrap">
-<a class="brand" href="../index.html">Rami Halabi</a>
+<p class="brand-line"><a class="brand" href="../index.html">Rami Halabi</a><span class="brand-role">Software developer · Stockholm</span></p>
 <nav class="site-nav" aria-label="Main">
 <a href="../index.html">Products</a>
 <a href="https://www.linkedin.com/in/rami-halabi-2a5573195/">LinkedIn</a>
@@ -24,20 +24,26 @@
 </div></header>
 <main id="content">
 <div class="wrap">
-<section class="product-hero" aria-labelledby="title">
-<p class="eyebrow">AI agent tooling</p>
+<section class="product-hero has-media" aria-labelledby="title">
+<div class="hero-text">
+<p class="eyebrow"><a href="../index.html#agents">AI agent tooling</a></p>
 <h1 id="title">SoherAgent</h1>
 <p class="lead">A governed delivery harness for coding agents: an exact authorized batch, leased work, independent review and hard stops.</p>
+<p class="hero-actions"><a class="button" href="#demo">See the demo</a></p>
+</div>
+<a class="hero-media" href="#demo" tabindex="-1" aria-hidden="true"><img src="../assets/products/thumbs/pi-agent-harness.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"></a>
 <dl class="facts">
 <div><dt>When</dt><dd class="date">Jul 2026</dd></div>
 <div><dt>Status</dt><dd>Working extension suite; private source</dd></div>
 <div><dt>Source</dt><dd>Private source, available for supervised review</dd></div>
 <div><dt>Stack</dt><dd><ul class="tags"><li>TypeScript</li><li>Node.js</li><li>Pi SDK</li><li>Obsidian</li></ul></dd></div>
 </dl>
-<p class="hero-actions"><a href="#demo">See the demo</a></p>
 </section>
-<section class="block" aria-labelledby="problem"><h2 id="problem">Problem and idea</h2><div class="block-body"><p>Coding agents work fast, but without limits they commit, deploy or widen the scope on their own.</p><p>The idea: the agent can only act on a batch that a person authorized exactly. Work runs under a lease, an independent reviewer checks it, and the harness stops before anything that was not approved.</p></div></section>
-<section class="block" aria-labelledby="how"><h2 id="how">How it works</h2><div class="block-body"><ol class="flow" aria-label="Diagram: how SoherAgent works"><li><strong>Plan</strong><span>Idea, specification and tickets</span></li><li><strong>Authorize</strong><span>The person approves one exact batch</span></li><li><strong>Deliver</strong><span>Leased implementation with checkpoints</span></li><li><strong>Review</strong><span>An independent reviewer checks the work</span></li><li><strong>Stop</strong><span>Hard stop before anything unauthorized</span></li></ol></div></section>
+</div>
+<nav class="page-index" aria-label="On this page"><div class="wrap"><ol><li><a href="#problem">Problem</a></li><li><a href="#how">How it works</a></li><li><a href="#demo">Demo</a></li><li><a href="#built">What I built</a></li><li><a href="#stack">Stack</a></li><li><a href="#quality">Evidence</a></li><li><a href="#limits">Limits</a></li></ol></div></nav>
+<div class="wrap">
+<section class="block" id="problem" aria-labelledby="problem-title"><h2 id="problem-title">Problem and idea</h2><div class="block-body"><p>Coding agents work fast, but without limits they commit, deploy or widen the scope on their own.</p><p>The idea: the agent can only act on a batch that a person authorized exactly. Work runs under a lease, an independent reviewer checks it, and the harness stops before anything that was not approved.</p></div></section>
+<section class="block" id="how" aria-labelledby="how-title"><h2 id="how-title">How it works</h2><div class="block-body"><ol class="flow" aria-label="Diagram: how SoherAgent works"><li><strong>Plan</strong><span>Idea, specification and tickets</span></li><li><strong>Authorize</strong><span>The person approves one exact batch</span></li><li><strong>Deliver</strong><span>Leased implementation with checkpoints</span></li><li><strong>Review</strong><span>An independent reviewer checks the work</span></li><li><strong>Stop</strong><span>Hard stop before anything unauthorized</span></li></ol></div></section>
 <section class="block" id="demo" aria-labelledby="demo-title"><h2 id="demo-title">Demo</h2><div class="block-body"><p>Five chaptered terminal recordings follow one imagined project. Recordings 1 and 2 are sanitized concept recreations of a proposed planning mode, 3 and 4 recreate reviewed current behavior, and 5 shows captured test results.</p><div class="demo-switcher" data-demo-switcher data-reveal>
 <div class="demo-tabs" role="tablist" aria-label="SoherAgent workflow demos">
 <button class="demo-tab" id="demo-tab-1" role="tab" aria-selected="true" aria-controls="demo-panel-1"><span class="demo-tab-number">01</span><span><strong>Plan idea</strong><span>Proposed /plan concept</span></span></button>
@@ -264,19 +270,20 @@
 </a></nav>
   <div class="demo-panel-footer"><p>Actual captured results: 30 runtime assertions and 155/155 extension tests passed.</p><a href="../evidence/pi-agent-harness/terminal-05-verify.html?transcript=1&amp;v=expanded-reasoning-v1">Open transcript</a></div>
 </section></div></div></div></section>
-<section class="block" aria-labelledby="built"><h2 id="built">What I built</h2><div class="block-body"><ul><li>An extension suite of about 8,500 lines: a control plane with capability gates, deterministic phase routing and resumable sessions.</li><li>Cross-process leases, bounded parallel agents and hard stops before commits, deployment, destructive actions or scope changes.</li><li>Obsidian knowledge tools with bounded retrieval, path controls and approved changes only.</li></ul></div></section>
-<section class="block" aria-labelledby="stack"><h2 id="stack">Stack</h2><div class="block-body"><ul class="tags"><li>TypeScript</li><li>Node.js</li><li>Pi Extension SDK</li><li>Obsidian</li><li>Node test runner</li></ul></div></section>
-<section class="block" aria-labelledby="quality"><h2 id="quality">Quality evidence</h2><div class="block-body"><ul class="checklist"><li>155 of 155 extension tests pass (<a href="../evidence/pi-agent-harness/pi-extension-tests.txt">test output</a>).</li><li>30 of 30 runtime assertions pass in a public synthetic runner (<a href="../evidence/pi-agent-harness/runtime-behavior.json">result</a>, <a href="../evidence/pi-agent-harness/runtime-scenario.mjs">runner</a>).</li><li>Evidence captured on 24 July 2026 by importing the private modules into the public runner.</li></ul></div></section>
-<section class="block" aria-labelledby="limits"><h2 id="limits">Current limits</h2><div class="block-body"><ul><li>Recordings 1 and 2 show a proposed planning mode, not implemented behavior.</li><li>The test evidence does not prove a full live conversation or a production deployment.</li><li>The source is private. I can arrange a supervised review.</li></ul></div></section>
+<section class="block" id="built" aria-labelledby="built-title"><h2 id="built-title">What I built</h2><div class="block-body"><ul><li>An extension suite of about 8,500 lines: a control plane with capability gates, deterministic phase routing and resumable sessions.</li><li>Cross-process leases, bounded parallel agents and hard stops before commits, deployment, destructive actions or scope changes.</li><li>Obsidian knowledge tools with bounded retrieval, path controls and approved changes only.</li></ul></div></section>
+<section class="block" id="stack" aria-labelledby="stack-title"><h2 id="stack-title">Stack</h2><div class="block-body"><ul class="tags"><li>TypeScript</li><li>Node.js</li><li>Pi Extension SDK</li><li>Obsidian</li><li>Node test runner</li></ul></div></section>
+<section class="block" id="quality" aria-labelledby="quality-title"><h2 id="quality-title">Quality evidence</h2><div class="block-body"><ul class="checklist"><li>155 of 155 extension tests pass (<a href="../evidence/pi-agent-harness/pi-extension-tests.txt">test output</a>).</li><li>30 of 30 runtime assertions pass in a public synthetic runner (<a href="../evidence/pi-agent-harness/runtime-behavior.json">result</a>, <a href="../evidence/pi-agent-harness/runtime-scenario.mjs">runner</a>).</li><li>Evidence captured on 24 July 2026 by importing the private modules into the public runner.</li></ul></div></section>
+<section class="block" id="limits" aria-labelledby="limits-title"><h2 id="limits-title">Current limits</h2><div class="block-body"><ul><li>Recordings 1 and 2 show a proposed planning mode, not implemented behavior.</li><li>The test evidence does not prove a full live conversation or a production deployment.</li><li>The source is private. I can arrange a supervised review.</li></ul></div></section>
 <nav class="next-links" aria-label="More products">
-<a href="robotops-twin.html">Previous: RobotOps Twin</a>
-<a href="support-agent.html">Next: Customer service agent</a>
+<a class="next-link" href="robotops-twin.html"><span>Previous</span>RobotOps Twin</a>
+<a class="next-link next" href="support-agent.html"><span>Next</span>Customer service agent</a>
 </nav>
 </div>
 </main>
 <footer class="site-footer"><div class="wrap">
-<p>Rami Halabi · Software developer, Stockholm</p>
-<p>Static site, no tracking.</p>
+<p><span class="brand-small">Rami Halabi</span> · Software developer, Stockholm</p>
+<nav class="footer-nav" aria-label="Footer"><a href="../index.html">All products</a><a href="https://www.linkedin.com/in/rami-halabi-2a5573195/">LinkedIn</a><a href="https://github.com/raal1600">GitHub</a></nav>
+<p class="footer-note">Static site, no tracking.</p>
 </div></footer>
 </body>
 </html>

@@ -14,7 +14,7 @@
 <body>
 <a class="skip-link" href="#content">Skip to content</a>
 <header class="site-header"><div class="wrap">
-<a class="brand" href="../index.html">Rami Halabi</a>
+<p class="brand-line"><a class="brand" href="../index.html">Rami Halabi</a><span class="brand-role">Software developer · Stockholm</span></p>
 <nav class="site-nav" aria-label="Main">
 <a href="../index.html">Products</a>
 <a href="https://www.linkedin.com/in/rami-halabi-2a5573195/">LinkedIn</a>
@@ -23,34 +23,41 @@
 </div></header>
 <main id="content">
 <div class="wrap">
-<section class="product-hero" aria-labelledby="title">
-<p class="eyebrow">Simulation and robotics</p>
+<section class="product-hero has-media" aria-labelledby="title">
+<div class="hero-text">
+<p class="eyebrow"><a href="../index.html#simulation">Simulation and robotics</a></p>
 <h1 id="title">RobotOps Twin</h1>
 <p class="lead">A deterministic simulator for a warehouse robot cell, built to rehearse what happens when the robot and the software disagree.</p>
+<p class="hero-actions"><a class="button" href="#demo">See the demo</a></p>
+</div>
+<a class="hero-media" href="#demo" tabindex="-1" aria-hidden="true"><img src="../assets/products/thumbs/robotops-twin.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"></a>
 <dl class="facts">
 <div><dt>When</dt><dd class="date">Oct 2026</dd></div>
 <div><dt>Status</dt><dd>Acceptance criteria met at an audited revision</dd></div>
 <div><dt>Source</dt><dd>Public source (link on request)</dd></div>
 <div><dt>Stack</dt><dd><ul class="tags"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>RabbitMQ</li><li>OPC UA</li><li>Blender</li></ul></dd></div>
 </dl>
-<p class="hero-actions"><a href="#demo">See the demo</a></p>
 </section>
-<section class="block" aria-labelledby="problem"><h2 id="problem">Problem and idea</h2><div class="block-body"><p>When a robot finishes a pick but its confirmation is lost, the warehouse system cannot tell whether the order is done. Cases like this are rare, and expensive to reproduce on real hardware.</p><p>The idea: simulate the cell deterministically, inject faults on purpose, and make the operator confirm the outcome with fresh evidence before the workflow moves on.</p></div></section>
-<section class="block" aria-labelledby="how"><h2 id="how">How it works</h2><div class="block-body"><ol class="flow" aria-label="Diagram: how RobotOps Twin works"><li><strong>New test</strong><span>Choose the cell, product and fault scenario</span></li><li><strong>Durable workflow</strong><span>Plans the pick, sends commands, records every step</span></li><li><strong>Simulated cell</strong><span>Blender scene with six tools and injected faults</span></li><li><strong>Verification</strong><span>Fresh observation checks the result</span></li><li><strong>Investigation</strong><span>The operator reconciles before the next pick</span></li></ol></div></section>
-<section class="block" id="demo" aria-labelledby="demo-title"><h2 id="demo-title">Demo</h2><div class="block-body"><figure class="shot"><img src="../assets/products/robotops-cell.jpg" alt="Simulator workspace showing a scenario panel next to a 3D view of the robot cell." loading="lazy" decoding="async"><figcaption>Running a pick. The left panel explains the selected scenario; the replay shows the cell in 3D.</figcaption></figure><figure class="shot"><img src="../assets/products/robotops-investigation.jpg" alt="Investigation panel for an uncertain result, showing the original command record and the sensor report section." loading="lazy" decoding="async"><figcaption>Investigating an uncertain result. The command record alone does not confirm the order, so the next pick is paused until it is reconciled.</figcaption></figure></div></section>
-<section class="block" aria-labelledby="built"><h2 id="built">What I built</h2><div class="block-body"><ul><li>A FastAPI and WebSocket backend over a durable workflow in PostgreSQL and RabbitMQ.</li><li>An OPC UA interface to the simulated cell.</li><li>A synthetic robot cell in Blender with six product families, six tools and three camera views, replayed read-only in the browser.</li><li>The investigation flow: what happened, the evidence, and manual inspection, kept separate from possible explanations.</li><li>A Windows desktop app for the same workspace.</li></ul></div></section>
-<section class="block" aria-labelledby="stack"><h2 id="stack">Stack</h2><div class="block-body"><ul class="tags"><li>Python 3.13</li><li>FastAPI</li><li>Pydantic</li><li>psycopg</li><li>PostgreSQL</li><li>RabbitMQ</li><li>asyncua (OPC UA)</li><li>WebSockets</li><li>Blender</li><li>Playwright</li><li>uv</li></ul></div></section>
-<section class="block" aria-labelledby="quality"><h2 id="quality">Quality evidence</h2><div class="block-body"><ul class="checklist"><li>Two clean 831-case test runs on Linux and all 169 required acceptance criteria met at the audited revision.</li><li>About 11,000 lines of tests, including runs against real Blender, PostgreSQL and RabbitMQ.</li><li>Linux and Windows CI with ruff, mypy, bandit and pip-audit.</li></ul></div></section>
-<section class="block" aria-labelledby="limits"><h2 id="limits">Current limits</h2><div class="block-body"><ul><li>The cell is synthetic and based on public sources. It is not connected to real robot hardware.</li><li>Only one robot cell can be selected today, although the registry supports more.</li></ul></div></section>
+</div>
+<nav class="page-index" aria-label="On this page"><div class="wrap"><ol><li><a href="#problem">Problem</a></li><li><a href="#how">How it works</a></li><li><a href="#demo">Demo</a></li><li><a href="#built">What I built</a></li><li><a href="#stack">Stack</a></li><li><a href="#quality">Evidence</a></li><li><a href="#limits">Limits</a></li></ol></div></nav>
+<div class="wrap">
+<section class="block" id="problem" aria-labelledby="problem-title"><h2 id="problem-title">Problem and idea</h2><div class="block-body"><p>When a robot finishes a pick but its confirmation is lost, the warehouse system cannot tell whether the order is done. Cases like this are rare, and expensive to reproduce on real hardware.</p><p>The idea: simulate the cell deterministically, inject faults on purpose, and make the operator confirm the outcome with fresh evidence before the workflow moves on.</p></div></section>
+<section class="block" id="how" aria-labelledby="how-title"><h2 id="how-title">How it works</h2><div class="block-body"><ol class="flow" aria-label="Diagram: how RobotOps Twin works"><li><strong>New test</strong><span>Choose the cell, product and fault scenario</span></li><li><strong>Durable workflow</strong><span>Plans the pick, sends commands, records every step</span></li><li><strong>Simulated cell</strong><span>Blender scene with six tools and injected faults</span></li><li><strong>Verification</strong><span>Fresh observation checks the result</span></li><li><strong>Investigation</strong><span>The operator reconciles before the next pick</span></li></ol></div></section>
+<section class="block" id="demo" aria-labelledby="demo-title"><h2 id="demo-title">Demo</h2><div class="block-body"><figure class="shot"><a class="shot-link" href="../assets/products/robotops-cell.jpg"><img src="../assets/products/robotops-cell.jpg" alt="Simulator workspace showing a scenario panel next to a 3D view of the robot cell." loading="lazy" decoding="async"></a><figcaption>Running a pick. The left panel explains the selected scenario; the replay shows the cell in 3D.</figcaption></figure><figure class="shot"><a class="shot-link" href="../assets/products/robotops-investigation.jpg"><img src="../assets/products/robotops-investigation.jpg" alt="Investigation panel for an uncertain result, showing the original command record and the sensor report section." loading="lazy" decoding="async"></a><figcaption>Investigating an uncertain result. The command record alone does not confirm the order, so the next pick is paused until it is reconciled.</figcaption></figure></div></section>
+<section class="block" id="built" aria-labelledby="built-title"><h2 id="built-title">What I built</h2><div class="block-body"><ul><li>A FastAPI and WebSocket backend over a durable workflow in PostgreSQL and RabbitMQ.</li><li>An OPC UA interface to the simulated cell.</li><li>A synthetic robot cell in Blender with six product families, six tools and three camera views, replayed read-only in the browser.</li><li>The investigation flow: what happened, the evidence, and manual inspection, kept separate from possible explanations.</li><li>A Windows desktop app for the same workspace.</li></ul></div></section>
+<section class="block" id="stack" aria-labelledby="stack-title"><h2 id="stack-title">Stack</h2><div class="block-body"><ul class="tags"><li>Python 3.13</li><li>FastAPI</li><li>Pydantic</li><li>psycopg</li><li>PostgreSQL</li><li>RabbitMQ</li><li>asyncua (OPC UA)</li><li>WebSockets</li><li>Blender</li><li>Playwright</li><li>uv</li></ul></div></section>
+<section class="block" id="quality" aria-labelledby="quality-title"><h2 id="quality-title">Quality evidence</h2><div class="block-body"><ul class="checklist"><li>Two clean 831-case test runs on Linux and all 169 required acceptance criteria met at the audited revision.</li><li>About 11,000 lines of tests, including runs against real Blender, PostgreSQL and RabbitMQ.</li><li>Linux and Windows CI with ruff, mypy, bandit and pip-audit.</li></ul></div></section>
+<section class="block" id="limits" aria-labelledby="limits-title"><h2 id="limits-title">Current limits</h2><div class="block-body"><ul><li>The cell is synthetic and based on public sources. It is not connected to real robot hardware.</li><li>Only one robot cell can be selected today, although the registry supports more.</li></ul></div></section>
 <nav class="next-links" aria-label="More products">
-<a href="rigforge.html">Previous: RigForge</a>
-<a href="pi-agent-harness.html">Next: SoherAgent</a>
+<a class="next-link" href="rigforge.html"><span>Previous</span>RigForge</a>
+<a class="next-link next" href="pi-agent-harness.html"><span>Next</span>SoherAgent</a>
 </nav>
 </div>
 </main>
 <footer class="site-footer"><div class="wrap">
-<p>Rami Halabi · Software developer, Stockholm</p>
-<p>Static site, no tracking.</p>
+<p><span class="brand-small">Rami Halabi</span> · Software developer, Stockholm</p>
+<nav class="footer-nav" aria-label="Footer"><a href="../index.html">All products</a><a href="https://www.linkedin.com/in/rami-halabi-2a5573195/">LinkedIn</a><a href="https://github.com/raal1600">GitHub</a></nav>
+<p class="footer-note">Static site, no tracking.</p>
 </div></footer>
 </body>
 </html>

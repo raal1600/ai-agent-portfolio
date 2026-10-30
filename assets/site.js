@@ -109,6 +109,29 @@ const setupWorkflowDemo = () => {
   });
 };
 
+const setupPageIndex = () => {
+  const links = [...document.querySelectorAll('.page-index a[href^="#"]')];
+  const sections = links.map((link) => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+  if (!sections.length) return;
+  const update = () => {
+    // The current section is the last one whose top has passed the sticky bar; at the very bottom it is the last section.
+    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    const current = atBottom ? sections.at(-1) : sections.filter((section) => section.getBoundingClientRect().top <= 120).pop();
+    links.forEach((link) => {
+      if (current && link.getAttribute('href') === `#${current.id}`) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    });
+  };
+  let queued = false;
+  window.addEventListener('scroll', () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => { queued = false; update(); });
+  }, { passive: true });
+  update();
+};
+
 reveal();
 setupDemoSwitcher();
 setupWorkflowDemo();
+setupPageIndex();

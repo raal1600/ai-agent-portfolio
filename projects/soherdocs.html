@@ -14,7 +14,7 @@
 <body>
 <a class="skip-link" href="#content">Skip to content</a>
 <header class="site-header"><div class="wrap">
-<a class="brand" href="../index.html">Rami Halabi</a>
+<p class="brand-line"><a class="brand" href="../index.html">Rami Halabi</a><span class="brand-role">Software developer · Stockholm</span></p>
 <nav class="site-nav" aria-label="Main">
 <a href="../index.html">Products</a>
 <a href="https://www.linkedin.com/in/rami-halabi-2a5573195/">LinkedIn</a>
@@ -23,20 +23,26 @@
 </div></header>
 <main id="content">
 <div class="wrap">
-<section class="product-hero" aria-labelledby="title">
-<p class="eyebrow">Business systems</p>
+<section class="product-hero has-media" aria-labelledby="title">
+<div class="hero-text">
+<p class="eyebrow"><a href="../index.html#business">Business systems</a></p>
 <h1 id="title">SoherDocs</h1>
 <p class="lead">Turn one job posting and your saved CV knowledge into a tailored CV, a cover letter, an ATS check and PDFs.</p>
+<p class="hero-actions"><a class="button" href="#demo">See the demo</a></p>
+</div>
+<a class="hero-media" href="#demo" tabindex="-1" aria-hidden="true"><img src="../assets/products/thumbs/soherdocs.jpg" alt="" width="960" height="600" loading="lazy" decoding="async"></a>
 <dl class="facts">
 <div><dt>When</dt><dd class="date">Jun – Jul 2026</dd></div>
 <div><dt>Status</dt><dd>Product concept recording; private source</dd></div>
 <div><dt>Source</dt><dd>Private source, available for supervised review</dd></div>
 <div><dt>Stack</dt><dd><ul class="tags"><li>Next.js</li><li>TypeScript</li><li>PostgreSQL</li><li>Drizzle</li><li>Playwright</li></ul></dd></div>
 </dl>
-<p class="hero-actions"><a href="#demo">See the demo</a></p>
 </section>
-<section class="block" aria-labelledby="problem"><h2 id="problem">Problem and idea</h2><div class="block-body"><p>Tailoring a CV and a letter for every application is slow, and generic AI writing invents experience the applicant does not have.</p><p>The idea: keep a knowledge base of saved CV variants, tailor only from that evidence, check the result, and export ready-to-send PDFs.</p></div></section>
-<section class="block" aria-labelledby="how"><h2 id="how">How it works</h2><div class="block-body"><ol class="flow" aria-label="Diagram: how SoherDocs works"><li><strong>Job posting</strong><span>Paste or upload the ad</span></li><li><strong>Find evidence</strong><span>Search saved CV variants</span></li><li><strong>Tailor</strong><span>CV and personal cover letter</span></li><li><strong>Check</strong><span>Advisory ATS readiness review</span></li><li><strong>Export</strong><span>Both documents as PDFs</span></li></ol></div></section>
+</div>
+<nav class="page-index" aria-label="On this page"><div class="wrap"><ol><li><a href="#problem">Problem</a></li><li><a href="#how">How it works</a></li><li><a href="#demo">Demo</a></li><li><a href="#built">What I built</a></li><li><a href="#stack">Stack</a></li><li><a href="#quality">Evidence</a></li><li><a href="#limits">Limits</a></li></ol></div></nav>
+<div class="wrap">
+<section class="block" id="problem" aria-labelledby="problem-title"><h2 id="problem-title">Problem and idea</h2><div class="block-body"><p>Tailoring a CV and a letter for every application is slow, and generic AI writing invents experience the applicant does not have.</p><p>The idea: keep a knowledge base of saved CV variants, tailor only from that evidence, check the result, and export ready-to-send PDFs.</p></div></section>
+<section class="block" id="how" aria-labelledby="how-title"><h2 id="how-title">How it works</h2><div class="block-body"><ol class="flow" aria-label="Diagram: how SoherDocs works"><li><strong>Job posting</strong><span>Paste or upload the ad</span></li><li><strong>Find evidence</strong><span>Search saved CV variants</span></li><li><strong>Tailor</strong><span>CV and personal cover letter</span></li><li><strong>Check</strong><span>Advisory ATS readiness review</span></li><li><strong>Export</strong><span>Both documents as PDFs</span></li></ol></div></section>
 <section class="block" id="demo" aria-labelledby="demo-title"><h2 id="demo-title">Demo</h2><div class="block-body"><div class="workflow-demo" data-workflow-demo data-reveal>
       <nav class="workflow-chapters" aria-label="SoherDocs recording chapters">
         <a class="workflow-chapter" href="../evidence/soherdocs/soherdocs-workflow-transcript.html#add-job" data-chapter-start="0" data-chapter-end="5" aria-current="step">
@@ -78,19 +84,20 @@
     </div>
 
     <p class="visualization-note" id="workflow-disclosure" data-reveal><strong>Synthetic product concept.</strong> The recording illustrates intended behavior using a fabricated person, company, job, profile evidence, documents, and ATS score. The score is advisory—not an employer ATS result, hiring prediction, or guarantee. <a href="../evidence/soherdocs/product-visualization.html?state=1">Open the visualization source</a>.</p></div></section>
-<section class="block" aria-labelledby="built"><h2 id="built">What I built</h2><div class="block-body"><ul><li>A multi-user platform with authentication, private storage and ownership checks on every record.</li><li>Profile import with validation and a reviewed diff before anything is applied.</li><li>Consent controls for any data used to improve the product.</li><li>Document generation and PDF export.</li></ul></div></section>
-<section class="block" aria-labelledby="stack"><h2 id="stack">Stack</h2><div class="block-body"><ul class="tags"><li>Next.js</li><li>React</li><li>TypeScript</li><li>PostgreSQL</li><li>Drizzle ORM</li><li>Nunjucks</li><li>Vitest</li><li>Playwright</li></ul></div></section>
-<section class="block" aria-labelledby="quality"><h2 id="quality">Quality evidence</h2><div class="block-body"><ul class="checklist"><li>About 11,200 lines of unit, visual and E2E tests in the repository.</li><li>Each planned slice ships only after the type check, the test suites and a browser smoke test pass.</li></ul></div></section>
-<section class="block" aria-labelledby="limits"><h2 id="limits">Current limits</h2><div class="block-body"><ul><li>The recording is a synthetic product concept with a fabricated person, company and job. It is not footage of a shipped interface.</li><li>The ATS score is advisory. It is not an employer’s result or a hiring prediction.</li><li>The source is private. I can arrange a supervised review.</li></ul></div></section>
+<section class="block" id="built" aria-labelledby="built-title"><h2 id="built-title">What I built</h2><div class="block-body"><ul><li>A multi-user platform with authentication, private storage and ownership checks on every record.</li><li>Profile import with validation and a reviewed diff before anything is applied.</li><li>Consent controls for any data used to improve the product.</li><li>Document generation and PDF export.</li></ul></div></section>
+<section class="block" id="stack" aria-labelledby="stack-title"><h2 id="stack-title">Stack</h2><div class="block-body"><ul class="tags"><li>Next.js</li><li>React</li><li>TypeScript</li><li>PostgreSQL</li><li>Drizzle ORM</li><li>Nunjucks</li><li>Vitest</li><li>Playwright</li></ul></div></section>
+<section class="block" id="quality" aria-labelledby="quality-title"><h2 id="quality-title">Quality evidence</h2><div class="block-body"><ul class="checklist"><li>About 11,200 lines of unit, visual and E2E tests in the repository.</li><li>Each planned slice ships only after the type check, the test suites and a browser smoke test pass.</li></ul></div></section>
+<section class="block" id="limits" aria-labelledby="limits-title"><h2 id="limits-title">Current limits</h2><div class="block-body"><ul><li>The recording is a synthetic product concept with a fabricated person, company and job. It is not footage of a shipped interface.</li><li>The ATS score is advisory. It is not an employer’s result or a hiring prediction.</li><li>The source is private. I can arrange a supervised review.</li></ul></div></section>
 <nav class="next-links" aria-label="More products">
-<a href="ecommerce-back-office.html">Previous: E-commerce back office</a>
-<a href="rigforge.html">Next: RigForge</a>
+<a class="next-link" href="ecommerce-back-office.html"><span>Previous</span>E-commerce back office</a>
+<a class="next-link next" href="rigforge.html"><span>Next</span>RigForge</a>
 </nav>
 </div>
 </main>
 <footer class="site-footer"><div class="wrap">
-<p>Rami Halabi · Software developer, Stockholm</p>
-<p>Static site, no tracking.</p>
+<p><span class="brand-small">Rami Halabi</span> · Software developer, Stockholm</p>
+<nav class="footer-nav" aria-label="Footer"><a href="../index.html">All products</a><a href="https://www.linkedin.com/in/rami-halabi-2a5573195/">LinkedIn</a><a href="https://github.com/raal1600">GitHub</a></nav>
+<p class="footer-note">Static site, no tracking.</p>
 </div></footer>
 </body>
 </html>
