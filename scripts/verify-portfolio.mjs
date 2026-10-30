@@ -1,115 +1,96 @@
+// Checks every page at desktop and phone width: local links and fragments, images, horizontal overflow,
+// console errors and axe WCAG A/AA. Also searches the published files for names that must not appear.
+// External links are listed, never opened.
 import { chromium } from 'playwright-core'
-import { readFileSync, mkdirSync, existsSync } from 'node:fs'
-import { resolve, dirname } from 'node:path'
-import { createHash } from 'node:crypto'
+import { readFileSync, readdirSync, statSync, existsSync, mkdirSync, writeFileSync } from 'node:fs'
+import { resolve, dirname, join, relative, extname } from 'node:path'
+import { createRequire } from 'node:module'
 import { serve } from './serve.mjs'
 
-const remote = process.argv[2]?.replace(/\/$/, '')
-const server = remote ? null : await serve(process.cwd(), 8111)
-const base = remote ?? 'http://127.0.0.1:8111'
-const manifest = JSON.parse(readFileSync('evidence/hektor-agent/recording.json', 'utf8'))
+const root = process.cwd()
+const require = createRequire(import.meta.url)
+const axeSource = readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8')
 const out = resolve('test-results')
 mkdirSync(out, { recursive: true })
-const pages = ['index.html', 'projects/hektor-agent.html', 'projects/soherdocs.html', 'projects/pi-agent-harness.html', 'evidence/hektor-agent/hektor-demo-transcript.html']
-// Validate local assets and fragment destinations in the new service and transcript.
-for (const file of ['projects/hektor-agent.html', 'evidence/hektor-agent/hektor-demo-transcript.html']) {
-  const html = readFileSync(file, 'utf8')
-  for (const match of html.matchAll(/(?:href|src)="([^"<>]+)"/g)) {
-    const url = match[1]
-    if (/^(https?:|data:|mailto:)/.test(url)) continue
-    const [path, fragment] = url.split('#')
-    const target = path ? resolve(dirname(file), path.split('?')[0]) : resolve(file)
-    if (!existsSync(target)) throw new Error(`Broken asset: ${file}: ${url}`)
-    if (fragment && target.endsWith('.html') && !readFileSync(target, 'utf8').includes(`id="${fragment}"`)) throw new Error(`Missing fragment: ${url}`)
+
+const walk = dir => readdirSync(dir).flatMap(name => {
+  const path = join(dir, name)
+  if (['node_modules', '.git', 'test-results'].includes(name)) return []
+  return statSync(path).isDirectory() ? walk(path) : [path]
+})
+const files = walk(root)
+const pages = files.filter(f => f.endsWith('.html')).map(f => relative(root, f)).sort()
+
+// 1. Names of clients, employers, partners and people. Matched case-insensitively in text files and file paths.
+const banned = /\b(miun|mittuniversitet|mid sweden university|nord univ|interreg|lilly|vidaxl|dropxl|hngz55|sics|cosafe|volvo|hektor|h-sami|barbro|ingrid|gränslös)/i
+const textTypes = new Set(['.html', '.css', '.js', '.mjs', '.json', '.md', '.txt', '.vtt', '.yml', '.yaml', '.svg'])
+const nameHits = []
+for (const file of files) {
+  const rel = relative(root, file)
+  if (rel === 'scripts/verify-portfolio.mjs') continue // holds the pattern itself
+  if (banned.test(rel)) nameHits.push(`${rel} (path)`)
+  if (!textTypes.has(extname(file))) continue
+  readFileSync(file, 'utf8').split('\n').forEach((line, i) => { if (banned.test(line)) nameHits.push(`${rel}:${i + 1}: ${line.match(banned)[0]}`) })
+}
+
+// 2. Local links, assets and fragments.
+const linkProblems = [], external = new Set()
+for (const page of pages) {
+  const html = readFileSync(page, 'utf8')
+  for (const [, url] of html.matchAll(/(?:href|src|poster)="([^"]+)"/g)) {
+    if (/^https?:/.test(url)) { external.add(url); continue }
+    if (/^(mailto:|data:)/.test(url)) continue
+    const [pathPart, fragment] = url.replace(/&amp;/g, '&').split('#')
+    const target = pathPart ? resolve(dirname(page), pathPart.split('?')[0]) : resolve(page)
+    if (!existsSync(target)) { linkProblems.push(`${page}: missing ${url}`); continue }
+    if (fragment && target.endsWith('.html') && !readFileSync(target, 'utf8').includes(`id="${fragment}"`)) linkProblems.push(`${page}: missing #${fragment} in ${url}`)
   }
 }
-const browser = await chromium.launch(process.platform === 'win32' ? { channel: 'chrome' } : {})
-const errors = []
+
+// 3. Browser checks.
+const server = await serve(root, 8111)
+const browser = await chromium.launch({ channel: 'chrome' })
+const pageProblems = [], axeProblems = []
 try {
   for (const viewport of [{ width: 1440, height: 1000 }, { width: 390, height: 844 }]) {
-    const page = await browser.newPage({ viewport, reducedMotion: 'reduce' })
-    page.on('pageerror', e => errors.push(e.message))
-    page.on('console', m => {
-      // Browsers probe the domain-root favicon even though this portfolio has none.
-      if (m.type() === 'error' && !m.location().url?.endsWith('/favicon.ico')) errors.push(`${m.text()} (${m.location().url})`)
-    })
+    const context = await browser.newContext({ viewport, reducedMotion: 'reduce' })
     for (const file of pages) {
-      const response = await page.goto(`${base}/${file}`, { waitUntil: 'networkidle' })
-      if (!response.ok()) throw new Error(`${file}: HTTP ${response.status()}`)
-      const problems = await page.evaluate(() => {
-        const issues = []
-        if (document.documentElement.scrollWidth > innerWidth + 1) issues.push('Page overflows horizontally')
-        for (const link of document.querySelectorAll('.site-header a, .site-footer a')) {
-          const r = link.getBoundingClientRect()
-          if (r.left < 0 || r.right > innerWidth + 1) issues.push(`Navigation overflow: ${link.textContent}`)
-        }
-        for (const img of document.images) if (img.loading !== 'lazy' && (!img.complete || !img.naturalWidth)) issues.push(`Broken image: ${img.src}`)
-        return issues
+      const page = await context.newPage()
+      const errors = []
+      page.on('pageerror', e => errors.push(e.message))
+      page.on('console', m => { if (m.type() === 'error' && !m.location().url?.endsWith('/favicon.ico')) errors.push(m.text()) })
+      const response = await page.goto(`http://127.0.0.1:8111/${file}`, { waitUntil: 'load' })
+      if (!response.ok()) pageProblems.push(`${file}: HTTP ${response.status()}`)
+      await page.evaluate(async () => {
+        for (const img of document.querySelectorAll('img[loading="lazy"]')) img.loading = 'eager'
+        await Promise.all([...document.images].map(img => img.complete ? null : new Promise(r => { img.onload = img.onerror = r })))
+        await document.fonts?.ready
       })
-      if (problems.length) throw new Error(`${file}, ${viewport.width}px: ${problems.join('; ')}`)
-      if (file === 'index.html') {
-        if (await page.locator('.project-row').count() !== 3) throw new Error('Expected three services')
-        await page.locator('.project-row').last().scrollIntoViewIfNeeded()
-        await page.waitForFunction(() => [...document.querySelectorAll('.hektor-visual img')].every(img => img.complete && img.naturalWidth))
-        await page.screenshot({ path: `${out}/home-${viewport.width}.png` })
-      }
-      if (file === 'projects/hektor-agent.html') {
-        await page.locator('#product-view').scrollIntoViewIfNeeded()
-        await page.waitForFunction(() => document.querySelector('video')?.readyState >= 2)
-        await page.locator('video').evaluate(async v => { await v.play(); v.pause() })
-        await page.screenshot({ path: `${out}/hektor-${viewport.width}.png`, fullPage: viewport.width === 390 })
-        const media = await page.locator('video').evaluate(v => ({ duration: v.duration, width: v.videoWidth, height: v.videoHeight, error: v.error?.message }))
-        if (media.error || Math.abs(media.duration - 150) > .2 || media.width !== 1600 || media.height !== 900) throw new Error(`Incorrect media: ${JSON.stringify(media)}`)
-        // Every chapter must seek the actual MP4 and update the Swedish status.
-        const chapters = page.locator('[data-chapter-start]')
-        if (await chapters.count() !== 7) throw new Error('Expected seven chapters')
-        for (let i = 0; i < 7; i++) {
-          await chapters.nth(i).click()
-          await page.waitForFunction(start => Math.abs(document.querySelector('video').currentTime - start) < 2, manifest.chapters[i].start)
-          await page.locator('video').evaluate(v => v.pause())
-          if (await chapters.nth(i).getAttribute('aria-current') !== 'step') throw new Error(`Chapter ${i + 1} not selected`)
-        }
-        if (!(await page.locator('[data-chapter-status]').innerText()).startsWith('Avsnitt 7')) throw new Error('Status is not localized')
-        const cues = await page.locator('video').evaluate(async v => {
-          const track = [...v.textTracks].find(t => t.kind === 'captions')
-          track.mode = 'hidden'
-          for (let i = 0; i < 50 && !track.cues?.length; i++) await new Promise(r => setTimeout(r, 100))
-          return track.cues?.length
-        })
-        if (cues !== 14) throw new Error(`Expected 14 Swedish description cues, got ${cues}`)
-      }
-      console.log(`OK ${viewport.width}px ${file}`)
+      const issues = await page.evaluate(() => {
+        const found = []
+        if (document.documentElement.scrollWidth > innerWidth + 1) found.push(`horizontal overflow (${document.documentElement.scrollWidth}px)`)
+        for (const img of document.images) if (!img.naturalWidth) found.push(`broken image ${img.getAttribute('src')}`)
+        return found
+      })
+      for (const issue of [...issues, ...errors]) pageProblems.push(`${file} @${viewport.width}px: ${issue}`)
+      await page.addScriptTag({ content: axeSource })
+      const result = await page.evaluate(() => window.axe.run(document, { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'] } }))
+      for (const v of result.violations) axeProblems.push(`${file} @${viewport.width}px: ${v.id} (${v.impact}) x${v.nodes.length}: ${v.nodes[0].target.join(' ')}`)
+      if (viewport.width === 390 || file === 'index.html') await page.screenshot({ path: join(out, `${file.replace(/[\\/]/g, '_')}-${viewport.width}.png`), fullPage: true })
+      await page.close()
     }
-    await page.close()
+    await context.close()
   }
-  // Decode a frame inside every slide interval, including the final offer.
-  const page = await browser.newPage({ viewport: { width: 1600, height: 1000 } })
-  await page.goto(`${base}/projects/hektor-agent.html`)
-  await page.waitForFunction(() => document.querySelector('video')?.readyState >= 2)
-  const fingerprints = new Set()
-  for (const slide of manifest.slides) {
-    const frame = await page.locator('video').evaluate(async (v, time) => {
-      v.pause()
-      await new Promise(done => { v.addEventListener('seeked', done, { once: true }); v.currentTime = time })
-      const canvas = document.createElement('canvas'); canvas.width = 160; canvas.height = 90
-      canvas.getContext('2d').drawImage(v, 0, 0, 160, 90)
-      return canvas.toDataURL()
-    }, (slide.start + slide.end) / 2)
-    if (fingerprints.has(frame)) throw new Error(`Repeated/blank frame at slide ${slide.number}`)
-    fingerprints.add(frame)
-    if ([1, 7, 9, 14].includes(slide.number)) await page.locator('video').screenshot({ path: `${out}/video-slide-${slide.number}.png` })
-  }
-  const response = await page.request.get(`${base}/evidence/hektor-agent/hektor-demo.mp4`)
-  if (!response.ok()) throw new Error(`MP4 download HTTP ${response.status()}`)
-  const hash = createHash('sha256').update(await response.body()).digest('hex')
-  if (hash !== manifest.videoSha256) throw new Error('Published video differs from verified recording')
-  // Chapter anchors remain useful if JavaScript is disabled.
-  const plain = await browser.newContext({ javaScriptEnabled: false })
-  const fallback = await plain.newPage()
-  await fallback.goto(`${base}/projects/hektor-agent.html`)
-  await fallback.locator('[data-chapter-start]').nth(4).click()
-  if (!fallback.url().endsWith('hektor-demo-transcript.html#diktering')) throw new Error('Transcript fallback failed')
-  await plain.close()
-  if (errors.length) throw new Error(errors.join('\n'))
-  console.log('PASS: desktop/mobile, navigation, seven chapter seeks, 14 decoded slides, captions, MP4 integrity, and no-JavaScript transcript.')
-} finally { await browser.close(); server?.close() }
+} finally {
+  await browser.close(); server.close()
+}
+
+const report = { pages: pages.length, nameHits, linkProblems, pageProblems, axeProblems, externalLinks: [...external].sort() }
+writeFileSync(join(out, 'verify-report.json'), JSON.stringify(report, null, 2))
+console.log(`Pages checked: ${pages.length} at 1440 and 390 px`)
+for (const [label, list] of [['Name search hits', nameHits], ['Link problems', linkProblems], ['Page problems', pageProblems], ['Axe violations', axeProblems]]) {
+  console.log(`${label}: ${list.length}`)
+  list.slice(0, 40).forEach(x => console.log('  ' + x))
+}
+console.log(`External links (listed, not opened): ${external.size}`)
+if (nameHits.length || linkProblems.length || pageProblems.length || axeProblems.length) process.exit(1)

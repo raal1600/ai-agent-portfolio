@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blender Teaching Overlay · Rami Halabi</title>
+<meta name="description" content="A Windows MCP server that lets an AI tutor point at Blender’s interface while the learner makes every click.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&amp;family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="../index.html">Rami Halabi</a>
+<nav class="site-nav" aria-label="Main">
+<a href="../index.html">Products</a>
+<a href="https://www.linkedin.com/in/rami-halabi-2a5573195/">LinkedIn</a>
+<a href="https://github.com/raal1600">GitHub</a>
+</nav>
+</div></header>
+<main id="content">
+<div class="wrap">
+<section class="product-hero" aria-labelledby="title">
+<p class="eyebrow">3D and creative tooling</p>
+<h1 id="title">Blender Teaching Overlay</h1>
+<p class="lead">A Windows MCP server that lets an AI tutor point at Blender’s interface while the learner makes every click.</p>
+<dl class="facts">
+<div><dt>When</dt><dd class="date">Sep 2026</dd></div>
+<div><dt>Status</dt><dd>Early source release for Windows</dd></div>
+<div><dt>Source</dt><dd><a href="https://github.com/raal1600/blender-teaching-overlay-mcp">Public source</a></dd></div>
+<div><dt>Stack</dt><dd><ul class="tags"><li>C#</li><li>.NET 10</li><li>MCP</li><li>Windows</li></ul></dd></div>
+</dl>
+<p class="hero-actions"><a href="#demo">See the demo</a></p>
+</section>
+<section class="block" aria-labelledby="problem"><h2 id="problem">Problem and idea</h2><div class="block-body"><p>Following a Blender tutorial means hunting for small controls. Letting an agent take over the mouse would be quicker, but it takes away the learning and puts the user’s work at risk.</p><p>The idea: the agent can see Blender and point, but it cannot click, type or change the scene. The learner does every step.</p></div></section>
+<section class="block" aria-labelledby="how"><h2 id="how">How it works</h2><div class="block-body"><ol class="flow"><li><strong>Find Blender</strong><span>Discover and bind one window</span></li><li><strong>Capture</strong><span>A fresh image of the interface</span></li><li><strong>Decide</strong><span>The agent picks the control</span></li><li><strong>Point</strong><span>Click-through pointer, outline and label</span></li><li><strong>Learner clicks</strong><span>Optionally verified through Blender MCP</span></li></ol></div></section>
+<section class="block" id="demo" aria-labelledby="demo-title"><h2 id="demo-title">Demo</h2><div class="block-body"><p>The server exposes six tools to the agent:</p><ol class="walkthrough"><li><strong><code>status</code></strong><span>Finds eligible Blender windows and reports readiness, without taking a screenshot.</span></li><li><strong><code>bind_blender</code></strong><span>Binds one window by an opaque ID the server issued.</span></li><li><strong><code>capture_blender</code></strong><span>Returns a fresh image of that window with coordinate data.</span></li><li><strong><code>zoom_blender</code></strong><span>Crops and enlarges part of an existing image for the agent.</span></li><li><strong><code>show_guidance</code></strong><span>Draws one pointer, outline and short label over the control.</span></li><li><strong><code>clear_guidance</code></strong><span>Removes the guidance and cancels any delayed drawing.</span></li></ol><p class="note">There is no public recording yet; screenshots from the test machine are kept private.</p></div></section>
+<section class="block" aria-labelledby="built"><h2 id="built">What I built</h2><div class="block-body"><ul><li>The MCP server in C# on .NET 10, with strict tool schemas over local stdio.</li><li>Window capture through Windows Graphics Capture and Direct3D 11, with correct coordinates at 100 to 200 % display scaling and on monitors with negative positions.</li><li>A click-through overlay that never takes focus, so the learner keeps full control.</li><li>PowerShell build and test scripts that use a pinned SDK and committed lockfiles.</li></ul></div></section>
+<section class="block" aria-labelledby="stack"><h2 id="stack">Stack</h2><div class="block-body"><ul class="tags"><li>C#</li><li>.NET 10</li><li>Windows Graphics Capture</li><li>Direct3D 11</li><li>MCP (stdio)</li><li>PowerShell</li><li>GitHub Actions</li></ul></div></section>
+<section class="block" aria-labelledby="quality"><h2 id="quality">Quality evidence</h2><div class="block-body"><ul class="checklist"><li>Automated tests for coordinates and rounding, window identity, snapshot expiry and race conditions, and the MCP protocol.</li><li>12 test groups passed, including a real guided lesson, on the original test machine.</li><li>Windows CI builds and tests every change.</li></ul></div></section>
+<section class="block" aria-labelledby="limits"><h2 id="limits">Current limits</h2><div class="block-body"><ul><li>Validated on one Windows 11, Blender 5.2.1, 150 % scaling setup so far.</li><li>No installer yet; it is built from source.</li><li>HDR displays, separate Blender dialog windows and ARM64 are not supported.</li></ul></div></section>
+<nav class="next-links" aria-label="More products">
+<a href="blender-asset-director.html">Previous: Blender Asset Director</a>
+<a href="private-ai-datacenter.html">Next: Private AI Datacenter</a>
+</nav>
+</div>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>Rami Halabi · Software developer, Stockholm</p>
+<p>Static site, no tracking.</p>
+</div></footer>
+</body>
+</html>

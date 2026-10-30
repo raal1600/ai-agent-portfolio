@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RigForge · Rami Halabi</title>
+<meta name="description" content="A community platform for planning, saving and sharing PC builds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&amp;family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="../index.html">Rami Halabi</a>
+<nav class="site-nav" aria-label="Main">
+<a href="../index.html">Products</a>
+<a href="https://www.linkedin.com/in/rami-halabi-2a5573195/">LinkedIn</a>
+<a href="https://github.com/raal1600">GitHub</a>
+</nav>
+</div></header>
+<main id="content">
+<div class="wrap">
+<section class="product-hero" aria-labelledby="title">
+<p class="eyebrow">Business systems</p>
+<h1 id="title">RigForge</h1>
+<p class="lead">A community platform for planning, saving and sharing PC builds.</p>
+<dl class="facts">
+<div><dt>When</dt><dd class="date">Dec 2025</dd></div>
+<div><dt>Status</dt><dd>In development; not deployed</dd></div>
+<div><dt>Source</dt><dd>Private source</dd></div>
+<div><dt>Stack</dt><dd><ul class="tags"><li>Next.js</li><li>TypeScript</li><li>Prisma</li><li>PostgreSQL</li><li>NextAuth</li></ul></dd></div>
+</dl>
+<p class="hero-actions"><a href="#demo">See the demo</a></p>
+</section>
+<section class="block" aria-labelledby="problem"><h2 id="problem">Problem and idea</h2><div class="block-body"><p>People who build PCs plan their parts in spreadsheets and share screenshots. There is no single place to plan a build, save it, and let others learn from it or start from it.</p><p>The idea: a build studio with running totals, a cloud workspace for saved builds, and a showcase where the community can browse and reuse them.</p></div></section>
+<section class="block" aria-labelledby="how"><h2 id="how">How it works</h2><div class="block-body"><ol class="flow"><li><strong>Sign in</strong><span>Accounts with NextAuth</span></li><li><strong>Build studio</strong><span>Pick components; totals for price and power update as you go</span></li><li><strong>Save</strong><span>Cloud workspace in PostgreSQL through Prisma</span></li><li><strong>Share</strong><span>Showcase, tags and media</span></li></ol></div></section>
+<section class="block" id="demo" aria-labelledby="demo-title"><h2 id="demo-title">Demo</h2><div class="block-body"><figure class="shot"><img src="../assets/products/rigforge-home.jpg" alt="RigForge home page with the headline Design Your Dream Rig and buttons to build a PC or browse blueprints." loading="lazy" decoding="async"><figcaption>Home page.</figcaption></figure><figure class="shot"><img src="../assets/products/rigforge-builder.jpg" alt="Build studio listing component slots such as graphics card, processor and memory, with a setup summary panel." loading="lazy" decoding="async"><figcaption>Build studio with an empty build and the running summary.</figcaption></figure><figure class="shot"><img src="../assets/products/rigforge-build.jpg" alt="Saved build detail page with build ID, dates, total price, owner and tags." loading="lazy" decoding="async"><figcaption>A saved build. The QA account and its zero price are test data.</figcaption></figure><p class="note">QA screenshots from the repository, taken with synthetic test accounts.</p></div></section>
+<section class="block" aria-labelledby="built"><h2 id="built">What I built</h2><div class="block-body"><ul><li>Five planned releases in three weeks: foundation, media pipeline, build studio, community features, and discovery.</li><li>Accounts, saved builds, tags and media uploads.</li><li>Product, roadmap and technical specification documents for each release.</li></ul></div></section>
+<section class="block" aria-labelledby="stack"><h2 id="stack">Stack</h2><div class="block-body"><ul class="tags"><li>Next.js 16</li><li>React 19</li><li>TypeScript</li><li>Prisma</li><li>PostgreSQL</li><li>NextAuth</li><li>Tailwind CSS</li><li>Zod</li></ul></div></section>
+<section class="block" aria-labelledby="quality"><h2 id="quality">Quality evidence</h2><div class="block-body"><ul class="checklist"><li>30 automated test cases in the repository.</li><li>Browser QA screenshots recorded for each release.</li><li>Release notes for every version from V2.4 to V3.1.</li></ul></div></section>
+<section class="block" aria-labelledby="limits"><h2 id="limits">Current limits</h2><div class="block-body"><ul><li>Not deployed publicly.</li><li>Component prices in the QA data are placeholders.</li><li>Development paused during V3.1 planning.</li></ul></div></section>
+<nav class="next-links" aria-label="More products">
+<a href="soherdocs.html">Previous: SoherDocs</a>
+<a href="robotops-twin.html">Next: RobotOps Twin</a>
+</nav>
+</div>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>Rami Halabi · Software developer, Stockholm</p>
+<p>Static site, no tracking.</p>
+</div></footer>
+</body>
+</html>

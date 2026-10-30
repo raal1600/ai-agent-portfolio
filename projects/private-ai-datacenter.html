@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Private AI Datacenter · Rami Halabi</title>
+<meta name="description" content="A reference design for running AI workflows on premises, in 18 linked views from hardware to tenant offboarding.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&amp;family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="../index.html">Rami Halabi</a>
+<nav class="site-nav" aria-label="Main">
+<a href="../index.html">Products</a>
+<a href="https://www.linkedin.com/in/rami-halabi-2a5573195/">LinkedIn</a>
+<a href="https://github.com/raal1600">GitHub</a>
+</nav>
+</div></header>
+<main id="content">
+<div class="wrap">
+<section class="product-hero" aria-labelledby="title">
+<p class="eyebrow">Architecture</p>
+<h1 id="title">Private AI Datacenter</h1>
+<p class="lead">A reference design for running AI workflows on premises, in 18 linked views from hardware to tenant offboarding.</p>
+<dl class="facts">
+<div><dt>When</dt><dd class="date">Sep 2026</dd></div>
+<div><dt>Status</dt><dd>Reference design; not deployed</dd></div>
+<div><dt>Source</dt><dd><a href="https://github.com/raal1600/private-ai-datacenter">Public source</a></dd></div>
+<div><dt>Stack</dt><dd><ul class="tags"><li>Mermaid</li><li>HTML</li><li>JavaScript</li><li>Python</li></ul></dd></div>
+</dl>
+<p class="hero-actions"><a href="#demo">See the demo</a></p>
+</section>
+<section class="block" aria-labelledby="problem"><h2 id="problem">Problem and idea</h2><div class="block-body"><p>Organisations want AI to help run their infrastructure, but they cannot send data out or let the AI hold broad credentials.</p><p>The idea: keep customer traffic, estate management and AI inference on separate planes, and let the AI act only through a gateway that scopes every credential and records every request.</p></div></section>
+<section class="block" aria-labelledby="how"><h2 id="how">How it works</h2><div class="block-body"><ol class="flow"><li><strong>Boundaries</strong><span>Estate, networks and service ownership</span></li><li><strong>Platform</strong><span>VMware with tenant isolation</span></li><li><strong>AI control plane</strong><span>Local models and durable workflow state</span></li><li><strong>Execution gateway</strong><span>Scoped credentials and approvals</span></li><li><strong>Operations</strong><span>Patching, backups, incidents and break-glass</span></li></ol></div></section>
+<section class="block" id="demo" aria-labelledby="demo-title"><h2 id="demo-title">Demo</h2><div class="block-body"><figure class="shot"><img src="../assets/products/datacenter-explorer.jpg" alt="Architecture explorer with a list of views on the left and the estate boundaries diagram on the right." loading="lazy" decoding="async"><figcaption>The explorer: grouped views, design notes, Mermaid source, and SVG export for every diagram.</figcaption></figure><p><a href="https://raal1600.github.io/private-ai-datacenter/">Open the explorer</a></p></div></section>
+<section class="block" aria-labelledby="built"><h2 id="built">What I built</h2><div class="block-body"><ul><li>18 editable Mermaid diagrams, each with design notes and source references.</li><li>A self-contained explorer with search, zoom and pan, fullscreen and exports, and no framework, backend or tracking.</li><li>A hardware memory worksheet, an automation acceptance catalogue and an offline ZIP.</li></ul></div></section>
+<section class="block" aria-labelledby="stack"><h2 id="stack">Stack</h2><div class="block-body"><ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Mermaid</li><li>SVG</li><li>Python</li><li>GitHub Actions</li><li>GitHub Pages</li></ul></div></section>
+<section class="block" aria-labelledby="quality"><h2 id="quality">Quality evidence</h2><div class="block-body"><ul class="checklist"><li>Structural validation and browser regression tests run in CI before publishing.</li><li>Rendered SVGs ship with a manifest of their Mermaid source hashes.</li></ul></div></section>
+<section class="block" aria-labelledby="limits"><h2 id="limits">Current limits</h2><div class="block-body"><ul><li>A design only. Nothing is deployed, and the hardware figures are worksheet estimates.</li></ul></div></section>
+<nav class="next-links" aria-label="More products">
+<a href="teaching-overlay.html">Previous: Blender Teaching Overlay</a>
+<a href="survey-map.html">Next: Bilingual survey map</a>
+</nav>
+</div>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>Rami Halabi · Software developer, Stockholm</p>
+<p>Static site, no tracking.</p>
+</div></footer>
+</body>
+</html>

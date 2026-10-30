@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url'
 
 export function serve(root = process.cwd(), port = 8110) {
   root = resolve(root)
-  const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'application/javascript', '.json': 'application/json', '.png': 'image/png', '.svg': 'image/svg+xml', '.mp4': 'video/mp4', '.webm': 'video/webm', '.vtt': 'text/vtt; charset=utf-8' }
+  const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'application/javascript', '.json': 'application/json', '.png': 'image/png', '.jpg': 'image/jpeg', '.mjs': 'text/javascript', '.txt': 'text/plain; charset=utf-8', '.md': 'text/markdown; charset=utf-8', '.svg': 'image/svg+xml', '.mp4': 'video/mp4', '.webm': 'video/webm', '.vtt': 'text/vtt; charset=utf-8' }
   const server = createServer((req, res) => {
     try {
       let file = resolve(root, '.' + decodeURIComponent(new URL(req.url, 'http://localhost').pathname))

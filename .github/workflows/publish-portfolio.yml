@@ -1,4 +1,4 @@
-# Like Hektor's Publish decks: every deployment contains BOTH required branches.
+# Every deployment contains BOTH required branches.
 # / -> main; /preview/ -> feature/customer-facing-website.
 # Manual publishing only. Branch pushes never deploy this workflow.
 name: Publish portfolio and customer preview
