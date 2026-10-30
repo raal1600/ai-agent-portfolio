@@ -2,7 +2,7 @@
 
 A static product showcase: every product I have built, grouped by area, with one page each covering the problem and idea, how it works, a demo, what I built myself, the stack, quality evidence and current limits.
 
-**[Open the site](https://raal1600.github.io/ai-agent-portfolio/)**
+**[Open the site](https://soher.ai/)**
 
 | Area | Products |
 |---|---|
