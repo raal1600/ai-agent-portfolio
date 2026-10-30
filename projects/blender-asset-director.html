@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blender Asset Director · Rami Halabi</title>
+<meta name="description" content="Gives a coding agent a small Blender production team: reuse assets, adapt motion, plan shots and review the result.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&amp;family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="../index.html">Rami Halabi</a>
+<nav class="site-nav" aria-label="Main">
+<a href="../index.html">Products</a>
+<a href="https://www.linkedin.com/in/rami-halabi-2a5573195/">LinkedIn</a>
+<a href="https://github.com/raal1600">GitHub</a>
+</nav>
+</div></header>
+<main id="content">
+<div class="wrap">
+<section class="product-hero" aria-labelledby="title">
+<p class="eyebrow">3D and creative tooling</p>
+<h1 id="title">Blender Asset Director</h1>
+<p class="lead">Gives a coding agent a small Blender production team: reuse assets, adapt motion, plan shots and review the result.</p>
+<dl class="facts">
+<div><dt>When</dt><dd class="date">Sep 2026</dd></div>
+<div><dt>Status</dt><dd>v0.5.0 released; v0.6 in development</dd></div>
+<div><dt>Source</dt><dd><a href="https://github.com/raal1600/blender-asset-director">Public source</a></dd></div>
+<div><dt>Stack</dt><dd><ul class="tags"><li>Python</li><li>Blender</li><li>MCP</li><li>Codex skill</li></ul></dd></div>
+</dl>
+<p class="hero-actions"><a href="#demo">See the demo</a></p>
+</section>
+<section class="block" aria-labelledby="problem"><h2 id="problem">Problem and idea</h2><div class="block-body"><p>Agents that build 3D scenes tend to generate everything from scratch, even when suitable assets already exist. And moving an animation from one character rig to another often breaks the footwork and timing.</p><p>The idea: index what the scene and library already have, plan the transfer and have it reviewed, then adapt the motion with explicit checks, and keep technical tests separate from a person’s judgement of the performance.</p></div></section>
+<section class="block" aria-labelledby="how"><h2 id="how">How it works</h2><div class="block-body"><ol class="flow" aria-label="Diagram: how Blender Asset Director works"><li><strong>Prompt and scene</strong><span>Start from what already exists</span></li><li><strong>Index</strong><span>Assets and motion clips</span></li><li><strong>Plan</strong><span>Reviewed transfer plan</span></li><li><strong>Adapt</strong><span>Retarget with grounding and timing checks</span></li><li><strong>Review</strong><span>Evidence for a person to judge</span></li></ol></div></section>
+<section class="block" id="demo" aria-labelledby="demo-title"><h2 id="demo-title">Demo</h2><div class="block-body"><figure class="shot"><a href="https://raal1600.github.io/blender-asset-director/"><img src="../assets/products/asset-director-poster.jpg" alt="Four renders of the same character comparing a hard cut, an NLA crossfade, an aligned crossfade and the Director bridge between two dance clips." loading="lazy" decoding="async"></a><figcaption>Four ways to join two motion clips, compared over four seconds. <a href="https://raal1600.github.io/blender-asset-director/">Watch the recording</a>.</figcaption></figure></div></section>
+<section class="block" aria-labelledby="built"><h2 id="built">What I built</h2><div class="block-body"><ul><li>A Python package and command-line tool with no third-party dependencies, plus an installer.</li><li>One agent skill that loads seven roles as needed: director, scout, performance, camera, lighting, editing and continuity.</li><li>Motion retargeting with reference-frame conversion, optional foot grounding, and fixes for import timing and clip endpoints.</li><li>Full-clip sequencing with a reviewed bridge between clips, and a public technical lab on GitHub Pages.</li></ul></div></section>
+<section class="block" aria-labelledby="stack"><h2 id="stack">Stack</h2><div class="block-body"><ul class="tags"><li>Python 3.11</li><li>Blender</li><li>Blender MCP</li><li>Codex skills</li><li>GitHub Actions</li><li>GitHub Pages</li></ul></div></section>
+<section class="block" aria-labelledby="quality"><h2 id="quality">Quality evidence</h2><div class="block-body"><ul class="checklist"><li>523 test functions, including Blender component tests and end-to-end job tests in CI.</li><li>Releases are published only after the complete CI suite passes, and the public installer is checked after each release.</li></ul></div></section>
+<section class="block" aria-labelledby="limits"><h2 id="limits">Current limits</h2><div class="block-body"><ul><li>A technically correct transfer is not proof of natural movement; unsuitable source clips still look wrong.</li><li>Video-to-motion capture and live streaming are not implemented.</li><li>The installer still installs v0.5.0; the development branch is ahead of it.</li></ul></div></section>
+<nav class="next-links" aria-label="More products">
+<a href="support-agent.html">Previous: Customer service agent</a>
+<a href="teaching-overlay.html">Next: Blender Teaching Overlay</a>
+</nav>
+</div>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>Rami Halabi · Software developer, Stockholm</p>
+<p>Static site, no tracking.</p>
+</div></footer>
+</body>
+</html>

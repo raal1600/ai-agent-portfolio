@@ -5,7 +5,7 @@ html[data-terminal-ui="shell-v2"] {
   --shell-line: #31414a;
   --shell-line-strong: #526873;
   --shell-text: #d9e3e7;
-  --shell-muted: #93a4ac;
+  --shell-muted: #b8c6cc;
   --shell-accent: #75d5e4;
   --shell-accent-soft: #132a30;
   --shell-success: #8bd49c;
@@ -603,3 +603,7 @@ html[data-terminal-ui="shell-v2"][data-mode="transcript"] .scene { border-bottom
   html[data-terminal-ui="shell-v2"] .ask-body { grid-template-columns: 1fr; }
   html[data-terminal-ui="shell-v2"] .ask-options { border-right: 0; border-bottom: 1px solid var(--shell-line); }
 }
+
+/* Contrast: the dark shell inherits light status colours from terminal-demo.css; lift them for the dark background. */
+html[data-terminal-ui="shell-v2"] { --muted: #9aa6ae; --success: #7fbf8a; --warning: #d0a659; --danger: #e08585; }
+html[data-terminal-ui="shell-v2"] .evidence-badge.actual { color: #2f5f39; }

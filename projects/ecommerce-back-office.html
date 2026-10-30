@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E-commerce back office · Rami Halabi</title>
+<meta name="description" content="Purchase costs, target margins and competitor prices for a 1,150-product online shop, in one read-only dashboard.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&amp;family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="../index.html">Rami Halabi</a>
+<nav class="site-nav" aria-label="Main">
+<a href="../index.html">Products</a>
+<a href="https://www.linkedin.com/in/rami-halabi-2a5573195/">LinkedIn</a>
+<a href="https://github.com/raal1600">GitHub</a>
+</nav>
+</div></header>
+<main id="content">
+<div class="wrap">
+<section class="product-hero" aria-labelledby="title">
+<p class="eyebrow">Business systems</p>
+<h1 id="title">E-commerce back office</h1>
+<p class="lead">Purchase costs, target margins and competitor prices for a 1,150-product online shop, in one read-only dashboard.</p>
+<dl class="facts">
+<div><dt>When</dt><dd class="date">Sep 2026 – present</dd></div>
+<div><dt>Status</dt><dd>Live for one shop; AI monitoring paused</dd></div>
+<div><dt>Source</dt><dd>Private source</dd></div>
+<div><dt>Stack</dt><dd><ul class="tags"><li>PostgreSQL</li><li>PL/pgSQL</li><li>Supabase</li><li>Cloudflare Workers</li><li>JavaScript</li></ul></dd></div>
+</dl>
+<p class="hero-actions"><a href="#demo">See the demo</a></p>
+</section>
+<section class="block" aria-labelledby="problem"><h2 id="problem">Problem and idea</h2><div class="block-body"><p>A dropshipping shop sells products it never holds. Supplier costs change, competitors change their prices, and the shop platform has no view of margins. The owner needed to see, for each product, what it costs, what it should sell for and what others charge, without any tool touching the live shop.</p><p>The idea: let PostgreSQL own the rules. Workers, both AI agents and a plain price refresher, can only call validated database functions. Every observation is kept, and the dashboard only reads.</p></div></section>
+<section class="block" aria-labelledby="how"><h2 id="how">How it works</h2><div class="block-body"><ol class="flow" aria-label="Diagram: how E-commerce back office works"><li><strong>Catalogue and costs</strong><span>Imported snapshots, read-only towards the shop</span></li><li><strong>PostgreSQL</strong><span>Append-only ledger, validating functions, row-level security</span></li><li><strong>Workers</strong><span>AI agents find and judge offers; a Cloudflare Worker re-reads verified prices every 30 minutes</span></li><li><strong>Dashboard</strong><span>Static site behind sign-in: margins and competitor prices</span></li></ol></div></section>
+<section class="block" id="demo" aria-labelledby="demo-title"><h2 id="demo-title">Demo</h2><div class="block-body"><figure class="shot"><img src="../assets/products/erp-overview.jpg" alt="Dashboard overview with counts of loaded products, calculated margins and products with negative margin." loading="lazy" decoding="async"><figcaption>Overview after sign-in.</figcaption></figure><figure class="shot"><img src="../assets/products/erp-prices.jpg" alt="Price table: purchase cost, product margin, target margin, calculated price and lowest competitor price for each product." loading="lazy" decoding="async"><figcaption>Prices and margins. Each row shows the purchase cost, the margin at the calculated price, the target margin and the lowest verified competitor price, with its source and check time.</figcaption></figure><figure class="shot"><img src="../assets/products/erp-monitoring.jpg" alt="Monitoring panel showing the status of exact and equivalent product monitoring groups." loading="lazy" decoding="async"><figcaption>Competitor monitoring. The queue adapts to whichever workers are running, and paused groups are taken over without errors.</figcaption></figure><p class="note">Synthetic data. These screenshots were rendered from the real dashboard code, with every request answered by a local mock containing invented products, sellers, prices and links. The shop’s name is replaced with “Exempelbutiken”.</p></div></section>
+<section class="block" aria-labelledby="built"><h2 id="built">What I built</h2><div class="block-body"><ul><li>The data model and 41 versioned migrations, with the domain logic in validating PL/pgSQL functions in a private schema.</li><li>Margin calculation in whole öre, editable margin targets and a preview of every price change before it is saved.</li><li>Competitor price monitoring: exact matches by EAN, judged equivalent products, seller coverage and an adaptive work queue.</li><li>A Cloudflare Worker that re-reads verified offers from the page’s structured data, with sites that earn or lose automatic refresh.</li><li>A versioned contract for the AI workers, published by migration, with rollback scripts for each version.</li></ul></div></section>
+<section class="block" aria-labelledby="stack"><h2 id="stack">Stack</h2><div class="block-body"><ul class="tags"><li>PostgreSQL 17</li><li>PL/pgSQL</li><li>Supabase Auth</li><li>Row-level security</li><li>pg_cron</li><li>Cloudflare Workers</li><li>Browser Rendering</li><li>Hyperdrive</li><li>Cloudflare Pages</li><li>JavaScript</li><li>Python</li><li>GitHub Actions</li></ul></div></section>
+<section class="block" aria-labelledby="quality"><h2 id="quality">Quality evidence</h2><div class="block-body"><ul class="checklist"><li>About 3,800 lines of SQL tests across the migrations, run in CI.</li><li>92 JavaScript test cases for the dashboard and the price refresher.</li><li>Three CI workflows: SQL tests, dashboard checks and deploy, and the price refresher.</li><li>A deployment log of verified checkpoints that the workers read before they act.</li></ul></div></section>
+<section class="block" aria-labelledby="limits"><h2 id="limits">Current limits</h2><div class="block-body"><ul><li>Shop catalogue and supplier costs are imported by hand; there is no live supplier API.</li><li>Finding new competitor offers depends on AI scheduled tasks, which are paused right now. The refresher only re-reads offers that were already verified.</li><li>Competitor prices exclude shipping, and the margin excludes payment fees and overhead.</li></ul></div></section>
+<nav class="next-links" aria-label="More products">
+<a href="survey-map.html">Previous: Bilingual survey map</a>
+<a href="soherdocs.html">Next: SoherDocs</a>
+</nav>
+</div>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>Rami Halabi · Software developer, Stockholm</p>
+<p>Static site, no tracking.</p>
+</div></footer>
+</body>
+</html>

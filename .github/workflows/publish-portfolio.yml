@@ -1,7 +1,7 @@
-# Like Hektor's Publish decks: every deployment contains BOTH required branches.
-# / -> main; /preview/ -> feature/customer-facing-website.
+# Publishes main only. The earlier /preview/ branch is no longer deployed,
+# so the client-name check below covers everything that goes live.
 # Manual publishing only. Branch pushes never deploy this workflow.
-name: Publish portfolio and customer preview
+name: Publish portfolio
 
 on:
   workflow_dispatch:
@@ -17,45 +17,37 @@ jobs:
   build:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - name: Check out current main
+      - name: Check out main
         uses: actions/checkout@v4
         with:
-          ref: main
-          path: production
-          persist-credentials: false
-
-      - name: Check out customer website
-        uses: actions/checkout@v4
-        with:
-          ref: feature/customer-facing-website
-          path: customer
           persist-credentials: false
 
       - uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      - name: Validate the customer website source
-        working-directory: customer
-        run: node scripts/check-site.mjs
+      - name: Install check tools
+        run: npm ci
 
-      - name: Assemble both branches without changing either source
-        working-directory: customer
-        run: node scripts/build-pages.mjs ../production
+      - name: Check links, layout, accessibility and client names
+        run: npm run verify
 
-      - name: Validate both published versions
-        working-directory: customer
-        run: node scripts/verify-pages.mjs
+      - name: Collect only the public files
+        run: |
+          mkdir pages-dist
+          cp -R index.html assets projects evidence pages-dist/
 
-      - name: Upload the combined site
+      - name: Upload the site
         uses: actions/upload-pages-artifact@v4
         with:
-          path: customer/pages-dist
+          path: pages-dist
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       pages: write
       id-token: write
@@ -63,6 +55,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Publish both versions together
+      - name: Publish
         id: deployment
         uses: actions/deploy-pages@v4

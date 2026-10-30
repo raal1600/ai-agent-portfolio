@@ -14,7 +14,7 @@
   --green-soft: #e4f3e9;
   --blue: #3568a8;
   --blue-soft: #e8f0fb;
-  --yellow: #9a6d14;
+  --yellow: #7a560f;
   --yellow-soft: #fff4cf;
   --red: #a24a52;
   --red-soft: #fff1f2;
@@ -107,7 +107,7 @@ html[data-capture="scene"] .obsidian-app { height: 720px; }
   letter-spacing: .05em;
   text-transform: uppercase;
 }
-.sidebar-actions { color: #85827d; font-size: 15px; letter-spacing: .12em; }
+.sidebar-actions { color: #5f5c58; font-size: 15px; letter-spacing: .12em; }
 .file-tree { padding: 9px 7px 18px; }
 .tree-row {
   min-height: 24px;
@@ -192,11 +192,11 @@ html:not([data-view]) .specification-tab { background: var(--panel); color: var(
   gap: 7px;
   border-bottom: 1px solid #ebe9e4;
   background: #fdfcfb;
-  color: #85817b;
+  color: #5f5c58;
   font-size: 9.5px;
 }
 .pane-toolbar .spacer { flex: 1; }
-.toolbar-chip { padding: 2px 5px; border-radius: 4px; background: #f0efec; color: #77736e; font: 8px/1 var(--mono); }
+.toolbar-chip { padding: 2px 5px; border-radius: 4px; background: #f0efec; color: #5c5955; font: 8px/1 var(--mono); }
 .note-scroll {
   min-width: 0;
   min-height: 0;
@@ -209,7 +209,7 @@ html:not([data-view]) .specification-tab { background: var(--panel); color: var(
 .note-scroll::-webkit-scrollbar { width: 10px; }
 .note-scroll::-webkit-scrollbar-track { background: #f2f0ec; }
 .note-scroll::-webkit-scrollbar-thumb { border: 2px solid #f2f0ec; border-radius: 999px; background: #aaa49c; }
-.breadcrumbs { margin-bottom: 7px; color: #8c8983; font-size: 8.5px; }
+.breadcrumbs { margin-bottom: 7px; color: #62605b; font-size: 8.5px; }
 .note-title { margin: 0 0 7px; font-size: 28px; line-height: 1.06; letter-spacing: -.03em; }
 .note-subtitle { margin: 0 0 10px; color: var(--muted); font-size: 10.5px; }
 
@@ -226,7 +226,7 @@ html:not([data-view]) .specification-tab { background: var(--panel); color: var(
 }
 .properties-detailed { grid-template-columns: repeat(2, minmax(0, 1fr)); font-size: 9px; }
 .property { min-width: 0; display: flex; gap: 5px; }
-.property-name { flex: 0 0 auto; color: #8c8983; }
+.property-name { flex: 0 0 auto; color: #62605b; }
 .property-value { min-width: 0; overflow: hidden; color: #4c4945; text-overflow: ellipsis; white-space: nowrap; }
 .properties-detailed .property-value { overflow: visible; text-overflow: clip; white-space: normal; overflow-wrap: anywhere; }
 .property-value.approved { color: var(--green); font-weight: 750; }
@@ -308,7 +308,7 @@ html:not([data-view]) .specification-tab { background: var(--panel); color: var(
 .architecture-flow { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto 1fr; gap: 5px; align-items: center; }
 .architecture-node { min-width: 0; min-height: 55px; padding: 7px; display: flex; flex-direction: column; justify-content: center; border: 1px solid #ccd8e8; border-radius: 6px; background: #f3f7fc; text-align: center; }
 .architecture-node strong { font-size: 9px; }
-.architecture-node span { margin-top: 2px; color: #697b91; font-size: 8px; }
+.architecture-node span { margin-top: 2px; color: #53647a; font-size: 8px; }
 .architecture-arrow { color: var(--blue); font-weight: 800; }
 .architecture-note { margin-top: 6px !important; padding: 6px 8px; border-left: 3px solid var(--blue); background: var(--blue-soft); }
 .story-list { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
@@ -352,13 +352,13 @@ html:not([data-view]) .specification-tab { background: var(--panel); color: var(
 .linked-note + .linked-note { margin-top: 5px; }
 .linked-note strong, .linked-note small { display: block; }
 .linked-note strong { color: #514d48; font-size: 9px; }
-.linked-note small { margin-top: 2px; color: #85817b; font-size: 8px; }
+.linked-note small { margin-top: 2px; color: #5f5c58; font-size: 8px; }
 .linked-note.muted-link { opacity: .68; }
 .context-section.provenance { padding: 8px; border: 1px solid #d5cdea; border-radius: 6px; background: #faf8ff; color: #665d7d; font-size: 8.8px; line-height: 1.42; }
 .context-section.provenance h2 { color: #5f4c9e; }
 .context-section.provenance p { margin: 0; }
 
-.statusbar { padding: 0 10px; display: flex; align-items: center; gap: 18px; border-top: 1px solid var(--line); background: var(--chrome); color: #77746f; font-size: 8.5px; }
+.statusbar { padding: 0 10px; display: flex; align-items: center; gap: 18px; border-top: 1px solid var(--line); background: var(--chrome); color: #5c5955; font-size: 8.5px; }
 .statusbar .right { margin-left: auto; }
 .statusbar strong { color: var(--purple); }
 
