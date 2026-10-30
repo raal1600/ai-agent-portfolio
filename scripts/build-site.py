@@ -17,7 +17,7 @@ def old(path):
 
 
 # Recording players from the published pages, reused unchanged.
-AGENT_DEMO = re.search(r'(<div class="demo-switcher".*?)</div></section>\s*<section class="block" aria-labelledby="built">',
+AGENT_DEMO = re.search(r'(<div class="demo-switcher".*?)</div></section>\s*<section class="block"[^>]*aria-labelledby="built(?:-title)?">',
                        old('projects/pi-agent-harness.html'), re.S).group(1)
 docs_html = old('projects/soherdocs.html')
 DOCS_DEMO = re.search(r'(<div class="workflow-demo".*?<p class="visualization-note".*?</p>)', docs_html, re.S).group(1)
@@ -297,6 +297,14 @@ PRODUCTS = [
 AREA_NAME = {k: n for k, n, _ in AREAS}
 # Card and hero images made by thumbs.py; products without one get a typographic tile of their flow.
 THUMBS = {p['slug'] for p in PRODUCTS if (ROOT / 'assets/products/thumbs' / f'{p["slug"]}.jpg').exists()}
+# Dark is the default. The saved choice is applied before the page paints, so a light page never flashes dark.
+THEME_BOOT = ("(function(){var d=document.documentElement;d.classList.add('js');"
+              "try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')d.dataset.theme=t}catch(e){}})();")
+SUN = ('<svg class="icon-sun" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/>'
+       '<path d="M8 1v1.6M8 13.4V15M1 8h1.6M13.4 8H15M3 3l1.1 1.1M11.9 11.9 13 13M3 13l1.1-1.1M11.9 4.1 13 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>')
+MOON = ('<svg class="icon-moon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">'
+        '<path d="M13.5 9.6A5.6 5.6 0 0 1 6.4 2.5a5.6 5.6 0 1 0 7.1 7.1Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>')
+THEME_TOGGLE = f'<button class="theme-toggle" type="button" data-theme-toggle>{SUN}{MOON}<span data-theme-label>Light mode</span></button>'
 SECTIONS = [('problem', 'Problem'), ('how', 'How it works'), ('demo', 'Demo'), ('built', 'What I built'),
             ('stack', 'Stack'), ('quality', 'Evidence'), ('limits', 'Limits')]
 
@@ -304,10 +312,11 @@ SECTIONS = [('problem', 'Problem'), ('how', 'How it works'), ('demo', 'Demo'), (
 def head(title, description, depth, extra=''):
     up = '../' * depth
     return f'''<!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>{THEME_BOOT}</script>
 <title>{e(title)}</title>
 <meta name="description" content="{e(description)}">
 {FONTS}
@@ -322,6 +331,7 @@ def head(title, description, depth, extra=''):
 <a href="{up}index.html"{' aria-current="page"' if depth == 0 else ''}>Products</a>
 <a href="{LINKEDIN}">LinkedIn</a>
 <a href="{GITHUB}">GitHub</a>
+{THEME_TOGGLE}
 </nav>
 </div></header>
 '''
